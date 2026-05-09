@@ -3,3 +3,4 @@ __pycache__/
 .env
 price_prediction_model.pkl
 node_modules/
+users.db
