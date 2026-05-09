@@ -9,11 +9,30 @@ export default function LoginScreen() {
   const [password, setPassword] = useState('');
   const { login } = useAuth();
 
-  const handleLogin = () => {
-    // Mock JWT Login
-    if (email && password) {
-      const mockToken = "eyJhbGciOiJIUzI1NiIsInR5cCI...mock.jwt.token";
-      login(mockToken);
+  const handleLogin = async () => {
+    if (!email || !password) {
+      alert("Lütfen e-posta ve şifrenizi girin.");
+      return;
+    }
+
+    try {
+      const response = await fetch('http://172.24.246.41:5000/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Pass the real token to our AuthContext
+        login(data.token);
+      } else {
+        alert("Hata: " + (data.error || "Giriş yapılamadı."));
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Sunucuya bağlanılamadı. Backend'in çalıştığından emin olun.");
     }
   };
 

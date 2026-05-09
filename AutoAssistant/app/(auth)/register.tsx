@@ -8,14 +8,39 @@ export default function RegisterScreen() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const { login } = useAuth();
   const router = useRouter();
 
-  const handleRegister = () => {
-    // Mock JWT Registration
-    if (email && password && name) {
-      const mockToken = "eyJhbGciOiJIUzI1NiIsInR5cCI...mock.jwt.token";
-      login(mockToken);
+  const handleRegister = async () => {
+    if (!name || !email || !password || !confirmPassword) {
+      alert("Lütfen tüm alanları doldurun.");
+      return;
+    }
+    
+    if (password !== confirmPassword) {
+      alert("Şifreler eşleşmiyor.");
+      return;
+    }
+
+    try {
+      const response = await fetch('http://172.24.246.41:5000/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert("Kayıt başarılı! Lütfen giriş yapın.");
+        router.replace('/(auth)/login');
+      } else {
+        alert("Hata: " + (data.error || "Kayıt olunamadı."));
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Sunucuya bağlanılamadı.");
     }
   };
 
@@ -51,6 +76,14 @@ export default function RegisterScreen() {
             placeholderTextColor={Colors.textMuted}
             value={password}
             onChangeText={setPassword}
+            secureTextEntry
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Şifreyi Onayla"
+            placeholderTextColor={Colors.textMuted}
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
             secureTextEntry
           />
         </View>

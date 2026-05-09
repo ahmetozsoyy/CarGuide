@@ -4,10 +4,31 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sqlite3
 import os
+import jwt
+import datetime
+from werkzeug.security import generate_password_hash, check_password_hash
 from google import genai
 
 app = Flask(__name__)
 CORS(app)
+app.config['SECRET_KEY'] = 'sizin_gizli_anahtariniz_buraya' # Should be in env
+
+# Initialize Database for Users
+def init_db():
+    conn = sqlite3.connect('asistan.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            email TEXT UNIQUE NOT NULL,
+            password TEXT NOT NULL
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
+init_db()
 
 # Load the trained ML model
 try:
@@ -25,6 +46,58 @@ if api_key:
 else:
     client = None
     print("WARNING: GEMINI_API_KEY environment variable not found. AI translation will be disabled.")
+
+
+@app.route('/register', methods=['POST'])
+def register():
+    data = request.json
+    name = data.get('name')
+    email = data.get('email')
+    password = data.get('password')
+
+    if not name or not email or not password:
+        return jsonify({'success': False, 'error': 'Lütfen tüm alanları doldurun.'}), 400
+
+    hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
+
+    try:
+        conn = sqlite3.connect('asistan.db')
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO users (name, email, password) VALUES (?, ?, ?)", (name, email, hashed_password))
+        conn.commit()
+        conn.close()
+        return jsonify({'success': True, 'message': 'Kayıt başarılı!'})
+    except sqlite3.IntegrityError:
+        return jsonify({'success': False, 'error': 'Bu e-posta adresi zaten kayıtlı.'}), 400
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.json
+    email = data.get('email')
+    password = data.get('password')
+
+    if not email or not password:
+        return jsonify({'success': False, 'error': 'Lütfen e-posta ve şifrenizi girin.'}), 400
+
+    conn = sqlite3.connect('asistan.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT id, name, password FROM users WHERE email = ?", (email,))
+    user = cursor.fetchone()
+    conn.close()
+
+    if not user or not check_password_hash(user[2], password):
+        return jsonify({'success': False, 'error': 'E-posta veya şifre hatalı.'}), 401
+
+    token = jwt.encode({
+        'user_id': user[0],
+        'name': user[1],
+        'exp': datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(days=30)
+    }, app.config['SECRET_KEY'], algorithm='HS256')
+
+    return jsonify({'success': True, 'token': token, 'name': user[1]})
 
 
 @app.route('/predict', methods=['POST'])
@@ -91,7 +164,6 @@ def lookup_obd():
         technical_desc = result[0]
         simplified_desc = technical_desc
 
-        # If Gemini is configured, simplify the text
         if client:
             prompt = f"Sen uzman bir otomotiv mühendisisin. Aracın sisteminden şu teknik hata açıklaması geldi: '{technical_desc}'. Lütfen bu sorunun ne anlama geldiğini araç sahiplerinin anlayabileceği kadar sade, ancak son derece resmi ve profesyonel bir dille açıkla. Açıklama 2-3 cümleyi geçmesin; doğrudan sorunun kaynağını ve olası etkisini temiz bir dille özetle."
             try:
