@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.env
+price_prediction_model.pkl
+node_modules/

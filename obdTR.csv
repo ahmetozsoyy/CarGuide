@@ -1,0 +1,3072 @@
+﻿id,desc_tr
+P0100,Kütle veya Hacim Hava Akış Devresi Arızası
+P0101,Kütle veya Hacim Hava Akışı Devre Aralığı/Performans Sorunu
+P0102,Kütle veya Hacim Hava Akışı Devresi Düşük Girişi
+P0103,Kütle veya Hacim Hava Akışı Devresi Yüksek Girişi
+P0104,Kütle veya Hacim Hava Akışı Devresi Aralıklı
+P0105,Manifold Mutlak Basınç/Barometrik Basınç Devresi Arızası
+P0106,Manifold Mutlak Basınç/Barometrik Basınç Devre Aralığı/Performans Sorunu
+P0107,Manifold Mutlak Basınç/Barometrik Basınç Devresi Düşük Girişi
+P0108,Manifold Mutlak Basınç/Barometrik Basınç Devresi Yüksek Girişi
+P0109,Manifold Mutlak Basınç/Barometrik Basınç Devresi Aralıklı
+P0110,IAT Devre Arızası
+P0111,Emme Havası Sıcaklığı Devre Aralığı/Performans Sorunu
+P0112,Emme Hava Sıcaklığı Devresi Düşük Girişi
+P0113,Emme Hava Sıcaklığı Devresi Yüksek Girişi
+P0114,Emme Hava Sıcaklığı Devresi Aralıklı
+P0115,Motor Soğutucu Sıcaklığı Devre Arızası
+P0116,Motor Soğutucu Sıcaklığı Devre Aralığı/Performans Sorunu
+P0117,Motor Soğutucu Sıcaklığı Devresi Düşük Girişi
+P0118,Motor Soğutucu Sıcaklığı Devresi Yüksek Girişi
+P0119,Motor Soğutucu Sıcaklığı Devresi Aralıklı
+P0120,Gaz Kelebeği Konum Sensörü/Anahtarı Devre Arızası
+P0121,Gaz Kelebeği Konum Sensörü/Anahtarı Devre Aralığı/Performans Sorunu
+P0122,Gaz Kelebeği Konum Sensörü/Anahtarı A Devresi Düşük Girişi
+P0123,Gaz Kelebeği Konum Sensörü/Anahtarı A Devresi Yüksek Girişi
+P0124,Gaz Kelebeği Konum Sensörü/Anahtarı Devre Aralıklı
+P0125,Kapalı Çevrim Yakıt Kontrolü için Yetersiz Soğutucu Sıcaklığı;
+P0126,ECT Kapalı Döngü Yakıt Kontrolüne Aşırı Süre
+P0128,Kararlı Çalışma için Yetersiz Soğutma Sıvısı Sıcaklığı
+P0130,Soğutucu Termostat Arızası
+P0131,O2 Sensör Devresi Arızası (Sıra 1 Sensör 1)
+P0132,O2 Sensör Devresi Düşük Gerilimi (Sıra 1 Sensör 1)
+P0133,O2 Sensör Devresi Yüksek Gerilimi (Sıra 1 Sensör 1)
+P0134,O2 Sensör Devresi Yavaş Yanıtı (Sıra 1 Sensör 1)
+P0135,O2 Sensör Devresinde Etkinlik Algılanmadı (Sıra 1 Sensör 1)
+P0136,O2 Sensörü Isıtıcı Devresi Arızası (Sıra 1 Sensör 1)
+P0137,O2 Sensör Devresi Arızası (Sıra 1 Sensör 2)
+P0138,O2 Sensör Devresi Düşük Gerilimi (Sıra 1 Sensör 2)
+P0139,O2 Sensör Devresi Yüksek Gerilimi (Sıra 1 Sensör 2)
+P0140,O2 Sensör Devresi Yavaş Yanıtı (Sıra 1 Sensör 2)
+P0141,O2 Sensörü Devresinde Etkinlik Algılanmadı (Sıra 1 Sensör 2)
+P0142,O2 Sensörü Isıtıcı Devresi Arızası (Sıra 1 Sensör 2)
+P0143,O2 Sensör Devresi Arızası (Sıra 1 Sensör 3)
+P0144,O2 Sensör Devresi Düşük Gerilimi (Sıra 1 Sensör 3)
+P0145,O2 Sensör Devresi Yüksek Gerilimi (Sıra 1 Sensör 3)
+P0146,O2 Sensör Devresi Yavaş Yanıtı (Sıra 1 Sensör 3)
+P0147,O2 Sensörü Devresinde Etkinlik Algılanmadı (Sıra 1 Sensör 3)
+P0150,O2 Sensörü Isıtıcı Devresi Arızası (Sıra 1 Sensör 3)
+P0151,O2 Sensör Devresi Arızası (Sıra 2 Sensör 1)
+P0152,O2 Sensör Devresi Düşük Gerilimi (Sıra 2 Sensör 1)
+P0153,O2 Sensör Devresi Yüksek Gerilimi (Sıra 2 Sensör 1)
+P0154,O2 Sensör Devresi Yavaş Yanıtı (Sıra 2 Sensör 1)
+P0155,O2 Sensör Devresinde Etkinlik Algılanmadı (Sıra 2 Sensör 1)
+P0156,O2 Sensörü Isıtıcı Devresi Arızası (Sıra 2 Sensör 1)
+P0157,O2 Sensör Devresi Arızası (Sıra 2 Sensör 2)
+P0158,O2 Sensör Devresi Düşük Gerilimi (Sıra 2 Sensör 2)
+P0159,O2 Sensör Devresi Yüksek Gerilimi (Sıra 2 Sensör 2)
+P0160,O2 Sensör Devresi Yavaş Yanıtı (Sıra 2 Sensör 2)
+P0161,O2 Sensör Devresinde Etkinlik Algılanmadı (Sıra 2 Sensör 2)
+P0162,O2 Sensörü Isıtıcı Devresi Arızası (Sıra 2 Sensör 2)
+P0163,O2 Sensör Devresi Arızası (Sıra 2 Sensör 3)
+P0164,O2 Sensör Devresi Düşük Gerilimi (Sıra 2 Sensör 3)
+P0165,O2 Sensör Devresi Yüksek Gerilimi (Sıra 2 Sensör 3)
+P0166,O2 Sensör Devresi Yavaş Yanıtı (Sıra 2 Sensör 3)
+P0167,O2 Sensör Devresinde Etkinlik Algılanmadı (Sıra 2 Sensör 3)
+P0170,O2 Sensörü Isıtıcı Devresi Arızası (Sıra 2 Sensör 3)
+P0171,Yakıt Trim Arızası (Sıra 1)
+P0172,Yakıt Trimleme Sistemi Yalın (Sıra 1)
+P0173,Yakıt Trimi Çok Zengin (Sıra 1)
+P0174,Yakıt Trim Arızası (Sıra 2)
+P0175,Yakıt Trimi Çok Zayıf (Sıra 2)
+P0176,Yakıt Trimi Çok Zengin (Sıra 2)
+P0177,Yakıt Bileşimi Sensörü Devresi Arızası
+P0178,Yakıt Bileşimi Sensörü Devre Aralığı/Performansı
+P0179,Yakıt Bileşimi Sensörü Devresi Düşük Girişi
+P0180,Yakıt Bileşimi Sensörü Devresi Yüksek Girişi
+P0181,Yakıt Sıcaklık Sensörü A Devresi Arızası
+P0182,Yakıt Sıcaklık Sensörü A Devre Aralığı/Performansı
+P0183,Yakıt Sıcaklık Sensörü A Devresi Düşük Girişi
+P0184,Yakıt Sıcaklık Sensörü A Devresi Yüksek Girişi
+P0185,Yakıt Sıcaklık Sensörü A Devresi Aralıklı
+P0186,Yakıt Sıcaklık Sensörü B Devresi Arızası
+P0187,Yakıt Sıcaklık Sensörü B Devre Aralığı/Performansı
+P0188,Yakıt Sıcaklık Sensörü B Devresi Düşük Girişi
+P0189,Yakıt Sıcaklık Sensörü B Devresi Yüksek Girişi
+P0190,Yakıt Sıcaklık Sensörü B Devresi Aralıklı
+P0191,Yakıt Rayı Basınç Sensörü Devresi Arızası
+P0192,Yakıt Rayı Basınç Sensörü Devre Aralığı/Performansı
+P0193,Yakıt Rayı Basınç Sensörü Devresi Düşük Girişi
+P0194,Yakıt Rayı Basınç Sensörü Devresi Yüksek Girişi
+P0195,Yakıt Rayı Basınç Sensörü Devresi Aralıklı
+P0196,Motor Yağı Sıcaklık Sensörü Arızası
+P0197,Motor Yağı Sıcaklık Sensörü Aralığı/Performansı
+P0198,Motor Yağı Sıcaklık Sensörü Düşük
+P0199,Motor Yağı Sıcaklık Sensörü Yüksek
+P0200,Motor Yağı Sıcaklık Sensörü Aralıklı
+P0201,Enjektör Devresi Arızası
+P0202,Enjektör Devresi Arızası - Silindir 1
+P0203,Enjektör Devresi Arızası - Silindir 2
+P0204,Enjektör Devresi Arızası - Silindir 3
+P0205,Enjektör Devresi Arızası - Silindir 4
+P0206,Enjektör Devresi Arızası - Silindir 5
+P0207,Enjektör Devresi Arızası - Silindir 6
+P0208,Enjektör Devresi Arızası - Silindir 7
+P0209,Enjektör Devresi Arızası - Silindir 8
+P0210,Enjektör Devresi Arızası - Silindir 9
+P0211,Enjektör Devresi Arızası - Silindir 10
+P0212,Enjektör Devresi Arızası - Silindir 11
+P0213,Enjektör Devresi Arızası - Silindir 12
+P0214,Soğuk Çalıştırma Enjektörü 1 Arızası
+P0215,Soğuk Çalıştırma Enjektörü 2 Arızası
+P0216,Motor Kapatma Solenoidi Arızası
+P0217,Enjeksiyon Zamanlaması Kontrol Devresi Arızası
+P0218,Motor Aşırı Sıcaklık Durumu
+P0219,İletim Aşırı Sıcaklık Durumu
+P0220,Motor Aşırı Hız Durumu
+P0221,Gaz Kelebeği/Petal Konum Sensörü/Anahtar B Devresi Arızası
+P0222,Gaz Kelebeği/Petal Konum Sensörü/Anahtar B Devre Menzili/Performans Sorunu
+P0223,Gaz Kelebeği/Petal Konum Sensörü/Anahtar B Devresi Düşük Girişi
+P0224,Gaz Kelebeği/Petal Konum Sensörü/Anahtar B Devresi Yüksek Girişi
+P0225,Gaz Kelebeği/Petal Konum Sensörü/Anahtar B Devresi Aralıklı
+P0226,Gaz Kelebeği/Petal Konum Sensörü/Anahtar C Devresi Arızası
+P0227,Gaz Kelebeği/Petal Konum Sensörü/Anahtar C Devre Aralığı/Performans Sorunu
+P0228,Gaz Kelebeği/Petal Konum Sensörü/Anahtar C Devresi Düşük Girişi
+P0229,Gaz Kelebeği/Petal Konum Sensörü/Anahtar C Devresi Yüksek Girişi
+P0230,Gaz Kelebeği/Petal Konum Sensörü/Anahtar C Devresi Aralıklı
+P0231,Yakıt Pompası Ana Devre Arızası
+P0232,Yakıt Pompası İkincil Devresi Düşük
+P0233,Yakıt Pompası İkincil Devresi Yüksek
+P0234,Yakıt Pompası İkincil Devre Aralıklı
+P0235,Motorun Aşırı Takviye Durumu
+P0236,Turbo Şarjı Takviye Sensörü A Devresi Arızası
+P0237,Turboşarj Takviye Sensörü A Devre Aralığı/Performansı
+P0238,Turbo Şarjı Takviye Sensörü A Devresi Düşük
+P0239,Turbo Şarjı Takviye Sensörü A Devresi Yüksek
+P0240,Turbo Şarjı Takviye Sensörü B Arızası
+P0241,Turbo Şarjı Takviye Sensörü B Devre Aralığı/Performansı
+P0242,Turbo Şarjı Takviye Sensörü B Devresi Düşük
+P0243,Turbo Şarjı Takviye Sensörü B Devresi Yüksek
+P0244,Turbo Şarjı Atık Kapağı Solenoidi A Arızası
+P0245,Turboşarj Tahliye Kapağı Solenoidi A Aralığı/Performansı
+P0246,Turbo Şarjı Atık Kapağı Solenoidi A Düşük
+P0247,Turboşarj Tahliye Kapağı Solenoidi A Yüksek
+P0248,Turbo Şarjı Atık Kapağı Solenoidi B Arızası
+P0249,Turbo Şarjı Atık Kapağı Solenoidi B Aralığı/Performansı
+P0250,Turbo Şarjı Atık Kapağı Solenoidi B Düşük
+P0251,Turboşarj Tahliye Kapağı Solenoidi B Yüksek
+P0252,"Enjeksiyon Pompası Yakıt Ölçüm Kontrolü ""A"" Arızası (Kam/Rotor/Enjektör)"
+P0253,"Enjeksiyon Pompası Yakıt Ölçüm Kontrolü ""A"" Aralığı/Performansı (Kam/Rotor/Enjektör)"
+P0254,"Enjeksiyon Pompası Yakıt Ölçüm Kontrolü ""A"" Düşük (Kam/Rotor/Enjektör)"
+P0255,"Enjeksiyon Pompası Yakıt Ölçüm Kontrolü ""A"" Yüksek (Kam/Rotor/Enjektör)"
+P0256,"Enjeksiyon Pompası Yakıt Ölçüm Kontrolü ""A"" Aralıklı (Kam/Rotor/Enjektör)"
+P0257,"Enjeksiyon Pompası Yakıt Ölçüm Kontrolü ""B"" Arızası (Kam/Rotor/Enjektör)"
+P0258,"Enjeksiyon Pompası Yakıt Ölçüm Kontrolü ""B"" Aralığı/Performansı (Kam/Rotor/Enjektör)"
+P0259,"Enjeksiyon Pompası Yakıt Ölçüm Kontrolü ""B"" Düşük (Kam/Rotor/Enjektör)"
+P0260,"Enjeksiyon Pompası Yakıt Ölçüm Kontrolü ""B"" Yüksek (Kam/Rotor/Enjektör)"
+P0261,"Enjeksiyon Pompası Yakıt Ölçüm Kontrolü ""B"" Aralıklı (Kam/Rotor/Enjektör)"
+P0262,Silindir 1 Enjektör Devresi Düşük
+P0263,Silindir 1 Enjektör Devresi Yüksek
+P0264,Silindir 1 Katkısı/Denge Arızası
+P0265,Silindir 2 Enjektör Devresi Düşük
+P0266,Silindir 2 Enjektör Devresi Yüksek
+P0267,Silindir 2 Katkısı/Denge Arızası
+P0268,Silindir 3 Enjektör Devresi Düşük
+P0269,Silindir 3 Enjektör Devresi Yüksek
+P0270,Silindir 3 Katkı/Denge Arızası
+P0271,Silindir 4 Enjektör Devresi Düşük
+P0272,Silindir 4 Enjektör Devresi Yüksek
+P0273,Silindir 4 Katkı/Denge Arızası
+P0274,Silindir 5 Enjektör Devresi Düşük
+P0275,Silindir 5 Enjektör Devresi Yüksek
+P0276,Silindir 5 Katkı/Denge Arızası
+P0277,Silindir 6 Enjektör Devresi Düşük
+P0278,Silindir 6 Enjektör Devresi Yüksek
+P0279,Silindir 6 Katkı/Denge Arızası
+P0280,Silindir 7 Enjektör Devresi Düşük
+P0281,Silindir 7 Enjektör Devresi Yüksek
+P0282,Silindir 7 Katkı/Denge Arızası
+P0283,Silindir 8 Enjektör Devresi Düşük
+P0284,Silindir 8 Enjektör Devresi Yüksek
+P0285,Silindir 8 Katkı/Denge Arızası
+P0286,Silindir 9 Enjektör Devresi Düşük
+P0287,Silindir 9 Enjektör Devresi Yüksek
+P0288,Silindir 9 Katkı/Denge Arızası
+P0289,Silindir 10 Enjektör Devresi Düşük
+P0290,Silindir 10 Enjektör Devresi Yüksek
+P0291,Silindir 10 Katkı/Bakiye Arızası
+P0292,Silindir 11 Enjektör Devresi Düşük
+P0293,Silindir 11 Enjektör Devresi Yüksek
+P0294,Silindir 11 Katkı/Bakiye Arızası
+P0295,Silindir 12 Enjektör Devresi Düşük
+P0296,Silindir 12 Enjektör Devresi Yüksek
+P0300,Silindir 12 Katkı/Aralık Arızası
+P0301,Rastgele/Çoklu Silindir Teklemesi Algılandı
+P0302,Silindir 1 Tekleme Algılandı
+P0303,Silindir 2 Tekleme Algılandı
+P0304,Silindir 3 Tekleme Algılandı
+P0305,Silindir 4 Tekleme Algılandı
+P0306,Silindir 5 Tekleme Algılandı
+P0307,Silindir 6 Tekleme Algılandı
+P0308,Silindir 7 Tekleme Algılandı
+P0309,Silindir 8 Tekleme Algılandı
+P0310,Silindir 9 Tekleme Algılandı
+P0311,Silindir 10 Tekleme Algılandı
+P0312,Silindir 11 Tekleme Algılandı
+P0320,Silindir 12 Tekleme Algılandı
+P0321,Ateşleme/Dağıtıcı Motor Hız Giriş Devresi Arızası
+P0322,Ateşleme/Dağıtıcı Motor Hızı Giriş Devresi Aralığı/Performansı
+P0323,Ateşleme/Dağıtıcı Motor Hız Giriş Devresi Sinyal Yok
+P0325,Ateşleme/Dağıtıcı Motor Hız Giriş Devresi Aralıklı
+P0326,Vuruntu Sensörü 1 Devre Arızası (Sıra 1 veya Tek Sensör)
+P0327,Vuruntu Sensörü 1 Devre Aralığı/Performansı (Sıra 1 veya Tek Sensör)
+P0328,Vuruntu Sensörü 1 Devresi Düşük Girişi (Sıra 1 veya Tek Sensör)
+P0329,Vuruntu Sensörü 1 Devresi Yüksek Girişi (Sıra 1 veya Tek Sensör)
+P0330,Vuruntu Sensörü 1 Devresi Aralıklı (Sıra 1 veya Tek Sensör)
+P0331,Vuruntu Sensörü 2 Devre Arızası (Sıra 2)
+P0332,Vuruntu Sensörü 2 Devre Aralığı/Performansı (Sıra 2)
+P0333,Vuruntu Sensörü 2 Devresi Düşük Girişi (Sıra 2)
+P0334,Vuruntu Sensörü 2 Devresi Yüksek Girişi (Sıra 2)
+P0335,Vuruntu Sensörü 2 Devresi Aralıklı (Sıra 2)
+P0336,Krank Mili Konum Sensörü A Devresi Arızası
+P0337,Krank Mili Konum Sensörü A Devre Aralığı/Performansı
+P0338,Krank Mili Konum Sensörü A Devresi Düşük Girişi
+P0339,Krank Mili Konum Sensörü A Devresi Yüksek Girişi
+P0340,Krank Mili Konum Sensörü A Devresi Aralıklı
+P0341,Eksantrik Mili Konum Sensörü Devresi Arızası
+P0342,Eksantrik Mili Konum Sensörü Devre Aralığı/Performansı
+P0343,Eksantrik Mili Konum Sensörü Devresi Düşük Girişi
+P0344,Eksantrik Mili Konum Sensörü Devresi Yüksek Girişi
+P0350,Eksantrik Mili Konum Sensörü Devresi Aralıklı
+P0351,Ateşleme Bobini Birincil/İkincil Devre Arızası
+P0352,Ateşleme Bobini A Birincil/İkincil Devre Arızası
+P0353,Ateşleme Bobini B Birincil/İkincil Devre Arızası
+P0354,Ateşleme Bobini C Birincil/İkincil Devre Arızası
+P0355,Ateşleme Bobini D Birincil/İkincil Devre Arızası
+P0356,Ateşleme Bobini E Birincil/İkincil Devre Arızası
+P0357,Ateşleme Bobini F Birincil/İkincil Devre Arızası
+P0358,Ateşleme Bobini G Birincil/İkincil Devre Arızası
+P0359,Ateşleme Bobini H Birincil/İkincil Devre Arızası
+P0360,Ateşleme Bobini I Birincil/İkincil Devre Arızası
+P0361,Ateşleme Bobini J Birincil/İkincil Devre Arızası
+P0362,Ateşleme Bobini K Birincil/İkincil Devre Arızası
+P0370,Ateşleme Bobini L Birincil/İkincil Devre Arızası
+P0371,Zamanlama Referansı Yüksek Çözünürlüklü Sinyal A Arızası
+P0372,Zamanlama Referansı Yüksek Çözünürlük Sinyali Çok Fazla Darbe
+P0373,Zamanlama Referansı Yüksek Çözünürlük Sinyali Çok Az Darbe
+P0374,Zamanlama Referansı Yüksek Çözünürlüklü Sinyal A Aralıklı/Düzensiz Darbeler
+P0375,Zamanlama Referansı Yüksek Çözünürlük Sinyali A Darbe Yok
+P0376,Zamanlama Referansı Yüksek Çözünürlüklü Sinyal B Arızası
+P0377,Zamanlama Referansı Yüksek Çözünürlüklü Sinyal B Çok Fazla Darbe
+P0378,Zamanlama Referansı Yüksek Çözünürlüklü Sinyal B Çok Az Darbe
+P0379,Zamanlama Referansı Yüksek Çözünürlüklü Sinyal B Aralıklı/Düzensiz Darbeler
+P0380,Zamanlama Referansı Yüksek Çözünürlüklü Sinyal B Darbe Yok
+P0381,"Kızdırma Bujisi/Isıtıcı Devresi ""A"" Arızası"
+P0382,Kızdırma Bujisi/Isıtıcı Gösterge Devresi Arızası
+P0385,Egzoz Gazı Devridaim Akışı Arızası
+P0386,Krank Mili Konum Sensörü B Devresi Arızası
+P0387,Krank Mili Konum Sensörü B Devre Aralığı/Performansı
+P0388,Krank Mili Konum Sensörü B Devresi Düşük Girişi
+P0389,Krank Mili Konum Sensörü B Devresi Yüksek Girişi
+P0400,Krank Mili Konum Sensörü B Devresi Aralıklı
+P0401,Egzoz Gazı Devridaim Akışı Arızası
+P0402,Egzoz Gazı Devridaim Akışı Yetersiz Algılandı
+P0403,Egzoz Gazı Devridaim Akışı Aşırı Algılandı
+P0404,Egzoz Gazı Devridaim Devresi Arızası
+P0405,Egzoz Gazı Devridaim Devre Aralığı/Performansı
+P0406,Egzoz Gazı Devridaim Sensörü A Devresi Düşük
+P0407,Egzoz Gazı Devridaim Sensörü A Devresi Yüksek
+P0408,Egzoz Gazı Devridaim Sensörü B Devresi Düşük
+P0410,Egzoz Gazı Devridaim Sensörü B Devresi Yüksek
+P0411,İkincil Hava Enjeksiyon Sistemi Arızası
+P0412,İkincil Hava Enjeksiyon Sistemi Yanlış Akış Algılandı
+P0413,İkincil Hava Enjeksiyon Sistemi Anahtarlama Valfı A Devresi Arızası
+P0414,İkincil Hava Enjeksiyon Sistemi Anahtarlama Valfı A Devresi Açık
+P0415,İkincil Hava Enjeksiyon Sistemi Anahtarlama Valfı A Devresi Kısa Devreli
+P0416,İkincil Hava Enjeksiyon Sistemi Anahtarlama Valfı B Devresi Arızası
+P0417,İkincil Hava Enjeksiyon Sistemi Anahtarlama Valfı B Devresi Açık
+P0418,İkincil Hava Enjeksiyon Sistemi Anahtarlama Valfı B Devresi Kısa Devreli
+P0419,"İkincil Hava Enjeksiyon Sistemi Rölesi ""A"" Devre Arızası"
+P0420,"İkincil Hava Enjeksiyon Sistemi Rölesi ""B"" Devre Arızası"
+P0421,Katalizör Sistemi Verimliliği Eşiğin Altında (Sıra 1)
+P0422,Eşiğin Altında Isınma Katalizör Verimliliği (Sıra 1)
+P0423,Eşiğin Altında Ana Katalizör Verimliliği (Sıra 1)
+P0424,Eşiğin Altında Isıtmalı Katalizör Verimliliği (Sıra 1)
+P0426,Eşiğin Altında Isıtılmış Katalizör Sıcaklığı (Sıra 1)
+P0427,Katalizör Sıcaklık Sensörü Aralığı/Performansı (Sıra 1)
+P0428,Katalizör Sıcaklık Sensörü Düşük Girişi (Sıra 1)
+P0430,Katalizör Sıcaklık Sensörü Yüksek Girişi (Sıra 1)
+P0431,Katalizör Sistemi Verimliliği Eşiğin Altında (Sıra 2)
+P0432,Eşiğin Altında Isınma Katalizör Verimliliği (Sıra 2)
+P0433,Eşiğin Altında Ana Katalizör Verimliliği (Sıra 2)
+P0434,Eşiğin Altında Isıtmalı Katalizör Verimliliği (Sıra 2)
+P0436,Eşiğin Altında Isıtılmış Katalizör Sıcaklığı (Sıra 2)
+P0437,Katalizör Sıcaklık Sensörü Aralığı/Performansı (Sıra 2)
+P0438,Katalizör Sıcaklık Sensörü Düşük Girişi (Sıra 2)
+P0440,Katalizör Sıcaklık Sensörü Yüksek Girişi (Sıra 2)
+P0441,Evaporatif Emisyon Kontrol Sistemi Arızası
+P0442,Evaporatif Emisyon Kontrol Sistemi Yanlış Tahliye Akışı
+P0443,Evaporatif Emisyon Kontrol Sisteminde Kaçak Tespit Edildi (küçük sızıntı)
+P0444,Evaporatif Emisyon Kontrol Sistemi Tahliye Kontrol Vanası Devresi Arızası
+P0445,Evaporatif Emisyon Kontrol Sistemi Tahliye Kontrol Vanası Devresi Açık
+P0446,Evaporatif Emisyon Kontrol Sistemi Tahliye Kontrol Vanası Devresi Kısa Devreli
+P0447,Evaporatif Emisyon Kontrol Sistemi Havalandırma Kontrol Devresi Arızası
+P0448,Evaporatif Emisyon Kontrol Sistemi Havalandırma Kontrol Devresi Açık
+P0449,Evaporatif Emisyon Kontrol Sistemi Havalandırma Kontrol Devresi Kısa Devreli
+P0450,Evaporatif Emisyon Kontrol Sistemi Havalandırma Valfı/Solenoid Devre Arızası
+P0451,Evaporatif Emisyon Kontrol Sistemi Basınç Sensörü Arızası
+P0452,Evaporatif Emisyon Kontrol Sistemi Basınç Sensörü Aralığı/Performansı
+P0453,Evaporatif Emisyon Kontrol Sistemi Basınç Sensörü Düşük Girişi
+P0454,Evaporatif Emisyon Kontrol Sistemi Basınç Sensörü Yüksek Giriş
+P0455,Evaporatif Emisyon Kontrol Sistemi Basınç Sensörü Aralıklı
+P0460,Evaporatif Emisyon Kontrol Sisteminde Kaçak Tespit Edildi (brüt sızıntı)
+P0461,Yakıt Seviye Sensörü Devresi Arızası
+P0462,Yakıt Seviye Sensörü Devre Aralığı/Performansı
+P0463,Yakıt Seviye Sensörü Devresi Düşük Girişi
+P0464,Yakıt Seviye Sensörü Devresi Yüksek Girişi
+P0465,Yakıt Seviye Sensörü Devresi Aralıklı
+P0466,Boşaltma Akış Sensörü Devresi Arızası
+P0467,Temizleme Akış Sensörü Devre Aralığı/Performansı
+P0468,Temizleme Akış Sensörü Devresi Düşük Girişi
+P0469,Temizleme Akış Sensörü Devresi Yüksek Girişi
+P0470,Temizleme Akış Sensörü Devresi Aralıklı
+P0471,Egzoz Basıncı Sensörü Arızası
+P0472,Egzoz Basıncı Sensörü Aralığı/Performansı
+P0473,Egzoz Basıncı Sensörü Düşük
+P0474,Egzoz Basıncı Sensörü Yüksek
+P0475,Egzoz Basıncı Sensörü Aralıklı
+P0476,Egzoz Basıncı Kontrol Valfı Arızası
+P0477,Egzoz Basıncı Kontrol Valfı Aralığı/Performansı
+P0478,Egzoz Basıncı Kontrol Valfı Düşük
+P0479,Egzoz Basıncı Kontrol Valfı Yüksek
+P0480,Egzoz Basıncı Kontrol Valfı Aralıklı
+P0481,Soğutma Fanı 1 Kontrol Devresi Arızası
+P0482,Soğutma Fanı 2 Kontrol Devresi Arızası
+P0483,Soğutma Fanı 3 Kontrol Devresi Arızası
+P0484,Soğutma Fanı Mantıksallık Kontrolü Arızası
+P0485,Soğutma Fanı Devresinde Aşırı Akım
+P0500,Soğutma Fanı Gücü/Topraklama Devresi Arızası
+P0501,Araç Hız Sensörü Arızası
+P0502,Araç Hız Sensörü Aralığı/Performansı
+P0503,Araç Hız Sensörü Düşük Girişi
+P0505,Araç Hız Sensörü Aralıklı/Düzensiz/Yüksek
+P0506,Rölanti Kontrol Sistemi Arızası
+P0507,Rölanti Kontrol Sistemi Devri Beklenenden Düşük
+P0510,Rölanti Kontrol Sistemi Devri Beklenenden Yüksek
+P0520,Kapalı Gaz Kelebeği Konum Anahtarı Arızası
+P0521,Motor Yağı Basınç Sensörü/Anahtar Devresi Arızası
+P0522,Motor Yağı Basınç Sensörü/Anahtar Devre Aralığı/Performansı
+P0523,Motor Yağı Basınç Sensörü/Anahtar Devresi Düşük Gerilimi
+P0530,Motor Yağı Basınç Sensörü/Anahtar Devresi Yüksek Gerilimi
+P0531,Klima Soğutucu Akışkan Basınç Sensörü Devresi Arızası
+P0532,Klima Soğutucu Akışkan Basınç Sensörü Devre Aralığı/Performansı
+P0533,Klima Soğutucu Akışkan Basınç Sensörü Devresi Düşük Girişi
+P0534,Klima Soğutucu Akışkan Basınç Sensörü Devresi Yüksek Girişi
+P0550,Klima Soğutucu Akışkan Şarj Kaybı
+P0551,Servo Direksiyon Basınç Sensörü Devresi Arızası
+P0552,Servo Direksiyon Basınç Sensörü Devre Aralığı/Performansı
+P0553,Servo Direksiyon Basınç Sensörü Devresi Düşük Girişi
+P0554,Servo Direksiyon Basınç Sensörü Devresi Yüksek Giriş
+P0560,Servo Direksiyon Basınç Sensörü Devresi Aralıklı
+P0561,Sistem Gerilimi Arızası
+P0562,Sistem Gerilimi Kararsız
+P0563,Klima basınç sensörü düşük voltajı (Chrysler)
+P0565,Sistem Gerilimi Yüksek
+P0566,Sinyal Arızasında Hız Sabitleyici
+P0567,Hız Sabitleyici Kapalı Sinyal Arızası
+P0568,Hız Sabitleyici Devam Sinyali Arızası
+P0569,Hız Sabitleyici Ayar Sinyali Arızası
+P0570,Hız Sabitleyici Sahil Sinyali Arızası
+P0571,Hız Sabitleyici Hızlanma Sinyali Arızası
+P0572,Hız Sabitleyici/Fren Anahtarı A Devresi Arızası
+P0573,Hız Sabitleyici/Fren Anahtarı A Devresi Düşük
+P0574,Hız Sabitleyici/Fren Anahtarı A Devresi Yüksek
+P0575,Hız Sabitleyiciyle İlgili Arıza
+P0576,Hız Sabitleyiciyle İlgili Arıza
+P0578,Hız Sabitleyiciyle İlgili Arıza
+P0579,Hız Sabitleyiciyle İlgili Arıza
+P0580,Hız Sabitleyiciyle İlgili Arıza
+P0600,Hız Sabitleyiciyle İlgili Arıza
+P0601,Seri İletişim Bağlantısı Arızası
+P0602,Kontrol Modülü Salt Okunur Belleği(ROM)
+P0603,Kontrol Modülü Programlama Hatası
+P0604,Dahili Kontrol Modülü Canlı Belleği Tutma (KAM) Hatası
+P0605,Dahili Kontrol Modülü Rasgele Erişim Belleği (RAM) Hatası
+P0606,Dahili Kontrol Modülü Salt Okunur Bellek (ROM) Hatası
+P0608,PCM İşlemci Arızası
+P0609,"Kontrol Modülü VSS Çıkışı ""A"" Arızası"
+P0620,"Kontrol Modülü VSS Çıkışı ""B"" Arızası"
+P0621,Jeneratör Kontrol Devresi Arızası
+P0622,"Jeneratör Lambası ""L"" Kontrol Devresi Arızası"
+P0650,"Jeneratör Alanı ""F"" Kontrol Devresi Arızası"
+P0654,Arıza Gösterge Lambası (MIL) Kontrol Devresi Arızası
+P0655,Motor Devri Çıkış Devresi Arızası
+P0656,Motor Sıcak Lambası Çıkış Kontrol Devresi Arızası
+P0700,Yakıt Seviyesi Çıkış Devresi Arızası
+P0701,Şanzıman Kontrol Sistemi Arızası
+P0702,Şanzıman Kontrol Sistemi Aralığı/Performansı
+P0703,Şanzıman Kontrol Sistemi Elektrik
+P0704,Tork Konvertörü/Fren Anahtarı B Devresi Arızası
+P0705,Debriyaj Anahtarı Giriş Devresi Arızası
+P0706,Şanzıman Menzil Sensörü Devresi arızası (PRNDL Girişi)
+P0707,Şanzıman Menzili Sensörü Devre Menzili/Performansı
+P0708,Şanzıman Menzili Sensörü Devresi Düşük Girişi
+P0709,Şanzıman Menzili Sensörü Devresi Yüksek Giriş
+P0710,İletim Aralığı Sensörü Devresi Aralıklı
+P0711,Şanzıman Yağı Sıcaklık Sensörü Devresi Arızası
+P0712,Şanzıman Yağı Sıcaklık Sensörü Devre Aralığı/Performansı
+P0713,Şanzıman Yağı Sıcaklık Sensörü Devresi Düşük Girişi
+P0714,Şanzıman Yağı Sıcaklık Sensörü Devresi Yüksek Giriş
+P0715,Şanzıman Yağı Sıcaklık Sensörü Devresi Aralıklı
+P0716,Giriş/Türbin Hız Sensörü Devresi Arızası
+P0717,Giriş/Türbin Hız Sensörü Devre Aralığı/Performansı
+P0718,Giriş/Türbin Hız Sensörü Devresi Sinyal Yok
+P0719,Giriş/Türbin Hız Sensörü Devresi Aralıklı
+P0720,Tork Konvertörü/Fren Anahtarı B Devresi Düşük
+P0721,Çıkış Hız Sensörü Devresi Arızası
+P0722,Çıkış Hızı Sensör Aralığı/Performansı
+P0723,Çıkış Hız Sensörü Sinyal Yok
+P0724,Çıkış Hızı Sensörü Aralıklı
+P0725,Tork Konvertörü/Fren Anahtarı B Devresi Yüksek
+P0726,Motor Hızı Giriş Devresi Arızası
+P0727,Motor Hızı Giriş Devresi Aralığı/Performansı
+P0728,Motor Hız Giriş Devresi Sinyal Yok
+P0730,Motor Devri Giriş Devresi Aralıklı
+P0731,Yanlış Dişli Oranı
+P0732,Dişli 1 Yanlış oran
+P0733,Dişli 2 Yanlış oran
+P0734,Dişli 3 Yanlış oran
+P0735,Dişli 4 Yanlış oran
+P0736,Vites 5 Yanlış oran
+P0740,Yanlış vites oranını ters çevirme
+P0741,Tork Konvertörü Debriyaj Devresi Arızası
+P0742,Tork Konvertörü Kavrama Devresi Performansı veya Sıkışmış
+P0743,Tork Konvertörü Kavrama Devresi Açık Sıkışmış
+P0744,Tork Konvertör Kavrama Devresi Elektrik
+P0745,Tork Konvertörü Kavrama Devresi Aralıklı
+P0746,Basınç Kontrol Solenoid Arızası
+P0747,Basınç Kontrol Solenoid Performansı veya Sıkışmış
+P0748,Basınç Kontrol Solenoidi Açıkta Sıkışmış
+P0749,Basınç Kontrol Solenoid Elektrik
+P0750,Basınç Kontrol Solenoidi Aralıklı
+P0751,Vites Değiştirme Solenoidi A Arızası
+P0752,Vites Değiştirme Solenoidi A Performansı veya Kapalı Kalmış/
+P0753,1-2 Vites Değiştirme Solenoid Valfı Performansı
+P0754,Vites Değiştirme Solenoidi A Sıkışmış
+P0755,Vites Değiştirme Solenoidi A Elektrikli/
+P0756,1-2 Vites Değiştirme Solenoidi Devresi Elektrik
+P0757,Vites Değiştirme Solenoidi A Aralıklı
+P0758,Vites Değiştirme Solenoidi B Arızası
+P0759,Vites Değiştirme Solenoidi B Performansı veya Kapalı Kalmış/
+P0760,2-3 Vites Değiştirme Solenoid Valfı Performansı
+P0761,Vites Değiştirme Solenoidi B Açıkta Sıkışmış
+P0762,Vites Değiştirme Solenoidi B Elektrikli/ 2-3 Vites Değiştirme Solenoidi Devresi Elektrik
+P0763,Vites Değiştirme Solenoidi B Aralıklı
+P0764,Vites Değiştirme Solenoidi C Arızası
+P0765,Vites Değiştirme Solenoidi C Performansı veya Kapalı Kalmış
+P0766,Vites Değiştirme Solenoidi C Açık Kalmış
+P0767,Vites Değiştirme Solenoidi C Elektrik
+P0768,Vites Değiştirme Solenoidi C Aralıklı
+P0769,Vites Değiştirme Solenoidi D Arızası
+P0770,Vites Değiştirme Solenoidi D Performansı veya Kapalı Sıkışmış
+P0771,Vites Değiştirme Solenoidi D Açık Sıkışmış
+P0772,Vites Değiştirme Solenoidi D Elektrik
+P0773,Vites Değiştirme Solenoidi D Aralıklı
+P0774,Vites Değiştirme Solenoidi E Arızası
+P0775,Vites Değiştirme Solenoidi E Performansı veya Kapalı Sıkışmış
+P0776,Vites Değiştirme Solenoid E Sıkışmış
+P0777,Vites Değiştirme Solenoidi E Elektrik
+P0778,Vites Değiştirme Solenoidi E Aralıklı
+P0779,Basınç Kontrol Solenoidi B Arızası
+P0780,Basınç Kontrol Solenoidi B Performansı
+P0781,Basınç Kontrol Solenoidi B Açık Sıkışmış
+P0782,Basınç Kontrol Solenoidi B Elektrik
+P0783,Basınç Kontrol Solenoidi B Aralıklı
+P0784,Vites Arızası
+P0785,1-2 Vites Arızası
+P0786,2-3 Vites Arızası
+P0787,3-4 Vites Arızası
+P0788,4-5 Vites Arızası
+P0789,Vites Değiştirme/Zamanlama Solenoidi Arızası/ 3-2 Vites Değiştirme Solenoidi Devresi Elektriksel
+P0790,Vites Değiştirme/Zamanlama Solenoid Aralığı/Performansı
+P0801,Vites Değiştirme/Zamanlama Solenoidi Düşük
+P0803,Vites Değiştirme/Zamanlama Solenoidi Yüksek
+P0804,Vites Değiştirme/Zamanlama Solenoidi Aralıklı
+P1100,Normal/Performans Anahtarı Devre Arızası
+P1101,Ters Engelleme Kontrol Devresi Arızası
+P1102,1-4 Vites Yükseltme (Vardiya Atlama) Solenoid Kontrol Devresi Arızası
+P1103,1-4 Vites Yükseltme (Vardiya Atlama) Lambası Kontrol Devresi Arızası
+P1104,MAF Sensörü Aralıklı / Tüm OBDII Sistemlerinin Kontrolü Tamamlanmadı
+P1105,MAF Sensörü Otomatik Test Aralığının Dışında./
+P1106,KOER Tamamlanamıyor KOER İptal Edildi
+P1107,MAF Sensörü Aralık İçinde Ancak Beklenenden Düşük
+P1108,MAF Sensörü Aralık İçinde Ancak Beklenenden Yüksek
+P1109,MAF Topraklama Arızası
+P1110,Çift Alternatör Üst Arızası
+P1111,Çift Alternatör Alt Arıza/Manifold Mutlak Basınç (MAP) Sensör Devresi Aralıklı Yüksek Gerilim
+P1112,Çift Alternatör Alt Devre Arızası/ Manifold Mutlak Basınç (MAP) Sensör Devresi Aralıklı Düşük Gerilim
+P1113,Çift Alternatör Akü Lambası Devre Arızası
+P1114,IAT - B Sensör Aralıklı
+P1115,IAT Sensörü (D/C) Açık/Kısa
+P1116,Emme Havası Sıcaklığı (IAT) Sensör Devresi Aralıklı Yüksek Gerilim
+P1117,Emme Havası Sıcaklığı (IAT) Sensör Devresi Aralıklı Düşük Gerilim
+P1118,IAT Sensörü Açık/Kısa
+P1119,Motor Soğutma Suyu Sıcaklığı (ECT) Sensör Devresi Aralıklı Düşük Gerilim/IAT - B Devresi Düşük Girişi
+P1120,Motor Soğutma Suyu Sıcaklığı (ECT) Sensör Devresi Aralıklı Yüksek Gerilim/IAT - B Devresi Yüksek Girişi
+P1121,Motor Soğutma Suyu sensörü aralık dışında/ECT Sensörü Otomatik Test Aralığının Dışında
+P1122,Motor Soğutucu Sensörü aralıklı/ECT Sensörü Aralıklı
+P1123,Manifold Mutlak Sıcaklık Devresi Düşük Girişi
+P1124,Manifold Mutlak Sıcaklık Devresi Yüksek Girişi
+P1125,Gaz kelebeği konum sensörü aralık dışında
+P1126,Gaz Kelebeği Konumu (TP) Sensör Devresi Aralıklı Yüksek Gerilim
+P1127,Gaz Kelebeği Konumu (TP) Sensör Devresi Aralıklı Düşük Gerilim
+P1128,Gaz Kelebeği Konum Sensörü Aralık İçinde Ancak Beklenenden Yüksek
+P1129,Gaz Kelebeği Konum Sensörü Otomatik Test Aralığının Dışında
+P1130,Gaz kelebeği konum sensörü aralıklı
+P1131,Gaz Kelebeği Konumu (Dar Aralık) Sensör Devresi Arızası
+P1132,Egzoz Sıcak Değil
+P1133,Giriş Isıtmalı O2 Sensörleri Değiştirildi
+P1134,Aşağı Akım Isıtmalı O2 Sensörleri Değiştirildi
+P1135,HO2S Anahtarının Eksikliği - Sınırda Uyarlanabilir Yakıt
+P1136,HO2S Anahtarının Eksikliği - Sensör Zayıflığı Gösteriyor
+P1137,HO2S Anahtarının Eksikliği - Sensör Zenginliği Gösterir
+P1138,HO2S Yetersiz Anahtarlama Sensörü 1
+P1139,HO2S Geçiş Süresi Oranı Sensörü 1
+P1140,Pedal Konum Sensörü A Devresi Aralıklı
+P1141,Fan Kontrol Devresi Arızası
+P1142,HO2S Anahtarının Eksikliği - Sensör Zayıflığı Gösteriyor
+P1143,HO2S12 Anahtarının Eksikliği - Sensör Zenginliği Gösterir
+P1144,Yakıt Gösterge Devresinde Su Arızası
+P1150,Yakıt Durumunda Su
+P1151,Yakıt Kısıtlama Göstergesi Devre Arızası
+P1152,Yakıt Kısıtlama Durumu
+P1153,Hava Destekli Kontrol Valfı Aralığı/Performansı
+P1154,Hava Yardımı Kontrol Valfı Devre Arızası
+P1155,HO2S21 Anahtarının Eksikliği - Sınırda Uyarlanabilir Yakıt
+P1156,HO2S21 Anahtarının Eksikliği - Sensör Zayıflığı Gösteriyor
+P1157,HO2S21 Anahtarının Eksikliği - Sensör Zenginliği Gösterir
+P1158,Sıra 2 Yakıt Kontrolü Yalın'a Kaydırıldı
+P1159,Sıra 2 Yakıt Kontrolü Zengine Kaydırıldı
+P1167,Alternatif Yakıt Kontrol Cihazı
+P1168,Yakıt Seçim Anahtarı Arızası
+P1169,HO2S22 Anahtarının Eksikliği - Sensör Zayıflığı Gösteriyor
+P1170,HO2S22 Anahtarının Eksikliği - Sensör Zenginliği Gösterir
+P1171,Yakıt Step Motor Arızası
+P1172,Geçersiz Test
+P1173,Yakıt Rayı Sensörü Aralık İçi Düşük Arızası
+P1174,Yakıt Rayı Sensörü Aralık İçi Yüksek Arıza
+P1175,ESO - Motor Kapatma Solenoidi Arızası
+P1176,Rotor Sensör Arızası
+P1177,Rotor Kontrol Arızası
+P1178,Rotor Kalibrasyon Arızası
+P1180,Kam Sensörü Arızası
+P1181,Kam Kontrol Arızası
+P1182,Kam Kalibrasyon Arızası
+P1183,Senkronizasyon Hatası
+P1184,( açık )
+P1185,Yakıt Dağıtım Sistemi Arızası - Düşük
+P1186,Yakıt Dağıtım Sistemi Arızası - Yüksek
+P1187,Yakıt Kapatma Solenoidi Arızası
+P1188,Motor Yağı Sıcaklık Devresi Arızası
+P1189,Motor Yağı Sıcaklığı Otomatik Test Aralığının Dışında
+P1190,FTS Yüksek - Yakıt Pompası Sıcaklık Sensörü Yüksek
+P1191,FTS Düşük - Yakıt Pompası Sıcaklık Sensörü Düşük
+P1192,Varyant Seçimi
+P1193,Kalibrasyon Bellek Arızası
+P1194,Pompa Hızı Sinyal Arızası
+P1195,Kalibrasyon Direnci Aralık Dışında
+P1196,Ana Hat Gerilimi
+P1197,Harici Gerilim
+P1198,EGR Sürücüsü Aşırı Akımı
+P1199,ECU A/D Dönüştürücü
+P1200,SCP HBCC Başlatılamadı
+P1201,Anahtar Kapalı Gerilimi Yüksek
+P1202,Anahtar Kapalı Gerilimi Düşük
+P1203,Pompa Rotor Kontrolü Eksik Yakıt Doldurma
+P1204,Yakıt Seviyesi Giriş Devresi Düşük
+P1205,Enjektör Kontrol Devresi
+P1206,Enjektör Devresi Açık / Kısa Devre - Silindir #1
+P1209,Enjektör Devresi Açık / Kısa Devre - Silindir #2
+P1210,Enjektör Devresi Açık / Kısa Devre - Silindir #3
+P1211,Enjektör Devresi Açık / Kısa Devre - Silindir #4
+P1212,Enjektör Devresi Açık / Kısa Devre - Silindir #5
+P1213,Enjektör Devresi Açık / Kısa Devre - Silindir #6
+P1214,Enjektör Kontrol Basınç Sistemi Arızası
+P1215,Enjektör Kontrol Basıncı Beklenen Seviyenin Üzerinde
+P1216,Enjektör Kontrol Basınç Sensörü İstenilen Üstü/Aşağısı
+P1217,Krank Sırasında Enjektör Kontrol Basıncı Algılanamadı
+P1218,Enjektör Devresi Arızasını Başlat
+P1219,Pedal Konum Sensörü B Devresi Aralıklı
+P1220,Pedal Konum Sensörü C Devresi Düşük Girişi
+P1221,Pedal Konum Sensörü C Devresi Yüksek Girişi
+P1222,Pedal Konum Sensörü C Devresi Aralıklı
+P1223,CID Yüksek
+P1224,CID Düşük
+P1225,Seri Gaz Kelebeği Kontrol Sistemi Arızası
+P1226,Çekiş Kontrol Sistemi Arızası
+P1227,Çekiş Kontrol Çıkış Devresi Arızası
+P1228,Pedal Talep Sensörü B Devresi Yüksek Girişi
+P1229,Gaz Kelebeği Konum Sensörü B Otomatik Test Aralığının Dışında
+P1230,İğne Kaldırma Sensörü Arızası
+P1231,Kontrol Kılıfı Sensörü Arızası
+P1232,Atık Kapağı Arızalı Kapatıldı (Aşırı Basınç)
+P1233,Wastegate Açılamadı (Basınç Altında)
+P1234,Ara Soğutucu Pompa Sürücüsü Arızası
+P1235,Yakıt Pompası Düşük Hız Arızası
+P1236,Yakıt Pompası İkincil Devresi Düşük
+P1237,Yakıt Pompası Hızı Birincil Devre Arızası
+P1238,Yakıt Pompası Sürücü Modülü Off Line
+P1239,Yakıt Pompası Sürücü Modülü Off Line
+P1240,Yakıt Pompası Kontrolü Aralık Dışında
+P1241,Yakıt Pompası Kontrolü Aralık Dışında
+P1242,Yakıt Pompası İkincil Devre Arızası
+P1243,Yakıt Pompası İkincil Devre Arızası
+P1244,Hız Yakıt Pompası Pozitif Besleme Arızası
+P1245,Sensör Güç Kaynağı Arızası
+P1246,Sensör Güç Kaynağı Düşük Girişi
+P1247,Sensör Güç Kaynağı Yüksek Giriş
+P1248,İkinci Yakıt Pompası Arızalı veya Toprak Arızası
+P1249,Alternatör Yük Girişi Arızası Yüksek
+P1250,Alternatör Yükü Girişi Arızalı Düşük
+P1251,Alternatör Yük Girişi Başarısız
+P1252,Turbo Takviye Basıncı Düşük
+P1253,Turbo Takviye Basıncı Algılanamadı
+P1254,Atık Kapısı Kontrol Vanası Performansı
+P1255,PRC Solenoid Devre Arızası
+P1256,Hava Karışımı Solenoid Devre Arızası
+P1257,Pedal Korelasyonu PDS1 ve LPDS Yüksek
+P1258,Pedal Korelasyonu PDS1 ve LPDS Düşük
+P1259,Pedal Korelasyonu PDS2 ve LPDS Yüksek
+P1260,Pedal Korelasyonu PDS2 ve LPDS Düşük
+P1261,Pedal Korelasyonu PDS1 ve HPDS
+P1262,Pedal Korelasyonu PDS2 ve HPDS
+P1263,Pedal Korelasyonu PDS1 ve PDS2
+P1264,PCM Sinyal Hatasına İmmobilizer
+P1265,HIRSIZLIK Algılandı
+P1266,Silindir #1 Yüksekten Alçak Tarafa Kısa
+P1267,Silindir #2 Yüksekten Alçak Tarafa Kısa
+P1268,Silindir #3 Yüksekten Alçak Tarafa Kısa
+P1269,Silindir #4 Yüksekten Alçak Tarafa Kısa
+P1270,Silindir #5 Yüksekten Alçak Tarafa Kısa
+P1271,Silindir #6 Yüksekten Alçak Tarafa Kısa
+P1272,Silindir #7 Yüksekten Alçak Tarafa Kısa
+P1273,Silindir #8 Yüksekten Alçak Tarafa Kısa
+P1274,İmmobilizer Kodu Programlanmadı
+P1275,Motor Devri veya Hız Sınırlayıcısına Ulaşıldı
+P1276,Silindir #1 Yüksekten Alçak Tarafa Açık
+P1277,Silindir #2 Yüksekten Alçak Tarafa Açık
+P1278,Silindir #3 Yüksekten Alçak Tarafa Açık
+P1280,Silindir #4 Yüksekten Alçak Tarafa Açık
+P1281,Silindir #5 Yüksekten Alçak Tarafa Açık
+P1282,Silindir #6 Yüksekten Alçak Tarafa Açık
+P1283,Silindir #7 Yüksekten Alçak Tarafa Açık
+P1284,Silindir #8 Yüksekten Alçak Tarafa Açık
+P1285,Enjeksiyon Kontrol Basıncı Aralık Dışında Düşük
+P1286,Enjeksiyon Kontrol Basıncı Aralık Dışında Yüksek
+P1287,Aşırı Enjeksiyon Kontrol Basıncı
+P1288,IPR Devre Arızası
+P1289,İptal Edilen KOER - ICP Arızası
+P1290,Silindir kapağının aşırı sıcaklığı algılandı
+P1291,Yakıt Nabzı Aralık İçinde Ancak Beklenenden Düşük
+P1292,Yakıt Nabzı Aralık İçinde Ancak Beklenenden Yüksek
+P1293,Silindir Kafası Sıcaklık Sensörü Otomatik Test Aralığının Dışında
+P1294,Silindir Kafası Sıcaklık Sensörü Yüksek Girişi
+P1295,Silindir Kafası Sıcaklık Sensörü Düşük Girişi
+P1296,Enjektör Yüksek Tarafı GND veya VBATT'a Kısa - Sıra 1
+P1297,Enjektör Yüksek Tarafı GND veya VBATT'a Kısa - Sıra 2
+P1298,Enjektör Yüksek Tarafı Açık - Sıra 1
+P1299,Enjektör Yüksek Tarafı Açık - Sıra 2/Hedefe rölantiye ulaşılamadı
+P1300,Çoklu arızalar - Sıra 1 - Düşük Yan Şortlu
+P1301,Çoklu arızalar - Sıra 2 - Düşük Yan Şortlu
+P1302,Enjektörün Yüksek Tarafları Birbirine Kısa Devre Yapmış
+P1303,IDM Arızası
+P1304,Silindir Kafası Aşırı Sıcaklık Koruması Aktif
+P1305,Kalibrasyon Arızasını Artırma
+P1306,Kalibrasyonu Yüksek Artırın
+P1307,Kalibrasyonu Artırın Düşük
+P1308,EGR Kalibrasyon Arızası
+P1309,EGR Kalibrasyonu Yüksek
+P1313,EGR Kalibrasyonu Düşük
+P1314,Kickdown Rölesi Çekme Devresi Arızası
+P1315,Kickdown Rölesi Tutma Devresi Arızası
+P1316,Klima Kavrama Devresi Arızası
+P1317,Tekleme Monitörü AICE Çip Arızası
+P1336,Tekleme Oranı Katalizör Hasarı Arızası - Sıra 1
+P1340,Tekleme Oranı Katalizör Hasarı Arızası - Sıra 2
+P1341,Sürekli Tekleme
+P1345,Enjektör Devresi / IDM Kodları Algılandı
+P1346,Enjektör Devresi / IDM Kodları Güncellenmedi
+P1347,Krank / Kam Sensörü Aralığı / Performansı
+P1348,Eksantrik Mili Konum Sensörü B Devresi Arızası
+P1349,Eksantrik Mili Konum Sensörü B Aralığı / Performansı
+P1350,SGC (Eksantrik Pozisyonu) Sensör Devresi Arızası/ Krank Mili Pozisyonu - Eksantrik Mili Pozisyonu Korelasyonu
+P1351,Yakıt Seviye Sensörü B Devresi Arızası
+P1352,Yakıt Seviyesi Sensörü B Menzili / Performansı
+P1353,Yakıt Seviye Sensörü B Devresi Düşük
+P1354,Yakıt Seviye Sensörü B Devresi Yüksek
+P1355,Yakıt Seviye Sensörü B Aralıklı/Bypass Hattı Monitörü
+P1360,IDM Giriş Devresi Arızası/ Ateşleme Bobini Kontrol Devresi Yüksek Gerilim
+P1361,Ateşleme Bobini A Birincil Devre Arızası
+P1362,Ateşleme Bobini B Birincil Devre Arızası
+P1363,Ateşleme Bobini C Birincil Devre Arızası
+P1364,Ateşleme Bobini D Birincil Devre Arızası
+P1365,Ateşleme Bobini İkincil Devre Arızası
+P1366,Ateşleme Kontrol (IC) Devresi Düşük Gerilimi
+P1367,Ateşleme Bobini C İkincil Devre Arızası
+P1368,Ateşleme Bobini D İkincil Devre Arızası
+P1369,Ateşleme Bobini Birincil Devre Arızası
+P1370,Ateşleme Bobini İkincil Devre Arızası
+P1371,Ateşleme Yedek
+P1372,Ateşleme Yedek
+P1373,Ateşleme Yedek
+P1374,Motor Sıcaklık Işığı Monitörü Arızası
+P1375,Kıvılcım Testi Sırasında Yetersiz RMP Artışı
+P1376,Ateşleme Bobini - Silindir 1 - Erken Aktivasyon Arızası
+P1380,Ateşleme Bobini - Silindir 2 - Erken Aktivasyon Arızası
+P1381,Ateşleme Bobini - Silindir 3 - Erken Aktivasyon Arızası
+P1382,Krank Mili Konumu (CKP)/Ateşleme Bobini - Silindir 4 - Erken Aktivasyon Arızası
+P1383,Ateşleme Bobini - Silindir 5 - Erken Aktivasyon Arızası
+P1384,Ateşleme Bobini - Silindir 6 - Erken Aktivasyon Arızası
+P1385,Tekleme Algılandı - Bozuk Yol Verisi Mevcut Değil
+P1386,Değişken Kam Zamanlaması Aşırı İlerlemiş (Sıra #1)/ Tekleme Algılandı - BCM ile İletişim Yok
+P1387,Değişken Kam Zamanlama Solenoidi #1 Devre Arızası
+P1388,Değişken Kam Zamanlaması Aşırı Geciktirildi (Sıra #1)
+P1389,VVT Solenoid A Arızası
+P1390,Değişken Kam Zamanlama Solenoidi B Arızası
+P1391,Değişken Kam Zamanlaması Aşırı Gelişmiş (Sıra #2)
+P1392,Değişken Kam Zamanlama Solenoidi #2 Devre Arızası
+P1393,Değişken Kam Zamanlaması Aşırı Geciktirildi (Sıra #2)
+P1394,Kızdırma Bujisi Devresi Yüksek Taraf Düşük Giriş
+P1395,Oktan Pimi Kendi Kendine Test Aralığının Dışında Ayarlayın
+P1396,Kızdırma Bujisi Devresi Düşük Girişi (Sıra #1)
+P1397,Kızdırma Bujisi Devresi Yüksek Girişi (Sıra #1)
+P1398,Kızdırma Bujisi Devresi Düşük Girişi (Sıra #2)
+P1399,Kızdırma Bujisi Devresi Yüksek Girişi (Sıra #2)
+P1400,Kızdırma Bujisi Monitörü Arızası (Sıra #1)
+P1401,Kızdırma Bujisi Monitörü Arızası (Sıra #2)
+P1402,Sistem Gerilimi Otomatik Test Aralığının Dışında
+P1403,VVT Solenoid B Devresi Yüksek Girişi
+P1404,Kızdırma Bujisi Devresi Yüksek Taraf
+P1405,DPFE Devresi Düşük Girişi
+P1406,DPFE Devresi Yüksek Girişi
+P1407,EGR Ölçüm Deliği Kısıtlı
+P1408,DPFE Sensör Hortumları Ters Çevrilmiş
+P1409,IAT - B Devre Arızası/ Egzoz Gazı Devridaimi Kapalı Pozisyon Performansı
+P1411,DPFE Sensörü Giriş Hortumu Kapalı veya Tıkanmış
+P1413,Egzoz Gazı Devridaimi (EGR) Konum Sensörü Performansı
+P1414,EGR Akış Algılanmadı
+P1415,EGR Akışı Kendi Kendine Test Aralığının Dışında
+P1416,EVR Kontrol Devresi Arızası
+P1417,SAI Sisteminde Yanlış Aşağı Akış Algılandı
+P1418,SAI Sistem Monitörü Devresi Düşük Girişi
+P1419,SAI Sistem Monitörü Devresi Yüksek Giriş
+P1420,Hava Pompası Devresi Arızası/ (HAVA) Sistem Sıra 1
+P1421,Liman Hava Devresi Arızası/ (AIR) Sistem Sıra 2
+P1422,Liman Hava Tahliye Devresi Arızası
+P1423,Bölünmüş Hava #1 Devre Arızası
+P1424,Bölünmüş Hava #2 Devre Arızası
+P1425,Katalizör Sıcaklık Sensörü Arızası
+P1426,Katalizör Hasarı
+P1427,EGI Sıcaklık Sensörü Arızası
+P1428,EGI İşlevsellik Testi Başarısız
+P1429,EGI Kızdırma Bujisi Birincil Arızası
+P1430,EGI Kızdırma Bujisi İkincil Arızası
+P1433,EGI Mini - MAF Aralık Dışında Başarısız Oldu
+P1434,EGI Mini - MAF Arızalı Kısa Devre
+P1435,EGI Mini - MAF Arızası Açık Devre
+P1436,Elektrikli Hava Pompası Birincil Arızası
+P1437,Elektrikli Hava Pompası İkincil Arızası
+P1438,Klima Soğutucu Akışkan Sıcaklığı Devresi Düşük
+P1439,Klima Soğutucu Akışkan Sıcaklığı Devresi Yüksek
+P1440,Klima Soğutucu Akışkan Sıcaklığı Devre Aralığı/Performansı
+P1441,Klima Evaporatör Hava Sıcaklığı Devresi Düşük
+P1442,Klima Evaporatör Hava Sıcaklığı Devre Aralığı/Performansı
+P1443,Zemin Sıcaklık Anahtarı Devre Arızası
+P1444,Boşaltma Valfi Açık Sıkışmış
+P1445,Buharlaşmalı Emisyon (EVAP) Sistem Akışı Sadece Tahliye Olmayan Chevrolet Sırasında
+P1446,Yalnızca Oldsmobile'de Tahliye Olmayan Sırada Evaporatif Emisyon (EVAP) Sistem Akışı
+P1447,Evaporatif Emisyon Kontrol Sisteminde Kaçak Tespit Edildi
+P1448,Evaporatif Emisyon Kontrol Sistemi Kontrol Vanası
+P1449,Temizleme Akış Sensörü Devresi Düşük Girişi
+P1450,Temizleme Akış Sensörü Devresi Yüksek Girişi
+P1451,Evaporatif Vakum Solenoid Devresi Arızası
+P1452,ELC Sistemi Kapatma Valfi Akış Arızası
+P1453,ELC Sistem 2 Arızası
+P1454,Evaporatif Kontrol Solenoid Devresi Arızası
+P1455,Yakıt Deposu Vakumunun Boşaltılması Yapılamıyor
+P1456,Evap Emisyon Kontrol Sistemi Havalandırma Kontrol Vanası Devresi
+P1457,Tanktaki Vakum Boşaltılamıyor
+P1460,Yakıt Deposu Basınç Tahliye Valfi Arızası
+P1461,Evaporatif Sistem Vakum Testi Arızası
+P1462,Evap Emisyon Kontrolü Sistem Sızıntısı Tespit Edildi (Brüt Kaçak/Akış Yok)
+P1463,Yakıt Deposu Sıcaklık Sensörü Devresi Arızası
+P1464,Tankta Vakum Çekilemiyor
+P1465,Tamamen açık gaz kelebeği klima kesme rölesi devresi
+P1466,Klima basınç sensörü devre voltajı düşük
+P1467,Klima basınç sensörü devre voltajı yüksek
+P1468,Klima Basınç Sensörü Yetersiz Basınç Değişimi
+P1469,Klima Talebi Otomatik Test Aralığının Dışında
+P1470,Klima Röle Devresi Arızası
+P1471,Klima Soğutucu Sıcaklık Sensörü/Devre Arızası
+P1472,Klima Kompresörü Sıcaklık Sensörü Arızası
+P1473,SSPOD Açık Devre veya Kapalı Devre Arızası
+P1474,Düşük Klima Döngüsü Dönemi
+P1475,Klima Döngü Süresi Çok Kısa
+P1476,Elektrodrive Fan 1 Çalışma Arızası (Sürücü Tarafı)
+P1477,Elektro Tahrikli Fan 2 Çalışma Arızası (Yolcu Tarafı)
+P1478,Fan(lar) Kapalıyken Fan İkincil Yüksek
+P1479,Düşük Fan Kontrolü Birincil Devre Arızası
+P1480,Fan Rölesi (Düşük) Devre Arızası
+P1481,Fan Rölesi (Yüksek) Devre Arızası
+P1482,Ek Fan Rölesi Devresi Arızası
+P1483,Soğutma Fanı Sürücü Arızası
+P1484,Yüksek Fan Kontrolü Birincil Devre Arızası
+P1485,Düşük Fan Açıkken İkincil Fan Düşük
+P1486,Yüksek Fan Açıkken İkincil Fan Düşük
+P1487,SCP
+P1490,Fan Devresine Giden Güç Aşırı Akımı
+P1491,Açık Güçten Toprağa VCRM
+P1492,EGRV Devre Arızası
+P1493,EGRA Devre Arızası
+P1494,EGRHK Solenoid Devre Arızası
+P1495,İkincil Hava Tahliye Solenoid Devresi Arızası
+P1500,İkincil Anahtar Solenoid Devre Arızası
+P1501,APLSOL Solenoid Devre Arızası
+P1502,RCNT Solenoid Devre Arızası
+P1503,SPCUT Solenoid Devre Arızası
+P1504,TCSPL Solenoid Devre Arızası
+P1505,Araç Hız Sensörü Aralıklı
+P1506,Araç Hız Sensörü Otomatik Test Aralığının Dışında
+P1507,Araç Hız Sensörü Aralıklı Arızası
+P1508,Yardımcı Hız Sensörü Arızası
+P1509,Boşta Hava Kontrol Devresi Arızası
+P1510,Uyarlanabilir Klipste Boşta Hava Kontrol Sistemi
+P1511,Boşta Hava Kontrolü Aşırı Hız Hatası
+P1512,Rölantide Hava Kontrolü Düşük Hız Hatası
+P1513,Rölanti Kontrol Sistemi Devresi Açık
+P1514,Rölanti Kontrol Sistemi Devresi Kısa Devreli
+P1515,Boşta Sinyal Devresi Arızası
+P1516,Rölanti Anahtarı (Elektrik Kontrol Gaz Kelebeği) Devre Arızası
+P1517,Emme Manifoldu Çalıştırıcısı Kontrolü (Sıra 1) Kapalı Sıkışmış
+P1518,Emme Manifoldu Çalıştırıcısı Kontrolü (Sıra 2) Kapalı Sıkışmış
+P1519,Yüksek Yük Nötr/Sürücü Arızası
+P1520,Elektrik Akım Devresi Arızası
+P1521,IMRC Giriş Hatası (Sıra 1)
+P1522,IMRC Giriş Hatası (Sıra 2)
+P1523,Emme Manifoldu Çalıştırıcısı Kontrolü (Açık Sıkışmış)
+P1524,Emme Manifoldu Çalıştırıcısı Kontrolü (Kapalı Sıkışmış)
+P1525,Emme Manifoldu Çalıştırıcısı Kontrol Devresi Arızası
+P1526,Değişken Emme Solenoidi #1 Devre Arızası
+P1527,Değişken Emme Solenoidi #2 Devre Arızası
+P1528,IVC Solenoid Devre Arızası
+P1529,Değişken Emme Solenoid Sistemi
+P1530,Hava Bypass Valf Sistemi
+P1531,Hava Bypass Sistemi
+P1532,Isınma Solenoidi Devre Arızasını Hızlandırın
+P1533,Yardımcı Gaz Kelebeği Valfı Solenoid Devresi Arızası
+P1534,SCAIR Solenoid Devre Arızası
+P1535,Klima Debriyaj Devresi Arızası
+P1536,Geçersiz Test - Gaz Pedalı Hareketi
+P1537,IMCC Devre Arızası
+P1538,AAI Devre Arızası
+P1539,Atalet Anahtarı Etkinleştirildi
+P1540,Üfleyici Fan Hızı Devre Aralığı/Performansı
+P1549,El Freni Anahtarı Devre Arızası
+P1550,Emme Manifoldu Çalıştırıcısı Kontrolü (Sıra 1) Açık Sıkışmış
+P1565,Emme Manifoldu Çalıştırıcısı Kontrolü (Sıra 2) Açık Sıkışmış
+P1566,Klima Debriyaj Devresine Giden Güç Aşırı Akımı
+P1567,Hava Baypas Valfı Devre Arızası
+P1568,IMCC Devre Arızası
+P1571,PSPS Kendi Kendini Test Aralığının Dışında
+P1572,Hız Kontrol Komut Anahtarı Aralık Dışında Yüksek
+P1573,Hız Kontrol Komut Anahtarı Aralık Dışında Düşük
+P1574,Hız Kontrol Çıkış Devresi Sürekliliği
+P1575,Hız Kontrolü Hızı Tutamıyor
+P1576,Fren Anahtarı Arızası
+P1577,Fren Pedalı Anahtarı Devre Arızası
+P1578,Gaz Kelebeği Konumu Mevcut Değil
+P1579,Gaz Kelebeği Konum Sensörü Sensörleri Arasında Anlaşmazlık
+P1580,Pedal Konumu Otomatik Test Aralığının Dışında
+P1581,Pedal Konumu Mevcut Değil
+P1582,Pedal Konum Sensörü Sensörler Arasında Anlaşmazlık
+P1583,ETC Gücü Talepten Az
+P1584,Güç Sınırlama Modunda ETC
+P1585,Elektronik Gaz Kelebeği Monitörü PCM'yi Geçersiz Kılma
+P1586,Elektronik Gaz Kelebeği Monitörü Arızası
+P1587,Elektronik Gaz Kelebeği Monitörü Verileri Mevcuttur
+P1588,Elektronik Gaz Kelebeği Monitörü Seyir Devre Dışı Bırakma
+P1589,"TCU, IPE Devre Arızasını Algıladı"
+P1600,Gaz Kelebeği Kontrol Ünitesi Arızası
+P1601,Gaz Kelebeği Kontrol Ünitesi Gaz Kelebeği Konumu Arızası
+P1602,Gaz Kelebeği Kontrol Ünitesi Modülasyonlu Komut Arızası
+P1603,Gaz Kelebeği Kontrol Ünitesi Geri Dönüş Yayı Kaybını Algıladı
+P1604,TCU İstenilen Gaz Kelebeği Açısını Kontrol Edemiyor
+P1605,KAM Gücünün Kaybı; Açık Devre
+P1606,ECM/TCM Seri İletişim Hatası
+P1607,İmmobilizer/ECM İletişim Hatası
+P1608,EEPROM Arızası
+P1609,Kod Kelimesi Düzenlenmemiş
+P1610,Canlı Tutma Bellek Testi Arızası
+P1611,ECM Kontrol Rölesi O/P Devresi Arızası
+P1612,MIL O/P Devre Arızası
+P1613,Dahili ECM Arızası
+P1614,Diyagnostik Lamba Sürücüsü Arızası
+P1615,SBDS Etkileşimli Kodlar
+P1616,SBDS Etkileşimli Kodlar
+P1617,SBDS Etkileşimli Kodlar
+P1618,SBDS Etkileşimli Kodlar
+P1619,SBDS Etkileşimli Kodlar
+P1620,SBDS Etkileşimli Kodlar
+P1621,SBDS Etkileşimli Kodlar
+P1622,SBDS Etkileşimli Kodlar
+P1623,SBDS Etkileşimli Kodlar
+P1624,SBDS Etkileşimli Kodlar
+P1625,SBDS Etkileşimli Kodlar
+P1626,Kontrol Modülü Uzun Süreli Bellek Performansı/ İmmobilizer Kod Sözcükleri Eşleşmiyor
+P1627,İmmobilizatör Kimliği Eşleşmiyor
+P1628,İmmobilizer Kod Kelimesi/Kimlik Numarası Yazma Hatası
+P1629,Hırsızlığa Karşı Koruma Sistemi
+P1630,B+ VCRM Fan Devresi Arızasına Besleme
+P1631,Hırsızlık Caydırıcı Yakıt Etkinleştirme Sinyali Alınmadı/ VCRM Klima Devresine B+ Beslemesi Arızası
+P1632,Modül Besleme Gerilimi Aralık Dışında
+P1633,Modül Ateşleme Kaynağı Giriş Arızası
+P1634,Dahili Voltaj Regülatörü Arızası
+P1635,Dahili Vref Arızası
+P1636,Hırsızlık Caydırıcı Başlatma Etkinleştirme Sinyali Doğru Değil/ Ana Röle Arızası (Güç Tutma)
+P1637,Akıllı Alternatör Arızaları Sensör/Devre Arızası
+P1638,KAM Gerilimi Çok Düşük
+P1639,Veri Çıkışı Bağlantı Devresi Arızası
+P1640,Lastik / Aks Oranı Kabul Edilebilir Aralığın Dışında
+P1641,Endüktif İmza Çip İletişim Hatası
+P1642,ECM/ABSCM Devresini/Ağ Arızasını Bağlayabilir
+P1643,ECM/INSTM Devresini/Ağ Arızasını Bağlayabilir
+P1644,Araç Kimlik Bloğu Bozuk veya Programlanmamış
+P1645,Güç Aktarma Sistemi DTC'leri Başka Bir Modülde Mevcuttur
+P1650,Yakıt Pompası Ana Devre Arızası
+P1651,Yakıt Pompası Monitör Devresi Yüksek Girişi
+P1652,Yakıt Pompası Monitör Devresi Düşük Girişi
+P1653,Yakıt Pompası Hız Kontrol Devresi Arızası
+P1654,Yakıt Pompası Direnç Anahtarı Devre Arızası
+P1655,PSP Anahtarı Kendi Kendine Test Aralığının Dışında
+P1660,PSP Anahtar Giriş Arızası
+P1661,IAC Monitörü PSP Anahtarı Arızası Nedeniyle Devre Dışı Bırakıldı
+P1662,Servo Direksiyon Çıkış Devresi Arızası
+P1663,Devridaim Geçersiz Kılma Devresi Arızası
+P1667,Marş Devre Dışı Bırakma Devresi Arızası
+P1668,Çıkış Devresi Kontrol Sinyali Yüksek
+P1670,Çıkış Devresi Kontrol Sinyali Düşük
+P1680,IDM_EN Devre Arızası
+P1681,Yakıt Talebi Komut Sinyali Devresi Arızası
+P1682,CI Devre Arızası
+P1683,PCM - IDM İletişim Hatası
+P1684,Elektronik Geri Besleme Sinyali Algılanmadı
+P1685,Yağ Pompası Arızasının Ölçülmesi
+P1686,Yağ Pompası Arızasının Ölçülmesi
+P1687,Yağ Pompası Arızasının Ölçülmesi
+P1688,Ölçüm Yağ Pompası Sıcaklık Sensörü Devresi Arızası
+P1689,Ölçüm Yağ Pompası Pozisyon Sensörü Devresi Arızası
+P1690,Yağ Pompası Ölçümü Adım Motoru Devresi Arızası
+P1691,Yağ Pompası Ölçümü Adım Motoru Devresi Arızası
+P1692,Yağ Pompası Ölçümü Adım Motoru Devresi Arızası
+P1693,Yağ Pompası Ölçümü Adım Motoru Devresi Arızası
+P1694,Yağ Basıncı Kontrol Solenoidi Devre Arızası
+P1700,Wastegate Solenoid Devre Arızası
+P1701,Turbo Basınç Kontrol Solenoidi Devre Arızası
+P1702,Turbo Kontrol Solenoid Devresi Arızası
+P1703,Turbo Şarj Kontrol Devresi Arızası
+P1704,Turbo Şarj Tahliye Devresi Arızası
+P1705,İletim Belirsiz Arızası (Nötr Durumda Başarısız)
+P1706,Ters Etkileşim Hatası
+P1707,TRS Devre Aralıklı Arızası
+P1708,Fren Anahtarı Otomatik Test Aralığının Dışında
+P1709,"Dijital TRS, KOEO / KOER'de Geçiş Durumlarında Başarısız Oldu"
+P1711,KOEO / KOER Sırasında P veya N'de Değil
+P1712,Parkta Yüksek Araç Hızı Gözlemlendi
+P1713,Transfer Kutusu Nötr Göstergesi Kesin Arıza Mevcut
+P1714,Debriyaj Anahtarı Devresi Arızası
+P1715,PNP Anahtarı Otomatik Test Aralığının Dışında
+P1716,TFT Sensörü Otomatik Test Aralığının Dışında
+P1717,Trans Tork Azaltma Talebi Sinyali Arızası
+P1718,TFT Sensör Aralık İçi Arızası Düşük Değer
+P1720,SSA Endüktif İmza Arızası
+P1721,SSB Endüktif İmza Arızası
+P1722,SSC Endüktif İmza Arızası
+P1723,SSD Endüktif İmza Arızası
+P1724,TFT Sensörü Aralık İçi Arızası Yüksek
+P1725,Araç Hız (Sayaç) Devresi Arızası
+P1726,Dişli 1 Yanlış Oran
+P1727,Dişli 2 Yanlış Oran
+P1728,Dişli 3 yanlış Oran
+P1729,Dişli 4 Yanlış Oran
+P1730,Otomatik Test Sırasında Yetersiz Motor Devri Artışı
+P1731,Otomatik Test Sırasında Yetersiz Motor Devri Düşüşü
+P1732,Sahil Debriyaj Solenoid Endüktif İmza Arızası
+P1733,Şanzıman Kayma Hatası
+P1734,4x4 Düşük Anahtar Hatası
+P1735,Vites Kontrol Arızası 2
+P1736,1-2 Vites Arızası
+P1737,2-3 Vites Arızası
+P1738,3-4 Vites Arızası
+P1739,Vites Kontrol Arızası
+P1740,Birinci Vites Anahtarı Devre Arızası
+P1741,İkinci Vites Anahtarı Devre Arızası
+P1742,Kilitleme Solenoid Sistemi
+P1743,Vardiya Zamanı Hatası
+P1744,Kayma Solenoid Sistemi
+P1745,Tork Konvertörü Debriyajı Endüktif İmza Arızası
+P1746,Tork Konvertörü Debriyaj Kontrol Hatası
+P1747,Tork Konvertörü Debriyaj Solenoid Arızası
+P1748,Tork Konvertörü Debriyaj Solenoid Arızası
+P1749,Tork Konvertörü Kavrama Sistemi Performansı
+P1751,Hat Basıncı Solenoid Sistemi
+P1754,"Basınç Kontrol Solenoidi ""A"" Açık Devre"
+P1755,"Basınç Kontrol Solenoidi ""A"" Kısa Devre"
+P1756,EPC Arızası
+P1760,Basınç Kontrol Solenoidi Arızası Düşük
+P1761,Vites Değiştirme Solenoidi A Performansı
+P1762,Sahil Debriyaj Solenoid Devresi Arızası
+P1765,Ara Hız Sensörü (ISS) Arızası
+P1767,Vites Değiştirme Solenoidi B Performansı
+P1768,"Basınç Kontrol Solenoidi ""A"" Kısa Devre"
+P1769,Vites Değiştirme Solenoidi C Performansı
+P1770,Overdrive Bandı Başarısız Oldu
+P1775,Zamanlama Solenoidi Devre Arızası
+P1776,Tork Konvertörü Kavrama Devresi Arızası
+P1777,Performans / Normal / Kış Modu Giriş Arızası
+P1778,AG4 Şanzıman Torku Modülasyon Arızası
+P1779,Debriyaj Solenoid Devresi Arızası
+P1780,İletim Sistemi MIL Arızası
+P1781,Ateşleme Geciktirme Talebi Süresi Arızası
+P1782,Ateşleme Geciktirme Talebi Devre Arızası
+P1783,Şanzıman Ters I/P Devresi Arızası
+P1784,TCIL Devre Arızası
+P1785,Trans Kontrol Anahtarı (O/D İptali) Otomatik Test Aralığının Dışında
+P1786,4X4 Anahtar Kendi Kendine Test Aralığının Dışında
+P1787,P/ES Devresi Kendi Kendini Test Aralığının Dışında
+P1788,Şanzıman Aşırı Sıcaklık Durumu
+P1789,Şanzıman Mekanik Arızası - Birinci ve Geri
+P1790,Şanzıman Mekanik Arızası - Birinci ve İkinci
+P1791,3-2 Vites Küçültme Hatası
+P1792,2-1 Vites Küçültme Hatası
+P1793,"Basınç Kontrol Solenoidi ""B"" Açık Devre"
+P1794,"Basınç Kontrol Solenoidi ""B"" Kısa Devre"
+P1795,TP (Mekanik) Devre Arızası
+P1796,TP (Elektrik) Devresi Arızası
+P1797,Barometre Basınç Devresi Arızası
+P1798,Emme Hava Hacmi Devresi Arızası
+P1799,Akü Gerilim Devresi Arızası
+P1800,Rölanti Anahtarı Devre Arızası
+P1801,Kick Down Anahtarı Devre Arızası
+P1802,Nötr Anahtar Devresi Arızası
+P1803,Soğutucu Sıcaklık Devresi Arızası
+P1804,Tutma Anahtarı Devresi Arızası
+P1805,Şanzıman Kavraması Ara Kilidi Emniyet Anahtarı Devre Arızası
+P1806,Şanzıman Kavraması Ara Kilidi Emniyet Anahtarı Açık Devre
+P1807,Şanzıman Kavraması Ara Kilidi Emniyet Şalteri Aküye Kısa Devre
+P1808,Şanzıman Kavraması Kilitleme Emniyet Şalteri Şasiye Kısa Devre
+P1809,Şanzıman 4 Tekerlekten Çekiş Yüksek Gösterge Devresi Arızası
+P1810,Şanzıman 4 Tekerden Çekiş Yüksek Göstergesi Açık Devre
+P1811,Şanzıman 4 Tekerlekten Çekiş Yüksek Göstergesi Aküye Kısa Devre
+P1812,Şanzıman 4 Tekerlekten Çekiş Yüksek Göstergesi Şasiye Kısa Devre
+P1813,Şanzıman 4 Tekerlekten Çekiş Düşük Gösterge Devresi Arızası
+P1814,Şanzıman 4 Tekerden Çekiş Düşük Göstergesi Açık Devre
+P1815,TFP Valf Konum Anahtarı Devresi/Şanzıman 4 Tekerlekten Çekiş Düşük Göstergesi Aküye Kısa Devre
+P1816,Şanzıman 4 Tekerden Çekiş Düşük Göstergesi Şasiye Kısa Devre
+P1817,Şanzıman 4 Tekerlekten Çekiş Modu Seçim Devresi Arızası
+P1818,Şanzıman 4 Tekerlekten Çekiş Modu Açık Devreyi Seçin
+P1819,Şanzıman 4 Tekerlekten Çekiş Modu Seçimi Aküye Kısa Devre
+P1820,Şanzıman 4 Tekerlekten Çekiş Modu Seç Şasiye Kısa Devre
+P1821,Şanzıman Nötr Emniyet Anahtarı Devre Arızası
+P1822,Şanzıman Nötr Emniyet Anahtarı Açık Devre
+P1823,Şanzıman Nötr Emniyet Anahtarı Aküye Kısa Devre
+P1824,Şanzıman Nötr Güvenlik Anahtarı Şasiye Kısa Devre
+P1825,Şanzıman Transfer Kutusu Saat Yönünde Vites Değiştirme Rölesi Bobini Devre Arızası
+P1826,Şanzıman Transfer Kutusu Saat Yönünde Vites Değiştirme Rölesi Bobini Açık Devre
+P1827,Şanzıman Transfer Kutusu Saat Yönünde Vites Değiştirme Rölesi Bobini Aküye Kısa Devre
+P1828,Şanzıman Transfer Kutusu Saat Yönünde Vites Değiştirme Röle Bobini Şasiye Kısa Devre
+P1829,Şanzıman 4 Tekerlekten Çekişli Debriyaj Rölesi Devre Arızası
+P1830,Şanzıman 4 Tekerlekten Çekişli Debriyaj Rölesi Açık Devre
+P1831,Şanzıman 4 Tekerlekten Çekiş Düşük Debriyaj Rölesi Devresi - Akü
+P1832,Şanzıman 4 Tekerlekten Çekiş Düşük Debriyaj Röle Devresi Şasiye
+P1833,Şanzıman Transfer Kutusu Saat Yönünün Tersine Vites Değiştirme Rölesi Bobini Devre Arızası
+P1834,Şanzıman Transfer Kutusu Saat Yönünün Tersine Vites Değiştirme Rölesi Bobini Açık Devre
+P1835,Şanzıman Transfer Kutusu Saat Yönünün Tersine Vites Değiştirme Rölesi Bobini Aküye Kısa Devre
+P1836,Şanzıman Transfer Kutusu Saat Yönünün Tersine Vites Değiştirme Rölesi Bobini Şasiye Kısa Devre
+P1837,Şanzıman Transfer Kutusu Diferansiyel Kilitleme Solenoidi Devre Arızası
+P1838,Şanzıman Transfer Kutusu Diferansiyel Kilitleme Solenoidi Açık Devre
+P1839,Şanzıman Transfer Kutusu Diferansiyel Kilitleme Solenoidi Aküye Kısa Devre
+P1840,Şanzıman Transfer Kutusu Diferansiyel Kilitleme Solenoidi Şasiye Kısa Devre
+P1841,Şanzıman Transfer Kutusu Ön Şaft Hız Sensörü Devre Arızası
+P1842,Şanzıman Transfer Kutusu Arka Şaft Hız Sensörü Devre Arızası
+P1843,Şanzıman Transfer Kutusu Vites Motoru Devre Arızası
+P1844,Şanzıman Transfer Kutusu Vites Motoru Açık Devre
+P1845,Şanzıman Transfer Kutusu Vites Motoru Aküye Kısa Devre
+P1846,Şanzıman Transfer Kutusu Vites Motoru Şasiye Kısa Devre
+P1847,Şanzıman Transfer Kutusu Diferansiyel Kilitleme Geri Besleme Anahtarı Devre Arızası
+P1848,Şanzıman Transfer Kutusu Diferansiyel Kilitleme Geri Besleme Anahtarı Açık Devre
+P1849,Şanzıman Transfer Kutusu Diferansiyel Kilitleme Geri Besleme Anahtarı Aküye Kısa Devre
+P1850,Şanzıman Transfer Kutusu Diferansiyel Kilitleme Geri Besleme Anahtarı Şasiye Kısa Devre
+P1867,Şanzıman Transfer Kutusu Kontak Plakası Güç Devresi Arızası
+P1868,Şanzıman Transfer Kutusu Kontak Plakası Gücü Açık Devre
+P1869,Şanzıman Transfer Kutusu Temas Plakası Gücü Aküye Kısa Devre
+P1870,Şanzıman Transfer Kutusu Temas Plakası Gücü Şasiye Kısa Devre
+P1871,Şanzıman Transfer Kutusu Sistemiyle İlgili Sorun - Servis Gerekli
+P1872,Şanzıman Transfer Kutusu Temas Plakası Genel Devre Arızası
+P1873,Şanzıman Otomatik 4 Tekerden Çekiş Gösterge (Lamba) Devre Arızası
+P1874,Şanzıman Otomatik 4 Tekerden Çekiş Gösterge (Lamba) Devresi Aküye Kısa Devre
+P1875,Şanzıman Bileşeni Kayması/Şanzıman Mekanik Transfer Kutusu 4x4 Anahtar Devre Arızası
+P1876,Şanzıman Mekanik Transfer Kutusu 4x4 Anahtar Devresi Aküye Kısa Devre
+P1877,Şanzıman Mekanik 4 Tekerlekten Çekiş Aksı Kilit Lambası Devre Arızası
+P1878,Şanzıman Mekanik 4 Tekerlekten Çekiş Aksı Kilit Lambası Devresi Aküye Kısa Devre
+P1879,Şanzıman Otomatik Hall Etkisi Sensörü Güç Devresi Arızası
+P1880,Şanzıman Otomatik Hall Etkisi Sensörü Güç Devresi Aküye Kısa Devre / 4WD Düşük Anahtar Devresi Elektriksel
+P1881,Şanzıman Transfer Kutusu 2 Tekerlekli Tahrik Solenoidi Devre Arızası
+P1882,Şanzıman Transfer Kutusu 2 Tekerlekli Tahrik Solenoidi Devresi Aküye Kısa Devre
+P1883,Şanzıman Transfer Kutusu Ayrılmış Solenoid Devre Arızası
+P1884,Şanzıman Transfer Kutusu Ayrılmış Solenoid Açık Devre
+P1885,Şanzıman Transfer Kutusu Ayrılmış Solenoid Aküye Kısa Devre
+P1886,Motor Soğutucu Seviye Şalteri Devre Arızası
+P1890,Motor Soğutma Sıvısı Seviye Şalteri Devresi Şasiye Kısa Devre
+P1891,Motor Soğutucu Seviye Şalteri Devre Arızası
+P1900,Motor Soğutucu Seviyesi Lambası Devresi Şasiye Kısa Devre
+P1901,Şanzıman Transfer Kutusu Devre Dışı Solenoid Şasiye Kısa Devre
+P1902,4X4 Başlatma Hatası
+P1903,Şanzıman 4WD Modu Seçimi Dönüş Giriş Devresi Arızası
+P1904,Şanzıman Transfer Kutusu Temas Plakası Şasi Dönüşü Açık Devre
+P1905,OSS Devre Aralıklı Arızası
+P1906,TSS Devre Aralıklı Arızası
+P1907,"Basınç Kontrol Solenoidi ""B"" Aralıklı Kısa"
+P1908,"Basınç Kontrol Solenoidi ""C"" Kısa Devre"
+P1909,"Basınç Kontrol Solenoidi ""C"" Açık Devre"
+P1910,"Basınç Kontrol Solenoidi ""C"" Aralıklı Kısa"
+P1911,Kickdown Çekme Rölesi Açık veya Şasiye Kısa Devre
+P1912,Kickdown Tutma Rölesi Açık veya Şasiye Kısa Devre
+P1913,Şanzıman Basınç Devresi Solenoidi Açık veya Şasiye Kısa Devre
+P1914,Trans Sıcaklık Sensörü Devresi Açık veya Pwr veya Gnd'ye Kısa Devre Yaptı
+P1915,VFS A Basınç Çıkışı Arızalı Düşük
+P1916,VFS B Basınç Çıkışı Arızalı Düşük
+P1917,VFS C Basınç Çıkışı Arızalı Düşük
+P1918,Basınç Anahtarı A Devresi Arızası
+B1200,İklim Kontrol Düğmesi Devre Arızası
+B1201,Yakıt Gönderici Devre Arızası
+B1202,Yakıt Gönderici Devresi Açık
+B1203,Yakıt Gönderici Devresi Aküye Kısa Devre
+B1204,Yakıt Gönderici Devresi Şasiye Kısa Devre
+B1205,EIC Anahtarı-1 Tertibatı Devre Arızası
+B1206,EIC Anahtarı-1 Montaj Devresi Açık
+B1207,EIC Anahtarı-1 Montaj Devresi Aküye Kısa Devre
+B1208,EIC Anahtarı-1 Montaj Devresi Şasiye Kısa Devre
+B1209,EIC Anahtarı-2 Tertibatı Devre Arızası
+B1210,EIC Anahtarı-2 Montaj Devresi Açık
+B1211,EIC Anahtarı-2 Montaj Devresi Aküye Kısa Devre
+B1212,EIC Anahtarı-2 Montaj Devresi Şasiye Kısa Devre
+B1213,Hırsızlığa Karşı Programlanan Anahtar Sayısı Minimumun Altında
+B1214,Çalıştırma Kartı Lambası Devre Arızası
+B1215,Çalıştırma Kartı Lamba Devresi Aküye Kısa Devre
+B1216,Acil Durum ve Yol Kenarı Yardım Anahtarı Devresi Şasiye Kısa Devre
+B1217,Korna Rölesi Bobini Devre Arızası
+B1218,Korna Rölesi Bobini Devresi Vbatt'a Kısa Devre
+B1219,Yakıt Deposu Basınç Sensörü Devre Arızası
+B1220,Yakıt Deposu Basınç Sensörü Devresi Açık
+B1222,Yakıt Sıcaklık Sensörü #1 Devre Arızası
+B1223,Yakıt Sıcaklık Sensörü #1 Devresi Açık
+B1224,Yakıt Sıcaklık Sensörü #1 Devresi Aküye Kısa Devre
+B1225,Yakıt Sıcaklık Sensörü #1 Devresi Şasiye Kısa Devre
+B1226,Yakıt Sıcaklık Sensörü #2 Devre Arızası
+B1227,Yakıt Sıcaklık Sensörü #2 Devresi Açık
+B1228,Yakıt Sıcaklık Sensörü #2 Devresi Aküye Kısa Devre
+B1229,Yakıt Sıcaklık Sensörü #2 Devresi Şasiye Kısa Devre
+B1231,Boyuna Hızlanma Eşiği Aşıldı
+B1232,Üreticiyi Gör
+B1233,Cam Kırılma Sensörü Arızası
+B1234,Ayna Anahtarı Geçersiz Kod
+B1235,Pencere Geri Bildirim Hatası
+B1236,Pencere Geri Bildirimi Sinyal Kaybı
+B1237,Pencere Geri Bildirimi Aralık Dışında
+B1238,Aşırı Sıcaklık Arızası
+B1239,Hava Akışı Karışım Kapısı Sürücüsü Devre Arızası
+B1240,Silecek Yıkayıcı Arka Pompa Rölesi Devre Arızası
+B1241,Silecek Yıkayıcı Arka Pompa Röle Devresi Aküye Kısa Devre
+B1242,Hava Akışı Devridaim Kapısı Sürücü Devresi Arızası
+B1243,Ekspres Cam Aşağı Anahtarı Devresi Aküye Kısa Devre
+B1244,Silecek Arka Motor Çalıştırma Rölesi Devre Arızası
+B1245,Silecek Arka Motor Çalıştırma Rölesi Devresi Aküye Kısa Devre
+B1246,Dim Panel Potansiyometre Anahtarı Devre Arızası
+B1247,Panel Dim Anahtarı Devresi Açık
+B1249,Karışım Kapısı Arızası
+B1250,Hava Sıcaklığı Dahili Sensör Devre Arızası
+B1251,Hava Sıcaklığı Dahili Sensör Devresi Açık
+B1252,Hava Sıcaklığı Dahili Sensör Devresi Aküye Kısa Devre
+B1253,Hava Sıcaklığı Dahili Sensör Devresi Şasiye Kısa Devre
+B1254,Hava Sıcaklığı Harici Sensör Devre Arızası
+B1255,Hava Sıcaklığı Harici Sensör Devresi Açık
+B1256,Hava Sıcaklığı Harici Sensör Devresi Aküye Kısa Devre
+B1257,Hava Sıcaklığı Harici Sensör Devresi Şasiye Kısa Devre
+B1258,Güneş Radyasyonu Sensörü Devre Arızası
+B1259,Güneş Radyasyonu Sensörü Devresi Açık
+B1260,Güneş Radyasyonu Sensörü Devresi Aküye Kısa Devre
+B1261,Güneş Radyasyonu Sensörü Devresi Şasiye Kısa Devre
+B1262,Servo Motor Buz Çözme Devre Arızası
+B1263,Servo Motor Havalandırma Devresi Arızası
+B1264,Servo Motor Ayak Devresi Arızası
+B1265,Servo Motor Coolair Bypass Devre Arızası
+B1266,Servo Motor Hava Girişi Sol Devre Arızası
+B1267,Servo Motor Hava Girişi Sağ Devre Arızası
+B1268,Servo Motor Potansiyometresi Buz Çözme Devresi Arızası
+B1269,Servo Motor Potansiyometresi Buz Çözme Devresi Açık
+B1270,Servo Motor Potansiyometresi Buz Çözme Devresi Aküye Kısa Devre
+B1271,Servo Motor Potansiyometresi Buz Çözme Devresi Şasiye Kısa Devre
+B1272,Servo Motor Potansiyometresi Havalandırma Devresi Arızası
+B1273,Servo Motor Potansiyometresi Havalandırma Devresi Açık
+B1274,Servo Motor Potansiyometresi Havalandırma Devresi Aküye Kısa Devre
+B1275,Servo Motor Potansiyometresi Havalandırma Devresi Şasiye Kısa Devre
+B1276,Servo Motor Potansiyometre Ayak Devresi Arızası
+B1277,Servo Motor Potansiyometre Ayak Devresi Açık
+B1278,Servo Motor Potansiyometre Ayak Devresi Aküye Kısa Devre
+B1279,Servo Motor Potansiyometre Ayak Devresi Şasiye Kısa Devre
+B1280,Servo Motor Potansiyometresi Coolair Devre Arızası
+B1281,Servo Motor Potansiyometresi Coolair Devresi Açık
+B1282,Servo Motor Potansiyometresi Coolair Devresi Aküye Kısa Devre
+B1283,Servo Motor Potansiyometresi Coolair Devresi Şasiye Kısa Devre
+B1284,Servo Motor Potansiyometresi Hava Girişi Sol Devre Arızası
+B1285,Servo Motor Potansiyometresi Hava Girişi Sol Devre Açık
+B1286,Servo Motor Potansiyometresi Hava Girişi Sol Devre Aküye Kısa Devre
+B1287,Servo Motor Potansiyometresi Hava Girişi Sol Devre Şasiye Kısa Devre
+B1288,Servo Motor Potansiyometresi Hava Girişi Sağ Devre Arızası
+B1289,Servo Motor Potansiyometresi Hava Girişi Sağ Devre Açık
+B1290,Servo Motor Potansiyometresi Hava Girişi Sağ Devre Aküye Kısa Devre
+B1291,Servo Motor Potansiyometresi Hava Girişi Sağ Devre Şasiye Kısa Devre
+B1292,Akü Güç Rölesi Devre Arızası
+B1293,Akü Güç Rölesi Devresi Açık
+B1294,Akü Güç Rölesi Devresi Aküye Kısa Devre
+B1295,Akü Güç Rölesi Devresi Şasiye Kısa Devre
+B1296,Güç Kaynağı Sensörü Devre Arızası
+B1297,Güç Kaynağı Sensörü Devresi Açık
+B1298,Güç Kaynağı Sensörü Devresi Aküye Kısa Devre
+B1299,Güç Kaynağı Sensörü Devresi Şasiye Kısa Devre
+B1300,Elektrikli Kapı Kilidi Devre Arızası
+B1301,Elektrikli Kapı Kilidi Devresi Açık
+B1302,Aksesuar Geciktirme Rölesi Bobini Devre Arızası
+B1303,Aksesuar Geciktirme Rölesi Bobini Devresi Açık
+B1304,Aksesuar Geciktirme Rölesi Bobini Devresi Aküye Kısa Devre
+B1305,Aksesuar Geciktirme Rölesi Bobini Devresi Şasiye Kısa Devre
+B1306,Yağ Seviye Anahtarı Devresi Açık
+B1307,Yağ Seviye Anahtarı Devresi Aküye Kısa Devre
+B1308,Yağ Seviye Şalteri Devresi Şasiye Kısa Devre
+B1309,Elektrikli Kapı Kilidi Devresi Şasiye Kısa Devre
+B1310,Elektrikli Kapı Kilit Açma Devresi Arızası
+B1311,Elektrikli Kapı Kilit Açma Devresi Açık
+B1312,Lamba Ön Far Giriş Devresi Aküye Kısa Devre
+B1313,Akü Tasarruf Rölesi Bobini Devre Arızası
+B1314,Akü Tasarrufu Rölesi Bobini Devresi Açık
+B1315,Akü Tasarrufu Rölesi Bobini Devresi Aküye Kısa Devre
+B1316,Akü Tasarruf Rölesi Bobini Devresi Şasiye Kısa Devre
+B1317,Akü Gerilimi Yüksek
+B1318,Akü Gerilimi Düşük
+B1319,Sürücü Kapısı Aralık Devre Arızası
+B1320,Sürücü Kapısı Aralık Devresi Açık
+B1321,Sürücü Kapısı Aralık Devresi Aküye Kısa Devre
+B1322,Sürücü Kapısı Aralık Devresi Şasiye Kısa Devre
+B1323,Kapı Aralık Lambası Devre Arızası
+B1324,Kapı Aralık Lambası Devresi Açık
+B1325,Kapı Aralık Lambası Devresi Aküye Kısa Devre
+B1326,Kapı Aralık Lambası Devresi Şasiye Kısa Devre
+B1327,Yolcu Kapısı Aralık Devre Arızası
+B1328,Yolcu Kapısı Aralık Devresi Açık
+B1329,Yolcu Kapısı Aralık Devresi Aküye Kısa Devre
+B1330,Yolcu Kapısı Aralık Devresi Şasiye Kısa Devre
+B1331,Güverte Kapağı Aralık Arka Kapı Devre Arızası
+B1332,Güverte Kapağı Aralık Arka Kapı Devresi Açık
+B1333,Güverte Kapağı Aralık Arka Kapı Devresi Aküye Kısa Devre
+B1334,Güvertesi Aralıklı Arka Kapı Devresi Şasiye Kısa Devre
+B1335,Kapı Aralık RR Devre Arızası
+B1336,Kapı Aralık Sağdan Devre Açık
+B1337,Kapı Açık Sağ Arka Devre Aküye Kısa Devre
+B1338,Kapı Açık RR Devre Şasiye Kısa Devre
+B1339,Zil Girişi Talebi Devresi Aküye Kısa Devre
+B1340,Zil Girişi Talebi Devresi Şasiye Kısa Devre
+B1341,Elektrikli Kapı Kilit Açma Devresi Şasiye Kısa Devre
+B1342,ECU Arızalı
+B1343,Isıtmalı Arkadan Aydınlatmalı Giriş Devresi Arızası
+B1344,Isıtmalı Arkadan Aydınlatmalı Giriş Devresi Açık
+B1345,Isıtmalı Arkadan Aydınlatmalı Giriş Devresi Şasiye Kısa Devre
+B1346,Isıtmalı Arkadan Aydınlatmalı Giriş Devresi Aküye Kısa Devre
+B1347,Isıtmalı Arkadan Aydınlatmalı Röle Devre Arızası
+B1348,Isıtmalı Arkadan Aydınlatmalı Röle Devresi Açık
+B1349,Isıtmalı Arkadan Aydınlatmalı Röle Aküye Kısa Devre
+B1350,Isıtmalı Arkadan Aydınlatmalı Röle Şasiye Kısa Devre
+B1351,Kontak Anahtarı Devresi Aküye Kısa Devre
+B1352,Kontak Anahtarı Devre Arızası
+B1353,Kontak Anahtarı Devresi Açık
+B1354,Kontak Anahtarı Devresi Şasiye Kısa Devre
+B1355,Ateşleme Çalıştırma Devresi Arızası
+B1356,Ateşleme Çalıştırma Devresi Açık
+B1357,Ateşleme Çalıştırma Devresi Aküye Kısa Devre
+B1358,Ateşleme Çalıştırma Devresi Şasiye Kısa Devre
+B1359,Kontak Çalıştırma/Hızlanma Devre Arızası
+B1360,Kontak Çalıştırma/Hızlanma Devresi Açık
+B1361,Ateşleme Çalıştırma/Hızlanma Devresi Aküye Kısa Devre
+B1362,Kontak Çalıştırma/Hızlanma Devresi Şasiye Kısa Devre
+B1363,Kontak Başlatma Devresi Arızası
+B1364,Kontak Başlatma Devresi Açık
+B1365,Kontak Başlatma Devresi Aküye Kısa Devre
+B1366,Kontak Başlatma Devresi Şasiye Kısa Devre
+B1367,Ateşleme Takozu Devre Arızası
+B1368,Ateşleme Takozu Devresi Açık
+B1369,Ateşleme Takozu Devresi Aküye Kısa Devre
+B1370,Ateşleme Takozu Devresi Şasiye Kısa Devre
+B1371,Işıklı Giriş Rölesi Devre Arızası
+B1372,Işıklı Giriş Rölesi Devresi Açık
+B1373,Işıklı Giriş Rölesi Aküye Kısa Devre
+B1374,Işıklı Giriş Rölesi Şasiye Kısa Devre
+B1375,Yağ Değiştirme Lambası Devresi Açık
+B1376,Yağ Değiştirme Lambası Devresi Aküye Kısa Devre
+B1377,Yağ Değiştirme Lambası Devre Arızası
+B1378,Yağ Değiştirme Lambası Devresi Şasiye Kısa Devre
+B1379,Yağ Değiştirme Sıfırlama Düğmesi Devresi Şasiye Kısa Devre
+B1380,Yağ Değiştirme Sıfırlama Düğmesi Devre Arızası
+B1381,Yağ Değiştirme Sıfırlama Düğmesi Devresi Açık
+B1382,Yağ Değiştirme Sıfırlama Düğmesi Devresi Aküye Kısa Devre
+B1383,Yağ Seviyesi Lambası Devresi Aküye Kısa Devre
+B1384,Yağ Seviye Lambası Devre Arızası
+B1385,Yağ Seviyesi Lambası Devresi Açık
+B1386,Yağ Seviyesi Lambası Devresi Şasiye Kısa Devre
+B1387,Yağ Sıcaklık Sensörü Devresi Açık
+B1388,Yağ Sıcaklık Sensörü Devresi Aküye Kısa Devre
+B1389,Yağ Sıcaklık Sensörü Devre Arızası
+B1390,Yağ Sıcaklık Sensörü Devresi Şasiye Kısa Devre
+B1391,Yağ Seviye Şalteri Devre Arızası
+B1392,Elektrikli Kapı Hafızası Kilit Rölesi Devre Arızası
+B1393,Elektrikli Kapı Hafızası Kilit Rölesi Devresi Açık
+B1394,Elektrikli Kapı Hafızası Kilit Rölesi Devresi Aküye Kısa Devre
+B1395,Elektrikli Kapı Hafızası Kilit Rölesi Devresi Şasiye Kısa Devre
+B1396,Elektrikli Kapı Kilidi Devresi Aküye Kısa Devre
+B1397,Elektrikli Kapı Kilit Açma Devresi Aküye Kısa Devre
+B1398,Sürücü Elektrikli Cam Tek Dokunuş Camı Rölesi Devre Arızası
+B1399,Sürücü Elektrikli Cam Tek Dokunuş Camı Röle Devresi Açık
+B1400,Sürücü Elektrikli Cam Tek Dokunuş Camı Röle Devresi Aküye Kısa Devre
+B1401,Sürücü Elektrikli Cam Tek Dokunuş Camı Röle Devresi Şasiye Kısa Devre
+B1402,Sürücü Elektrikli Cam Aşağı Anahtarı Devre Arızası
+B1403,Sürücü Elektrikli Cam Açma Anahtarı Devre Arızası
+B1404,Sürücü Elektrikli Cam Kapalı Devre Açık
+B1405,Sürücü Elektrikli Cam Aşağı Devresi Aküye Kısa Devre
+B1406,Sürücü Elektrikli Cam Aşağı Devresi Şasiye Kısa Devre
+B1407,Sürücü Elektrikli Cam Açma Devresi Açık
+B1408,Sürücü Elektrikli Cam Açma Devresi Aküye Kısa Devre
+B1409,Sürücü Elektrikli Cam Açma Devresi Şasiye Kısa Devre
+B1410,Sürücü Elektrikli Cam Motoru Devre Arızası
+B1411,Sürücü Elektrikli Cam Motoru Devresi Açık
+B1412,Sürücü Elektrikli Cam Motoru Devresi Aküye Kısa Devre
+B1413,Sürücü Elektrikli Cam Motoru Devresi Şasiye Kısa Devre
+B1414,Elektrikli Cam Sağ Sol Motor Devre Arızası
+B1415,Elektrikli Cam Sağ Sol Motor Devresi Açık
+B1416,Elektrikli Cam Sağ Sol Motor Devresi Aküye Kısa Devre
+B1417,Elektrikli Cam Sağ Sol Motor Devresi Şasiye Kısa Devre
+B1418,Yolcu Elektrikli Cam Motoru Devre Arızası
+B1419,Yolcu Elektrikli Cam Motoru Devresi Açık
+B1420,Yolcu Elektrikli Cam Motoru Devresi Aküye Kısa Devre
+B1421,Yolcu Elektrikli Cam Motoru Devresi Şasiye Kısa Devre
+B1422,Elektrikli Cam Sağ Arka Motor Devre Arızası
+B1423,Elektrikli Cam Sağ Arka Motor Devresi Açık
+B1424,Elektrikli Cam Sağ Arka Motor Devresi Aküye Kısa Devre
+B1425,Elektrikli Cam Sağ Arka Motor Devresi Şasiye Kısa Devre
+B1426,Lamba Emniyet Kemeri Devresi Aküye Kısa Devre
+B1427,Lamba Emniyet Kemeri Devresi Açık
+B1428,Lamba Emniyet Kemeri Devre Arızası
+B1429,Lamba Emniyet Kemeri Devresi Şasiye Kısa Devre
+B1430,Emniyet Kemeri Anahtarı Devresi Şasiye Kısa Devre
+B1431,Silecek Freni/Çalıştırma Rölesi Devre Arızası
+B1432,Silecek Freni/Çalıştırma Rölesi Devresi Aküye Kısa Devre
+B1433,Silecek Freni/Çalıştırma Rölesi Devresi Şasiye Kısa Devre
+B1434,Silecek Yüksek/Düşük Hız Rölesi Bobini Devre Arızası
+B1435,Silecek Yüksek/Düşük Hız Rölesi Bobini Devresi Açık
+B1436,Silecek Yüksek/Düşük Hız Rölesi Bobini Devresi Aküye Kısa Devre
+B1437,Silecek Yüksek/Düşük Hız Rölesi Bobini Devresi Şasiye Kısa Devre
+B1438,Silecek Modu Seçim Anahtarı Devre Arızası
+B1439,Silecek Modu Seçimi Anahtar Devresi Açık
+B1440,Silecek Modu Seçimi Anahtar Devresi Aküye Kısa Devre
+B1441,Silecek Modu Seçim Anahtarı Devresi Şasiye Kısa Devre
+B1442,Kapı Kolu Anahtarı Devre Arızası
+B1443,Kapı Kolu Anahtarı Devresi Açık
+B1444,Kapı Kolu Anahtarı Devresi Aküye Kısa Devre
+B1445,Kapı Kolu Anahtarı Devresi Şasiye Kısa Devre
+B1446,Silecek Park Algılama Devre Arızası
+B1447,Silecek Park Algılama Devresi Açık
+B1448,Silecek Park Algılama Devresi Aküye Kısa Devre
+B1449,Silecek Park Algılama Devresi Şasiye Kısa Devre
+B1450,Silecek Yıkama/Geciktirme Anahtarı Devre Arızası
+B1451,Silecek Yıkama/Geciktirme Anahtarı Devresi Açık
+B1452,Silecek Yıkama/Geciktirme Anahtarı Devresi Aküye Kısa Devre
+B1453,Silecek Yıkama/Geciktirme Anahtarı Devresi Şasiye Kısa Devre
+B1454,Silecek Yıkama Sıvısı Lambası Devre Arızası
+B1455,Silecek Yıkama Sıvısı Lambası Devresi Açık
+B1456,Silecek Yıkama Sıvısı Lambası Devresi Aküye Kısa Devre
+B1457,Silecek Yıkama Sıvısı Lambası Devresi Şasiye Kısa Devre
+B1458,Silecek Yıkama Pompası Motor Rölesi Devre Arızası
+B1459,Silecek Yıkama Pompası Motor Röle Bobini Devresi Açık
+B1460,Silecek Yıkama Pompası Motor Röle Bobini Devresi Aküye Kısa Devre
+B1461,Silecek Yıkama Pompası Motor Röle Bobini Devresi Şasiye Kısa Devre
+B1462,Emniyet Kemeri Anahtarı Devre Arızası
+B1463,Emniyet Kemeri Anahtarı Devresi Açık
+B1464,Emniyet Kemeri Anahtarı Devresi Aküye Kısa Devre
+B1465,Silecek Freni/Çalıştırma Rölesi Devresi Açık
+B1466,Silecek Yüksek/Düşük Hız Değişmiyor
+B1467,Silecek Yüksek/Düşük Hız Devresi Motor Aküye Kısa Devre
+B1468,Zil Giriş Talebi Devre Arızası
+B1469,Zil Giriş İsteği Devresi Açık
+B1470,Lamba Ön Far Giriş Devresi Arızası
+B1471,Lamba Ön Far Giriş Devresi Açık
+B1472,Lamba Ön Far Giriş Devresi Şasiye Kısa Devre
+B1473,Silecek Düşük Hız Devresi Motor Arızası
+B1474,Akü Tasarrufu Güç Rölesi Devresi Aküye Kısa Devre
+B1475,Aksesuar Geciktirme Rölesi Kontağı Aküye Kısa Devre
+B1476,Silecek Yüksek Hız Devresi Motor Arızası
+B1477,Silecek Yüksek/Düşük Devre Motoru Şasiye Kısa Devre
+B1478,Elektrikli Pencere Tek Dokunuş Yukarı/Aşağı Aynı Anda Etkinleştirilir
+B1479,Silecek Yıkama Sıvısı Seviye Sensörü Devre Arızası
+B1480,Silecek Yıkama Sıvısı Seviye Sensörü Devresi Açık
+B1481,Silecek Yıkama Sıvısı Seviye Sensörü Devresi Aküye Kısa Devre
+B1482,Silecek Yıkama Sıvısı Seviye Sensörü Devresi Şasiye Kısa Devre
+B1483,Fren Pedalı Giriş Devresi Arızası
+B1484,Fren Pedalı Girişi Açık Devre
+B1485,Fren Pedalı Giriş Devresi Akü Kısa Devre
+B1486,Fren Pedalı Giriş Devresi Şasi Kısa Devresi
+B1487,Kapı Kolu Sağ Ön Devre Arızası
+B1488,Kapı Kolu Sağ Ön Devre Açık
+B1489,Kapı Kolu Sağ Ön Aküye Kısa Devre
+B1490,Kapı Kolu Sağ Ön Yere Kısa
+B1491,Ateşleme Silindiri Sensörü Devre Arızası
+B1492,Ateşleme Silindiri Sensörü Açık Devre
+B1493,Ateşleme Silindiri Sensörü Pil Kısa Devresi
+B1494,Ateşleme Silindiri Sensörü Şasesi Kısa Devre
+B1495,Güverte Kapağı Delme Sensörü Devre Arızası
+B1496,Güverte Kapağı Delme Sensörü Açık Devre
+B1497,Güverte Kapağı Delme Sensörü Pilinde Kısa Devre
+B1498,Güverte Kapağı Delme Sensörü Şasisi Kısa
+B1499,Lamba Dönüş Sinyali Sol Devre Arızası
+B1500,Lamba Dönüş Sinyali Sol Devre Açık
+B1501,Lamba Dönüş Sinyali Sol Devre Aküye Kısa Devre
+B1502,Lamba Dönüş Sinyali Sol Devre Şasiye Kısa Devre
+B1503,Lamba Dönüş Sinyali Sağ Devre Arızası
+B1504,Lamba Dönüş Sinyali Sağ Devre Açık
+B1505,Lamba Dönüş Sinyali Sağ Devre Aküye Kısa Devre
+B1506,Lamba Dönüş Sinyali Sağ Devresi Şasiye Kısa Devre
+B1507,Flaş Geçiş Anahtarı Devre Arızası
+B1508,Geçiş Anahtarı Devresi Açık Flaş
+B1509,Geçiş Anahtarı Devresine Flaş Aküye Kısa Devre
+B1510,Geçiş Anahtarı Devresi Şasiye Kısa Devre
+B1511,Sürücü Kapı Kolu Devre Arızası
+B1512,Sürücü Kapısı Kolu Devresi Açık
+B1513,Sürücü Kapısı Kolu Devresi Aküye Kısa Devre
+B1514,Sürücü Kapısı Kolu Devresi Şasiye Kısa Devre
+B1515,Koltukta Sürücü Bulundu Anahtarı Devre Arızası
+B1516,Koltukta Sürücü Bulundu Anahtar Devresi Açık
+B1517,Sürücü Koltuğunda Anahtar Devresi Aküye Kısa Devre
+B1518,Sürücü Koltuğunda Anahtar Devresi Şasiye Kısa Devre
+B1519,Kaput Anahtarı Devre Arızası
+B1520,Kaput Anahtarı Devresi Açık
+B1521,Kaput Anahtarı Devresi Aküye Kısa Devre
+B1522,Kaput Anahtarı Devresi Şasiye Kısa Devre
+B1523,Anahtarsız Giriş Devre Arızası
+B1524,Anahtarsız Giriş Devresi Açık
+B1525,Anahtarsız Giriş Devresi Aküye Kısa Devre
+B1526,Anahtarsız Giriş Devresi Şasiye Kısa Devre
+B1527,Bellek Seti Anahtarı Devre Arızası
+B1528,Bellek Seti Anahtarı Devresi Açık
+B1529,Bellek Seti Anahtarı Devresi Aküye Kısa Devre
+B1530,Bellek Seti Anahtarı Devresi Şasiye Kısa Devre
+B1531,Bellek 1 Anahtar Devre Arızası
+B1532,Bellek 1 Anahtar Devresi Açık
+B1533,Bellek 1 Anahtar Devresi Aküye Kısa Devre
+B1534,Bellek 1 Anahtar Devresi Şasiye Kısa Devre
+B1535,Bellek 2 Anahtar Devre Arızası
+B1536,Bellek 2 Anahtar Devresi Açık
+B1537,Bellek 2 Anahtar Devresi Aküye Kısa Devre
+B1538,Bellek 2 Anahtar Devresi Şasiye Kısa Devre
+B1539,Ayna Sürücüsü Anahtar Düzeneği Devre Arızası
+B1540,Ayna Sürücüsü Anahtar Grubu Devresi Açık
+B1541,Ayna Sürücüsü Anahtar Grubu Devresi Aküye Kısa Devre
+B1542,Ayna Sürücüsü Anahtar Grubu Devresi Şasiye Kısa Devre
+B1543,Koltuk Yön Anahtarı Grubu Devre Arızası
+B1544,Koltuk Yön Anahtarı Grubu Devresi Açık
+B1545,Koltuk Yön Anahtarı Grubu Devresi Aküye Kısa Devre
+B1546,Koltuk Yön Anahtarı Grubu Devresi Şasiye Kısa Devre
+B1547,Elektrikli Cam Ana Devre Arızası
+B1548,Elektrikli Pencere Ana Devresi Açık
+B1549,Elektrikli Cam Ana Devresi Aküye Kısa Devre
+B1550,Elektrikli Cam Ana Devresi Şasiye Kısa Devre
+B1551,Güverte Kapağı Serbest Bırakma Devresi Arızası
+B1552,Güverte Kapağı Açma Devresi Açık
+B1553,Güverte Kapağı Serbest Bırakma Devresi Aküye Kısa Devre
+B1554,Güverte Kapağı Serbest Bırakma Devresi Şasiye Kısa Devre
+B1555,Ateşleme Çalıştırma/Başlatma Devresi Arızası
+B1556,Kontak Çalıştırma/Başlatma Devresi Açık
+B1557,Ateşleme Çalıştırma/Başlatma Devresi Aküye Kısa Devre
+B1558,Ateşleme Çalıştırma/Başlatma Devresi Şasiye Kısa Devre
+B1559,Kapı Kilit Silindiri Devre Arızası
+B1560,Kapı Kilit Silindiri Devresi Açık
+B1561,Kapı Kilidi Silindir Devresi Aküye Kısa Devre
+B1562,Kapı Kilit Silindiri Devresi Şasiye Kısa Devre
+B1563,Kapı Aralık Devre Arızası
+B1564,Kapı Aralık Devresi Açık
+B1565,Kapı Aralık Devresi Aküye Kısa Devre
+B1566,Kapı Aralık Devresi Şasiye Kısa Devre
+B1567,Lamba Ön Far Uzun Huzme Devre Arızası
+B1568,Lamba Ön Far Uzun Huzme Devresi Açık
+B1569,Lamba Ön Far Uzun Huzme Devresi Aküye Kısa Devre
+B1570,Lamba Ön Far Uzun Huzme Devresi Şasiye Kısa Devre
+B1571,Kapı Aralık Sol Sol Devre Arızası
+B1572,Kapı Açık Sol Sol Devre Açık
+B1573,Kapı Açık Sol Sol Devre Aküye Kısa Devre
+B1574,Kapı Aralık Sol Sol Devre Şasiye Kısa Devre
+B1575,Lamba Park Giriş Devresi Arızası
+B1576,Lamba Park Giriş Devresi Açık
+B1577,Lamba Park Giriş Devresi Aküye Kısa Devre
+B1578,Lamba Park Giriş Devresi Şasiye Kısa Devre
+B1579,Loş Panel Artış Giriş Devresi Arızası
+B1580,Loş Panel Arttırma Giriş Devresi Açık
+B1581,Loş Panel Arttırma Giriş Devresi Aküye Kısa Devre
+B1582,Karartma Paneli Arttırma Giriş Devresi Şasiye Kısa Devre
+B1583,Loş Panel Azaltma Giriş Devresi Arızası
+B1584,Loş Panel Azaltma Giriş Devresi Açık
+B1585,Loş Panel Azaltma Giriş Devresi Aküye Kısa Devre
+B1586,Karartma Paneli Giriş Devresini Şasiye Kısa Devreyi Azaltır
+B1587,Otomatik Lamba Gecikmesi Artış Devre Arızası
+B1588,Otomatik Lamba Gecikmesi Artırma Devresi Açık
+B1589,Otomatik Lamba Gecikmesi Arttırma Devresi Aküye Kısa Devre
+B1590,Otomatik Lamba Gecikmesi Arttırma Devresi Şasiye Kısa Devre
+B1591,Otomatik Lamba Gecikmesi Devre Arızasını Azaltır
+B1592,Otomatik Lamba Gecikmesini Azaltma Devresi Açık
+B1593,Otomatik Lamba Gecikmesi Azaltma Devresi Aküye Kısa Devre
+B1594,Otomatik Lamba Gecikmesi Azaltma Devresi Şasiye Kısa Devre
+B1595,Kontak Anahtarı Yasadışı Giriş Kodu
+B1596,Hizmet Sürekli Kodları
+B1600,PATS Kontak Anahtarı Transponder Sinyali Alınmıyor
+B1601,"PATS, Kontak Anahtarı Aktarıcısından Yanlış Anahtar Kodu Aldı"
+B1602,"PATS, Kontak Anahtarı Aktarıcısından Geçersiz Anahtar Kodu Formatı Aldı"
+B1603,Lamba Hırsızlığa Karşı Gösterge Devre Arızası
+B1604,Lamba Hırsızlığa Karşı Gösterge Devresi Açık
+B1605,Lamba Hırsızlığa Karşı Gösterge Devresi Aküye Kısa Devre
+B1606,Lamba Hırsızlığa Karşı Gösterge Devresi Şasiye Kısa Devre
+B1607,Işıklı Giriş Giriş Devresi Arızası
+B1608,Işıklı Giriş Girişi Açık Devre
+B1609,Işıklı Giriş Girişi Aküye Kısa Devre
+B1610,Işıklı Giriş Girişi Şasiye Kısa Devre
+B1611,Silecek Arka Modu Seçim Anahtarı Devre Arızası
+B1612,Silecek Arka Modu Seçim Anahtarı Devresi Açık
+B1613,Silecek Arka Modu Seçim Anahtarı Devresi Aküye Kısa Devre
+B1614,Silecek Arka Modu Seçim Anahtarı Devresi Şasiye Kısa Devre
+B1615,Silecek Arka Devre Dışı Bırakma Anahtarı Devre Arızası
+B1616,Silecek Arka Devre Dışı Bırakma Anahtarı Devresi Açık
+B1617,Silecek Arka Devre Dışı Bırakma Anahtarı Devresi Aküye Kısa Devre
+B1618,Silecek Arka Devre Dışı Bırakma Anahtarı Devresi Şasiye Kısa Devre
+B1619,Silecek Arka Alt Limit Giriş Devresi Arızası
+B1620,Silecek Arka Alt Limit Giriş Devresi Açık
+B1621,Silecek Arka Alt Limit Giriş Devresi Aküye Kısa Devre
+B1622,Silecek Arka Alt Limit Giriş Devresi Şasiye Kısa Devre
+B1623,Lamba Tuş Takımı Çıkış Devresi Arızası
+B1624,Lamba Tuş Takımı Çıkışı Açık Devre
+B1625,Lamba Tuş Takımı Çıkışı Aküye Kısa Devre
+B1626,Lamba Tuş Takımı Çıkışı Şasiye Kısa Devre
+B1627,PRNDL Ters Giriş Devresi Arızası
+B1628,PRNDL Ters Giriş Açık Devre
+B1629,PRNDL Ters Giriş Aküye Kısa Devre
+B1630,PRNDL Ters Giriş Şasiye Kısa Devre
+B1631,Ayna Sürücüsü Sol Devre Arızası
+B1632,Ayna Sürücüsü Sol Devre Açık
+B1633,Ayna Sürücüsü Sol Devre Aküye Kısa Devre
+B1634,Ayna Sürücüsü Sol Devre Şasiye Kısa Devre
+B1635,Ayna Sürücüsü Sağ Devre Arızası
+B1636,Ayna Sürücüsü Sağ Devre Açık
+B1637,Ayna Sürücüsü Sağ Devre Aküye Kısa Devre
+B1638,Ayna Sürücüsü Sağ Yere Kısa
+B1639,Ayna Yolcu Sol Devre Arızası
+B1640,Yolcu Aynası Sol Devre Açık
+B1641,Yolcu Aynası Sol Devre Aküye Kısa Devre
+B1642,Yolcu Aynası Sol Devre Şasiye Kısa Devre
+B1643,Yolcu Aynası Sağ Devre Arızası
+B1644,Yolcu Aynası Sağ Devre Açık
+B1645,Yolcu Aynası Sağ Devre Aküye Kısa Devre
+B1646,Yolcu Aynası Sağ Devre Şasiye Kısa Devre
+B1647,Sürücü Koltuğu Öne Yatırma Devre Arızası
+B1648,Sürücü Koltuğu İleri Yatma Devresi Açık
+B1649,Sürücü Koltuğu Öne Yatırma Devresi Aküye Kısa Devre
+B1650,Sürücü Koltuğu İleri Yatırma Devresi Şasiye Kısa Devre
+B1651,Sürücü Koltuğu Geriye Yatma Devre Arızası
+B1652,Sürücü Koltuğu Geriye Yatırma Devresi Açık
+B1653,Sürücü Koltuğu Geriye Yatırma Devresi Aküye Kısa Devre
+B1654,Sürücü Koltuğu Geri Yatırılır Devre Şasiye Kısa Devre
+B1655,Sürücü Koltuğu Arka Devre Arızası
+B1656,Sürücü Koltuğu Arka Devresi Açık
+B1657,Sürücü Koltuğu Arka Devresi Aküye Kısa Devre
+B1658,Sürücü Koltuğu Arka Devresi Şasiye Kısa Devre
+B1659,Sürücü Koltuğu Ön Devre Arızası
+B1660,Sürücü Koltuğu Ön Devresi Açık
+B1661,Sürücü Koltuğu Ön Devresi Aküye Kısa Devre
+B1662,Sürücü Koltuğu Ön Devresi Şasiye Kısa Devre
+B1663,Sürücü Koltuğu Ön Yukarı/Aşağı Motor Durmuş
+B1664,Sürücü Koltuğu Arka Yukarı/Aşağı Motor Durdu
+B1665,Sürücü Koltuğu İleri/Geri Motoru Durdu
+B1666,Sürücü Koltuğu Yatırma Motoru Durdu
+B1667,Ayna Sürücüsü Yukarı/Aşağı Motoru Durdu
+B1668,Ayna Sürücüsü Sağ/Sol Motor Durdu
+B1669,Yolcu Aynası Yukarı/Aşağı Motoru Durdu
+B1670,Yolcu Aynası Sağ/Sol Motor Durmuş
+B1671,Akü Modülü Gerilimi Aralık Dışında
+B1672,Koltukta Sürücü Oturuyor Giriş Devresi Arızası
+B1673,Koltukta Sürücü Oturuyor Giriş Devresi Açık
+B1674,Sürücü Koltuğunda Giriş Devresi Aküye Kısa Devre
+B1675,Sürücü Koltuğunda Giriş Devresi Şasiye Kısa Devre
+B1676,Akü Paketi Gerilimi Aralık Dışında
+B1677,Alarm Panik Giriş Devre Arızası
+B1678,Alarm Panik Giriş Devresi Açık
+B1679,Alarm Panik Giriş Devresi Aküye Kısa Devre
+B1680,Alarm Panik Giriş Devresi Şasiye Kısa Devre
+B1681,PATS Alıcı-Verici Modülü Sinyali Alınmıyor
+B1682,PATS Devre Dışı (PATS ile Aktarıcı Arasındaki Bağlantıyı Kontrol Edin)
+B1683,Ayna Sürücü/Yolcu Anahtarı Devre Arızası
+B1684,Ayna Sürücü/Yolcu Anahtarı Devresi Açık
+B1685,Lamba Kubbesi Giriş Devresi Arızası
+B1686,Lamba Kubbesi Giriş Devresi Açık
+B1687,Lamba Kubbesi Giriş Devresi Aküye Kısa Devre
+B1688,Lamba Kubbesi Giriş Devresi Şasiye Kısa Devre
+B1689,Otomatik Lamba Gecikmesi Devre Arızası
+B1690,Otomatik Lamba Gecikme Devresi Açık
+B1691,Otomatik Lamba Gecikme Devresi Aküye Kısa Devre
+B1692,Otomatik Lamba Gecikme Devresi Şasiye Kısa Devre
+B1693,Devre Arızasında Otomatik Lamba
+B1694,Devre Açıkken Otomatik Lamba
+B1695,Otomatik Lamba Açık Devre Aküye Kısa Devre
+B1696,Otomatik Lamba Açık Devre Şasiye Kısa Devre
+B1697,Ayna Sürücü/Yolcu Anahtarı Devresi Aküye Kısa Devre
+B1698,Ayna Sürücü/Yolcu Anahtarı Devresi Şasiye Kısa Devre
+B1701,Sürücü Koltuğu Yatırma İleri Anahtarı Devre Arızası
+B1702,Sürücü Koltuğu Yatırma İleri Anahtarı Devresi Açık
+B1703,Sürücü Koltuğu Yatırma İleri Anahtar Devresi Aküye Kısa Devre
+B1704,Sürücü Koltuğu İleri Yatırma Anahtarı Devresi Şasiye Kısa Devre
+B1705,Sürücü Koltuğu Geri Yatırma Anahtarı Devre Arızası
+B1706,Sürücü Koltuğu Arkaya Yatırma Anahtarı Devresi Açık
+B1707,Sürücü Koltuğu Arkaya Yatırma Anahtarı Devresi Aküye Kısa Devre
+B1708,Sürücü Koltuğu Arkaya Yatırma Anahtarı Devresi Şasiye Kısa Devre
+B1709,Sürücü Koltuğu Ön Yukarı Anahtarı Devre Arızası
+B1710,Sürücü Koltuğu Ön Yukarı Anahtarı Devresi Açık
+B1711,Sürücü Koltuğu Ön Yukarı Anahtar Devresi Aküye Kısa Devre
+B1712,Sürücü Koltuğu Ön Yukarı Anahtar Devresi Şasiye Kısa Devre
+B1713,Sürücü Koltuğu Ön Aşağı Anahtarı Devre Arızası
+B1714,Sürücü Koltuğu Ön Aşağı Anahtarı Devresi Açık
+B1715,Sürücü Koltuğu Ön Aşağı Anahtarı Devresi Aküye Kısa Devre
+B1716,Sürücü Koltuğu Ön Aşağı Anahtarı Devresi Şasiye Kısa Devre
+B1717,Sürücü Koltuğu İleri Anahtar Devresi Arızası
+B1718,Sürücü Koltuğu İleri Anahtar Devresi Açık
+B1719,Sürücü Koltuğu İleri Anahtar Devresi Aküye Kısa Devre
+B1720,Sürücü Koltuğu İleri Anahtar Devresi Şasiye Kısa Devre
+B1721,Sürücü Koltuğu Arka Anahtar Devre Arızası
+B1722,Sürücü Koltuğu Arka Anahtar Devresi Açık
+B1723,Sürücü Koltuğu Arka Anahtar Devresi Aküye Kısa Devre
+B1724,Sürücü Koltuğu Arka Anahtar Devresi Şasiye Kısa Devre
+B1725,Sürücü Koltuğu Arka Yukarı Anahtarı Devre Arızası
+B1726,Sürücü Koltuğu Arka Anahtar Devresi Açık
+B1727,Sürücü Koltuğu Arka Anahtar Devresi Aküye Kısa Devre
+B1728,Sürücü Koltuğu Arka Anahtar Devresi Şasiye Kısa Devre
+B1729,Sürücü Koltuğu Arka Aşağı Anahtarı Devre Arızası
+B1730,Sürücü Koltuğu Arka Aşağı Anahtarı Devresi Açık
+B1731,Sürücü Koltuğu Arka Aşağı Anahtar Devresi Aküye Kısa Devre
+B1732,Sürücü Koltuğu Arka Aşağı Anahtarı Devresi Şasiye Kısa Devre
+B1733,Ayna Sürücüsü Dikey Anahtar Devre Arızası
+B1734,Ayna Sürücüsü Dikey Anahtar Devresi Açık
+B1735,Ayna Sürücüsü Dikey Anahtar Devresi Aküye Kısa Devre
+B1736,Ayna Sürücüsü Dikey Anahtar Devresi Şasiye Kısa Devre
+B1737,Ayna Sürücüsü Yatay Anahtar Devre Arızası
+B1738,Ayna Sürücüsü Yatay Anahtar Devresi Açık
+B1739,Ayna Sürücüsü Yatay Anahtar Devresi Aküye Kısa Devre
+B1740,Ayna Sürücüsü Yatay Anahtar Devresi Şasiye Kısa Devre
+B1741,Ayna Yolcu Dikey Şalteri Devre Arızası
+B1742,Yolcu Aynası Dikey Anahtar Devresi Açık
+B1743,Yolcu Aynası Dikey Anahtar Devresi Aküye Kısa Devre
+B1744,Yolcu Aynası Dikey Anahtar Devresi Şasiye Kısa Devre
+B1745,Ayna Yolcu Yatay Anahtar Devre Arızası
+B1746,Yolcu Aynası Yatay Anahtar Devresi Açık
+B1747,Yolcu Aynası Yatay Anahtar Devresi Aküye Kısa Devre
+B1748,Yolcu Aynası Yatay Anahtar Devresi Şasiye Kısa Devre
+B1749,Park/Nötr Anahtarı Devre Arızası
+B1750,Park/Nötr Anahtarı Devresi Açık
+B1751,Park/Nötr Anahtarı Devresi Aküye Kısa Devre
+B1752,Park/Nötr Anahtarı Devresi Şasiye Kısa Devre
+B1753,Tehlike Flaş Çıkışı Devre Arızası
+B1754,Tehlike Flaş Çıkış Devresi Açık
+B1755,Tehlike Flaş Çıkış Devresi Kısa Pil
+B1756,Tehlike Flaş Çıkış Devresi Şasiye Kısa Devre
+B1757,Sürücü Koltuğu Arka Aşağı Devre Arızası
+B1758,Sürücü Koltuğu Arka Aşağı Devresi Açık
+B1759,Sürücü Koltuğu Arka Alt Devresi Aküye Kısa Devre
+B1760,Sürücü Koltuğu Arka Aşağı Devresi Şasiye Kısa Devre
+B1761,Sürücü Koltuğu Ön Aşağı Devre Arızası
+B1762,Sürücü Koltuğu Ön Alt Devre Açık
+B1763,Sürücü Koltuğu Ön Alt Devre Aküye Kısa Devre
+B1764,Sürücü Koltuğu Ön Aşağı Devresi Şasiye Kısa Devre
+B1765,Sürücü Koltuğu İleri Devre Arızası
+B1766,Sürücü Koltuğu İleri Devresi Açık
+B1767,Sürücü Koltuğu İleri Devresi Aküye Kısa Devre
+B1768,Sürücü Koltuğu İleri Devresi Şasiye Kısa Devre
+B1769,Sürücü Koltuğu Geriye Devre Arızası
+B1770,Sürücü Koltuğu Geri Devresi Açık
+B1771,Sürücü Koltuğu Geri Devresi Aküye Kısa Devre
+B1772,Sürücü Koltuğu Geri Devresi Şasiye Kısa Devre
+B1773,Ayna Sürücüsü Yukarı Devre Arızası
+B1774,Ayna Sürücüsü Yukarı Devre Açık
+B1775,Ayna Sürücüsü Devresi Aküye Kısa Devre
+B1776,Ayna Sürücüsü Yukarı Devresi Şasiye Kısa Devre
+B1778,Ayna Sürücüsü Aşağı Devre Arızası
+B1779,Ayna Sürücüsü Aşağı Devre Açık
+B1780,Ayna Sürücüsü Arıza Devresi Aküye Kısa Devre
+B1781,Ayna Sürücüsü Yere Kısa Devre
+B1782,Ayna Yolcu Yukarı Devre Arızası
+B1783,Yolcu Aynası Yukarı Devresi Açık
+B1784,Yolcu Aynası Yukarı Devresi Aküye Kısa Devre
+B1785,Yolcu Aynası Yukarı Devresi Şasiye Kısa Devre
+B1786,Ayna Yolcu Aşağı Devre Arızası
+B1787,Yolcu Aynası Aşağı Devresi Açık
+B1788,Yolcu Aynası Aşağı Devresi Aküye Kısa Devre
+B1789,Yolcu Aynası Aşağı Devresi Şasiye Kısa Devre
+B1790,Otomatik Lamba Sensörü Giriş Devresi Arızası
+B1791,Otomatik Lamba Sensörü Giriş Devresi Açık
+B1792,Otomatik Lamba Sensörü Giriş Devresi Aküye Kısa Devre
+B1793,Otomatik Lamba Sensörü Giriş Devresi Şasiye Kısa Devre
+B1794,Lamba Ön Far Kısa Huzmeli Devre Arızası
+B1795,Lamba Ön Far Kısa Huzme Devresi Açık
+B1796,Lamba Ön Far Kısa Huzme Devresi Aküye Kısa Devre
+B1797,Lamba Ön Far Kısa Huzme Devresi Şasiye Kısa Devre
+B1798,Lamba Dönüş Sinyali Ön Çıkış Devresi Arızası
+B1799,Lamba Dönüş Sinyali Ön Çıkış Devresi Açık
+B1800,Lamba Dönüş Sinyali Ön Çıkış Devresi Aküye Kısa Devre
+B1801,Lamba Dönüş Sinyali Ön Çıkış Devresi Şasiye Kısa Devre
+B1802,Lamba Dönüş Sinyali Arka Çıkış Devresi Arızası
+B1803,Lamba Dönüş Sinyali Arka Çıkış Devresi Açık
+B1804,Lamba Dönüş Sinyali Arka Çıkış Devresi Aküye Kısa Devre
+B1805,Lamba Dönüş Sinyali Arka Çıkış Devresi Şasiye Kısa Devre
+B1806,Lamba Kuyruk Çıkış Devresi Arızası
+B1807,Lamba Kuyruk Çıkış Devresi Açık
+B1808,Lamba Kuyruk Çıkış Devresi Aküye Kısa Devre
+B1809,Lamba Kuyruk Çıkış Devresi Şasiye Kısa Devre
+B1810,Lamba Yedekleme Anahtarı Giriş Devresi Arızası
+B1811,Lamba Yedekleme Anahtarı Giriş Devresi Açık
+B1812,Lamba Yedekleme Anahtarı Giriş Devresi Aküye Kısa Devre
+B1813,Lamba Yedekleme Anahtarı Giriş Devresi Şasiye Kısa Devre
+B1814,Silecek Arka Motor Aşağı Rölesi Bobini Devre Arızası
+B1815,Silecek Arka Motor Aşağı Röle Bobini Devresi Açık
+B1816,Silecek Arka Motor Aşağı Röle Bobini Devresi Aküye Kısa Devre
+B1817,Silecek Arka Motor Aşağı Röle Bobini Devresi Şasiye Kısa Devre
+B1818,Silecek Arka Motor Yukarı Röle Bobini Devre Arızası
+B1819,Silecek Arka Motor Yukarı Röle Bobini Devresi Açık
+B1820,Silecek Arka Motor Yukarı Röle Bobini Devresi Aküye Kısa Devre
+B1821,Silecek Arka Motor Yukarı Röle Bobini Devresi Şasiye Kısa Devre
+B1822,Silecek Arka Park Algılama Giriş Devresi Arızası
+B1823,Silecek Arka Park Algılama Giriş Devresi Açık
+B1824,Silecek Arka Park Algılama Giriş Devresi Aküye Kısa Devre
+B1825,Silecek Arka Park Algılama Giriş Devresi Şasiye Kısa Devre
+B1826,Silecek Arka Üst Limit Giriş Devresi Arızası
+B1827,Silecek Arka Üst Limit Giriş Devresi Açık
+B1828,Silecek Arka Yüksek Limit Giriş Devresi Aküye Kısa Devre
+B1829,Silecek Arka Yüksek Limit Giriş Devresi Şasiye Kısa Devre
+B1830,Kapı Kilidini Devre Dışı Bırakma Anahtarı Devre Arızası
+B1831,Kapı Kilidini Devre Dışı Bırakma Anahtarı Devresi Açık
+B1832,Kapı Kilidini Devre Dışı Bırakma Anahtarı Devresi Aküye Kısa Devre
+B1833,Kapı Kilidini Devre Dışı Bırakma Anahtarı Devresi Şasiye Kısa Devre
+B1834,Kapı Kilidini Devre Dışı Bırakma Çıkış Devresi Arızası
+B1835,Kapı Kilidini Devre Dışı Bırakma Çıkış Devresi Açık
+B1836,Kapı Kilidini Devre Dışı Bırakma Çıkış Devresi Aküye Kısa Devre
+B1837,Kapı Kilidini Devre Dışı Bırakma Çıkış Devresi Şasiye Kısa Devre
+B1838,Akü Tasarrufu Güç Rölesi Devre Arızası
+B1839,Silecek Arka Motor Devre Arızası
+B1840,Silecek Ön Güç Devresi Arızası
+B1841,Silecek Ön Güç Devresi Açık
+B1842,Silecek Ön Güç Devresi Aküye Kısa Devre
+B1843,Silecek Ön Güç Devresi Şasiye Kısa Devre
+B1844,Telefon Ahizesi Devre Arızası
+B1845,Ateşleme Sabotaj Devresi Arızası
+B1846,Ateşleme Sabotaj Devresi Açık
+B1847,Ateşleme Sabotaj Devresi Aküye Kısa Devre
+B1848,Ateşleme Sabotaj Devresi Şasiye Kısa Devre
+B1849,İklim Kontrol Sıcaklık Diferansiyel Devre Arızası
+B1850,İklim Kontrolü Sıcaklık Farkı Devresi Açık
+B1851,İklim Kontrolü Sıcaklık Diferansiyel Devresi Aküye Kısa Devre
+B1852,İklim Kontrolü Sıcaklık Diferansiyel Devresi Şasiye Kısa Devre
+B1853,İklim Kontrolü Hava Sıcaklığı Dahili Sensör Motor Devresi Arızası
+B1854,İklim Kontrolü Hava Sıcaklığı Dahili Sensör Motor Devresi Açık
+B1855,İklim Kontrolü Hava Sıcaklığı Dahili Sensör Motor Devresi Aküye Kısa Devre
+B1856,İklim Kontrolü Hava Sıcaklığı Dahili Sensör Motor Devresi Şasiye Kısa Devre
+B1857,Klima Kontrolü Açma/Kapama Anahtarı Devre Arızası
+B1858,İklim Kontrolü Klima Basınç Anahtarı Devre Arızası
+B1859,İklim Kontrolü Klima Basınç Anahtarı Devresi Açık
+B1860,İklim Kontrolü Klima Basınç Anahtarı Devresi Aküye Kısa Devre
+B1861,İklim Kontrolü Klima Basınç Anahtarı Devresi Şasiye Kısa Devre
+B1862,İklim Kontrolü Klima Kilit Sensörü Arızası
+B1863,Şasi ECU Devresi Açık
+B1864,Akü Güç Kaynağı ECU Devre Arızası
+B1865,Akü Güç Kaynağı ECU Devresi Açık
+B1866,Akü Güç Kaynağı ECU Devresi Aküye Kısa Devre
+B1867,Akü Güç Kaynağı ECU Devresi Şasiye Kısa Devre
+B1868,Lamba Hava Yastığı Uyarı Göstergesi Devre Arızası
+B1869,Lamba Hava Yastığı Uyarı Göstergesi Devresi Açık
+B1870,Lamba Hava Yastığı Uyarı Göstergesi Devresi Aküye Kısa Devre
+B1871,Yolcu Hava Yastığı Devre Dışı Modülü Arızası
+B1872,Dönüş Sinyali / Tehlike Gücü Besleme Devresi Aküye Kısa Devre
+B1873,Dönüş Sinyali / Tehlike Gücü Besleme Devresi Şasiye Kısa Devre
+B1874,Cep Telefonu Ahizesi Mevcut Değil
+B1875,Dönüş Sinyali / Tehlike Anahtarı Sinyal Devresi Arızası
+B1876,Emniyet Kemeri Sürücüsü Ön Gericisi Devre Arızası
+B1877,Emniyet Kemeri Tahrik Sistemi Ön Gericisi Devresi Açık
+B1878,Emniyet Kemeri Tahrik Sistemi Ön Gericisi Devresi Aküye Kısa Devre
+B1879,Emniyet Kemeri Tahrik Sistemi Ön Gericisi Devresi Şasiye Kısa Devre
+B1880,Emniyet Kemeri Yolcu Ön Gericisi Devre Arızası
+B1881,Yolcu Emniyet Kemeri Ön Gericisi Devresi Açık
+B1882,Yolcu Emniyet Kemeri Ön Gericisi Devresi Aküye Kısa Devre
+B1883,Yolcu Emniyet Kemeri Ön Gericisi Devresi Şasiye Kısa Devre
+B1884,PAD Uyarı Lambası Çalışmıyor
+B1885,Emniyet Kemeri Tahrik Sistemi Ön Gericisi Devre Direnci Şöminede Düşük
+B1886,Emniyet Kemeri Yolcu Ön Gericisi Devre Direnci Şöminede Düşük
+B1887,Hava Yastığı Sürücü Devresi Direnci Düşük veya Birlikte Kısa Devre Yapmış
+B1888,Hava Yastığı Yolcu Devresi Direnci Düşük veya Birlikte Kısa Devre Yapmış
+B1889,Yolcu Hava Yastığı Devre Dışı Modülü Sensörü Engellendi
+B1890,PAD Uyarı Lambası Devresi Aküye Kısa Devre
+B1891,Hava Yastığı Ton Uyarı Göstergesi Devresi Aküye Kısa Devre
+B1892,Hava Yastığı Ton Uyarı Göstergesi Devre Arızası
+B1893,GPS Anteni Açık Devre
+B1894,Silecek Arka Motor Hız Algılama Devre Arızası
+B1897,Korna Anahtarı Devre Arızası
+B1898,Zil Girişi #2 Devresi Şasiye Kısa Devre
+B1899,Mikrofon Giriş Sinyali Devresi Açık
+B1900,Sürücü Tarafı Hava Yastığı Arızası
+B1901,Hava Yastığı Çarpma Sensörü #1 Besleme/Dönüş Devresi Şasiye Kısa Devre
+B1902,Hava Yastığı Çarpma Sensörü #1 Topraklama Devresi Arızası
+B1903,Hava Yastığı Çarpma Sensörü #1 Şasi Devresi Aküye Kısa Devre
+B1904,Hava Yastığı Çarpma Sensörü #2 Besleme/Dönüş Devresi Arızası
+B1905,Hava Yastığı Çarpma Sensörü #2 Besleme/Dönüş Devresi Aküye Kısa Devre
+B1906,Hava Yastığı Çarpma Sensörü #2 Besleme/Dönüş Devresi Şasiye Kısa Devre
+B1907,Hava Yastığı Çarpma Sensörü #2 Topraklama Devresi Arızası
+B1908,Hava Yastığı Çarpma Sensörü #2 Şasi Devresi Aküye Kısa Devre
+B1909,Hava Yastığı Çarpma Sensörü #2 Şasi Devresi Şasiye Kısa Devre
+B1910,Hava Yastığı Diyagnostik Monitörü Toprak Devre Arızası
+B1911,Hava Yastığı Diyagnostik Monitör Şasi Devresi Aküye Kısa Devre
+B1912,Hava Yastığı Diyagnostik Monitör Şasi Devresi Şasiye Kısa Devre
+B1913,Hava Yastığı Sürücü/Yolcu Devresi Şasiye Kısa Devre
+B1914,Hava Yastığı Çarpma Sensörleri #1 / #2 Devresi Şasiye Kısa Devre
+B1915,Hava Yastığı Sürücüsü Devre Arızası
+B1916,Hava Yastığı Sürücü Devresi Aküye Kısa Devre
+B1917,Hava Yastığı Hafızasını Silme Devre Arızası
+B1918,Hava Yastığı Hafızasını Temizleme Devresi Açık
+B1919,Hava Yastığı Hafızası Silme Devresi Aküye Kısa Devre
+B1920,Hava Yastığı Yolcu Devre Arızası
+B1921,Hava Yastığı Diyagnostik Monitörü Topraklama Devresi Açık
+B1922,Hava Yastığı Emniyet Sensörü Çıkış Devresi Aküye Kısa Devre
+B1923,Hava Yastığı Belleği Silme Devresi Şasiye Kısa Devre
+B1924,Hava Yastığı Dahili Diyagnostik Monitör Arızası veya Sistem Devre Dışı Bırakma Arızası
+B1925,Yolcu Hava Yastığı Devresi Aküye Kısa Devre
+B1926,Hava Yastığı Yolcu Basınç Anahtarı Devre Arızası
+B1927,Yolcu Yan Hava Yastığı Arızası
+B1928,Hava Yastığı Koruma Sensörü Çıkış Devresi Arızası
+B1929,Hava Yastığı Emniyet Sensörü Çıkış Devresi Açık
+B1930,Hava Yastığı Emniyet Sensörü Çıkış Devresi Şasiye Kısa Devre
+B1931,Hava Yastığı Çarpma Sensörü #1 Besleme/Dönüş Devresi Arızası
+B1932,Hava Yastığı Sürücü Devresi Açık
+B1933,Hava Yastığı Yolcu Devresi Açık
+B1934,Hava Yastığı Sürücüsü Şişirme Devresi Direnci Squib'de Düşük
+B1935,Hava Yastığı Yolcu Şişirme Devresi Direnci Şöminede Düşük
+B1936,Hava Yastığı Sürücü Devresi Şasiye Kısa Devre
+B1937,Hava Yastığı Yolcu Basınç Anahtarı Devresi Açık
+B1938,Hava Yastığı Yolcu Devresi Şasiye Kısa Devre
+B1939,Hava Yastığı Yolcu Basınç Anahtarı Devresi Şasiye Kısa Devre
+B1941,Hava Yastığı Çarpma Sensörü #1 Besleme/Dönüş Devresi Açık
+B1942,Hava Yastığı Çarpma Sensörü #2 Besleme/Dönüş Devresi Açık
+B1943,Hava Yastığı Çarpma Sensörü #1 Şasi Devresi Şasiye Kısa Devre
+B1944,Hava Yastığı Çarpma Sensörü #1 Şasi Devresi Açık
+B1945,Hava Yastığı Çarpma Sensörü #2 Şasi Devresi Açık
+B1946,İklim Kontrolü Klima Sonrası Evaporatör Sensör Devresi Arızası
+B1947,İklim Kontrolü Klima Sonrası Evaporatör Sensör Devresi Şasiye Kısa Devre
+B1948,İklim Kontrolü Su Sıcaklığı Sensörü Devre Arızası
+B1949,İklim Kontrolü Su Sıcaklığı Sensörü Devresi Şasiye Kısa Devre
+B1950,Koltuk Arka Yukarı/Aşağı Potansiyometre Geri Besleme Devresi Arızası
+B1951,Koltuk Arka Yukarı/Aşağı Potansiyometre Geri Besleme Devresi Açık
+B1952,Koltuk Arka Yukarı/Aşağı Potansiyometre Geri Besleme Devresi Aküye Kısa Devre
+B1953,Koltuk Arka Yukarı/Aşağı Potansiyometre Geri Besleme Devresi Şasiye Kısa Devre
+B1954,Koltuk Önü Yukarı/Aşağı Potansiyometre Geri Besleme Devresi Arızası
+B1955,Koltuk Önü Yukarı/Aşağı Potansiyometre Geri Besleme Devresi Açık
+B1956,Koltuk Önü Yukarı/Aşağı Potansiyometre Geri Besleme Devresi Aküye Kısa Devre
+B1957,Koltuk Önü Yukarı/Aşağı Potansiyometre Geri Besleme Devresi Şasiye Kısa Devre
+B1958,Koltuk Yatırma İleri/Geri Potansiyometre Geri Besleme Devre Arızası
+B1959,Koltuk Yatırma İleri/Geri Potansiyometre Geri Besleme Devresi Açık
+B1960,Koltuk Yatırma İleri/Geri Potansiyometre Geri Besleme Devresi Aküye Kısa Devre
+B1961,Koltuk Yatırma İleri/Geri Potansiyometre Geri Besleme Devresi Şasiye Kısa Devre
+B1962,Koltuk Yatay İleri/Geri Potansiyometre Geri Besleme Devresi Arızası
+B1963,Koltuk Yatay İleri/Geri Potansiyometre Geri Besleme Devresi Açık
+B1964,Koltuk Yatay İleri/Geri Potansiyometre Geri Besleme Devresi Aküye Kısa Devre
+B1965,Koltuk Yatay İleri/Geri Potansiyometre Geri Besleme Devresi Şasiye Kısa Devre
+B1966,Klima Sonrası Isıtıcı Sensör Devresi Arızası
+B1967,Klima Sonrası Isıtıcı Sensör Devresi Şasiye Kısa Devre
+B1968,Klima Su Pompası Algılama Devre Arızası
+B1969,Klima Debriyaj Manyetik Kontrol Devresi Arızası
+B1970,Yolcu Koltuğu Arkası İleri Anahtar Devresi Şasiye Kısa Devre
+B1971,Yolcu Koltuğu Arkası Arka Anahtar Devresi Şasiye Kısa Devre
+B1972,Yolcu Arka Koltuk Yukarı Anahtarı Devresi Aküye Kısa Devre
+B1973,Yolcu Arka Koltuk Aşağı Anahtarı Devresi Aküye Kısa Devre
+B1979,Yolcu Koltuğu Arka Anahtar Devresi Aküye Kısa Devre
+B1980,Ampul - Kesinti Durumu Algılandı
+B1981,Bellek Kapatma Anahtarı Devresi Aküye Kısa Devre
+B1984,Koltuk Anahtarı Bel Şişirme Devresi Arızası
+B1985,Koltuk Anahtarı Bel Söndürme Devresi Arızası
+B1987,Pedal İleri/Geri Motor Durdu
+B1988,Pedal Pozisyonu İleri Anahtar Devresi Aküye Kısa Devre
+B1989,Pedal Konumu Arka Anahtar Devresi Aküye Kısa Devre
+B1990,Pedal İleri / Geri Potansiyometre Geri Besleme Devresi Arızası
+B1991,Pedal İleri / Geri Potansiyometre Geri Besleme Devresi Aküye Kısa Devre
+B1992,Sürücü Tarafı
+B1993,Sürücü Tarafı
+B1994,Sürücü Tarafı
+B1995,Sürücü Tarafı
+B1996,Yolcu Tarafı
+B1997,Yolcu Tarafı
+B1998,Yolcu Tarafı
+B1999,Yolcu Tarafı
+B2100,Kapı Sürücüsü Anahtar Silindir Anahtarı Arızası
+B2101,Baş Dayanağı Anahtarı Devre Arızası
+B2102,Anten Devresi Şasiye Kısa Devre
+B2103,Anten Bağlı Değil
+B2104,Kapı Yolcu Anahtarı Silindir Şalteri Arızası
+B2105,Gaz Kelebeği Konumu Girişi Aralık Dışında Düşük
+B2106,Gaz Kelebeği Konumu Girişi Aralık Dışında Yüksek
+B2107,Ön Silecek Motoru Rölesi Devresi Vbatt'a Kısa Devre
+B2108,Gövde Anahtarı Silindir Şalteri Arızası
+B2109,Isıtmalı Rüzgar Kalkanı Rölesi Vbatt'a Kısa Devre (Arıza 2/6/97'den değiştirildi)
+B2110,Ön Silecek Motoru Rölesi Devresi Açık (Arıza 2/6/97'den değiştirildi)
+B2111,Tüm Kapı Kilidi Girişleri Şasiye Kısa Devre
+B2112,Kapı Sürücü Seti Anahtarı Sıkışmış Arızası
+B2113,Isıtmalı Ön Cam Girişi Şasiye Kısa Devre
+B2114,Ön Yıkayıcı Girişi Şasiye Kısa Devre
+B2115,Arka Yıkayıcı Girişi Şasiye Kısa Devre
+B2116,Kapı Sürücüsü Sıfırlama Anahtarı Sıkışmış Arıza
+B2117,Sürücü Tarafı
+B2118,Yolcu Tarafı
+B2119,Kompresör Arızası
+B2120,Kapı Yolcu Seti Anahtarı Sıkışmış Arızası
+B2122,Sürücü Tarafı Uydu İletişim Devresi Şasiye Kısa Devre
+B2123,Yolcu Tarafı Uydu İletişim Devresi Şasiye Kısa Devre
+B2124,Kapı Yolcu Sıfırlama Anahtarı Sıkışmış Arıza
+B2128,Merkezi Kilit Motoru Arızası
+B2129,Merkezi Kilit Geri Bildirim Arızası
+B2130,Çift Kilit Zaman Aşımı Arızası
+B2131,Çift Kilit Geri Besleme Arızası
+B2132,Dimmer Anahtarı Devresi Gnd'ye Kısa Devre
+B2133,Fren Motoru Uyarı Lambası Devre Arızası
+B2134,Fren Motoru Uyarı Lambası Devresi Vbatt'a Kısa Devre
+B2135,Park Freni Uygulandı Uyarı Lambası Devre Arızası
+B2136,Park Freni Uygulandı Uyarı Lambası Devresi Aküye Kısa Devre
+B2139,Veri Uyuşmazlığı (alınan veriler beklenenle eşleşmiyor)
+B2141,NVM Yapılandırma Hatası
+B2142,NVM TIC Arızası
+B2143,NVM Bellek Arızası
+B2144,NVM Alarm Veri Arızası
+B2145,NVM RF HR Arızası
+B2146,Koltuk Yatırma Motoru Konumu Aralık Dışında
+B2148,PWM Giriş Devresi Arızası
+B2149,Koltuk Ön Dikey Motor Konumu Aralık Dışında
+B2150,Güç Kaynağı #1 Devresi Şasiye Kısa Devre
+B2151,Güç Kaynağı #2 Devresi Şasiye Kısa Devre
+B2152,Koltuk Arka Dikey Motor Konumu Aralık Dışında
+B2153,Arka Yankı Sensörü Devre Arızası
+B2154,Ön Yankı Sensörü Devre Arızası
+B2155,Koltuk Yatay Motor Konumu Aralık Dışında
+B2156,Arka Doppler Sensörü Devre Arızası
+B2157,Ön Doppler Sensörü Devre Arızası
+B2158,Koltuk Yatırma Motoru Hafıza Konumu Aralık Dışında
+B2159,Bellek #1 çıkışı Şasiye Kısa Devre
+B2160,Bellek #1 çıkışı VBatt'a kısa
+B2161,Koltuk Ön Dikey Motor Hafıza Konumu Aralık Dışında
+B2162,Veri Uyuşmazlığı #2 (alınan veriler beklenenle eşleşmiyor)
+B2163,Debriyaj Konumu Arızası
+B2164,Koltuk Arka Dikey Motor Hafıza Konumu Aralık Dışında
+B2165,Vites değiştirme konumu Arıza
+B2166,Vites seçme konumu Arıza
+B2167,Koltuk Yatay Motor Hafıza Konumu Aralık Dışında
+B2168,Kilit Açma Durumu onaylanamıyor
+B2169,Kilit doğrulanamıyor Durum
+B2170,Direksiyon Kolonu Kilit Anahtarı Devre Arızası
+B2172,Atalet Anahtarı Giriş Devresi Açık
+B2174,Cam Sürücüsü Arka Uzaktan Yukarı Anahtarı Aküye Kısa Devre
+B2175,Klima Talep Sinyali Devresi Şasiye Kısa Devre
+B2176,Aşırı hız anahtarı devresi Vbatt'a kısa devre
+B2177,İç Tarama Sensörü Devre Arızası
+B2178,Cam Sürücüsü Arka Uzaktan Aşağı Anahtarı Aküye Kısa Devre
+B2179,"Ön Silecek Seçme Anahtarı ""A"" Şasiye Kısa Devre"
+B2180,"Ön Silecek Seçme Anahtarı ""B"" Şasiye Kısa Devre"
+B2181,"Ön Silecek Seçme Anahtarı ""C"" Şasiye Kısa Devre"
+B2182,Cam Yolcu Ön Uzaktan Kumanda Anahtarı Aküye Kısa Devre
+B2183,"Ön Silecek Seçme Anahtarı ""H"" Şasiye Kısa Devre"
+B2184,"Ön Silecek Seçim Anahtarı ""W"" Şasiye Kısa Devre"
+B2185,"Arka Silecek Seçme Anahtarı ""D"" Şasiye Kısa Devre"
+B2186,Cam Yolcu Ön Uzaktan Aşağı Anahtarı Aküye Kısa Devre
+B2187,"Arka Silecek Seçme Anahtarı ""B"" Şasiye Kısa Devre"
+B2188,"Arka Silecek Seçme Anahtarı ""E"" Şasiye Kısa Devre"
+B2190,Yolcu Camı Arka Uzaktan Kumanda Anahtarı Aküye Kısa Devre
+B2194,Yolcu Camı Arka Uzaktan Aşağı Anahtarı Aküye Kısa Devre
+B2195,Sürücü Camı Yukarı / Aşağı Güç Devresi Şasiye Kısa Devre
+B2196,Yolcu Camı Yukarı/Aşağı Güç Devresi Şasiye Kısa Devre
+B2197,TV Modülü Hatası
+B2198,TrafficMaster Modülü Hatası
+B2199,VICS Modülü Hatası
+B2200,TV Modülüyle İletişim Yok (TV Takılmıyor)
+B2201,Traffic MasterModule ile İletişim Yok
+B2202,VICS Modülüyle İletişim Yok (VICS Takılmıyor)
+B2203,CD-ROM Hatası
+B2204,GPS Anten Bağlantısı Açık veya Kısa
+B2205,GPS Alıcı Hatası
+B2206,Jiroskop Hatası
+B2207,ECU ROM Sağlama Toplamı Hatası
+B2208,Ekrana İletişim Bağlantısı ve Anahtar Modülü Hatası
+B2209,İç Lamba Geçersiz Kılma Anahtarı Açık Devre
+B2210,İç Lamba Geçersiz Kılma Anahtarı Şasiye Kısa Devre
+B2211,Düşük Soğutma Sıvısı Lambası Çıkış Devresi Aküye Kısa Devre
+B2214,Yolcu Camı Ön Yukarı Anahtarı Aküye Kısa Devre
+B2215,Cam Yolcu Ön Aşağı Anahtarı Aküye Kısa Devre
+B2219,Pencere Sürücüsü Ön Akım Geri Beslemesi Aşıldı
+B2220,Pencere Sürücüsü Arka Akım Geri Beslemesi Aşıldı
+B2221,Pencere Yolcu Önü Akım Geri Beslemesi Aşıldı
+B2222,Cam Yolcu Arka Akım Geri Beslemesi Aşıldı
+B2223,Ayna Sürücüsü Sürücü Devresi Arızası
+B2224,Ayna Yolcu Tahrik Devresi Arızası
+B2225,Ön Çarpma Sensörü Montaj Arızası
+B2226,Ön Çarpışma Sensörü Dahili Arızası
+B2227,Ön Çarpışma Sensörü Sürücüsü İletişim Arızası
+B2228,Hava Yastığı Sürücü Devresi Şasiye Kısa Devre - Döngü #2
+B2229,Hava Yastığı Yolcu Devresi Şasiye Kısa Devre - Döngü #2
+B2230,Hava Yastığı Sürücü Devresi Aküye Kısa Devre - Döngü #2
+B2231,Yolcu Hava Yastığı Devresi Aküye Kısa Devre - Döngü #2
+B2232,Hava Yastığı Sürücü Devresi Açık - Döngü #2
+B2233,Hava Yastığı Yolcu Devresi Açık - Döngü #2
+B2234,Hava Yastığı Sürücüsü Şişirme Devresi Direnci Şöminede Düşük - Döngü #2
+B2235,Hava Yastığı Yolcu Şişirme Devresi
+B2236,Zayıf veya Arızalı Elektrikli Araç Akü Modülü Arızası
+B2237,VSS Mevcutken Park Etmeyi Gösteren Araç Sinyali
+B2238,Elektrikli Kayar Kapının Güç Kablosu Kırık
+B2239,Arka Kargo Kapı Seti Anahtarı Sıkışmış (Toprağa Kısa Devre)
+B2240,Arka Kargo Kapısı Sıfırlama Anahtarı Sıkışmış (Toprağa Kısa Devre)
+B2241,Arka Kargo Kapısı Kilit Devresi Şasiye Kısa Devre
+B2242,Arka Kargo Kapısı Kilit Açma Devresi Açık
+B2243,Sürücü Arka Kapı Aralık Devresi Açık
+B2244,Sürücü Kayar Kapı Aralık Devresi GND'ye Kısa Devre
+B2245,Yolcu Arka Kapısı Aralık Devresi Açık
+B2246,Yolcu Kayar Kapı Aralık Devresi GND'ye Kısa Devre
+B2247,EV Akü Paketi Sıcaklık Arızası
+B2248,Isıtmalı Ön Cam Röle Bobini Devre Arızası
+B2249,Ön Far Röle Bobini Aküye Kısa Devre
+B2250,Tüm Kapıların Kilidini Açma Rölesi Devre Arızası
+B2251,Park Lambası Çıkış Rölesi Sürücü Devresi Arızası
+B2252,Park Lambası Çıkış Rölesi Yönlendiricisi Aküye Kısa Devre
+B2300,Koltuk Sürücüsü Hafıza Konumu Hatası
+B2301,Koltuk Yolcu Hafıza Konumu Hatası
+B2302,Koltuk Kafalığı Geri Besleme Potansiyometresi Devre Arızası
+B2303,Koltuk Kafalığı Geri Besleme Potansiyometresi Devresi Açık
+B2304,Koltuk Kafalığı Geri Besleme Potansiyometresi Devresi Aküye Kısa Devre
+B2305,Koltuk Kafalığı Geri Besleme Potansiyometresi Devresi Şasiye Kısa Devre
+B2306,Koltuk Kafalığı Motoru Durdu
+B2310,Ayna Sürücüsü Bellek Konumu Hatası
+B2311,Ayna Yolcu Hafızası Pozisyon Hatası
+B2312,Yolcu Aynası Yatay Geri Besleme Potansiyometresi Devre Arızası
+B2313,Yolcu Aynası Yatay Geri Besleme Potansiyometresi Devresi Açık
+B2314,Yolcu Aynası Yatay Geri Besleme Potansiyometresi Devresi Aküye Kısa Devre
+B2315,Yolcu Aynası Yatay Geri Besleme Potansiyometresi Devresi Şasiye Kısa Devre
+B2316,Yolcu Aynası Dikey Geri Besleme Potansiyometresi Devre Arızası
+B2317,Yolcu Aynası Dikey Geri Besleme Potansiyometresi Devresi Açık
+B2318,Yolcu Aynası Dikey Geri Besleme Potansiyometresi Devresi Aküye Kısa Devre
+B2319,Yolcu Aynası Dikey Geri Besleme Potansiyometresi Devresi Şasiye Kısa Devre
+B2320,Ayna Sürücüsü Yatay Geri Besleme Potansiyometresi Devre Arızası
+B2321,Ayna Sürücüsü Yatay Geri Besleme Potansiyometresi Devresi Açık
+B2322,Ayna Sürücüsü Yatay Geri Besleme Potansiyometresi Devresi Aküye Kısa Devre
+B2323,Ayna Sürücüsü Yatay Geri Besleme Potansiyometresi Devresi Şasiye Kısa Devre
+B2324,Ayna Sürücüsü Dikey Geri Besleme Potansiyometresi Devre Arızası
+B2325,Ayna Sürücüsü Dikey Geri Besleme Potansiyometresi Devresi Açık
+B2326,Ayna Sürücüsü Dikey Geri Besleme Potansiyometresi Devresi Aküye Kısa Devre
+B2327,Ayna Sürücüsü Dikey Geri Besleme Potansiyometresi Devresi Şasiye Kısa Devre
+B2328,Kolon Ulaşma Geri Besleme Potansiyometresi Devre Arızası
+B2329,Sütun Uzanma Geri Besleme Potansiyometresi Devresi Açık
+B2330,Kolon Uzanma Geri Besleme Potansiyometresi Devresi Aküye Kısa Devre
+B2331,Kolon Uzanma Geri Besleme Potansiyometresi Devresi Şasiye Kısa Devre
+B2332,Kolon Eğim Geri Besleme Potansiyometresi Devre Arızası
+B2333,Kolon Eğim Geri Besleme Potansiyometresi Devresi Açık
+B2334,Kolon Eğim Geri Besleme Potansiyometresi Devresi Aküye Kısa Devre
+B2335,Kolon Eğim Geri Besleme Potansiyometresi Devresi Şasiye Kısa Devre
+B2336,Ayna Anahtarı Komplesi Devre Arızası
+B2337,Ayna Anahtarı Komplesi Devresi Açık
+B2338,Ayna Anahtarı Komplesi Devresi Aküye Kısa Devre
+B2339,Ayna Anahtarı Komplesi Devresi Şasiye Kısa Devre
+B2340,Sütun Uzanma Motoru Durdu
+B2341,Sütun Eğim Motoru Durdu
+B2342,Koltuk Anahtarı Referans Gerilimi Pozitif Ortak Açık Devre
+B2343,Koltuk Anahtarı Referans Gerilimi Pozitif Ortak Besleme Alçak Gerilim
+B2344,Koltuk Anahtarı Referans Gerilimi Pozitif Ortak Besleme Gerilimi Arızası
+B2345,Koltuk Anahtarı Referans Gerilimi Negatif Ortak Açık Devre
+B2346,Ayna Anahtarı Referans Gerilimi Pozitif Ortak Açık Devre
+B2347,Ayna Anahtarı Referans Gerilimi Pozitif Ortak Besleme Alçak Gerilim
+B2348,Ayna Anahtarı Referans Gerilimi Pozitif Ortak Besleme Gerilimi Arızası
+B2349,Ayna Anahtarı Referans Gerilimi Negatif Ortak Açık Devre
+B2350,Direksiyon Kolonu Anahtar Devresi Aküye Kısa Devre
+B2351,Direksiyon Kolonu Anahtarı Devre Arızası
+B2352,Sürücü Belleği Güç Anahtarı Gösterge Devresi Aküye Kısa Devre
+B2353,Sürücü Aynası Elektrikli Sürücü Devresi Kısa Şasi
+B2354,Sürücü Aynası Yatay / Dikey Geri Besleme Potansiyometresi Devresi Açık
+B2355,Yolcu Aynası Yatay / Dikey Geri Besleme Potansiyometresi Devresi Açık
+B2357,Sürücü Camı Aşağı Akım Algılama Düşük Devre Arızası
+B2362,Uzaktan Açma/Kapama sinyali Devresi Şasiye Kısa Devre
+B2363,Optik Sensör Sistemi Arızası
+B2364,Yakıt Doldurma Kapısı Devresi Açık
+B2365,B Sütunu Elektrikli Kayar Kapı Açma/Kapama Anahtarı Giriş Ckt Gnd'ye Kısa
+B2366,IP Güç Kayar Kapı Açma/Kapama anahtarı Ckt Gnd'ye kısa
+B2367,Elektrikli Kayar Kapı Geçersiz Kılma Anahtarı Giriş Ckt'si Gnd'ye Kısa
+B2368,Direksiyon Kolonu Anahtar Devresi Aralık Dışında
+B2369,Zil ÇIKIŞI Talebi Ckt Şasiye Kısa Devre
+B2373,LED #1 Devresi Aküye Kısa Devre
+B2374,Güç Kaydırmalı Kilit (Mandal) Devre Arızası
+B2380,Isıtıcı Soğutma Suyu Sıcaklık sensörü devresi GND'ye kısa devre
+B2381,Isıtıcı Soğutucu Sıcaklık sensörü devresi Açık
+B2384,Ses Ters Yardımı Sessiz Giriş Ckt Arızası
+B2385,Sesli Navigasyon Sessiz Giriş Ckt Arızası
+B2401,Ses Kaset Destesi Mekanizması Arızası
+B2402,Ses CD/DJ Termal Kapatma Arızası
+B2403,Ses CD'si/DJ Dahili Arızası
+B2404,Sesli Direksiyon Anahtarı Devre Arızası
+B2405,Ses Tek Diskli CD Çalar Termal Kapatma Arızası
+B2406,Ses Tek Diskli CD Çalar Dahili Arıza
+B2416,İklim Kontrolü Devridaim Aktüatörü Limit Dışında
+B2425,Senkronizasyon Dışı Uzaktan Anahtarsız Giriş
+B2426,Yolcu Güneş Radyasyonu Sensörü Devresi Açık
+B2427,Yolcu Güneş Radyasyonu Sensörü Devresi Şasiye Kısa Devre
+B2428,Klima Sonrası Isıtıcı Sensör #2 Devre Arızası
+B2429,Klima Sonrası Isıtıcı Sensör #2 Devresi Şasiye Kısa Devre
+B2431,Transponder Programlama Başarısız
+B2432,Sürücü Emniyet Kemeri Tokası Şalteri Devresi Açık
+B2433,Sürücü Emniyet Kemeri Tokası Anahtarı Devresi Aküye Kısa Devre
+B2434,Sürücü Emniyet Kemeri Tokası Anahtarı Devresi Şasiye Kısa Devre
+B2435,Sürücü Emniyet Kemeri Tokası Anahtarı Direnci Aralık Dışında
+B2436,Yolcu Emniyet Kemeri Tokası Şalteri Devresi Açık
+B2437,Yolcu Emniyet Kemeri Tokası Anahtarı Devresi Aküye Kısa Devre
+B2438,Yolcu Emniyet Kemeri Tokası Anahtarı Devresi Şasiye Kısa Devre
+B2439,Yolcu Emniyet Kemeri Tokası Şalteri Direnci Aralık Dışında
+B2440,Yolcu Tarafı
+B2441,Sürücü Tarafı
+B2442,İzinsiz Giriş Sensörü Arızası
+B2443,Güç Aktarma Organı Performans Modu Anahtarı Devre arızası
+B2444,Sürücü Tarafı Çarpma Sensörü Dahili Arıza
+B2445,Yolcu Tarafı Çarpma Sensörü Dahili Arıza
+B2446,RESCU/VEMS Giriş Devresi Açık
+B2447,RESCU/VEMS Giriş Devresi Aküye Kısa Devre
+B2448,RESCU/VEMS Giriş Devresi Şasiye Kısa Devre
+B2449,Yardımcı Isıtıcı Kızdırma Bujisi Devresi Şasiye Kısa Devre
+B2450,Yardımcı Isıtıcı Kızdırma Bujisi Devresi Açık
+B2451,Yardımcı Isıtıcı Yakıt Pompası Devresi Şasiye Kısa Devre
+B2452,Yardımcı Isıtıcı Yakıt Pompası Devresi Açık
+B2453,Yardımcı Isıtıcı Üfleyici Fan Devresi Şasiye Kısa Devre
+B2454,Yardımcı Isıtıcı Üfleyici Fan Devresi Açık
+B2455,Yardımcı Isıtıcı Üfleyici Arızalı
+B2456,Yardımcı Isıtıcı Soğutma Suyu Sensörü Devresi Şasiye Kısa Devre
+B2457,Yardımcı Isıtıcı Soğutma Suyu Sensörü Devresi Açık
+B2458,Yardımcı Isıtıcı Aşırı Isınma Sensörü Devresi Şasiye Kısa Devre
+B2459,Yardımcı Isıtıcı Aşırı Isınma Sensörü Devresi Açık
+B2460,Yardımcı Isıtıcı Alev Sensörü Devresi Şasiye Kısa Devre
+B2461,Yardımcı Isıtıcı Alev Sensörü Devresi Açık
+B2462,Yardımcı Isıtıcı Alev Sönme Arızası
+B2463,Yardımcı Isıtıcı Aşırı Isınma Arızası
+B2464,Yardımcı Isıtıcı Başlatma Süresi Aşıldı
+B2465,Yardımcı Isıtıcı Başlatma Sayacı Taşması/Sistem Kilitli (aşağıdakiyle aynı mı?)
+B2466,Yardımcı Isıtıcı Aşırı Isınma Sayacı Taşması/Sistem Kilitli
+B2467,Yardımcı Isıtıcı Soğuma Süresi Aşıldı (a453-5 ile bağlantılı olabilir)
+B2468,Yardımcı Isıtıcı Soğutma Sıvısı Pompası Devresi Şasiye Kısa Devre
+B2469,Yardımcı Isıtıcı Soğutma Sıvısı Pompası Devresi Açık
+B2470,İç Fan Kontrol Devresi Şasiye Kısa Devre
+B2471,İç Fan Kontrol Devresi Açık
+B2472,Sis Lambası Anahtarı Arızası
+B2473,Yolcu Kapısı Devre Dışı Bırakma Anahtarı Şasiye Kısa Devre
+B2474,Yolcu Kapısı Kilit Anahtarı Devresi Şasiye Kısa Devre
+B2475,Yolcu Kapısı Kilit Açma Anahtarı Devresi Şasiye Kısa Devre
+B2476,RADYO MEVCUT ANAHTARI Devre Arızası
+B2477,Modül Yapılandırma Hatası
+B2478,HIRSIZLIĞA KARŞI GİRİŞ SİNYALİ TOPRAKTA KISA DEVRE
+B2479,FREN PARK ANAHTARI DEVRESİ TOPRAĞA KISA DEVRE
+B2480,LF KÖŞE LAMBA ÇIKIŞI Devresi Aküye Kısa Devre
+B2481,Dönüştürülebilir Üst Yukarı/Aşağı anahtarı Arızası
+B2482,RF KÖŞE LAMBA ÇIKIŞI Devresi Aküye Kısa Devre
+B2483,Sinyal Açık Devresini Etkinleştir
+B2484,Sinyalin Şasiye Kısa Devreyi Devre Dışı Bırak
+B2485,LF YAN TEKRARLAYICI LAMBA ÇIKIŞI Devresi Aküye Kısa Devre
+B2487,RF YAN TEKRARLAYICI LAMBA ÇIKIŞI Devresi Aküye Kısa Devre
+B2489,KAPUT ALTI LAMBA ÇIKIŞ DEVRE Arızası
+B2490,KAPUT ALTI LAMBA ÇIKIŞ DEVRESİ Aküye Kısa Devre
+B2491,RF PARK LAMBASI ÇIKIŞ DEVRESİ Aküye Kısa Devre
+B2492,Zaten Programlanmış (Yalnızca Test Modu DTC !!!)
+B2493,EL PARK LAMBASI ÇIKIŞ DEVRESİ Aküye Kısa Devre
+B2494,HIRSIZLIĞA KARŞI KORNA ÇIKIŞ DEVRESİ Aküye Kısa Devre
+B2495,HIRSIZLIĞA KARŞI KORNA ÇIKIŞ DEVRE Arızası
+B2496,HIRSIZLIĞA KARŞI KORNA ÇIKIŞ DEVRESİ Gnd'ye kısa devre
+B2499,NEZAKET LAMBASI ÇIKIŞI Arızası
+B2500,NEZAKET LAMBA ÇIKIŞI Devresi Aküye Kısa Devre
+B2501,LF LAMBA KISA FAR DEVRE Arızası
+B2502,SOL LAMBA KISA FAR DEVRESİ Aküye Kısa Devre
+B2503,RF LAMBA KISA FAR DEVRE Arızası
+B2504,RF LAMBASI DÜŞÜK FAR DEVRESİ Aküye Kısa Devre
+B2505,LF LAMBA UZUN FAR DEVRE Arızası
+B2506,SOL LAMBA UZUN FAR DEVRESİ Aküye Kısa Devre
+B2507,RF LAMBA UZUN FAR DEVRE Arızası
+B2508,RF LAMBASI UZUN FAR DEVRESİ Aküye Kısa Devre
+B2509,Arka Sis Lambası Anahtarı Devre Arızası
+B2510,Ana Fan Motoru Röle Devresi Aküye Kısa Devre
+B2511,Korna Çıkış Rölesi Devresi Aküye Kısa Devre
+B2512,Ön Sis Lambası Rölesi Devresi Aküye Kısa Devre
+B2513,Üfleyici (Fan) Devre Arızası
+B2514,Üfleyici (Fan) Devresi Vbatt'a Kısa Devre
+B2515,Isıtıcı Üfleyici Rölesi Devre Arızası
+B2516,Üfleyici Kontrol Devresi Arızası
+B2517,Acil Durum Kapatma Sistemi Arızalı
+B2518,Kompresör Aşırı Sıcaklık Arızası
+B2519,Yüksek Montajlı Stop Lambası Devre Arızası
+B2520,Yüksek Montajlı Stop Lambası Devresi Aküye Kısa Devre
+B2523,Lisans Lambası Devre Arızası
+B2524,Plaka Lambası Devresi Aküye Kısa Devre
+B2525,Sol Arka Yedek Lamba Devre Arızası
+B2526,Sol Arka Yedek Lamba Devresi Aküye Kısa Devre
+B2527,Sol Arka Stop Lambası Devre Arızası
+B2528,Sol Arka Stop Lambası Devresi Aküye Kısa Devre
+B2529,Sol Arka Dönüş Lambası Devre Arızası
+B2530,Sol Arka Dönüş Lambası Devresi Aküye Kısa Devre
+B2531,Sağ Arka Yedek Lamba Devre Arızası
+B2532,Sağ Arka Yedek Lamba Devresi Aküye Kısa Devre
+B2533,Sağ Arka Stop Lambası Devre Arızası
+B2534,Sağ Arka Stop Lambası Devresi Aküye Kısa Devre
+B2535,Sağ Arka Dönüş Lambası Devre Arızası
+B2536,Sağ Arka Dönüş Lambası Devresi Aküye Kısa Devre
+B2539,Yardımcı A/C Modu Konum Referans Devresi Şasiye Kısa Devre
+B2540,Yardımcı A/C Modu Pozisyon Referans Devresi Aküye Kısa Devre
+B2543,Yardımcı A/C Kontrol Anahtarı Referans Devresi Şasiye Kısa Devre
+B2544,Yardımcı A/C Kontrol Anahtarı Referans Devresi Aküye Kısa Devre
+B2545,Sistem Güç Rölesi Devresi Aküye Kısa Devre
+B2546,Sistem Güç Rölesi Devre Arızası
+B2550,LAMBA ÇUBUĞU ÇIKIŞ Devresi Şasiye Kısa Devre
+B2553,Sinyal Çıkış Devresini Aküye Kısa Devre Dışı Bırak
+B2554,LAMBA DOME ÇIKIŞI Devre Arızası
+B2555,LAMBA DOME ÇIKIŞ Devresi Aküye Kısa Devre
+B2556,Aküye Kısa Devre Sinyal Devresini Etkinleştir
+B2557,Sol Elektrikli Kayar Kapı Açma/Kapama Çıkış Devresi Aküye Kısa Devre
+B2558,Sağ Elektrikli Kayar Kapı Açma/Kapama Çıkış Devresi Aküye Kısa Devre
+B2559,Yardımcı Klima Fan Motoru Rölesi Devresi Aküye Kısa Devre
+B2560,Yardımcı Klima Fan Motoru Rölesi Devresi Şasiye Kısa Devre
+B2561,Yardımcı Klima Üfleyici Hızı 1 Devre Arızası
+B2562,Yardımcı Klima Üfleyici Hızı 1 Devresi Şasiye Kısa Devre
+B2563,Yardımcı Klima Üfleyici Hızı 2 Devre Arızası
+B2564,Yardımcı Klima Üfleyici Hızı 2 Devresi Şasiye Kısa Devre
+B2565,Sağ Kuyruk Lambası Devre Arızası
+B2566,Sağ Arka Lamba Devresi Şasiye Kısa Devre
+B2567,Ters Ayna Çıkış Devresi Arızası
+B2568,Ters Ayna Çıkış Devresi Şasiye Kısa Devre
+B2569,Bagaj Kapağı Devre Dışı Bırakma Anahtarı Devresi Şasiye Kısa Devre
+B2570,Sağ Lamba Kesintisi Sinyal Devresi Şasiye Kısa Devre
+B2571,Sol Lamba Kesintisi Sinyal Devresi Şasiye Kısa Devre
+B2580,Yardımcı Üfleyici Algılama Anahtarı Devre Arızası
+B2581,Yolcu Koltuğunda Yolcu Algılama Devresi Şasiye Kısa Devre
+B2582,Yolcu Koltuğu Yolcu Algılama Devresi Açık
+B2583,Çocuk Koltuğu Algılama Devresi Şasiye Kısa Devre
+B2584,Çocuk Koltuğu Algılama Devresi Açık
+B2585,Hırsızlığa Karşı Giriş Sinyali Devresi Aküye Kısa Devre
+B2586,Far Modu Seçimi Devre Arızası
+B2587,Yolcu Koltuğunda Yolcu Algılama Devresi Aküye Kısa Devre
+B2588,Çocuk Koltuğu Algılama Devresi Aküye Kısa Devre
+B2589,Kapanma Sırasında Beklenmedik Kapının Tersine Dönmesi
+B2590,Araç Park/Hız Sinyal Devresi Arızası
+B2591,Kilit Açma Sırasında Kilit Sinyali Eksik
+B2592,PSD Tamamen Kapatılmadı (Modül Başarıyla Komutlandırıldı)
+B2593,Modül Kapatma Komutu Esnasında Elektrikli Kayar Kapı Açıldı
+B2594,Güç Açma Sırasında Mandalın Açılmasından Sonra Hareket Algılanmadı
+B2595,Hırsızlığa Karşı Giriş Sinyali Devre Arızası
+B2596,Ön Far Yön Çıkışı Rölesi Devresi Aküye Kısa Devre
+B2597,Ön Far Hedef Çıkış Rölesi Devre Arızası
+B2598,Ön Far Rölesi Devre Arızası
+B2599,Bagaj Kapağı Açma Açık Devre
+B2600,Çift Kilitli Kapı Motoru Dondurulmuş
+B2601,Kapanırken ve Kapı Ters Çevrildiğinde Mandal Sinyali Algılanmadı
+B2602,Elektrikli Kayar Kapı Mandalı Açma Sırasında Eksik Mandal Sinyali
+B2603,Otomatik Test Sırasında PSD Tamamen Kapanmıyor
+B2604,Elektrikli Kayar Kapı Açma/Kapama Anahtarı Açık Devre
+B2605,Sinyal Açık Devresini Devre Dışı Bırak
+B2606,Klima Sıcaklık Sensörü Aralık Dışında
+C1091,Hız Tekerleği Sensörü Tüm Tutarlılık Arızası
+C1095,ABS Hidrolik Pompa Motor Devre Arızası
+C1096,ABS Hidrolik Pompa Motor Devresi Açık
+C1097,ABS Hidrolik Pompa Motor Devresi Şasiye Kısa Devre
+C1098,ABS Hidrolik Pompa Motor Devresi Aküye Kısa Devre
+C1100,ABS Pompa Anahtarı Devre Arızası
+C1101,ABS Hidrolik Valf Devre Arızası
+C1102,ABS Hızlanma Anahtarı Devre Arızası
+C1103,ABS Hidrolik Fren Anahtarı Devre Arızası
+C1104,Çekiş Kontrolü Aktif Lambası - Devre Aküye Kısa Devre
+C1105,Çekiş Kontrolü Devre Dışı Lambası - Devre Aküye Kısa Devre
+C1106,Çekiş Kontrolü Devre Dışı Bırakma Anahtarı Devresi Aküye Kısa Devre
+C1107,ABS Fonksiyonu Etkinleştirildi Giriş Devresi Arızası
+C1109,Hız Kontrol Aktüatör Grubu Kablo Serbest Bırakma Arızası
+C1110,ABS Güç Rölesi Bobini Devre Arızası
+C1111,ABS Güç Rölesi Bobini Açık Devre
+C1112,ABS Güç Rölesi Bobini Şasiye Kısa Devre
+C1113,ABS Güç Rölesi Bobini Aküye Kısa Devre
+C1114,ABS Güç Rölesi Çıkışı Şasiye Kısa Devre
+C1115,ABS Güç Rölesi Çıkışı Aküye Kısa Devre
+C1116,Marş Motoru Devre Arızası
+C1117,RPM Giriş Devresi Arızası
+C1123,Araç Hız Sensörü Girişi Aküye Kısa Devre
+C1124,Giriş mili hız sinyali eksik/arızalı
+C1125,Fren Hidroliği Seviye Sensörü Giriş Devresi Arızası
+C1126,Seyir Kontrolü Komut Anahtarı Grubu Devre Arızası
+C1127,Hız Sabitleyici Devre Dışı Bırakıcı Fren Anahtarı Devre Arızası
+C1132,Debriyaj konumu ckt şasiye kısa devre
+C1133,Debriyaj konumu aküye kısa devre
+C1134,Vites Değiştirme konumu yere kısa
+C1135,Vites Değiştirme konumu aküye kısa devre
+C1136,Vites Seçimi konumu şasiye kısa devre
+C1137,ECU Arızalı
+C1138,Vites Seçimi konumu Aküye kısa devre
+C1139,Tekerlek Hız Sensörü Orta Ton Zil Eksik Diş Arızası
+C1140,Hidrolik Taban Fren Arızası
+C1141,Tekerlek Hız Sensörü LF Ton Zil Dişi Eksik Arızası
+C1142,Tekerlek Hız Sensörü RF Ton Zil Dişi Eksik Arızası
+C1143,Tekerlek Hız Sensörü LR Ton Zil Dişi Eksik Arızası
+C1144,Tekerlek Hız Sensörü RR Ton Zil Dişi Eksik Arızası
+C1145,Hız Teker Sensörü RF Giriş Devresi Arızası
+C1146,Hız Teker Sensörü RF Devresi Açık
+C1148,Hız Teker Sensörü RF Tutarlılık Arızası
+C1149,Hidrolik Sıvı Basıncı/Akış Devresi Arızası
+C1150,İki Hızlı Arka Aks Giriş Anahtarı Devresi Vbatt'a Kısa Devre
+C1155,Hız Teker Sensörü LF Giriş Devresi Arızası
+C1156,Hız Teker Sensörü Sol Devre Açık
+C1157,Park Freni Ayar Elemanı Komplesi Anahtarı Uygulanan Devre Arızası
+C1158,Hız Tekerleği Sensörü LF Tutarlılık Arızası
+C1159,Hidrolik Sıvı Basıncı/Akış Devresi Toprağa Kısa Devre
+C1161,Hava Basıncı Düşük Devresi Gnd'ye Kısa Devre
+C1162,Park Freni Anahtarı # 2 Serbest Bırakılmış Devre Arızası
+C1163,Park Freni Anahtarı # 2 Devre Toprağa Kısa Devreli
+C1164,Park Freni Ayar Elemanı Grubu Anahtarı Devre Arızası
+C1165,Hız Teker Sensörü RR Giriş Devresi Arızası
+C1166,Hız Teker Sensörü RR Girişi Açık Devre
+C1167,Park Freni Ayar Elemanı Grubu Anahtarı Serbest Bırakılmış Devre Toprağa Kısa Devre
+C1168,Hız Tekerleği Sensörü RR Tutarlılık Arızası
+C1169,ABS Sıvı Boşaltma Maksimum Zamanlamayı Aşıyor
+C1170,PRNDL Anahtarı Devre Arızası
+C1172,Park Freni Anahtarı # 1 Uygulamalı Devre Arızası
+C1173,Park Freni Anahtarı # 1 Serbest Bırakılmış Devre Toprağa Kısa Devre
+C1174,Park Freni Anahtarı # 2 Uygulamalı Devre Arızası
+C1175,Hız Teker Sensörü Sol Giriş Devre Arızası
+C1176,Hız Teker Sensörü Sol Sol Devresi Açık
+C1177,Park Freni Ayar Elemanı Grubu Anahtarı Serbest Bırakıldı Devre Arızası
+C1178,Hız Tekerleği Sensörü LR Tutarlılık Arızası
+C1179,Hız Kontrol Aktüatörü Montaj Kablosu Gevşek Arızası
+C1180,Park Freni Valfı Solenoid #1 Algılama Giriş Devresi Arızası
+C1181,Park Freni Valfı Solenoid #1 Algılama Giriş Devresi Şasiye Kısa Devre
+C1182,Park Lambası Flaş Rölesi Devre Arızası
+C1183,Park Lambası Flaş Rölesi Devresi Aküye Kısa Devre
+C1184,ABS Sistemi Çalışmıyor
+C1185,ABS Güç Rölesi Çıkış Devresi Arızası
+C1186,ABS Güç Rölesi Çıkışı Açık Devre
+C1187,Fren Hidroliği Seviye Sensörü Girişi Açık Devre
+C1188,Fren Hidroliği Seviye Sensörü Girişi Aküye Kısa Devre
+C1189,Fren Hidroliği Seviye Sensörü Girişi Şasiye Kısa Devre
+C1190,Hız Teker Sensörü Sol Giriş Girişi Aküye Kısa Devre
+C1191,Hız Teker Sensörü LF Girişi Şasiye Kısa Devre
+C1192,Hız Teker Sensörü RF Girişi Aküye Kısa Devre
+C1193,Hız Teker Sensörü RF Girişi Şasiye Kısa Devre
+C1194,ABS Çıkış Valfı Bobini LF Devre Arızası
+C1195,ABS Çıkış Valfı Bobini LF Devresi Açık
+C1196,ABS Çıkış Valfı Bobini LF Devresi Aküye Kısa Devre
+C1197,ABS Çıkış Valfı Bobini LF Devresi Şasiye Kısa Devre
+C1198,ABS Giriş Valfı Bobini LF Devre Arızası
+C1199,ABS Giriş Valfı Bobini LF Devresi Açık
+C1200,ABS Giriş Valfı Bobini LF Devresi Aküye Kısa Devre
+C1201,ABS Giriş Valfı Bobini LF Devresi Şasiye Kısa Devre
+C1202,ABS Çıkış Valfı Bobini Arka Devre Arızası
+C1203,ABS Çıkış Valfı Bobini Arka Devre Açık
+C1204,ABS Çıkış Valfı Bobini Arka Devresi Aküye Kısa Devre
+C1205,ABS Çıkış Valfı Bobini Arka Devresi Şasiye Kısa Devre
+C1206,ABS Giriş Valfı Bobini Arka Devre Arızası
+C1207,ABS Giriş Valfı Bobini Arka Devre Açık
+C1208,ABS Giriş Valfi Bobini Arka Devresi Aküye Kısa Devre
+C1209,ABS Giriş Valfı Bobini Arka Devresi Şasiye Kısa Devre
+C1210,ABS Çıkış Valfı Bobini RF Devre Arızası
+C1211,ABS Çıkış Valfı Bobini RF Devresi Açık
+C1212,ABS Çıkış Valfı Bobini RF Devresi Aküye Kısa Devre
+C1213,ABS Çıkış Valfı Bobini RF Devresi Şasiye Kısa Devre
+C1214,ABS Giriş Valfı Bobini RF Devre Arızası
+C1215,ABS Giriş Valfı Bobini RF Devresi Açık
+C1216,ABS Giriş Valfı Bobini RF Devresi Aküye Kısa Devre
+C1217,ABS Giriş Valfı Bobini RF Devresi Şasiye Kısa Devre
+C1218,Lamba ABS Uyarı Çıkış Devre Arızası
+C1219,Lamba ABS Uyarı Çıkış Devresi Açık
+C1220,Lamba ABS Uyarı Çıkış Devresi Aküye Kısa Devre
+C1221,Lamba ABS Uyarı Çıkış Devresi Şasiye Kısa Devre
+C1222,Hız Çarkı Uyumsuzluğu
+C1223,Lamba Fren Uyarı Çıkış Devre Arızası
+C1224,Lamba Fren Uyarı Çıkış Devresi Açık
+C1225,Lamba Fren Uyarı Çıkış Devresi Aküye Kısa Devre
+C1226,Lamba Fren Uyarı Çıkış Devresi Şasiye Kısa Devre
+C1227,Hız Teker Sensörü Sol Giriş Girişi Aküye Kısa Devre
+C1228,Hız Teker Sensörü LR Girişi Şasiye Kısa Devre
+C1229,Hız Teker Sensörü Arka Merkez Tutarlılık Arızası
+C1230,Hız Teker Sensörü Arka Orta Giriş Devresi Arızası
+C1231,Hız Teker Sensörü Arka Orta Devresi Açık
+C1232,Hız Teker Sensörü Arka Orta Girişi Aküye Kısa Devre
+C1233,Hız Çarkı LF Giriş Sinyali Eksik
+C1234,Hız Çarkı RF Giriş Sinyali Eksik
+C1235,Hız Çarkı RR Giriş Sinyali Eksik
+C1236,Hız Çarkı LR Giriş Sinyali Eksik
+C1237,Hız Çarkı Arka Giriş Sinyali Eksik
+C1238,ABS Hidrolik Basınç Diferansiyel Anahtarı Giriş Devresi Arızası
+C1239,ABS Hidrolik Basınç Diferansiyel Anahtarı Girişi Açık Devre
+C1240,ABS Hidrolik Basınç Diferansiyel Şalteri Girişi Aküye Kısa Devre
+C1241,ABS Hidrolik Basınç Diferansiyel Anahtarı Girişi Şasiye Kısa Devre
+C1242,ABS Çıkış Valfı Bobini Sol Sol Devre Arızası
+C1243,ABS Çıkış Valfı Bobini Sol Sol Devre Açık
+C1244,ABS Çıkış Valfı Bobini Sol Sol Devre Aküye Kısa Devre
+C1245,ABS Çıkış Valfı Bobini Sol Sol Devre Şasiye Kısa Devre
+C1246,ABS Çıkış Valfı Bobini RR Devre Arızası
+C1247,ABS Çıkış Valfi Bobini Sağdan Devre Açık
+C1248,ABS Çıkış Valfı Bobini Sağ Devre Devresi Aküye Kısa Devre
+C1249,ABS Çıkış Valfı Bobini Sağ Devre Devresi Şasiye Kısa Devre
+C1250,ABS Giriş Valfı Bobini Sol Sol Devre Arızası
+C1251,ABS Giriş Valfı Bobini Sol Sol Devre Açık
+C1252,ABS Giriş Valfı Bobini Sol Sol Devre Aküye Kısa Devre
+C1253,ABS Giriş Valfı Bobini Sol Sol Devre Şasiye Kısa Devre
+C1254,ABS Giriş Valfı Bobini RR Devre Arızası
+C1255,ABS Giriş Valfi Bobini Sağdan Devre Açık
+C1256,ABS Giriş Valfı Bobini Sağ Devre Devresi Aküye Kısa Devre
+C1257,ABS Giriş Valfı Bobini Sağdan Devre Şasiye Kısa Devre
+C1258,Hız Çarkı LF Karşılaştırma Hatası
+C1259,Hız Çarkı RF Karşılaştırma Hatası
+C1260,Hız Çarkı RR Karşılaştırma Hatası
+C1261,Hız Çarkı LR Karşılaştırma Hatası
+C1262,Lamba Uyarı Rölesi Devre Arızası
+C1263,Lamba Uyarı Rölesi Devresi Açık
+C1264,Lamba Uyarı Rölesi Devresi Aküye Kısa Devre
+C1265,Lamba Uyarı Rölesi Devresi Şasiye Kısa Devre
+C1266,ABS Valfı Güç Rölesi Devre Arızası
+C1267,ABS İşlevleri Geçici Olarak Devre Dışı Bırakıldı
+C1268,Motor Rölesi # 1 Devre Arızası
+C1269,Motor Rölesi # 1 Devresi Aküye Kısa Devre
+C1270,Motor # 1 Giriş Devresi Arızası
+C1271,Motor # 1 Giriş Devresi Toprağa Kısa Devre
+C1272,Motor # 2 Giriş Devresi Arızası
+C1273,Motor # 2 Giriş Devresi Vbat'a Kısa Devre
+C1274,Solenoid Röle # 1 Devre Arızası
+C1275,Solenoid Röle # 1 Devresi Vbatt'a Kısa Devre
+C1276,Park Freni Ayar Elemanı Komplesi Anahtarı Devre Toprak'a Kısa Devreli
+C1277,DİREKSİYON Açısı 1 ve 2 Devre Arızası
+C1278,DİREKSİYON Açısı 1 ve 2 Sinyali Arızalı
+C1279,Yalpalama Oranı Sensörü devresi Arızası
+C1280,Yalpalama Oranı Sensörü Sinyal Arızası
+C1281,Yanal İvmeölçer devresi Arızası
+C1282,Yanal İvme Ölçer Sinyal Arızası
+C1283,Anahtar Test Sinyali Arızası
+C1284,Yağ Basınç Anahtarı Arızası
+C1285,Güçlendirici Solenoid Devre Arızası
+C1286,Hidrofor Mekanik Arızası
+C1287,Takviye Pedalı Kuvvet anahtarı devresi Arızası
+C1288,Basınç Dönüştürücü Ana / Birincil Giriş Devresi Arızası
+C1289,Basınç Dönüştürücü Yedekli / İkincil Giriş Devresi Arızası
+C1400,Çekiş Kontrol Valfı RF Devre Arızası
+C1401,Çekiş Kontrol Valfı RF Devresi Açık
+C1402,Çekiş Kontrol Valfı RF Devresi Şasiye Kısa Devre
+C1403,Çekiş Kontrol Valfı RF Devresi Aküye Kısa Devre
+C1404,Çekiş Kontrol Valfı Arka Devre Arızası
+C1405,Çekiş Kontrol Valfı Arka Devresi Açık
+C1406,Çekiş Kontrol Valfı Arka Devresi Şasiye Kısa Devre
+C1407,Çekiş Kontrol Valfı Arka Devresi Aküye Kısa Devre
+C1410,Çekiş Kontrol Valfı LF Devre Arızası
+C1411,Çekiş Kontrol Valfı Sol Devre Açık
+C1412,Çekiş Kontrol Valfı Sol Devresi Şasiye Kısa Devre
+C1413,Çekiş Kontrol Valfı Sol Devresi Aküye Kısa Devre
+C1414,Yanlış Modül Tasarım Düzeyi
+C1415,Yanlış Modül Yapılandırması
+C1416,Damper RF Devresi Aküye Kısa Devre
+C1417,Damper RF Devresi Şasiye Kısa Devre
+C1418,Damper RF Devre Arızası
+C1419,Damper RF Devresi Açık
+C1420,Hidrolik Sıvı Basıncı/Akış Devresi Vbatt'a Kısa Devre
+C1421,Damper Sol Sol Devresi Aküye Kısa Devre
+C1422,Damper Sol Sol Devresi Şasiye Kısa Devre
+C1423,Damper Sol Devre Arızası
+C1424,Damper Sol Devre Açık
+C1425,Damper Sağ Devresi Şasiye Kısa Devre
+C1426,Damper Sağ Devresi Aküye Kısa Devre
+C1427,Damper Sağ Devre Açık
+C1428,Damper Sağ Devre Arızası
+C1429,Giriş mili hızı giriş devresi arızası
+C1430,Damper Sol Sol Devre Açık
+C1431,Damper Sol Sol Devresi Aküye Kısa Devre
+C1432,Damper Sol Sol Devresi Şasiye Kısa Devre
+C1433,Damper Sol Devre Arızası
+C1435,İvme Ölçer Arka Devre Arızası
+C1436,İvme Ölçer Arka Devre Sinyali Algılanmıyor
+C1437,İvme Ölçer Arka Devresi Şasiye Kısa Devre
+C1438,İvme Ölçer Arka Devresi Aküye Kısa Devre
+C1439,Araç Hızlandırma EEC-IV Devre Arızası
+C1440,Basınç Dönüştürücü Ana / Birincil sinyal Arızalı
+C1441,Direksiyon Aşaması A Devre Sinyali Algılanmıyor
+C1442,Direksiyon Aşaması B Devre Sinyali Algılanmıyor
+C1443,Direksiyon Faz A Devresi Şasiye Kısa Devre
+C1444,Direksiyon Aşaması B Devresi Şasiye Kısa Devre
+C1445,Hızlı Araç Sinyal Devresi Arızası
+C1446,Fren Anahtarı Devre Arızası
+C1447,Çekiş Kontrol Modülü Talebi Devre Arızası
+C1448,Lamba Uyarlanabilir Sönümleme Uyarı Devresi Arızası
+C1449,Çekiş Kontrol Motoru Tutarlılık Arızası
+C1450,Çekiş Kontrol Motoru Devre Arızası
+C1451,Çekiş Kontrol Motoru Devresi Açık
+C1452,Çekiş Kontrol Motoru Devresi Aküye Kısa Devre
+C1453,Çekiş Kontrol Motoru Devresi Şasiye Kısa Devre
+C1454,Ön Yan İvme Ölçer Devre Arızası
+C1455,İvme Ölçer Ön Devre Arızası
+C1456,İvme Ölçer Ön Devresi Algılanmıyor
+C1457,İvme Ölçer Ön Devresi Şasiye Kısa Devre
+C1458,İvme Ölçer Ön Devresi Aküye Kısa Devre
+C1459,Uyarlanabilir Mod Anahtarı Devre Arızası
+C1460,Araç İvme Ölçer Güç Devresi Arızası
+C1461,Araç İvme Ölçer Güç Devresi Aküye Kısa Devre
+C1462,Sol Ön Dikey İvme Ölçer Devre Arızası
+C1463,Sağ Ön Dikey İvme Ölçer Devre Arızası
+C1464,Basınç Dönüştürücü Yedekli / İkincil Sinyal Arızalı
+C1465,Damper Yüksek Tarafı Ön Devre Aküye Kısa Devre
+C1466,Damper Devre Arızası
+C1467,Amortisör Yüksek Tarafı Arka Devre Aküye Kısa Devre
+C1468,Damper Düşük Tarafı Ön Devre Arızası
+C1469,Damper Düşük Tarafı Arka Devre Arızası
+C1495,Çekiş Kontrol Motoru Potansiyometresi Devre Arızası
+C1496,Çekiş Kontrol Motoru Potansiyometre Devresi Açık
+C1497,Çekiş Kontrol Motoru Potansiyometresi Devresi Aküye Kısa Devre
+C1498,Çekiş Kontrol Motoru Potansiyometre Devresi Şasiye Kısa Devre
+C1499,"Transfer Kutusu Kontak Plakası ""A"" Kodlayıcı Devre Arızası"
+C1500,"Transfer Kutusu Kontak Plakası ""B"" Kodlayıcı Devre Arızası"
+C1501,"Transfer Kutusu Kontak Plakası ""C"" Kodlayıcı Devre Arızası"
+C1502,"Transfer Kutusu Kontak Plakası ""D"" Kodlayıcı Devre Arızası"
+C1503,Dinamik Stabilite Kontrolü Sol Ön Valf Arızası
+C1504,Dinamik Stabilite Kontrolü Sağ Ön Valf Arızası
+C1505,Dinamik Stabilite Kontrolü Sol Arka Valf Arızası
+C1506,Dinamik Stabilite Kontrolü Sağ Arka Valf Arızası
+C1507,Fren Çekiş Kontrolü Zaman Aşımını Aştı
+C1508,Motorun Çekiş Kontrolü Zaman Aşımını Aştı
+C1510,Sağ Ön Tekerlek Basıncı Düşürme Performans Sorunu
+C1511,Sol Ön Tekerlek Basıncı Azaltma Performans Sorunu
+C1512,Sağ Arka Tekerlek Basıncı Düşürme Performans Sorunu
+C1513,Sol Arka Tekerlek Basıncı Düşürme Performans Sorunu
+C1699,Sol Arka Sensör Devresi Vbat'a Kısa Devre
+C1700,Sol Arka Sensör Devre Arızası
+C1701,Sol Arka Sensör Devre Arızası
+C1702,Sağ Arka Sensör Devresi Vbat'a Kısa Devre
+C1703,Sağ Arka Sensör Devre Arızası
+C1704,Sağ Arka Sensör Devre Arızası
+C1705,Sol Arka Orta Sensör Devresi Vbat'a Kısa Devre
+C1706,Sol Arka Orta Sensör Devre Arızası
+C1707,Sol Arka Orta Sensör Devre Arızası
+C1708,Sağ Arka Orta Sensör Devresi Vbat'a Kısa Devre
+C1709,Sağ Arka Orta Sensör Devre Arızası
+C1710,Sağ Arka Orta Sensör Devre Arızası
+C1711,Sol Ön Sensör Devresi Vbat'a Kısa Devre
+C1712,Sol Ön Sensör Devre Arızası
+C1713,Sol Ön Sensör Devre Arızası
+C1714,Sağ Ön Sensör Devresi Vbat'a Kısa Devre
+C1715,Sağ Ön Sensör Devre Arızası
+C1716,Sağ Ön Sensör Devre Arızası
+C1717,Sol Ön Orta Sensör Devresi Vbat'a Kısa Devre
+C1718,Sol Ön Orta Sensör Devre Arızası
+C1719,Sol Ön Orta Sensör Devre Arızası
+C1721,Havalı Süspansiyon Yükseklik Sensörü Güç Devresi Açık
+C1722,Havalı Süspansiyon Yükseklik Sensörü Güç Devresi Aküye Kısa Devre
+C1723,Havalı Süspansiyon Yükseklik Sensörü Güç Devresi Şasiye Kısa Devre
+C1724,Havalı Süspansiyon Yükseklik Sensörü Güç Devresi Arızası
+C1725,Hava Süspansiyonu Ön Pnömatik Arızası
+C1726,Hava Süspansiyonu Arka Pnömatik Arızası
+C1727,Hava Süspansiyon Rezervuarı Pnömatik Arızası
+C1728,Transfer Kutusu 2H ile 4H arasında geçiş yapamıyor
+C1729,Transfer Kutusu 4H ve 4L arasında geçiş yapamıyor
+C1730,Referans Gerilimi Aralık Dışında (+5 v)
+C1731,Havalı Süspansiyon LF Viraj Yukarı Zaman Aşımı
+C1732,Havalı Süspansiyon LF Viraj Aşağı Zaman Aşımı
+C1733,Hava Süspansiyonlu RF Köşe Yukarı Zaman Aşımı
+C1734,Hava Süspansiyonu RF Köşe Aşağı Zaman Aşımı
+C1735,Havalı Süspansiyon LR Köşe Yukarı Zaman Aşımı
+C1736,Havalı Süspansiyon LR Viraj Aşağı Zaman Aşımı
+C1737,Havalı Süspansiyon RR Virajda Zaman Aşımı
+C1738,Havalı Süspansiyon RR Viraj Aşağı Zaman Aşımı
+C1739,Sağ Ön Orta Sensör Devresi Vbat'a Kısa Devre
+C1740,Sağ Ön Orta Sensör Devre Arızası
+C1741,Sağ Ön Orta Sensör Devre Arızası
+C1742,Arka Siren Devre Arızası
+C1743,Arka Siren Devresi Vbatt'a Kısa Devre
+C1744,Ön Siren Devre Arızası
+C1745,Ön Siren Devresi Vbatt'a Kısa Devre
+C1748,Giriş Devresini Gnd'ye Kısa Devre Ettir
+C1749,Römork Giriş Devresi Arızası
+C1750,Hızlandırıcı Konum Sensörü Aralık Dışında
+C1751,Araç Hız Sensörü # 1 Çıkış Devresi Vbatt'a Kısa Devre
+C1752,Araç Hız Sensörü # 1 Çıkış Devresi Gnd'ye Kısa Devre
+C1753,Hidrolik Debriyaj Ayar Elemanı Valfı Sinyal Arızası
+C1754,Hidrolik Debriyaj Ayar Elemanı Valfı Devre Arızası
+C1755,Güç Limiti Kapatma Arızası
+C1756,Havalı Süspansiyon Ön Yükseklik Sensörü Yüksek (SE) Sinyal Devresi Arızası
+C1757,Havalı Süspansiyon Ön Yükseklik Sensörü Yüksek (SE) Sinyal Devresi Açık
+C1758,Havalı Süspansiyon Ön Yükseklik Sensörü Yüksek (SE) Sinyal Devresi Aküye Kısa Devre
+C1759,Havalı Süspansiyon Ön Yükseklik Sensörü Yüksek (SE) Sinyal Devresi Şasiye Kısa Devre
+C1760,Havalı Süspansiyon Arka Yükseklik Sensörü Yüksek (SE) Sinyal Devresi Arızası
+C1761,Havalı Süspansiyon Arka Yükseklik Sensörü Yüksek (SE) Sinyal Devresi Açık
+C1762,Havalı Süspansiyon Arka Yükseklik Sensörü Yüksek (SE) Sinyal Devresi Aküye Kısa Devre
+C1763,Havalı Süspansiyon Arka Yükseklik Sensörü Yüksek (SE) Sinyal Devresi Şasiye Kısa Devre
+C1765,Havalı Süspansiyon Arka Yükseklik Sensörü Düşük Sinyal Devresi Arızası
+C1766,Havalı Süspansiyon Arka Yükseklik Sensörü Düşük Sinyal Devresi Açık
+C1767,Havalı Süspansiyon Arka Yükseklik Sensörü Düşük Sinyal Devresi Aküye Kısa Devre
+C1768,Havalı Süspansiyon Arka Yükseklik Sensörü Düşük Sinyal Devresi Şasiye Kısa Devre
+C1770,Hava Süspansiyon Havalandırma Solenoidi Çıkış Devresi Arızası
+C1771,Hava Süspansiyon Havalandırma Solenoidi Çıkış Devresi Açık
+C1772,Hava Süspansiyon Havalandırma Solenoidi Çıkış Devresi Aküye Kısa Devre
+C1773,Hava Süspansiyon Havalandırma Solenoidi Çıkış Devresi Şasiye Kısa Devre
+C1774,Soğutucu Sıcaklığı Aralık Dışında
+C1775,DC-DC Dönüştürücü Arızası
+C1776,Kalorifer Sistemi Arızası
+C1777,Vakum Basınç Devresi Arızası
+C1778,Servo Direksiyon Arızası
+C1779,Üfleyici Anahtarı Arızası
+C1780,Sıcaklık Seçimi Arızası
+C1781,Motor Soğutma Suyu Sıcaklık Sinyali Eksik/Arıza
+C1790,Havalı Süspansiyon Sol Hava Yayı/Amortisör Solenoidi Çıkış Devresi Arızası
+C1791,Havalı Süspansiyon Sol Hava Yayı/Amortisör Solenoidi Çıkış Devresi Açık
+C1792,Havalı Süspansiyon Sol Hava Yayı/Amortisör Solenoidi Çıkış Devresi Aküye Kısa Devre
+C1793,Havalı Süspansiyon Sol Sol Hava Yayı/Amortisör Solenoidi Çıkış Devresi Şasiye Kısa Devre
+C1795,Hava Süspansiyonu RR Hava Yayı/Amortisör Solenoidi Çıkış Devresi Arızası
+C1796,Havalı Süspansiyon Sağ Arka Hava Yayı/Amortisör Solenoidi Çıkış Devresi Açık
+C1797,Havalı Süspansiyon Sağ Arka Hava Yayı/Amortisör Solenoidi Çıkış Devresi Aküye Kısa Devre
+C1798,Havalı Süspansiyon Sağ Arka Hava Yayı/Amortisör Solenoidi Çıkış Devresi Şasiye Kısa Devre
+C1800,Hava Süspansiyon Rezervuarı Solenoidi Devre Arızası
+C1805,Eşleşmeyen PCM ve/veya ABS-TC Modülü
+C1813,Hava Süspansiyonu Sol Havalandırma Talebi Maksimum Zamanlamayı Aştı
+C1814,Hava Süspansiyonu RR Havalandırma Talebi Maksimum Zamanlamayı Aştı
+C1818,Hava Süspansiyonu LR Hava Sıkıştırma Talebi Maksimum Zamanlamayı Aştı
+C1819,Hava Süspansiyonu RR Hava Sıkıştırma Talebi Maksimum Zamanlamayı Aştı
+C1820,Hava Süspansiyonu RF Hava Sıkıştırma Talebi Maksimum Zamanlamayı Aştı
+C1830,Hava Süspansiyon Kompresörü Rölesi Devre Arızası
+C1831,Hava Süspansiyon Kompresörü Rölesi Devresi Açık
+C1832,Hava Süspansiyon Kompresörü Röle Devresi Aküye Kısa Devre
+C1833,Hava Süspansiyon Kompresörü Rölesi Devresi Şasiye Kısa Devre
+C1834,Gösterge Sürücüsü Akım Arızası
+C1835,Akım Algılama Devre Arızası
+C1836,Pil Sıcaklığı Aralık Dışında
+C1837,Akü Isıtıcı Devre Arızası
+C1838,Şarj Sistemi Arızası
+C1839,Sızıntı Arızası
+C1840,Hava Süspansiyonunu Devre Dışı Bırakma Anahtarı Devre Arızası
+C1841,Hava Süspansiyonunu Devre Dışı Bırakma Anahtarı Devresi Açık
+C1842,Havalı Süspansiyon Devre Dışı Bırakma Anahtarı Devresi Aküye Kısa Devre
+C1843,Havalı Süspansiyon Devre Dışı Bırakma Anahtarı Devresi Şasiye Kısa Devre
+C1844,Hava Süspansiyonu İkincil Ön Şişirme Solenoidi Çıkış Devresi Arızası
+C1845,Hava Süspansiyonu Ön Şişirici Solenoidi Çıkış Devresi Arızası
+C1846,Hava Süspansiyonu Ön Şişirme Solenoidi Çıkış Devresi Açık
+C1847,Hava Süspansiyonu Ön Şişirici Solenoidi Çıkış Devresi Aküye Kısa Devre
+C1848,Hava Süspansiyonu Ön Şişirici Solenoid Çıkış Devresi Şasiye Kısa Devre
+C1849,Ana Silindir Basıncı Aralık Dışında
+C1850,Havalı Süspansiyon Uyarı Lambası Devre Arızası
+C1851,Havalı Süspansiyon Uyarı Lambası Devresi Açık
+C1852,Havalı Süspansiyon Uyarı Lambası Devresi Aküye Kısa Devre
+C1853,Havalı Süspansiyon Uyarı Lambası Devresi Şasiye Kısa Devre
+C1854,Motor Sıcaklığı Aralık Dışında
+C1855,Hızlanma Konumu Sensörü Çatışması
+C1856,Çekiş Motoru Kodlayıcı devresi Arızası
+C1859,PRNDL Giriş #2 Devre Arızası
+C1860,PRNDL Giriş #3 Devre Arızası
+C1861,PRNDL Girişi #4 Devre Arızası
+C1862,Kontaktör Devre Arızası
+C1863,Harici Şarj Arızası
+C1864,Akü Modülü Arızası
+C1865,Hava Süspansiyonu Arka Şişirici Solenoid Çıkış Devresi Arızası
+C1866,Hava Süspansiyonu Arka Şişirici Solenoidi Çıkış Devresi Açık
+C1867,Hava Süspansiyonu Arka Şişirici Solenoid Çıkış Devresi Aküye Kısa Devre
+C1868,Hava Süspansiyonu Arka Şişirici Solenoid Çıkış Devresi Şasiye Kısa Devre
+C1869,Hava Süspansiyon Kapısı Solenoidi Çıkış Devresi Arızası
+C1870,Hava Süspansiyon Kapısı Solenoidi Çıkış Devresi Açık
+C1871,Hava Süspansiyon Kapısı Solenoidi Çıkış Devresi Aküye Kısa Devre
+C1872,Hava Süspansiyon Kapısı Solenoidi Çıkış Devresi Şasiye Kısa Devre
+C1873,Hava Süspansiyon RF Hava Yay Solenoidi Çıkış Devresi Arızası
+C1874,Hava Süspansiyon RF Hava Yay Solenoidi Çıkış Devresi Açık
+C1875,Havalı Süspansiyon RF Havalı Yay Solenoidi Çıkış Devresi Aküye Kısa Devre
+C1876,Havalı Süspansiyon RF Havalı Yay Solenoidi Çıkış Devresi Şasiye Kısa Devre
+C1877,Havalı Süspansiyon Sol Havalı Yay Solenoidi Çıkış Devresi Arızası
+C1878,Havalı Süspansiyon Sol Hava Yay Solenoidi Çıkış Devresi Açık
+C1879,Havalı Süspansiyon Sol Havalı Yay Solenoidi Çıkış Devresi Aküye Kısa Devre
+C1880,Havalı Süspansiyon Sol Havalı Yay Solenoidi Çıkış Devresi Şasiye Kısa Devre
+C1881,Havalı Süspansiyon RF Yükseklik Sensörü Devre Arızası
+C1882,Havalı Süspansiyon RF Yükseklik Sensörü Devresi Açık
+C1883,Havalı Süspansiyon RF Yükseklik Sensörü Devresi Aküye Kısa Devre
+C1884,Havalı Süspansiyon RF Yükseklik Sensörü Devresi Şasiye Kısa Devre
+C1885,Havalı Süspansiyon Sağ Arka Yükseklik Sensörü Devre Arızası
+C1886,Havalı Süspansiyon Sağ Sağ Yükseklik Sensörü Devresi Açık
+C1887,Havalı Süspansiyon Sağ Sağ Yükseklik Sensörü Devresi Aküye Kısa Devre
+C1888,Havalı Süspansiyon Sağ Sağ Yükseklik Sensörü Devresi Şasiye Kısa Devre
+C1889,Havalı Süspansiyon Sol Sol Yükseklik Sensörü Devre Arızası
+C1890,Havalı Süspansiyon Sol Sol Yükseklik Sensörü Devresi Açık
+C1891,Havalı Süspansiyon Sol Sol Yükseklik Sensörü Devresi Aküye Kısa Devre
+C1892,Havalı Süspansiyon Sol Sol Yükseklik Sensörü Devresi Şasiye Kısa Devre
+C1893,Havalı Süspansiyon Sol Sol Yükseklik Sensörü Devre Arızası
+C1894,Havalı Süspansiyon Sol Sol Yükseklik Sensörü Devresi Açık
+C1895,Havalı Süspansiyon Sol Sol Yükseklik Sensörü Devresi Aküye Kısa Devre
+C1896,Havalı Süspansiyon Sol Sol Yükseklik Sensörü Devresi Şasiye Kısa Devre
+C1897,Direksiyon VAPS II Devre Döngüsü Arızası
+C1898,Direksiyon VAPS II Devre Döngüsü Açık
+C1899,Direksiyon VAPS II Devre Döngüsü Aküye Kısa Devre
+C1900,Direksiyon VAPS II Devre Döngüsü Şasiye Kısa Devre
+C1901,Sürüş Kontrolü RR Şok Ayar Elemanı Devre Arızası
+C1902,Sürüş Kontrolü RR Şok Ayar Elemanı Devresi Açık
+C1903,Sürüş Kontrolü RR Şok Ayar Elemanı Devresi Aküye Kısa Devre
+C1904,Sürüş Kontrolü RR Şok Ayar Elemanı Devresi Şasiye Kısa Devre
+C1905,Sürüş Kontrolü Sağ Sol Şok Ayar Elemanı Devre Arızası
+C1906,Sürüş Kontrolü Sağ Sol Şok Ayar Elemanı Devresi Açık
+C1907,Sürüş Kontrolü Sağ Sol Şok Ayar Elemanı Devresi Aküye Kısa Devre
+C1908,Sürüş Kontrolü Sağ Sol Şok Ayar Elemanı Devresi Şasiye Kısa Devre
+C1909,Sürüş Kontrolü RF Şok Aktüatör Devre Arızası
+C1910,Sürüş Kontrolü RF Şok Aktüatör Devresi Açık
+C1911,Sürüş Kontrolü RF Şok Ayar Elemanı Devresi Aküye Kısa Devre
+C1912,Sürüş Kontrolü RF Şok Aktüatör Devresi Şasiye Kısa Devre
+C1913,Sürüş Kontrolü Sol Şok Ayar Elemanı Devre Arızası
+C1914,Sürüş Kontrolü Sol Şok Ayar Elemanı Devresi Açık
+C1915,Sürüş Kontrolü Sol Şok Ayar Elemanı Devresi Aküye Kısa Devre
+C1916,Sürüş Kontrolü Sol Şok Ayar Elemanı Devresi Şasiye Kısa Devre
+C1917,Direksiyon EVO Aralık Dışı Arızası
+C1918,Hava Süspansiyonlu Sürüş Yüksekliği Seçim Anahtarı Devre Arızası
+C1920,Led #1 Devre Arızası
+C1921,VAPS Solenoid Aktüatör Çıkış Devresi Arızası
+C1922,VAPS Solenoid Aktüatör Çıkış Devresi Açık
+C1923,VAPS Solenoid Çalıştırıcı Çıkış Devresi Aküye Kısa Devre
+C1924,VAPS Solenoid Aktüatör Çıkış Devresi Şasiye Kısa Devre
+C1925,VAPS Solenoid Aktüatör Dönüş Devresi Arızası
+C1926,VAPS Solenoid Aktüatör Dönüş Devresi Açık
+C1927,VAPS Solenoid Çalıştırıcı Dönüş Devresi Aküye Kısa Devre
+C1928,VAPS Solenoid Çalıştırıcı Dönüş Devresi Şasiye Kısa Devre
+C1929,Hava Süspansiyonu Ön Kompresör Rölesi Devre Arızası
+C1930,Hava Süspansiyonu Ön Kompresör Rölesi Devresi Açık
+C1931,Hava Süspansiyon Ön Kompresörü Röle Devresi Aküye Kısa Devre
+C1932,Hava Süspansiyonu Ön Kompresör Rölesi Devresi Şasiye Kısa Devre
+C1933,Solenoid Akımı Aralık Dışında
+C1934,HPU (Hidrolik Pompa Ünitesi) Basınçlandırma Arızası
+C1935,Zil Devresi Arızası
+C1936,Hidrolik Pompa Rölesi Devre Arızası
+C1937,Direksiyon Açı Sensörü Ofseti Arızası
+C1938,Geçersiz Direksiyon Açısı Sensörü Kimliği
+C1939,Fren Basınç Anahtarı Giriş Devresi Arızası
+C1940,Fren Basınç Anahtarı Mekanik Arızası
+C1942,Tanınmayan Güç Aktarma Organı Yapılandırması
+C1943,Hava Yastığı Açılma Göstergesi Giriş Arızası
+C1944,Gösterge Sürücüsü Devre Arızası
+C1945,Park Anahtarı Araç Hareket Halindeyken Park Etmeyi Gösterir
+C1946,Koltuk Pist Konumu Anahtarı Devresi Açık
+C1947,Koltuk Pist Konumu Anahtarı Devresi Şasiye Kısa Devre
+C1948,Koltuk Pisti Pozisyon Anahtarı Devre Direnci Aralık Dışında
+C1949,İvme Ölçer Sensörü Devresi Açık
+C1950,İvme Ölçer Sensörü Devre Arızası
+C1951,Yanal İvme Ölçer Sensörü Devresi Açık
+C1952,Yalpalama Oranı Sensörü Devresi Açık
+C1953,Ana Silindir Basınç Sensörü Devresi Açık
+C1954,Ana Silindir Basınç Sensörü Devre Arızası
+C1955,Direksiyon Açısı Sensörü Devresi Açık
+C1956,Direksiyon Açısı Sensörü Devre Arızası
+C1957,Dinamik Stabilite Kontrol Valfı RF Devre Arızası
+C1958,Dinamik Stabilite Kontrol Valfı LF Devre Arızası
+C1959,Yanal İvme Ölçer Sensörü Devre Arızası
+C1960,Sürücü Freni Uygulama Devresi Arızası
+C1961,Park Lambası Rölesi Bobini Devre Arızası
+C1962,Park Lambası Röle Bobini Aküye Kısa Devre
+C1963,Denge Kontrolü Engelleme Uyarısı
+C2767,Rezerve Edildi - Henüz Belirlenmedi
+U1000,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1001,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1002,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1003,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1004,SCP (J1850) EEC Programlaması için Geçersiz veya Eksik Veri
+U1005,SCP (J1850) EEC Programlaması için Geçersiz veya Eksik Veri
+U1006,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1007,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1008,SCP (J1850) Motor Torku İçin Geçersiz veya Eksik Veri
+U1009,SCP (J1850) Motor Torku İçin Geçersiz veya Eksik Veri
+U1010,SCP (J1850) Motor Hava Girişi için Geçersiz veya Eksik Veri
+U1011,SCP (J1850) Motor Hava Girişi için Geçersiz veya Eksik Veri
+U1012,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1013,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1014,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1015,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1016,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1017,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1018,SCP (J1850) Kısma için Geçersiz veya Eksik Veri
+U1019,SCP (J1850) Kısma için Geçersiz veya Eksik Veri
+U1020,SCP (J1850) Klima Debriyajı için Geçersiz veya Eksik Veri
+U1021,SCP (J1850) Klima Debriyajı için Geçersiz veya Eksik Veri
+U1022,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1023,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1024,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1025,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1026,SCP (J1850) Motor Devri için Geçersiz veya Eksik Veri
+U1027,SCP (J1850) Motor Devri için Geçersiz veya Eksik Veri
+U1028,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1029,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1030,SCP (J1850) Deney #1 için Geçersiz veya Eksik Veri
+U1031,SCP (J1850) Deney #1 için Geçersiz veya Eksik Veri
+U1032,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1033,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1034,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1035,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1036,SCP (J1850) Tekerlekler için Geçersiz veya Eksik Veri
+U1037,SCP (J1850) Tekerlekler için Geçersiz veya Eksik Veri
+U1038,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1039,SCP (J1850) Birincil Kimlik / Araç Hızı için Geçersiz veya Eksik Veri
+U1040,SCP (J1850) Araç Hızına İlişkin Geçersiz veya Eksik Veri
+U1041,SCP (J1850) Araç Hızına İlişkin Geçersiz veya Eksik Veri
+U1042,SCP (J1850) Çekiş Kontrolü için Geçersiz veya Eksik Veri
+U1043,SCP (J1850) Çekiş Kontrolü için Geçersiz veya Eksik Veri
+U1044,Çekiş Motoru için SCP (J1850) Geçersiz veya Eksik Veri
+U1045,Çekiş Motoru için SCP (J1850) Geçersiz veya Eksik Veri
+U1046,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1047,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1048,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1049,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1050,SCP (J1850) Frenler için Geçersiz veya Eksik Veri
+U1051,SCP (J1850) Frenler için Geçersiz veya Eksik Veri
+U1052,SCP (J1850) Direksiyon / Direksiyon Simidi için Geçersiz veya Eksik Veri
+U1053,SCP (J1850) Direksiyon / Direksiyon Simidi için Geçersiz veya Eksik Veri
+U1054,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1055,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1056,SCP (J1850) Araç Yapılandırması için Geçersiz veya Eksik Veri
+U1057,SCP (J1850) Araç Yapılandırması için Geçersiz veya Eksik Veri
+U1058,SCP (J1850) Şanzıman / Transaks / PRNDL için Geçersiz veya Eksik Veri
+U1059,SCP (J1850) Şanzıman / Transaks / PRNDL için Geçersiz veya Eksik Veri
+U1060,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1061,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1062,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1063,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1064,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1065,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1066,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1067,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1068,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1069,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1070,SCP (J1850) Motor Sensörleri için Geçersiz veya Eksik Veri
+U1071,SCP (J1850) Motor Sensörleri için Geçersiz veya Eksik Veri
+U1072,SCP (J1850) Motor Soğutma Sıvısı için Geçersiz veya Eksik Veri
+U1073,SCP (J1850) Motor Soğutma Sıvısı için Geçersiz veya Eksik Veri
+U1074,SCP (J1850) Motor Yağı için Geçersiz veya Eksik Veri
+U1075,SCP (J1850) Motor Yağı Sıcaklığı İçin Geçersiz veya Eksik Veri
+U1076,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1077,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1078,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1079,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1080,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1081,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1082,SCP (J1850) Motor Sistemleri İçin Geçersiz veya Eksik Veri Diğer
+U1083,SCP (J1850) Motor Sistemleri İçin Geçersiz veya Eksik Veri Diğer
+U1084,SCP (J1850) Güç Aktarma Organı Durum Talebi için Geçersiz veya Eksik Veri
+U1085,SCP (J1850) Güç Aktarma Organı Durum Talebi için Geçersiz veya Eksik Veri
+U1086,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1087,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1088,SCP (J1850) Askıya Alınması Gereken Geçersiz veya Eksik Veri
+U1089,SCP (J1850) Askıya Alınması Gereken Geçersiz veya Eksik Veri
+U1090,SCP (J1850) Yasal Olmayan Teşhis için Geçersiz veya Eksik Veri
+U1091,SCP (J1850) Yasal Olmayan Teşhis için Geçersiz veya Eksik Veri
+U1092,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1093,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1094,SCP (J1850) Deney #2 için Geçersiz veya Eksik Veri
+U1095,SCP (J1850) Deney #2 için Geçersiz veya Eksik Veri
+U1096,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1097,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1098,SCP (J1850) Araç Hız Kontrolü için Geçersiz veya Eksik Veri
+U1099,SCP (J1850) Araç Hız Kontrolü için Geçersiz veya Eksik Veri
+U1100,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1101,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1102,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1103,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1104,SCP (J1850) Şasi Durumu Talebi için Geçersiz veya Eksik Veri
+U1105,SCP (J1850) Şasi Durumu Talebi için Geçersiz veya Eksik Veri
+U1106,SCP (J1850) Yasal Teşhis için Geçersiz veya Eksik Veri
+U1107,SCP (J1850) Yasal Teşhis için Geçersiz veya Eksik Veri
+U1108,SCP (J1850) Elektrikli Çekiş Tahriki (İnvertör) için Geçersiz veya Eksik Veri
+U1109,SCP (J1850) Elektrikli Çekiş Tahriki (İnvertör) için Geçersiz veya Eksik Veri
+U1110,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1111,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1112,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1113,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1114,SCP (J1850) Şarj Sistemi için Geçersiz veya Eksik Veri
+U1115,SCP (J1850) Şarj Sistemi için Geçersiz veya Eksik Veri
+U1116,SCP (J1850) Elektrik Enerjisi Yönetimi için Geçersiz veya Eksik Veri
+U1117,SCP (J1850) Elektrik Enerjisi Yönetimi için Geçersiz veya Eksik Veri
+U1118,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1119,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1120,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1121,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1122,SCP (J1850) Kilometre Sayacı için Geçersiz veya Eksik Veri
+U1123,SCP (J1850) Kilometre Sayacı için Geçersiz veya Eksik Veri
+U1124,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1125,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1126,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1127,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1128,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1129,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1130,SCP (J1850) Yakıt Sistemi için Geçersiz veya Eksik Veri
+U1131,SCP (J1850) Yakıt Sistemi için Geçersiz veya Eksik Veri
+U1132,SCP (J1850) Araç Hareketi İçin Geçersiz veya Eksik Veri
+U1133,SCP (J1850) Araç Hareketi İçin Geçersiz veya Eksik Veri
+U1134,SCP (J1850) Kontak Anahtarı/Marş Motoru için Geçersiz veya Eksik Veri
+U1135,SCP (J1850) Kontak Anahtarı/Marş Motoru için Geçersiz veya Eksik Veri
+U1136,SCP (J1850) Anlatılanlar için Geçersiz veya Eksik Veri
+U1137,SCP (J1850) Anlatılanlar için Geçersiz veya Eksik Veri
+U1138,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1139,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1140,SCP (J1850) Ağ Geçidi için Geçersiz veya Eksik Veri
+U1141,SCP (J1850) Ağ Geçidi için Geçersiz veya Eksik Veri
+U1142,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1143,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1144,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1145,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1146,SCP (J1850) Araç Güvenliği İçin Geçersiz veya Eksik Veri
+U1147,SCP (J1850) Araç Güvenliği İçin Geçersiz veya Eksik Veri
+U1148,SCP (J1850) Ses Kontrolü için Geçersiz veya Eksik Veri
+U1149,SCP (J1850) Ses Kontrolü için Geçersiz veya Eksik Veri
+U1150,SCP (J1850) Sesli Uyarılar için Geçersiz veya Eksik Veri
+U1151,SCP (J1850) Sesli Uyarılar için Geçersiz veya Eksik Veri
+U1152,SCP (J1850) Deney #3 için Geçersiz veya Eksik Veri
+U1153,SCP (J1850) Deney #3 için Geçersiz veya Eksik Veri
+U1154,SCP (J1850) Kompakt Disk için Geçersiz veya Eksik Veri
+U1155,SCP (J1850) Kompakt Disk için Geçersiz veya Eksik Veri
+U1156,SCP (J1850) Dijital Sinyal İşleme için Geçersiz veya Eksik Veri
+U1157,SCP (J1850) Dijital Sinyal İşleme için Geçersiz veya Eksik Veri
+U1158,SCP (J1850) Anten için Geçersiz veya Eksik Veri
+U1159,SCP (J1850) Anten için Geçersiz veya Eksik Veri
+U1160,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1161,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1162,SCP (J1850) Dijital Ses Kaseti için Geçersiz veya Eksik Veri
+U1163,SCP (J1850) Dijital Ses Kaseti için Geçersiz veya Eksik Veri
+U1164,SCP (J1850) Ayarlayıcı/Alıcı için Geçersiz veya Eksik Veri
+U1165,SCP (J1850) Ayarlayıcı/Alıcı için Geçersiz veya Eksik Veri
+U1166,SCP (J1850) Kaset için Geçersiz veya Eksik Veri
+U1167,SCP (J1850) Kaset için Geçersiz veya Eksik Veri
+U1168,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1169,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1170,SCP (J1850) Cep Telefonu / Çağrı Sistemi için Geçersiz veya Eksik Veri
+U1171,SCP (J1850) Cep Telefonu / Çağrı Sistemi için Geçersiz veya Eksik Veri
+U1172,SCP (J1850) Uzaktan Düğme Kontrolü için Geçersiz veya Eksik Veri
+U1173,SCP (J1850) Uzaktan Düğme Kontrolü için Geçersiz veya Eksik Veri
+U1174,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1175,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1176,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1177,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1178,SCP (J1850) İklim Kontrolü (HVAC) için Geçersiz veya Eksik Veri
+U1179,SCP (J1850) İklim Kontrolü (HVAC) için Geçersiz veya Eksik Veri
+U1180,SCP (J1850) Kişiselleştirme (Bellek) Özellikleri için Geçersiz veya Eksik Veri
+U1181,SCP (J1850) Kişiselleştirme (Bellek) Özellikleri için Geçersiz veya Eksik Veri
+U1182,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1183,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1184,SCP (J1850) Cam Silecek / Yıkayıcı için Geçersiz veya Eksik Veri
+U1185,SCP (J1850) Cam Silecek / Yıkayıcı için Geçersiz veya Eksik Veri
+U1186,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1187,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1188,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1189,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1190,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1191,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1192,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1193,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1194,SCP (J1850) Aynalar için Geçersiz veya Eksik Veri
+U1195,SCP (J1850) Aynalar için Geçersiz veya Eksik Veri
+U1196,SCP (J1850) Kapı Kilitleri için Geçersiz veya Eksik Veri
+U1197,SCP (J1850) Kapı Kilitleri için Geçersiz veya Eksik Veri
+U1198,SCP (J1850) Harici Erişim (Kapılar) için Geçersiz veya Eksik Veri
+U1199,SCP (J1850) Harici Erişim (Kapılar) için Geçersiz veya Eksik Veri
+U1200,SCP (J1850) Koltuk Hareketi / Kontrolü için Geçersiz veya Eksik Veri
+U1201,SCP (J1850) Koltuk Hareketi / Kontrolü için Geçersiz veya Eksik Veri
+U1202,Windows için SCP (J1850) Geçersiz veya Eksik Veri
+U1203,Windows için SCP (J1850) Geçersiz veya Eksik Veri
+U1204,SCP (J1850) Direksiyon Kolonu için Geçersiz veya Eksik Veri
+U1205,SCP (J1850) Direksiyon Kolonu için Geçersiz veya Eksik Veri
+U1206,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1207,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1208,SCP (J1850) Koltuk Anahtarları için Geçersiz veya Eksik Veri
+U1209,SCP (J1850) Koltuk Anahtarları için Geçersiz veya Eksik Veri
+U1210,SCP (J1850) Kısıtlamalar için Geçersiz veya Eksik Veri
+U1211,SCP (J1850) Kısıtlamalar için Geçersiz veya Eksik Veri
+U1212,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1213,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1214,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1215,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1216,SCP (J1850) Harici Lamba Kesintisi için Geçersiz veya Eksik Veri
+U1217,SCP (J1850) Harici Lamba Kesintisi için Geçersiz veya Eksik Veri
+U1218,SCP (J1850) Harici Lambalar için Geçersiz veya Eksik Veri
+U1219,SCP (J1850) Harici Lambalar için Geçersiz veya Eksik Veri
+U1220,SCP (J1850) İç Lamba Kesintisi için Geçersiz veya Eksik Veri
+U1221,SCP (J1850) İç Lamba Kesintisi için Geçersiz veya Eksik Veri
+U1222,SCP (J1850) İç Lambalar için Geçersiz veya Eksik Veri
+U1223,SCP (J1850) İç Lambalar için Geçersiz veya Eksik Veri
+U1224,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1225,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1226,SCP (J1850) Beden Durumu Talebi için Geçersiz veya Eksik Veri
+U1227,SCP (J1850) Beden Durumu Talebi için Geçersiz veya Eksik Veri
+U1228,Lastikler için SCP (J1850) Geçersiz veya Eksik Veri
+U1229,Lastikler için SCP (J1850) Geçersiz veya Eksik Veri
+U1230,SCP (J1850) Elektrikli Buz Çözme için Geçersiz veya Eksik Veri
+U1231,SCP (J1850) Elektrikli Buz Çözme için Geçersiz veya Eksik Veri
+U1232,SCP (J1850) Navigasyon için Geçersiz veya Eksik Veri
+U1233,SCP (J1850) Navigasyon için Geçersiz veya Eksik Veri
+U1234,SCP (J1850) Ekranlar için Geçersiz veya Eksik Veri
+U1235,SCP (J1850) Ekranlar için Geçersiz veya Eksik Veri
+U1236,SCP (J1850) Bellek Depolama için Geçersiz veya Eksik Veri
+U1237,SCP (J1850) Bellek Depolama için Geçersiz veya Eksik Veri
+U1238,SCP (J1850) Deney #4 için Geçersiz veya Eksik Veri
+U1239,SCP (J1850) Deney #4 için Geçersiz veya Eksik Veri
+U1240,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1241,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1242,SCP (J1850) Dış Ortam İçin Geçersiz veya Eksik Veri
+U1243,SCP (J1850) Dış Ortam İçin Geçersiz veya Eksik Veri
+U1244,SCP (J1850) İç Ortam İçin Geçersiz veya Eksik Veri
+U1245,SCP (J1850) İç Ortam İçin Geçersiz veya Eksik Veri
+U1246,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1247,SCP (J1850) Birincil Kimlik için Geçersiz veya Eksik Veri
+U1248,SCP (J1850) Saat/Tarih için Geçersiz veya Eksik Veri
+U1249,SCP (J1850) Saat/Tarih için Geçersiz veya Eksik Veri
+U1250,SCP (J1850) Araç Kimliği (VIN) için Geçersiz veya Eksik Veri
+U1251,SCP (J1850) Araç Kimliği (VIN) için Geçersiz veya Eksik Veri
+U1252,SCP (J1850) A Sınıfı İşlevler için Geçersiz veya Eksik Veri
+U1253,SCP (J1850) A Sınıfı İşlevler için Geçersiz veya Eksik Veri
+U1254,SCP (J1850) Ağ Kontrolü için Geçersiz veya Eksik Veri
+U1255,SCP (J1850) Ağ Kontrolü için Geçersiz veya Eksik Veri
+U1260,SCP (J1850) Tek Uçlu (+) Devre Arızası
+U1261,SCP (J1850) Tek Uçlu (-) Devre Arızası
+U1262,SCP (J1850) İletişim Veriyolu Arızası
+U1308,SCP (J1850) Fonksiyon Okuma Motor Torku için Geçersiz veya Eksik Veri
+U1341,SCP (J1850) Fonksiyon Okuma Araç Hızı için Geçersiz veya Eksik Veri
+U1430,SCP (J1850) İşlev Okuma Yakıt Sistemi için Geçersiz veya Eksik Veri
+U1451,SCP (J1850) İşlev Okuması Sesli Uyarıları/Hırsızlık Önleme Modülü için Geçersiz veya Eksik Veri
+U1612,SCP (J1850) Birincil Kimlik için Onay Eksikliği
+U1736,SCP (J1850) Anlatılanlara İlişkin Onay Eksikliği
+U1750,SCP (J1850) Sesli Uyarıların Onaylanmaması
+U1794,SCP (J1850) Aynalar İçin Onay Eksikliği
+U1797,SCP (J1850) Kapı Kilitleri İçin Onay Eksikliği
+U1798,SCP (J1850) Harici Erişim İçin Onay Eksikliği (Kapılar)
+U1806,SCP (J1850) Birincil Kimlik için Onay Eksikliği
+U1900,CAN İletişim Veriyolu Arızası
+U1950,UPB İletişim Veri Yolu Arızası
+U2000,Ses Arka Kontrol Birimi Yanıt Vermiyor
+U2001,Ses Kaset Destesi Birimi Yanıt Vermiyor
+U2002,Ses Çerçevesi Yanıt Vermiyor
+U2003,Ses Kompakt Diski / Disk Jokey Birimi Yanıt Vermiyor
+U2004,Sesli Direksiyon Kontrol Birimi Yanıt Vermiyor
+U2005,Ses Arkaya Entegre Kontrol Paneli Birimi Yanıt Vermiyor
+U2006,Sesli Uzaktan Klima Kontrol Ünitesi Yanıt Vermiyor
+U2007,Sesli Navigasyon Birimi Yanıt Vermiyor
+U2008,Sesli Telefon Yanıt Vermiyor
+U2009,Ses Ön Kontrol Modülü (ACM) Yanıt Vermiyor
+U2010,Modül Yanıt Vermiyor (SCP Değil)
+U2011,Modülden Geçersiz Veri Aktarıldı (SCP Olmayan)
+U2012,İletişim Veri Yolu Hatası (SCP Dışı)
+U2013,Pusula Modülü Yanıt Vermiyor
+U2014,Ses Subwoofer Ünitesi Yanıt Vermiyor
+U2015,Sinyal Bağlantısı Arızası (SCP Dışı)
+U2016,Sinyal Bağlantısı Şasiye Kısa Devre (SCP Olmayan) / NGV Modülünden
+U2017,Sürücü Tarafı Çarpma Sensörü İletişim Arızası (SCP Dışı)
+U2018,Yolcu Tarafı Çarpma Sensörü İletişim Arızası (SCP Dışı)
+U2019,Ses Ses Modülü Yanıt Vermiyor
+U2020,Audio Center Amplifikatörü yanıt vermiyor
+U2021,Geçersiz/hata verileri alındı ​​(SCP olmayan)
+U2150,SCP (J1850) REM'den Geçersiz Veri
+U2152,SCP (J1850) GEM'den Geçersiz Veri
+U2160,SCP (J1850) IC'den Geçersiz Veri
+U2195,SCP (J1850) SCLM'den Geçersiz Veri
+U2500,(CAN) Motor Yönetiminden Onay Eksikliği
