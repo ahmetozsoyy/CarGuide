@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sqlite3
 import os
-import google.generativeai as genai
+from google import genai
 
 app = Flask(__name__)
 CORS(app)
@@ -20,11 +20,10 @@ except Exception as e:
 # Configure Gemini AI (User needs to set GEMINI_API_KEY environment variable)
 api_key = os.environ.get("GEMINI_API_KEY")
 if api_key:
-    genai.configure(api_key=api_key)
-    ai_model = genai.GenerativeModel('gemini-2.5-flash')
+    client = genai.Client(api_key=api_key)
     print("Gemini AI configured successfully.")
 else:
-    ai_model = None
+    client = None
     print("WARNING: GEMINI_API_KEY environment variable not found. AI translation will be disabled.")
 
 
@@ -93,10 +92,13 @@ def lookup_obd():
         simplified_desc = technical_desc
 
         # If Gemini is configured, simplify the text
-        if ai_model:
+        if client:
             prompt = f"Sen uzman bir otomotiv mühendisisin. Aracın sisteminden şu teknik hata açıklaması geldi: '{technical_desc}'. Lütfen bu sorunun ne anlama geldiğini araç sahiplerinin anlayabileceği kadar sade, ancak son derece resmi ve profesyonel bir dille açıkla. Açıklama 2-3 cümleyi geçmesin; doğrudan sorunun kaynağını ve olası etkisini temiz bir dille özetle."
             try:
-                response = ai_model.generate_content(prompt)
+                response = client.models.generate_content(
+                    model='gemini-2.5-flash',
+                    contents=prompt
+                )
                 simplified_desc = f"Teknik Tanım: {technical_desc}\n\nAnaliz:\n{response.text}"
             except Exception as e:
                 print("Gemini API Error:", e)
