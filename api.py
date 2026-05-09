@@ -15,7 +15,7 @@ app.config['SECRET_KEY'] = 'sizin_gizli_anahtariniz_buraya' # Should be in env
 
 # Initialize Database for Users
 def init_db():
-    conn = sqlite3.connect('asistan.db')
+    conn = sqlite3.connect('users.db')
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS users (
@@ -61,7 +61,7 @@ def register():
     hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
 
     try:
-        conn = sqlite3.connect('asistan.db')
+        conn = sqlite3.connect('users.db')
         cursor = conn.cursor()
         cursor.execute("INSERT INTO users (name, email, password) VALUES (?, ?, ?)", (name, email, hashed_password))
         conn.commit()
@@ -82,7 +82,7 @@ def login():
     if not email or not password:
         return jsonify({'success': False, 'error': 'Lütfen e-posta ve şifrenizi girin.'}), 400
 
-    conn = sqlite3.connect('asistan.db')
+    conn = sqlite3.connect('users.db')
     cursor = conn.cursor()
     cursor.execute("SELECT id, name, password FROM users WHERE email = ?", (email,))
     user = cursor.fetchone()
