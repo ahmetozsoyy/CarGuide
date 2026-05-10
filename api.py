@@ -15,7 +15,7 @@ from google import genai
 
 app = Flask(__name__)
 CORS(app)
-app.config['SECRET_KEY'] = 'sizin_gizli_anahtariniz_buraya' # Should be in env
+app.config['SECRET_KEY'] = 'AIzaSyDJ9MqZ41UVVb6dZGkqrUIoqj3dxU3rVKM' # Should be in env
 
 # Initialize Database for Users
 def init_db():
@@ -42,8 +42,8 @@ except Exception as e:
     print(f"Error loading model: {e}")
     model = None
 
-# Configure Gemini AI (User needs to set GEMINI_API_KEY environment variable)
-api_key = os.environ.get("GEMINI_API_KEY")
+# Configure Gemini AI
+api_key = "AIzaSyDJ9MqZ41UVVb6dZGkqrUIoqj3dxU3rVKM"
 if api_key:
     client = genai.Client(api_key=api_key)
     print("Gemini AI configured successfully.")
@@ -57,7 +57,8 @@ try:
     _yolo_model_yolu = 'damage_model.pt'
     if os.path.exists(_yolo_model_yolu):
         damage_model = _YOLO(_yolo_model_yolu)
-        print("Hasar tespit modeli yüklendi.")
+        car_detector = _YOLO("yolov8n.pt") # Araç tespiti için standart model
+        print("Hasar ve Araç tespit modelleri yüklendi.")
     else:
         damage_model = None
         print("UYARI: damage_model.pt bulunamadı. train_damage_model.py çalıştırın.")
@@ -287,14 +288,55 @@ def analyze_damage():
                 img.save(tmp.name, 'JPEG')
                 tmp_yolu = tmp.name
 
-            # YOLO çıkarımı
+            # 1. AŞAMA: Önce Arabayı Tespit Et (İki Aşamalı Mimari)
+            car_results = car_detector.predict(source=tmp_yolu, conf=0.15, classes=[2, 5, 7], verbose=False) # 2:car, 5:bus, 7:truck
+            car_boxes = car_results[0].boxes
+
+            if len(car_boxes) > 0:
+                # Ekranda birden fazla araba varsa en büyüğünü (odaktakini) seç
+                max_area = 0
+                best_box = None
+                for box in car_boxes:
+                    bx1, by1, bx2, by2 = [int(v) for v in box.xyxy[0]]
+                    area = (bx2 - bx1) * (by2 - by1)
+                    if area > max_area:
+                        max_area = area
+                        best_box = (bx1, by1, bx2, by2)
+                
+                # Görüntüyü arabanın olduğu yere kırp (Arka planı, gökyüzünü, telleri at)
+                bx1, by1, bx2, by2 = best_box
+                w, h = img.size
+                # Arabanın etrafından azıcık pay (padding) bırak
+                pad = 30
+                bx1 = max(0, bx1 - pad)
+                by1 = max(0, by1 - pad)
+                bx2 = min(w, bx2 + pad)
+                by2 = min(h, by2 + pad)
+
+                img = img.crop((bx1, by1, bx2, by2))
+                
+                # Yeni kırpılmış resmi kaydet
+                os.unlink(tmp_yolu)
+                with tempfile.NamedTemporaryFile(suffix='.jpg', delete=False) as tmp:
+                    img.save(tmp.name, 'JPEG')
+                    tmp_yolu = tmp.name
+
+            # 2. AŞAMA: Sadece Araba Üzerinde Hasar Tespiti
             sonuc = damage_model.predict(
                 source=tmp_yolu,
-                conf=0.35,          # Güven eşiği
+                conf=0.15,          # Nano model zayıf olduğu için eşiği oldukça düşürdük
                 iou=0.45,
                 verbose=False
             )
             os.unlink(tmp_yolu)
+
+            # Çizimli görüntüyü (bounding box) oluştur
+            res_plotted = sonuc[0].plot(line_width=2)
+            res_plotted_rgb = res_plotted[..., ::-1] # BGR'den RGB'ye çevir
+            plotted_img = Image.fromarray(res_plotted_rgb)
+            buffered = BytesIO()
+            plotted_img.save(buffered, format="JPEG")
+            cizimli_b64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
 
             tespitler = []
             for r in sonuc:
@@ -331,6 +373,7 @@ def analyze_damage():
                 'hasar_var':      len(tespitler) > 0,
                 'ai_ozet':        ai_ozet,
                 'mesaj':          'Herhangi bir hasar tespit edilmedi.' if not tespitler else f'{len(tespitler)} hasar tespit edildi.',
+                'cizimli_goruntu': cizimli_b64 if tespitler else None,
             }
             tum_sonuclar.append(goruntu_sonucu)
 

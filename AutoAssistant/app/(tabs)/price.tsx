@@ -66,7 +66,7 @@ export default function PriceAnalysisScreen() {
     try {
       // Connect to the Python Flask backend
       // Replace this IP with your computer's local Wi-Fi IP (IPv4) if it's different.
-      const response = await fetch('http://192.168.10.140:5000/predict', {
+      const response = await fetch('http://172.24.246.41:5000/predict', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

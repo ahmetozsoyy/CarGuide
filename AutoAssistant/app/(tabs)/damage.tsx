@@ -9,7 +9,7 @@ import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
 import { Colors } from '../../constants/Colors';
 
 const { width: SCREEN_W } = Dimensions.get('window');
-const API_URL = 'http://192.168.10.140:5000';
+const API_URL = 'http://172.24.246.41:5000';
 
 // ── Türkçe sabitler ──────────────────────────────────────────────────────
 const SIDDET_RENK: Record<string, string> = {
@@ -31,6 +31,7 @@ interface GoruntuSonucu {
   ai_ozet: string | null;
   mesaj: string;
   hata?: string;
+  cizimli_goruntu?: string;
 }
 interface AnalyzedImage {
   uri: string;
@@ -60,7 +61,11 @@ function SonucKarti({ item, index }: { item: AnalyzedImage; index: number }) {
   if (!s) return null;
   return (
     <View style={styles.sonucKarti}>
-      <Image source={{ uri: item.uri }} style={styles.sonucGoruntu} resizeMode="cover" />
+      <Image 
+        source={{ uri: s.cizimli_goruntu ? `data:image/jpeg;base64,${s.cizimli_goruntu}` : item.uri }} 
+        style={styles.sonucGoruntu} 
+        resizeMode="contain" 
+      />
       <View style={styles.sonucIcerik}>
         <Text style={styles.sonucBaslik}>
           {s.hasar_var ? '⚠️ Hasar Tespit Edildi' : '✅ Hasar Bulunamadı'}
