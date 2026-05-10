@@ -5,4 +5,7 @@ joblib
 scikit-learn
 google-genai
 PyJWT
-sqlite3
+Pillow
+ultralytics
+roboflow
+python-dotenv

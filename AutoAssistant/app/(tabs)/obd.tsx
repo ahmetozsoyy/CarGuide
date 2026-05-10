@@ -15,7 +15,7 @@ export default function OBDAnalysisScreen() {
     setResult(null);
 
     try {
-      const response = await fetch('http://172.24.246.41:5000/obd', {
+      const response = await fetch('http://192.168.10.140:5000/obd', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code })

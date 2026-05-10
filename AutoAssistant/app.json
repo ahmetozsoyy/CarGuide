@@ -9,7 +9,12 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Araç hasarını analiz etmek için kamera erişimi gereklidir.",
+        "NSPhotoLibraryUsageDescription": "Galeri fotoğraflarını analiz etmek için erişim gereklidir.",
+        "NSMicrophoneUsageDescription": "Kamera kullanımı için mikrofon izni gereklidir."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -19,7 +24,12 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_IMAGES"
+      ]
     },
     "web": {
       "output": "static",
@@ -39,7 +49,15 @@
           }
         }
       ],
-      "expo-secure-store"
+      "expo-secure-store",
+      [
+        "expo-camera",
+        { "cameraPermission": "Araç hasarını analiz etmek için kamera erişimi gereklidir." }
+      ],
+      [
+        "expo-image-picker",
+        { "photosPermission": "Galeri fotoğraflarını analiz etmek için erişim gereklidir." }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,

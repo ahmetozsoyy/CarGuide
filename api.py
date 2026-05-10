@@ -6,6 +6,10 @@ import sqlite3
 import os
 import jwt
 import datetime
+import base64
+import tempfile
+from io import BytesIO
+from PIL import Image
 from werkzeug.security import generate_password_hash, check_password_hash
 from google import genai
 
@@ -46,6 +50,70 @@ if api_key:
 else:
     client = None
     print("WARNING: GEMINI_API_KEY environment variable not found. AI translation will be disabled.")
+
+# ── YOLO Hasar Tespit Modeli ─────────────────────────────────────────────
+try:
+    from ultralytics import YOLO as _YOLO
+    _yolo_model_yolu = 'damage_model.pt'
+    if os.path.exists(_yolo_model_yolu):
+        damage_model = _YOLO(_yolo_model_yolu)
+        print("Hasar tespit modeli yüklendi.")
+    else:
+        damage_model = None
+        print("UYARI: damage_model.pt bulunamadı. train_damage_model.py çalıştırın.")
+except Exception as e:
+    damage_model = None
+    print(f"Hasar modeli yüklenirken hata: {e}")
+
+# İngilizce sınıf → Türkçe etiket eşlemesi
+SINIF_TR = {
+    'dent':          'Ezik / Göçük',
+    'scratch':       'Çizik',
+    'crack':         'Çatlak',
+    'glass shatter': 'Cam Kırığı',
+    'lamp broken':   'Lamba Hasarı',
+    'tire flat':     'Lastik Hasarı',
+    # Küçük harf / büyük harf varyasyonları
+    'Dent':          'Ezik / Göçük',
+    'Scratch':       'Çizik',
+    'Crack':         'Çatlak',
+    'Glass Shatter': 'Cam Kırığı',
+    'Lamp Broken':   'Lamba Hasarı',
+    'Tire Flat':     'Lastik Hasarı',
+}
+
+AGIRLIK_TR = {
+    'low':    'Düşük',
+    'medium': 'Orta',
+    'high':   'Yüksek',
+}
+
+def _hasar_siddeti(guven: float) -> str:
+    """Güven skoruna göre hasar şiddeti döner."""
+    if guven >= 0.75:
+        return 'high'
+    elif guven >= 0.50:
+        return 'medium'
+    else:
+        return 'low'
+
+def _gemini_ozet(tespitler: list) -> str:
+    """Tespit edilen hasarlar için Gemini ile Türkçe özet oluştur."""
+    if not client or not tespitler:
+        return None
+    liste = ", ".join([f"{t['etiket']} (%{t['guven']:.0f})" for t in tespitler])
+    prompt = (
+        f"Sen uzman bir otomotiv hasar değerlendirme uzmanısın. "
+        f"Araç görüntüsünde şu hasarlar tespit edildi: {liste}. "
+        f"Türkçe, resmi ve profesyonel bir dille 2-3 cümlelik kısa bir değerlendirme yap. "
+        f"Hasarların olası etkisini ve ne yapılması gerektiğini belirt."
+    )
+    try:
+        resp = client.models.generate_content(model='gemini-2.5-flash', contents=prompt)
+        return resp.text
+    except Exception as e:
+        print(f"Gemini özet hatası: {e}")
+        return None
 
 
 @app.route('/register', methods=['POST'])
@@ -187,6 +255,103 @@ def lookup_obd():
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
+# ── Hasar Analiz Endpoint ────────────────────────────────────────────────
+@app.route('/analyze-damage', methods=['POST'])
+def analyze_damage():
+    """Tek veya çoklu görüntü analizi - base64 formatında alır, Türkçe sonuç döner."""
+    if not damage_model:
+        return jsonify({
+            'success': False,
+            'error': 'Hasar tespit modeli yüklü değil. Lütfen train_damage_model.py dosyasını çalıştırın.'
+        }), 503
+
+    data = request.json
+    goruntular = data.get('images', [])   # base64 listesi
+
+    if not goruntular:
+        return jsonify({'success': False, 'error': 'Görüntü verisi bulunamadı.'}), 400
+
+    tum_sonuclar = []
+
+    for idx, b64_veri in enumerate(goruntular):
+        try:
+            # base64 → PIL Image → geçici dosya
+            if ',' in b64_veri:
+                b64_veri = b64_veri.split(',', 1)[1]
+            img_bytes = base64.b64decode(b64_veri)
+            img = Image.open(BytesIO(img_bytes)).convert('RGB')
+
+            with tempfile.NamedTemporaryFile(suffix='.jpg', delete=False) as tmp:
+                img.save(tmp.name, 'JPEG')
+                tmp_yolu = tmp.name
+
+            # YOLO çıkarımı
+            sonuc = damage_model.predict(
+                source=tmp_yolu,
+                conf=0.35,          # Güven eşiği
+                iou=0.45,
+                verbose=False
+            )
+            os.unlink(tmp_yolu)
+
+            tespitler = []
+            for r in sonuc:
+                for box in r.boxes:
+                    sinif_id = int(box.cls[0])
+                    guven    = float(box.conf[0])
+                    en_isim  = r.names[sinif_id]
+                    tr_isim  = SINIF_TR.get(en_isim, en_isim)
+                    siddet   = _hasar_siddeti(guven)
+
+                    # Bounding box koordinatları (oransal)
+                    x1, y1, x2, y2 = [float(v) for v in box.xyxyn[0]]
+
+                    tespitler.append({
+                        'etiket':      tr_isim,
+                        'etiket_en':   en_isim,
+                        'guven':       round(guven * 100, 1),
+                        'siddet':      AGIRLIK_TR[siddet],
+                        'siddet_en':   siddet,
+                        'kutu':        {'x1': round(x1,4), 'y1': round(y1,4),
+                                        'x2': round(x2,4), 'y2': round(y2,4)},
+                    })
+
+            # Güvene göre sırala
+            tespitler.sort(key=lambda x: x['guven'], reverse=True)
+
+            # Gemini ile AI özet
+            ai_ozet = _gemini_ozet(tespitler) if tespitler else None
+
+            goruntu_sonucu = {
+                'goruntu_no':     idx + 1,
+                'tespit_sayisi':  len(tespitler),
+                'tespitler':      tespitler,
+                'hasar_var':      len(tespitler) > 0,
+                'ai_ozet':        ai_ozet,
+                'mesaj':          'Herhangi bir hasar tespit edilmedi.' if not tespitler else f'{len(tespitler)} hasar tespit edildi.',
+            }
+            tum_sonuclar.append(goruntu_sonucu)
+
+        except Exception as e:
+            tum_sonuclar.append({
+                'goruntu_no':    idx + 1,
+                'hata':          str(e),
+                'tespit_sayisi': 0,
+                'tespitler':     [],
+                'hasar_var':     False,
+            })
+
+    # Genel özet
+    toplam_hasar = sum(s.get('tespit_sayisi', 0) for s in tum_sonuclar)
+
+    return jsonify({
+        'success':         True,
+        'goruntu_sayisi':  len(goruntular),
+        'toplam_hasar':    toplam_hasar,
+        'sonuclar':        tum_sonuclar,
+    })
 
 
 if __name__ == '__main__':
