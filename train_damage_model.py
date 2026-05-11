@@ -4,7 +4,7 @@ CarDD (Car Damage Detection) - YOLOv8 Model Eğitim Scripti
 Bu script:
 1. CarDD veri setini Roboflow API üzerinden otomatik olarak indirir
 2. YOLOv8m (medium) modelini ince ayar (fine-tune) ile eğitir
-3. Eğitilen modeli 'damage_model.pt' olarak kaydeder
+3. Eğitilen modeli 'damage_model.pt' olarak kaydeder (ve Google Drive'a kopyalar)
 
 Çalıştırmadan önce:
   pip install ultralytics roboflow
@@ -159,7 +159,7 @@ def data_yaml_guncelle(yaml_yolu: str):
 
 # ── Model Eğitimi ────────────────────────────────────────────────────────
 
-def egit(yaml_yolu: str, epochs: int = 80, img_size: int = 640):
+def egit(yaml_yolu: str, epochs: int = 100, img_size: int = 640):
     """YOLOv8m modelini CarDD üzerinde eğitir."""
     try:
         from ultralytics import YOLO
@@ -207,6 +207,18 @@ def egit(yaml_yolu: str, epochs: int = 80, img_size: int = 640):
     if en_iyi.exists():
         shutil.copy(str(en_iyi), str(hedef))
         print(f"\n[BAŞARI] Model kaydedildi → {hedef.resolve()}")
+        
+        # Google Drive'a kaydet (Colab veya Windows)
+        drive_paths = [
+            Path("/content/drive/MyDrive/damage_model.pt"), # Colab
+            Path("G:/My Drive/damage_model.pt"),            # Windows TR
+            Path("G:/Drive/damage_model.pt")                # Windows EN
+        ]
+        for dp in drive_paths:
+            if dp.parent.exists():
+                shutil.copy(str(en_iyi), str(dp))
+                print(f"[BAŞARI] Model Drive'a da kopyalandı → {dp}")
+                break
     else:
         print("[UYARI] 'best.pt' bulunamadı. runs/ klasörünü kontrol edin.")
 
@@ -265,7 +277,7 @@ if __name__ == "__main__":
         tr = SINIF_CEVIRISI.get(s, s)
         print(f"  {s:20s} -> {tr}")
 
-    # 3. Modeli eğit (GPU varsa ~30-60 dk, CPU'da ~4-8 saat)
-    egit(yaml_yolu=yaml_yolu, epochs=80, img_size=640)
+    # 3. Modeli eğit (Ortalama bir süre ve iyi bir isabet oranı için)
+    egit(yaml_yolu=yaml_yolu, epochs=100, img_size=640)
 
     print("\n[TAMAMLANDI] Modeli API'da kullanmak için api.py'yi çalıştırın.")

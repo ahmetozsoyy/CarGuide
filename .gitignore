@@ -4,3 +4,10 @@ __pycache__/
 price_prediction_model.pkl
 node_modules/
 users.db
+
+# Large files and models
+*.pt
+*.zip
+cardd_dataset/
+test_download/
+runs/

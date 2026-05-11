@@ -54,14 +54,14 @@ else:
 # ── YOLO Hasar Tespit Modeli ─────────────────────────────────────────────
 try:
     from ultralytics import YOLO as _YOLO
-    _yolo_model_yolu = 'damage_model.pt'
+    _yolo_model_yolu = 'trained.pt'
     if os.path.exists(_yolo_model_yolu):
         damage_model = _YOLO(_yolo_model_yolu)
         car_detector = _YOLO("yolov8n.pt") # Araç tespiti için standart model
         print("Hasar ve Araç tespit modelleri yüklendi.")
     else:
         damage_model = None
-        print("UYARI: damage_model.pt bulunamadı. train_damage_model.py çalıştırın.")
+        print("UYARI: trained.pt bulunamadı.")
 except Exception as e:
     damage_model = None
     print(f"Hasar modeli yüklenirken hata: {e}")
@@ -74,6 +74,10 @@ SINIF_TR = {
     'glass shatter': 'Cam Kırığı',
     'lamp broken':   'Lamba Hasarı',
     'tire flat':     'Lastik Hasarı',
+    # Yeni modelin (trained.pt) sınıf isimleri:
+    'shattered_glass': 'Cam Kırığı',
+    'broken_lamp':     'Lamba Hasarı',
+    'flat_tire':       'Lastik Hasarı',
     # Küçük harf / büyük harf varyasyonları
     'Dent':          'Ezik / Göçük',
     'Scratch':       'Çizik',
@@ -345,6 +349,11 @@ def analyze_damage():
                     guven    = float(box.conf[0])
                     en_isim  = r.names[sinif_id]
                     tr_isim  = SINIF_TR.get(en_isim, en_isim)
+                    
+                    # Sadece kaporta ve far aksamı için lastik analizini atla
+                    if 'tire' in en_isim.lower() or tr_isim == 'Lastik Hasarı':
+                        continue
+
                     siddet   = _hasar_siddeti(guven)
 
                     # Bounding box koordinatları (oransal)
