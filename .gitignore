@@ -11,3 +11,5 @@ users.db
 cardd_dataset/
 test_download/
 runs/
+
+.env

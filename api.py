@@ -12,10 +12,13 @@ from io import BytesIO
 from PIL import Image
 from werkzeug.security import generate_password_hash, check_password_hash
 from google import genai
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
-app.config['SECRET_KEY'] = 'AIzaSyDJ9MqZ41UVVb6dZGkqrUIoqj3dxU3rVKM' # Should be in env
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'default_secret_fallback')
 
 # Initialize Database for Users
 def init_db():
@@ -43,7 +46,7 @@ except Exception as e:
     model = None
 
 # Configure Gemini AI
-api_key = "AIzaSyDJ9MqZ41UVVb6dZGkqrUIoqj3dxU3rVKM"
+api_key = os.getenv('GEMINI_API_KEY')
 if api_key:
     client = genai.Client(api_key=api_key)
     print("Gemini AI configured successfully.")
@@ -249,7 +252,7 @@ def lookup_obd():
                 simplified_desc = f"Teknik Tanım: {technical_desc}\n\nAnaliz:\n{response.text}"
             except Exception as e:
                 print("Gemini API Error:", e)
-                simplified_desc = f"Yapay zeka çevirisi şu an yapılamadı.\n\nTeknik Tanım: {technical_desc}"
+                simplified_desc = f"Yapay zeka çevirisi şu an yapılamadı. Hata: {str(e)}\n\nTeknik Tanım: {technical_desc}"
         else:
             simplified_desc = f"{technical_desc}\n\n(Not: Daha basit bir açıklama için sunucuya GEMINI_API_KEY eklenmelidir.)"
 
