@@ -640,5 +640,47 @@ def delete_vehicle(vehicle_id):
         return jsonify({'error': str(e)}), 500
 
 
+@app.route('/vehicles/<int:vehicle_id>', methods=['PUT'])
+def update_vehicle(vehicle_id):
+    """Araç bilgilerini günceller."""
+    user_id = get_user_from_token()
+    if not user_id:
+        return jsonify({'success': False, 'error': 'Yetkilendirme gerekli.'}), 401
+
+    data = request.json
+    try:
+        conn = sqlite3.connect('users.db')
+        cursor = conn.cursor()
+
+        # Check ownership
+        cursor.execute('SELECT id FROM vehicles WHERE id = ? AND user_id = ?', (vehicle_id, user_id))
+        if not cursor.fetchone():
+            conn.close()
+            return jsonify({'success': False, 'error': 'Araç bulunamadı.'}), 404
+
+        # Build update query dynamically
+        fields = []
+        values = []
+        for field in ['marka', 'seri', 'model', 'yil', 'kilometre', 'yakit_tipi', 'vites_tipi']:
+            if field in data:
+                fields.append(f'{field} = ?')
+                values.append(data[field])
+        if 'photos' in data:
+            photos = data['photos'][:5]
+            fields.append('photos = ?')
+            values.append(json_lib.dumps(photos))
+
+        if fields:
+            values.append(vehicle_id)
+            cursor.execute(f'UPDATE vehicles SET {", ".join(fields)} WHERE id = ?', values)
+            conn.commit()
+
+        conn.close()
+        return jsonify({'success': True, 'message': 'Araç güncellendi.'})
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
