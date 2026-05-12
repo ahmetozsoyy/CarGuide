@@ -1,98 +1,64 @@
 import React, { useState, useCallback } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, ActivityIndicator, FlatList } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '../../constants/Colors';
 import { useAuth } from '../../context/AuthContext';
 import { useFocusEffect } from 'expo-router';
 
 const API_URL = 'http://172.24.246.41:5000';
 
-interface HistoryItem {
-  id: number;
-  type: 'price' | 'obd' | 'damage';
-  title: string;
-  summary: string;
-  created_at: string;
-}
+interface HistoryItem { id: number; type: 'price' | 'obd' | 'damage'; title: string; summary: string; created_at: string; }
 
-const TAB_CONFIG = {
-  all:    { label: 'Tümü',   icon: '📋' },
-  price:  { label: 'Fiyat',  icon: '💰' },
-  obd:    { label: 'OBD',    icon: '🔧' },
-  damage: { label: 'Hasar',  icon: '🔍' },
+const TABS = [
+  { key: 'all', label: 'Tümü', icon: 'layers-outline' },
+  { key: 'price', label: 'Fiyat', icon: 'analytics-outline' },
+  { key: 'obd', label: 'OBD', icon: 'hardware-chip-outline' },
+  { key: 'damage', label: 'Hasar', icon: 'scan-outline' },
+] as const;
+
+const TYPE_CONFIG: Record<string, { color: string; icon: string }> = {
+  price: { color: Colors.secondary, icon: 'analytics' },
+  obd: { color: Colors.warning, icon: 'hardware-chip' },
+  damage: { color: Colors.danger, icon: 'scan' },
 };
 
-const TYPE_COLORS: Record<string, string> = {
-  price:  '#10B981',
-  obd:    '#F59E0B',
-  damage: '#EF4444',
-};
-
-const TYPE_ICONS: Record<string, string> = {
-  price:  '💰',
-  obd:    '🔧',
-  damage: '🔍',
-};
-
-function formatDate(dateStr: string): string {
-  try {
-    const d = new Date(dateStr);
-    return d.toLocaleDateString('tr-TR', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
-  } catch {
-    return dateStr;
-  }
+function formatDate(d: string) {
+  try { return new Date(d).toLocaleDateString('tr-TR', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }); } catch { return d; }
 }
 
 export default function ProfileScreen() {
   const { logout, userName, token } = useAuth();
-  const [activeTab, setActiveTab] = useState<'all' | 'price' | 'obd' | 'damage'>('all');
+  const [tab, setTab] = useState<string>('all');
   const [history, setHistory] = useState<HistoryItem[]>([]);
   const [loading, setLoading] = useState(false);
-
   const avatarLetter = userName ? userName.charAt(0).toUpperCase() : '?';
 
   const fetchHistory = useCallback(async () => {
     if (!token) return;
     setLoading(true);
     try {
-      const typeParam = activeTab === 'all' ? '' : `?type=${activeTab}`;
-      const response = await fetch(`${API_URL}/history${typeParam}`, {
-        headers: { 'Authorization': `Bearer ${token}` },
-      });
-      const data = await response.json();
-      if (data.success) {
-        setHistory(data.history);
-      }
-    } catch (e) {
-      console.error('History fetch error:', e);
-    } finally {
-      setLoading(false);
-    }
-  }, [token, activeTab]);
+      const tp = tab === 'all' ? '' : `?type=${tab}`;
+      const res = await fetch(`${API_URL}/history${tp}`, { headers: { 'Authorization': `Bearer ${token}` } });
+      const data = await res.json();
+      if (data.success) setHistory(data.history);
+    } catch (e) { console.error(e); }
+    finally { setLoading(false); }
+  }, [token, tab]);
 
-  // Refresh history when screen is focused or tab changes
-  useFocusEffect(
-    useCallback(() => {
-      fetchHistory();
-    }, [fetchHistory])
-  );
+  useFocusEffect(useCallback(() => { fetchHistory(); }, [fetchHistory]));
 
-  const renderHistoryItem = ({ item }: { item: HistoryItem }) => {
-    const color = TYPE_COLORS[item.type] || Colors.textMuted;
-    const icon = TYPE_ICONS[item.type] || '📋';
+  const renderItem = ({ item }: { item: HistoryItem }) => {
+    const cfg = TYPE_CONFIG[item.type] || { color: Colors.textMuted, icon: 'document' };
     return (
-      <View style={styles.historyCard}>
-        <View style={[styles.historyIconBg, { backgroundColor: color + '18' }]}>
-          <Text style={styles.historyIcon}>{icon}</Text>
+      <View style={styles.histCard}>
+        <View style={[styles.histIconBg, { backgroundColor: cfg.color + '18' }]}>
+          <Ionicons name={cfg.icon as any} size={20} color={cfg.color} />
         </View>
-        <View style={styles.historyContent}>
-          <Text style={styles.historyTitle} numberOfLines={1}>{item.title}</Text>
-          <Text style={styles.historySummary} numberOfLines={2}>{item.summary}</Text>
-          <Text style={styles.historyDate}>{formatDate(item.created_at)}</Text>
-        </View>
-        <View style={[styles.typeBadge, { backgroundColor: color + '22' }]}>
-          <Text style={[styles.typeBadgeText, { color }]}>
-            {item.type === 'price' ? 'Fiyat' : item.type === 'obd' ? 'OBD' : 'Hasar'}
-          </Text>
+        <View style={styles.histContent}>
+          <Text style={styles.histTitle} numberOfLines={1}>{item.title}</Text>
+          <Text style={styles.histSummary} numberOfLines={2}>{item.summary}</Text>
+          <Text style={styles.histDate}>{formatDate(item.created_at)}</Text>
         </View>
       </View>
     );
@@ -100,30 +66,31 @@ export default function ProfileScreen() {
 
   return (
     <View style={styles.container}>
-      {/* Header */}
-      <View style={styles.header}>
-        <View style={styles.avatarPlaceholder}>
+      {/* Profile Header */}
+      <LinearGradient colors={['#1E293B', '#0F172A']} style={styles.header}>
+        <LinearGradient colors={[...Colors.gradientPrimary]} style={styles.avatar}>
           <Text style={styles.avatarText}>{avatarLetter}</Text>
-        </View>
+        </LinearGradient>
         <View style={styles.headerInfo}>
           <Text style={styles.userName}>{userName || 'Kullanıcı'}</Text>
-          <Text style={styles.userSubtitle}>AutoAssistant Kullanıcısı</Text>
+          <Text style={styles.userSub}>AutoAssistant Kullanıcısı</Text>
         </View>
-      </View>
+        <TouchableOpacity onPress={logout} style={styles.logoutBtn}>
+          <Ionicons name="log-out-outline" size={22} color={Colors.danger} />
+        </TouchableOpacity>
+      </LinearGradient>
 
-      {/* Stats Row */}
+      {/* Stats */}
       <View style={styles.statsRow}>
-        {['price', 'obd', 'damage'].map((type) => {
-          const count = history.filter(h => activeTab === 'all' ? h.type === type : h.type === type).length;
+        {(['price', 'obd', 'damage'] as const).map(type => {
+          const cfg = TYPE_CONFIG[type];
+          const count = history.filter(h => tab === 'all' ? h.type === type : h.type === type).length;
+          const allCount = tab === 'all' ? history.filter(h => h.type === type).length : (tab === type ? history.length : 0);
           return (
             <View key={type} style={styles.statCard}>
-              <Text style={styles.statIcon}>{TYPE_ICONS[type]}</Text>
-              <Text style={styles.statCount}>
-                {activeTab === 'all' ? history.filter(h => h.type === type).length : (activeTab === type ? history.length : '-')}
-              </Text>
-              <Text style={styles.statLabel}>
-                {type === 'price' ? 'Fiyat' : type === 'obd' ? 'OBD' : 'Hasar'}
-              </Text>
+              <Ionicons name={cfg.icon as any} size={20} color={cfg.color} />
+              <Text style={styles.statCount}>{allCount}</Text>
+              <Text style={styles.statLabel}>{type === 'price' ? 'Fiyat' : type === 'obd' ? 'OBD' : 'Hasar'}</Text>
             </View>
           );
         })}
@@ -131,245 +98,55 @@ export default function ProfileScreen() {
 
       {/* Tab Bar */}
       <View style={styles.tabBar}>
-        {(Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>).map((tab) => (
-          <TouchableOpacity
-            key={tab}
-            style={[styles.tab, activeTab === tab && styles.tabActive]}
-            onPress={() => setActiveTab(tab)}
-          >
-            <Text style={[styles.tabText, activeTab === tab && styles.tabTextActive]}>
-              {TAB_CONFIG[tab].icon} {TAB_CONFIG[tab].label}
-            </Text>
+        {TABS.map(t => (
+          <TouchableOpacity key={t.key} style={[styles.tab, tab === t.key && styles.tabActive]} onPress={() => setTab(t.key)}>
+            <Ionicons name={t.icon as any} size={16} color={tab === t.key ? Colors.primary : Colors.textMuted} />
+            <Text style={[styles.tabText, tab === t.key && styles.tabTextActive]}>{t.label}</Text>
           </TouchableOpacity>
         ))}
       </View>
 
-      {/* History List */}
-      {loading ? (
-        <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color={Colors.primary} />
-        </View>
-      ) : history.length === 0 ? (
-        <View style={styles.emptyContainer}>
-          <Text style={styles.emptyIcon}>📊</Text>
+      {/* History */}
+      {loading ? <View style={styles.center}><ActivityIndicator size="large" color={Colors.primary} /></View>
+       : history.length === 0 ? (
+        <View style={styles.center}>
+          <Ionicons name="document-text-outline" size={52} color={Colors.textMuted} />
           <Text style={styles.emptyTitle}>Henüz analiz yok</Text>
-          <Text style={styles.emptySubtitle}>
-            Fiyat tahmini, OBD sorgusu veya hasar analizi yaptığınızda burada görünecek.
-          </Text>
+          <Text style={styles.emptySub}>Analiz yaptığınızda burada görünecek.</Text>
         </View>
-      ) : (
-        <FlatList
-          data={history}
-          keyExtractor={(item) => String(item.id)}
-          renderItem={renderHistoryItem}
-          contentContainerStyle={{ padding: 16, paddingBottom: 100 }}
-          showsVerticalScrollIndicator={false}
-        />
-      )}
-
-      {/* Logout Button */}
-      <View style={styles.logoutWrapper}>
-        <TouchableOpacity style={styles.logoutButton} onPress={logout}>
-          <Text style={styles.logoutButtonText}>Çıkış Yap</Text>
-        </TouchableOpacity>
-      </View>
+       ) : (
+        <FlatList data={history} keyExtractor={i => String(i.id)} renderItem={renderItem}
+          contentContainerStyle={{ padding: 16, paddingBottom: 20 }} showsVerticalScrollIndicator={false} />
+       )}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.background,
-  },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 20,
-    paddingBottom: 16,
-    backgroundColor: Colors.surface,
-    borderBottomWidth: 1,
-    borderBottomColor: Colors.border,
-  },
-  avatarPlaceholder: {
-    width: 56,
-    height: 56,
-    borderRadius: 28,
-    backgroundColor: Colors.primary,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  avatarText: {
-    fontSize: 24,
-    color: '#FFF',
-    fontWeight: 'bold',
-  },
-  headerInfo: {
-    marginLeft: 16,
-    flex: 1,
-  },
-  userName: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: Colors.text,
-  },
-  userSubtitle: {
-    fontSize: 13,
-    color: Colors.textMuted,
-    marginTop: 2,
-  },
-  statsRow: {
-    flexDirection: 'row',
-    padding: 16,
-    gap: 10,
-  },
-  statCard: {
-    flex: 1,
-    backgroundColor: Colors.surface,
-    borderRadius: 14,
-    padding: 14,
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: Colors.border,
-  },
-  statIcon: {
-    fontSize: 20,
-    marginBottom: 6,
-  },
-  statCount: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: Colors.text,
-  },
-  statLabel: {
-    fontSize: 11,
-    color: Colors.textMuted,
-    marginTop: 2,
-  },
-  tabBar: {
-    flexDirection: 'row',
-    paddingHorizontal: 16,
-    marginBottom: 8,
-    gap: 8,
-  },
-  tab: {
-    flex: 1,
-    paddingVertical: 10,
-    borderRadius: 10,
-    backgroundColor: Colors.surface,
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: Colors.border,
-  },
-  tabActive: {
-    backgroundColor: Colors.primary + '22',
-    borderColor: Colors.primary,
-  },
-  tabText: {
-    fontSize: 12,
-    color: Colors.textMuted,
-    fontWeight: '600',
-  },
-  tabTextActive: {
-    color: Colors.primary,
-  },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  emptyContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 40,
-  },
-  emptyIcon: {
-    fontSize: 48,
-    marginBottom: 16,
-  },
-  emptyTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: Colors.text,
-    marginBottom: 8,
-  },
-  emptySubtitle: {
-    fontSize: 14,
-    color: Colors.textMuted,
-    textAlign: 'center',
-    lineHeight: 22,
-  },
-  historyCard: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: Colors.surface,
-    borderRadius: 14,
-    padding: 14,
-    marginBottom: 10,
-    borderWidth: 1,
-    borderColor: Colors.border,
-  },
-  historyIconBg: {
-    width: 44,
-    height: 44,
-    borderRadius: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  historyIcon: {
-    fontSize: 20,
-  },
-  historyContent: {
-    flex: 1,
-    marginLeft: 12,
-  },
-  historyTitle: {
-    fontSize: 14,
-    fontWeight: '700',
-    color: Colors.text,
-  },
-  historySummary: {
-    fontSize: 12,
-    color: Colors.textMuted,
-    marginTop: 2,
-    lineHeight: 17,
-  },
-  historyDate: {
-    fontSize: 10,
-    color: Colors.textMuted,
-    marginTop: 4,
-    opacity: 0.7,
-  },
-  typeBadge: {
-    borderRadius: 8,
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    marginLeft: 8,
-  },
-  typeBadgeText: {
-    fontSize: 11,
-    fontWeight: '700',
-  },
-  logoutWrapper: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    padding: 16,
-    backgroundColor: Colors.background,
-  },
-  logoutButton: {
-    backgroundColor: Colors.surface,
-    borderRadius: 12,
-    padding: 14,
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: Colors.danger,
-  },
-  logoutButtonText: {
-    color: Colors.danger,
-    fontWeight: 'bold',
-    fontSize: 15,
-  },
+  container: { flex: 1, backgroundColor: Colors.background },
+  header: { flexDirection: 'row', alignItems: 'center', padding: 20, paddingTop: 10, paddingBottom: 16 },
+  avatar: { width: 52, height: 52, borderRadius: 18, justifyContent: 'center', alignItems: 'center' },
+  avatarText: { fontSize: 22, color: '#FFF', fontWeight: '800' },
+  headerInfo: { marginLeft: 14, flex: 1 },
+  userName: { fontSize: 20, fontWeight: '800', color: Colors.text },
+  userSub: { fontSize: 13, color: Colors.textMuted, marginTop: 2 },
+  logoutBtn: { width: 44, height: 44, borderRadius: 14, backgroundColor: Colors.danger + '15', justifyContent: 'center', alignItems: 'center' },
+  statsRow: { flexDirection: 'row', paddingHorizontal: 16, gap: 10, marginBottom: 12 },
+  statCard: { flex: 1, backgroundColor: Colors.surface, borderRadius: 16, padding: 14, alignItems: 'center', borderWidth: 1, borderColor: Colors.border, gap: 4 },
+  statCount: { fontSize: 24, fontWeight: '800', color: Colors.text },
+  statLabel: { fontSize: 11, color: Colors.textMuted },
+  tabBar: { flexDirection: 'row', paddingHorizontal: 16, gap: 8, marginBottom: 8 },
+  tab: { flex: 1, flexDirection: 'row', gap: 6, paddingVertical: 10, borderRadius: 12, backgroundColor: Colors.surface, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: Colors.border },
+  tabActive: { backgroundColor: Colors.primary + '15', borderColor: Colors.primary + '50' },
+  tabText: { fontSize: 12, color: Colors.textMuted, fontWeight: '600' },
+  tabTextActive: { color: Colors.primary },
+  center: { flex: 1, justifyContent: 'center', alignItems: 'center', gap: 10 },
+  emptyTitle: { fontSize: 18, fontWeight: '700', color: Colors.text },
+  emptySub: { fontSize: 14, color: Colors.textMuted },
+  histCard: { flexDirection: 'row', alignItems: 'center', backgroundColor: Colors.surface, borderRadius: 16, padding: 14, marginBottom: 10, borderWidth: 1, borderColor: Colors.border },
+  histIconBg: { width: 44, height: 44, borderRadius: 14, justifyContent: 'center', alignItems: 'center' },
+  histContent: { flex: 1, marginLeft: 12 },
+  histTitle: { fontSize: 14, fontWeight: '700', color: Colors.text },
+  histSummary: { fontSize: 12, color: Colors.textMuted, marginTop: 2, lineHeight: 17 },
+  histDate: { fontSize: 10, color: Colors.textMuted, marginTop: 4, opacity: 0.6 },
 });

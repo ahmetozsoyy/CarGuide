@@ -1,140 +1,108 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import React, { useState, useRef } from 'react';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Animated, ScrollView } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '../../constants/Colors';
 import { useAuth } from '../../context/AuthContext';
 
 export default function OBDAnalysisScreen() {
   const [code, setCode] = useState('');
-  const [result, setResult] = useState<{ title: string, desc: string } | null>(null);
-
+  const [result, setResult] = useState<{ title: string; desc: string } | null>(null);
   const [loading, setLoading] = useState(false);
   const { token } = useAuth();
+  const fadeAnim = useRef(new Animated.Value(0)).current;
 
   const handleSearch = async () => {
     if (!code) return;
-    
-    setLoading(true);
-    setResult(null);
-
+    setLoading(true); setResult(null);
     try {
       const response = await fetch('http://172.24.246.41:5000/obd', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          ...(token ? { 'Authorization': `Bearer ${token}` } : {}),
-        },
+        headers: { 'Content-Type': 'application/json', ...(token ? { 'Authorization': `Bearer ${token}` } : {}) },
         body: JSON.stringify({ code })
       });
-
       const data = await response.json();
-
       if (data.success) {
-        setResult({
-          title: data.title,
-          desc: data.desc
-        });
-      } else {
-        alert("Hata: " + (data.error || "Bir sorun oluştu"));
-      }
-    } catch (error) {
-      console.error(error);
-      alert("Sunucuya bağlanılamadı.");
-    } finally {
-      setLoading(false);
-    }
+        setResult({ title: data.title, desc: data.desc });
+        fadeAnim.setValue(0);
+        Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }).start();
+      } else { alert("Hata: " + (data.error || "Bir sorun oluştu")); }
+    } catch (error) { alert("Sunucuya bağlanılamadı."); }
+    finally { setLoading(false); }
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>OBD Arıza Kodu Yorumlama</Text>
-      <Text style={styles.subtitle}>Aracınızın verdiği hata kodunun ne anlama geldiğini öğrenin.</Text>
+    <ScrollView style={styles.container} contentContainerStyle={{ padding: 20 }}>
+      {/* Header */}
+      <View style={styles.headerCard}>
+        <LinearGradient colors={['#1E293B', '#334155']} style={styles.headerGrad} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
+          <View style={styles.headerIcon}>
+            <Ionicons name="hardware-chip" size={28} color={Colors.warning} />
+          </View>
+          <Text style={styles.title}>OBD Arıza Kodu Yorumlama</Text>
+          <Text style={styles.subtitle}>Aracınızın verdiği hata kodunun ne anlama geldiğini yapay zeka ile öğrenin.</Text>
+        </LinearGradient>
+      </View>
 
-      <View style={styles.searchContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="Arıza Kodunu Girin (Örn: P0171)"
-          placeholderTextColor={Colors.textMuted}
-          value={code}
-          onChangeText={setCode}
-          autoCapitalize="characters"
-        />
-        <TouchableOpacity style={styles.button} onPress={handleSearch} disabled={loading}>
-          <Text style={styles.buttonText}>{loading ? "..." : "Sorgula"}</Text>
+      {/* Search */}
+      <View style={styles.searchRow}>
+        <View style={styles.inputWrap}>
+          <Ionicons name="search" size={20} color={Colors.textMuted} />
+          <TextInput style={styles.input} placeholder="Kod girin (Örn: P0171)" placeholderTextColor={Colors.textMuted}
+            value={code} onChangeText={setCode} autoCapitalize="characters" />
+        </View>
+        <TouchableOpacity onPress={handleSearch} disabled={loading} activeOpacity={0.8}>
+          <LinearGradient colors={[...Colors.gradientPrimary]} style={styles.searchBtn}>
+            <Ionicons name={loading ? 'hourglass' : 'arrow-forward'} size={22} color="#FFF" />
+          </LinearGradient>
         </TouchableOpacity>
       </View>
 
+      {/* Result */}
       {result && (
-        <View style={styles.resultCard}>
-          <Text style={styles.resultTitle}>{result.title}</Text>
+        <Animated.View style={[styles.resultCard, { opacity: fadeAnim }]}>
+          <View style={styles.resultHeader}>
+            <View style={styles.codeChip}>
+              <Text style={styles.codeChipText}>{code.toUpperCase()}</Text>
+            </View>
+            <Text style={styles.resultTitle}>{result.title}</Text>
+          </View>
+          <View style={styles.divider} />
           <Text style={styles.resultDesc}>{result.desc}</Text>
+        </Animated.View>
+      )}
+
+      {/* Info */}
+      {!result && (
+        <View style={styles.infoCard}>
+          <Ionicons name="information-circle" size={22} color={Colors.info} />
+          <Text style={styles.infoText}>
+            P ile başlayan kodlar motor ve şanzıman, B ile başlayanlar gövde, C ile başlayanlar şasi ve U ile başlayanlar iletişim arızalarıdır.
+          </Text>
         </View>
       )}
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.background,
-    padding: 20,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: Colors.text,
-    marginBottom: 4,
-  },
-  subtitle: {
-    fontSize: 14,
-    color: Colors.textMuted,
-    marginBottom: 32,
-  },
-  searchContainer: {
-    flexDirection: 'row',
-    gap: 12,
-    marginBottom: 32,
-  },
-  input: {
-    flex: 1,
-    backgroundColor: Colors.surface,
-    borderRadius: 12,
-    padding: 16,
-    color: Colors.text,
-    borderWidth: 1,
-    borderColor: Colors.border,
-    fontSize: 16,
-  },
-  button: {
-    backgroundColor: Colors.primary,
-    borderRadius: 12,
-    paddingHorizontal: 24,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#FFF',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
-  resultCard: {
-    backgroundColor: Colors.surface,
-    borderRadius: 12,
-    padding: 20,
-    borderWidth: 1,
-    borderColor: Colors.border,
-    borderLeftWidth: 4,
-    borderLeftColor: Colors.danger,
-  },
-  resultTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: Colors.text,
-    marginBottom: 8,
-  },
-  resultDesc: {
-    fontSize: 14,
-    color: Colors.textMuted,
-    lineHeight: 22,
-  },
+  container: { flex: 1, backgroundColor: Colors.background },
+  headerCard: { borderRadius: 20, overflow: 'hidden', marginBottom: 20 },
+  headerGrad: { padding: 24 },
+  headerIcon: { width: 52, height: 52, borderRadius: 16, backgroundColor: Colors.warning + '18', justifyContent: 'center', alignItems: 'center', marginBottom: 16 },
+  title: { fontSize: 22, fontWeight: '800', color: Colors.text, marginBottom: 6 },
+  subtitle: { fontSize: 14, color: Colors.textSecondary, lineHeight: 20 },
+  searchRow: { flexDirection: 'row', gap: 12, marginBottom: 24 },
+  inputWrap: { flex: 1, flexDirection: 'row', alignItems: 'center', backgroundColor: Colors.surface, borderRadius: 16, paddingHorizontal: 16, gap: 10, borderWidth: 1, borderColor: Colors.border },
+  input: { flex: 1, color: Colors.text, fontSize: 16, paddingVertical: 16 },
+  searchBtn: { width: 56, height: 56, borderRadius: 16, justifyContent: 'center', alignItems: 'center' },
+  resultCard: { backgroundColor: Colors.surface, borderRadius: 20, padding: 20, borderWidth: 1, borderColor: Colors.border, borderLeftWidth: 4, borderLeftColor: Colors.danger },
+  resultHeader: { flexDirection: 'row', alignItems: 'center', gap: 12, marginBottom: 14 },
+  codeChip: { backgroundColor: Colors.danger + '22', borderRadius: 8, paddingHorizontal: 12, paddingVertical: 6 },
+  codeChipText: { color: Colors.danger, fontWeight: '800', fontSize: 14 },
+  resultTitle: { fontSize: 17, fontWeight: '700', color: Colors.text, flex: 1 },
+  divider: { height: 1, backgroundColor: Colors.border, marginBottom: 14 },
+  resultDesc: { fontSize: 14, color: Colors.textSecondary, lineHeight: 24 },
+  infoCard: { flexDirection: 'row', backgroundColor: Colors.info + '12', borderRadius: 16, padding: 16, gap: 12, alignItems: 'flex-start' },
+  infoText: { flex: 1, fontSize: 13, color: Colors.info, lineHeight: 20 },
 });
