@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { Platform } from 'react-native';
 import * as SecureStore from 'expo-secure-store';
 import { useRouter, useSegments } from 'expo-router';
-
 interface AuthContextType {
   token: string | null;
   login: (token: string) => Promise<void>;
@@ -28,7 +28,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     // Check secure storage for token on mount
     const loadToken = async () => {
       try {
-        const storedToken = await SecureStore.getItemAsync('jwt_token');
+        let storedToken = null;
+        if (Platform.OS === 'web') {
+          storedToken = localStorage.getItem('jwt_token');
+        } else {
+          storedToken = await SecureStore.getItemAsync('jwt_token');
+        }
         if (storedToken) setToken(storedToken);
       } catch (e) {
         console.error("Error loading token", e);
@@ -54,12 +59,20 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, [token, segments, isLoading]);
 
   const login = async (newToken: string) => {
-    await SecureStore.setItemAsync('jwt_token', newToken);
+    if (Platform.OS === 'web') {
+      localStorage.setItem('jwt_token', newToken);
+    } else {
+      await SecureStore.setItemAsync('jwt_token', newToken);
+    }
     setToken(newToken);
   };
 
   const logout = async () => {
-    await SecureStore.deleteItemAsync('jwt_token');
+    if (Platform.OS === 'web') {
+      localStorage.removeItem('jwt_token');
+    } else {
+      await SecureStore.deleteItemAsync('jwt_token');
+    }
     setToken(null);
   };
 

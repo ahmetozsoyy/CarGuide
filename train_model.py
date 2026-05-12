@@ -2,7 +2,7 @@ import sqlite3
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import TargetEncoder, StandardScaler
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import HistGradientBoostingRegressor
@@ -61,7 +61,7 @@ def train_and_evaluate(X, y):
     num_transformer = StandardScaler()
 
     # Preprocessing for categorical data
-    cat_transformer = TargetEncoder(target_type="continuous")
+    cat_transformer = OneHotEncoder(handle_unknown='ignore', sparse_output=False)
 
     # Bundle preprocessing
     preprocessor = ColumnTransformer(
