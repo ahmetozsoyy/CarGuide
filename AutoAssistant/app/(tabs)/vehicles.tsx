@@ -42,18 +42,22 @@ export default function VehiclesScreen() {
   useEffect(() => { const s = VD.marka_to_seri[marka] || []; setSeriList(s); setSeri(s[0] || ''); }, [marka]);
   useEffect(() => { const m = VD.seri_to_model[seri] || []; setModelList(m); setModel(m[0] || ''); }, [seri]);
 
-  const fetchVehicles = useCallback(async () => {
+  const fetchVehicles = useCallback(async (signal?: AbortSignal) => {
     if (!token) return;
     setLoading(true);
     try {
-      const res = await fetch(`${API_URL}/vehicles`, { headers: { 'Authorization': `Bearer ${token}` } });
+      const res = await fetch(`${API_URL}/vehicles`, { headers: { 'Authorization': `Bearer ${token}` }, signal });
       const data = await res.json();
       if (data.success) setVehicles(data.vehicles);
-    } catch (e) { console.error(e); }
+    } catch (e: any) { if (e.name !== 'AbortError') console.error(e); }
     finally { setLoading(false); }
   }, [token]);
 
-  useFocusEffect(useCallback(() => { fetchVehicles(); }, [fetchVehicles]));
+  useFocusEffect(useCallback(() => {
+    const controller = new AbortController();
+    fetchVehicles(controller.signal);
+    return () => controller.abort();
+  }, [fetchVehicles]));
 
   const openForm = (v?: Vehicle) => {
     if (v) {

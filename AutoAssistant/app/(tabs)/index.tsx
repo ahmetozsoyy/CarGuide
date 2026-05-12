@@ -34,19 +34,23 @@ export default function ProfileScreen() {
   const [loading, setLoading] = useState(false);
   const avatarLetter = userName ? userName.charAt(0).toUpperCase() : '?';
 
-  const fetchHistory = useCallback(async () => {
+  const fetchHistory = useCallback(async (signal?: AbortSignal) => {
     if (!token) return;
     setLoading(true);
     try {
       const tp = tab === 'all' ? '' : `?type=${tab}`;
-      const res = await fetch(`${API_URL}/history${tp}`, { headers: { 'Authorization': `Bearer ${token}` } });
+      const res = await fetch(`${API_URL}/history${tp}`, { headers: { 'Authorization': `Bearer ${token}` }, signal });
       const data = await res.json();
       if (data.success) setHistory(data.history);
-    } catch (e) { console.error(e); }
+    } catch (e: any) { if (e.name !== 'AbortError') console.error(e); }
     finally { setLoading(false); }
   }, [token, tab]);
 
-  useFocusEffect(useCallback(() => { fetchHistory(); }, [fetchHistory]));
+  useFocusEffect(useCallback(() => {
+    const controller = new AbortController();
+    fetchHistory(controller.signal);
+    return () => controller.abort();
+  }, [fetchHistory]));
 
   const renderItem = ({ item }: { item: HistoryItem }) => {
     const cfg = TYPE_CONFIG[item.type] || { color: Colors.textMuted, icon: 'document' };
