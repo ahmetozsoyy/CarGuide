@@ -7,6 +7,7 @@ import {
 import * as ImagePicker from 'expo-image-picker';
 import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
 import { Colors } from '../../constants/Colors';
+import { useAuth } from '../../context/AuthContext';
 
 const { width: SCREEN_W } = Dimensions.get('window');
 const API_URL = 'http://172.24.246.41:5000';
@@ -94,6 +95,7 @@ export default function DamageAnalysisScreen() {
   const [goruntular, setGoruntular] = useState<AnalyzedImage[]>([]);
   const [yukleniyor, setYukleniyor] = useState(false);
   const kameraRef = useRef<CameraView>(null);
+  const { token } = useAuth();
 
   // Galeri - tek fotoğraf
   const galeridenSec = async () => {
@@ -152,7 +154,10 @@ export default function DamageAnalysisScreen() {
       const base64Listesi = liste.map(g => g.base64 ? `data:image/jpeg;base64,${g.base64}` : '').filter(Boolean);
       const resp = await fetch(`${API_URL}/analyze-damage`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          ...(token ? { 'Authorization': `Bearer ${token}` } : {}),
+        },
         body: JSON.stringify({ images: base64Listesi }),
       });
       const data = await resp.json();

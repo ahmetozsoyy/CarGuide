@@ -32,10 +32,51 @@ def init_db():
             password TEXT NOT NULL
         )
     ''')
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS analysis_history (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            type TEXT NOT NULL,
+            title TEXT NOT NULL,
+            summary TEXT,
+            details TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users(id)
+        )
+    ''')
     conn.commit()
     conn.close()
 
 init_db()
+
+import json as json_lib
+from functools import wraps
+
+def get_user_from_token():
+    """Extract user_id from JWT token in Authorization header. Returns None if invalid."""
+    auth_header = request.headers.get('Authorization', '')
+    if not auth_header.startswith('Bearer '):
+        return None
+    try:
+        token = auth_header.split(' ')[1]
+        payload = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
+        return payload.get('user_id')
+    except Exception:
+        return None
+
+def save_history(user_id, analysis_type, title, summary, details=None):
+    """Save an analysis result to history."""
+    try:
+        conn = sqlite3.connect('users.db')
+        cursor = conn.cursor()
+        cursor.execute(
+            'INSERT INTO analysis_history (user_id, type, title, summary, details) VALUES (?, ?, ?, ?, ?)',
+            (user_id, analysis_type, title, summary, json_lib.dumps(details, ensure_ascii=False) if details else None)
+        )
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        print(f'History save error: {e}')
 
 # Load the trained ML model
 try:
@@ -207,13 +248,22 @@ def predict_price():
 
         formatted_range = f"{format_price(min_price)}  -  {format_price(max_price)}"
 
-        return jsonify({
+        result = {
             'success': True,
             'predicted_price': predicted_price,
             'min_price': min_price,
             'max_price': max_price,
             'formatted_price': formatted_range
-        })
+        }
+
+        # Save to history if user is authenticated
+        user_id = get_user_from_token()
+        if user_id:
+            title = f"{data.get('marka')} {data.get('seri')} {data.get('model')}"
+            summary = f"{data.get('yil')} | {int(float(data.get('kilometre'))):,} km | {formatted_range}".replace(',', '.')
+            save_history(user_id, 'price', title, summary, data)
+
+        return jsonify(result)
         
     except Exception as e:
         return jsonify({'error': str(e)}), 400
@@ -256,12 +306,19 @@ def lookup_obd():
         else:
             simplified_desc = f"{technical_desc}\n\n(Not: Daha basit bir açıklama için sunucuya GEMINI_API_KEY eklenmelidir.)"
 
-        return jsonify({
+        result = {
             'success': True,
             'title': f"{code} Arıza Kodu",
             'technical_desc': technical_desc,
             'desc': simplified_desc
-        })
+        }
+
+        # Save to history if user is authenticated
+        user_id = get_user_from_token()
+        if user_id:
+            save_history(user_id, 'obd', f"{code} Arıza Kodu", technical_desc)
+
+        return jsonify(result)
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -403,12 +460,68 @@ def analyze_damage():
     # Genel özet
     toplam_hasar = sum(s.get('tespit_sayisi', 0) for s in tum_sonuclar)
 
+    # Save to history if user is authenticated
+    user_id = get_user_from_token()
+    if user_id and toplam_hasar > 0:
+        hasar_listesi = []
+        for s in tum_sonuclar:
+            for t in s.get('tespitler', []):
+                hasar_listesi.append(t.get('etiket', ''))
+        title = f"{toplam_hasar} Hasar Tespit Edildi"
+        summary = ', '.join(hasar_listesi[:5])
+        save_history(user_id, 'damage', title, summary)
+
     return jsonify({
         'success':         True,
         'goruntu_sayisi':  len(goruntular),
         'toplam_hasar':    toplam_hasar,
         'sonuclar':        tum_sonuclar,
     })
+
+
+# ── Analiz Geçmişi Endpoint ──────────────────────────────────────────────
+@app.route('/history', methods=['GET'])
+def get_history():
+    """Kullanıcının analiz geçmişini döner."""
+    user_id = get_user_from_token()
+    if not user_id:
+        return jsonify({'success': False, 'error': 'Yetkilendirme gerekli.'}), 401
+
+    analysis_type = request.args.get('type')  # 'price', 'obd', 'damage' or None for all
+
+    try:
+        conn = sqlite3.connect('users.db')
+        conn.row_factory = sqlite3.Row
+        cursor = conn.cursor()
+
+        if analysis_type:
+            cursor.execute(
+                'SELECT * FROM analysis_history WHERE user_id = ? AND type = ? ORDER BY created_at DESC LIMIT 50',
+                (user_id, analysis_type)
+            )
+        else:
+            cursor.execute(
+                'SELECT * FROM analysis_history WHERE user_id = ? ORDER BY created_at DESC LIMIT 50',
+                (user_id,)
+            )
+
+        rows = cursor.fetchall()
+        conn.close()
+
+        history = []
+        for row in rows:
+            history.append({
+                'id': row['id'],
+                'type': row['type'],
+                'title': row['title'],
+                'summary': row['summary'],
+                'created_at': row['created_at'],
+            })
+
+        return jsonify({'success': True, 'history': history})
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 
 if __name__ == '__main__':

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, ActivityIndicator } from 'react-native';
 import { Colors } from '../../constants/Colors';
 import { Picker } from '@react-native-picker/picker';
+import { useAuth } from '../../context/AuthContext';
 import VehicleDataRaw from '../../constants/VehicleData.json';
 
 // Define the shape of our imported JSON
@@ -30,6 +31,7 @@ export default function PriceAnalysisScreen() {
 
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<string | null>(null);
+  const { token } = useAuth();
 
   // Update Seri list when Marka changes
   useEffect(() => {
@@ -70,6 +72,7 @@ export default function PriceAnalysisScreen() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          ...(token ? { 'Authorization': `Bearer ${token}` } : {}),
         },
         body: JSON.stringify({
           marka: marka,

@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { Colors } from '../../constants/Colors';
+import { useAuth } from '../../context/AuthContext';
 
 export default function OBDAnalysisScreen() {
   const [code, setCode] = useState('');
   const [result, setResult] = useState<{ title: string, desc: string } | null>(null);
 
   const [loading, setLoading] = useState(false);
+  const { token } = useAuth();
 
   const handleSearch = async () => {
     if (!code) return;
@@ -17,7 +19,10 @@ export default function OBDAnalysisScreen() {
     try {
       const response = await fetch('http://172.24.246.41:5000/obd', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          ...(token ? { 'Authorization': `Bearer ${token}` } : {}),
+        },
         body: JSON.stringify({ code })
       });
 
