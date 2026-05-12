@@ -225,16 +225,18 @@ def lookup_obd():
         return jsonify({'error': 'Lütfen bir OBD kodu girin.'}), 400
 
     try:
-        conn = sqlite3.connect('asistan.db')
-        cursor = conn.cursor()
-        cursor.execute("SELECT desc_tr FROM obd_kodlari WHERE id = ?", (code,))
-        result = cursor.fetchone()
-        conn.close()
+        import pandas as pd
+        try:
+            df_obd = pd.read_csv('obdTR.csv')
+        except Exception as e:
+            return jsonify({'success': False, 'error': 'obdTR.csv dosyası okunamadı.'})
 
-        if not result:
-            return jsonify({'success': False, 'error': 'Bu OBD kodu veritabanında bulunamadı.'})
+        match = df_obd[df_obd['id'] == code]
 
-        technical_desc = result[0]
+        if match.empty:
+            return jsonify({'success': False, 'error': 'Bu OBD kodu bulunamadı.'})
+
+        technical_desc = str(match.iloc[0]['desc_tr'])
         simplified_desc = technical_desc
 
         if client:
