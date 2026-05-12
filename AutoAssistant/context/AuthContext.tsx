@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { Platform } from 'react-native';
 import * as SecureStore from 'expo-secure-store';
-import { useRouter, useSegments } from 'expo-router';
 
 interface AuthContextType {
   token: string | null;
@@ -50,11 +49,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [token, setToken] = useState<string | null>(null);
   const [userName, setUserName] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const segments = useSegments();
-  const router = useRouter();
 
   useEffect(() => {
-    // Check secure storage for token on mount
     const loadToken = async () => {
       try {
         const storedToken = await storageGet('jwt_token');
@@ -71,20 +67,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     };
     loadToken();
   }, []);
-
-  useEffect(() => {
-    if (isLoading) return;
-
-    const inAuthGroup = segments[0] === '(auth)';
-
-    if (!token && !inAuthGroup) {
-      // Redirect to login if not authenticated
-      router.replace('/(auth)/login');
-    } else if (token && inAuthGroup) {
-      // Redirect to main tabs if authenticated and on auth screens
-      router.replace('/(tabs)');
-    }
-  }, [token, segments, isLoading]);
 
   const login = async (newToken: string, name: string) => {
     await storageSet('jwt_token', newToken);
