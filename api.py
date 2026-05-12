@@ -44,6 +44,22 @@ def init_db():
             FOREIGN KEY (user_id) REFERENCES users(id)
         )
     ''')
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS vehicles (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            marka TEXT NOT NULL,
+            seri TEXT NOT NULL,
+            model TEXT NOT NULL,
+            yil INTEGER NOT NULL,
+            kilometre INTEGER NOT NULL,
+            yakit_tipi TEXT NOT NULL,
+            vites_tipi TEXT NOT NULL,
+            photos TEXT DEFAULT '[]',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users(id)
+        )
+    ''')
     conn.commit()
     conn.close()
 
@@ -519,6 +535,106 @@ def get_history():
             })
 
         return jsonify({'success': True, 'history': history})
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+# ── Araç Yönetimi Endpoint'leri ──────────────────────────────────────────
+@app.route('/vehicles', methods=['GET'])
+def get_vehicles():
+    """Kullanıcının kayıtlı araçlarını döner."""
+    user_id = get_user_from_token()
+    if not user_id:
+        return jsonify({'success': False, 'error': 'Yetkilendirme gerekli.'}), 401
+
+    try:
+        conn = sqlite3.connect('users.db')
+        conn.row_factory = sqlite3.Row
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM vehicles WHERE user_id = ? ORDER BY created_at DESC', (user_id,))
+        rows = cursor.fetchall()
+        conn.close()
+
+        vehicles = []
+        for row in rows:
+            vehicles.append({
+                'id': row['id'],
+                'marka': row['marka'],
+                'seri': row['seri'],
+                'model': row['model'],
+                'yil': row['yil'],
+                'kilometre': row['kilometre'],
+                'yakit_tipi': row['yakit_tipi'],
+                'vites_tipi': row['vites_tipi'],
+                'photos': json_lib.loads(row['photos']) if row['photos'] else [],
+                'created_at': row['created_at'],
+            })
+
+        return jsonify({'success': True, 'vehicles': vehicles})
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/vehicles', methods=['POST'])
+def add_vehicle():
+    """Yeni araç ekler."""
+    user_id = get_user_from_token()
+    if not user_id:
+        return jsonify({'success': False, 'error': 'Yetkilendirme gerekli.'}), 401
+
+    data = request.json
+    required = ['marka', 'seri', 'model', 'yil', 'kilometre', 'yakit_tipi', 'vites_tipi']
+    for field in required:
+        if not data.get(field):
+            return jsonify({'success': False, 'error': f'{field} alanı zorunlu.'}), 400
+
+    # Photos: array of base64 strings (thumbnails), max 5
+    photos = data.get('photos', [])
+    if len(photos) > 5:
+        photos = photos[:5]
+
+    try:
+        conn = sqlite3.connect('users.db')
+        cursor = conn.cursor()
+        cursor.execute(
+            '''INSERT INTO vehicles (user_id, marka, seri, model, yil, kilometre, yakit_tipi, vites_tipi, photos)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+            (user_id, data['marka'], data['seri'], data['model'],
+             int(data['yil']), int(data['kilometre']),
+             data['yakit_tipi'], data['vites_tipi'],
+             json_lib.dumps(photos))
+        )
+        conn.commit()
+        vehicle_id = cursor.lastrowid
+        conn.close()
+
+        return jsonify({'success': True, 'message': 'Araç eklendi.', 'vehicle_id': vehicle_id})
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/vehicles/<int:vehicle_id>', methods=['DELETE'])
+def delete_vehicle(vehicle_id):
+    """Araç siler."""
+    user_id = get_user_from_token()
+    if not user_id:
+        return jsonify({'success': False, 'error': 'Yetkilendirme gerekli.'}), 401
+
+    try:
+        conn = sqlite3.connect('users.db')
+        cursor = conn.cursor()
+        cursor.execute('DELETE FROM vehicles WHERE id = ? AND user_id = ?', (vehicle_id, user_id))
+        conn.commit()
+        deleted = cursor.rowcount
+        conn.close()
+
+        if deleted == 0:
+            return jsonify({'success': False, 'error': 'Araç bulunamadı.'}), 404
+
+        return jsonify({'success': True, 'message': 'Araç silindi.'})
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
