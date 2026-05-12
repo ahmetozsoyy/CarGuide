@@ -25,8 +25,8 @@ export default function LoginScreen() {
       const data = await response.json();
 
       if (data.success) {
-        // Pass the real token to our AuthContext
-        login(data.token);
+        // Pass the real token and user name to our AuthContext
+        await login(data.token, data.name);
       } else {
         alert("Hata: " + (data.error || "Giriş yapılamadı."));
       }

@@ -4,16 +4,18 @@ import { Colors } from '../../constants/Colors';
 import { useAuth } from '../../context/AuthContext';
 
 export default function ProfileScreen() {
-  const { logout } = useAuth();
+  const { logout, userName } = useAuth();
+
+  // Get the first letter of the user's name for the avatar
+  const avatarLetter = userName ? userName.charAt(0).toUpperCase() : '?';
 
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <View style={styles.avatarPlaceholder}>
-          <Text style={styles.avatarText}>A</Text>
+          <Text style={styles.avatarText}>{avatarLetter}</Text>
         </View>
-        <Text style={styles.userName}>Ahmet Kullanıcı</Text>
-        <Text style={styles.userEmail}>ahmet@example.com</Text>
+        <Text style={styles.userName}>{userName || 'Kullanıcı'}</Text>
       </View>
 
       <View style={styles.section}>
@@ -64,11 +66,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: Colors.text,
-  },
-  userEmail: {
-    fontSize: 14,
-    color: Colors.textMuted,
-    marginTop: 4,
   },
   section: {
     padding: 20,
