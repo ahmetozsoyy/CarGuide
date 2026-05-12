@@ -25,53 +25,24 @@ export default function TabLayout() {
       }}>
       <Tabs.Screen name="index" options={{
         title: 'Profil',
-        tabBarIcon: ({ color, focused }) => (
-          <View style={focused ? styles.activeIcon : undefined}>
-            <Ionicons name={focused ? 'person' : 'person-outline'} size={22} color={color} />
-          </View>
-        ),
+        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'person' : 'person-outline'} size={22} color={color} />,
       }} />
       <Tabs.Screen name="vehicles" options={{
         title: 'Araçlarım',
-        tabBarIcon: ({ color, focused }) => (
-          <View style={focused ? styles.activeIcon : undefined}>
-            <Ionicons name={focused ? 'car-sport' : 'car-sport-outline'} size={22} color={color} />
-          </View>
-        ),
+        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'car-sport' : 'car-sport-outline'} size={22} color={color} />,
       }} />
       <Tabs.Screen name="damage" options={{
         title: 'Hasar',
-        tabBarIcon: ({ color, focused }) => (
-          <View style={focused ? styles.activeIcon : undefined}>
-            <Ionicons name={focused ? 'scan' : 'scan-outline'} size={22} color={color} />
-          </View>
-        ),
+        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'scan' : 'scan-outline'} size={22} color={color} />,
       }} />
       <Tabs.Screen name="obd" options={{
         title: 'OBD',
-        tabBarIcon: ({ color, focused }) => (
-          <View style={focused ? styles.activeIcon : undefined}>
-            <Ionicons name={focused ? 'hardware-chip' : 'hardware-chip-outline'} size={22} color={color} />
-          </View>
-        ),
+        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'hardware-chip' : 'hardware-chip-outline'} size={22} color={color} />,
       }} />
       <Tabs.Screen name="price" options={{
         title: 'Fiyat',
-        tabBarIcon: ({ color, focused }) => (
-          <View style={focused ? styles.activeIcon : undefined}>
-            <Ionicons name={focused ? 'analytics' : 'analytics-outline'} size={22} color={color} />
-          </View>
-        ),
+        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'analytics' : 'analytics-outline'} size={22} color={color} />,
       }} />
     </Tabs>
   );
 }
-
-const styles = StyleSheet.create({
-  activeIcon: {
-    backgroundColor: Colors.primary + '18',
-    borderRadius: 12,
-    padding: 4,
-    paddingHorizontal: 12,
-  },
-});
