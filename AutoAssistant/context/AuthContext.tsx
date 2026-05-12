@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { Platform } from 'react-native';
 import * as SecureStore from 'expo-secure-store';
+import { useRouter, useSegments } from 'expo-router';
 
 interface AuthContextType {
   token: string | null;
@@ -49,6 +50,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [token, setToken] = useState<string | null>(null);
   const [userName, setUserName] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const segments = useSegments();
+  const router = useRouter();
 
   useEffect(() => {
     const loadToken = async () => {
@@ -67,6 +70,19 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     };
     loadToken();
   }, []);
+
+  // Navigation guard: redirect based on auth state
+  useEffect(() => {
+    if (isLoading) return;
+
+    const inAuthGroup = segments[0] === '(auth)';
+
+    if (!token && !inAuthGroup) {
+      router.replace('/(auth)/login');
+    } else if (token && inAuthGroup) {
+      router.replace('/(tabs)');
+    }
+  }, [token, segments, isLoading]);
 
   const login = async (newToken: string, name: string) => {
     await storageSet('jwt_token', newToken);
