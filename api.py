@@ -607,8 +607,8 @@ def recommend_vehicle():
             query += " AND vites_tipi = ?"
             params.append(vites)
 
-        # Fiyata göre sırala, en fazla 100 aday al (AI'ya göndermek için)
-        query += " ORDER BY CAST(REPLACE(fiyat, '.', '') AS INTEGER) ASC LIMIT 100"
+        # Farklı bütçe ve özelliklerdeki araçları yakalamak için rastgele sırala (sadece en ucuzları almasın)
+        query += " ORDER BY RANDOM() LIMIT 200"
 
         cursor.execute(query, params)
         rows = cursor.fetchall()
@@ -637,7 +637,8 @@ def recommend_vehicle():
                     'fiyat': row['fiyat'],
                 }
 
-        aday_listesi = list(unique_cars.values())[:30]  # AI'ya max 30 benzersiz araç gönder
+        # AI kotasını aşmamak için en fazla 15 farklı aracı gönder (30 araç token limitini dolduruyor olabilir)
+        aday_listesi = list(unique_cars.values())[:15]
 
         # 2. AŞAMA: Gemini AI ile akıllı sıralama ve tavsiye
         if not client:
