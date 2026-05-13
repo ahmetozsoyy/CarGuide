@@ -428,8 +428,9 @@ def analyze_damage():
                     en_isim  = r.names[sinif_id]
                     tr_isim  = SINIF_TR.get(en_isim, en_isim)
                     
-                    # Sadece kaporta ve far aksamı için lastik analizini atla
-                    if 'tire' in en_isim.lower() or tr_isim == 'Lastik Hasarı':
+                    # Hatalı tespitlere neden olan sınıfları filtrele
+                    skip_classes = ['tire', 'glass', 'lamp', 'shatter', 'broken_lamp', 'flat_tire', 'shattered_glass']
+                    if any(skip in en_isim.lower() for skip in skip_classes):
                         continue
 
                     siddet   = _hasar_siddeti(guven)

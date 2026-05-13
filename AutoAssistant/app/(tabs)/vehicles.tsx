@@ -25,6 +25,7 @@ export default function VehiclesScreen() {
   const [damageResult, setDamageResult] = useState<any>(null);
   const [analyzing, setAnalyzing] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
+  const [fullscreenPhoto, setFullscreenPhoto] = useState<string | null>(null);
 
   // Form fields
   const [marka, setMarka] = useState(VD.marka[0] || '');
@@ -123,7 +124,6 @@ export default function VehiclesScreen() {
     if (!v.photos || v.photos.length === 0) { Alert.alert('Fotoğraf Yok', 'Hasar analizi için araç fotoğrafı ekleyin veya Hasar sekmesini kullanın.'); return; }
     setAnalyzing(true); setDamageResult(null);
     try {
-      // Send photos one by one to avoid memory crash
       const allResults: any[] = [];
       for (let i = 0; i < v.photos.length; i++) {
         const res = await fetch(`${API_URL}/analyze-damage`, {
@@ -131,7 +131,11 @@ export default function VehiclesScreen() {
           body: JSON.stringify({ images: [`data:image/jpeg;base64,${v.photos[i]}`] }),
         });
         const data = await res.json();
-        if (data.success && data.sonuclar) allResults.push(...data.sonuclar);
+        if (data.success && data.sonuclar) {
+          // Her sonuca fotoğraf index'ini ekle
+          data.sonuclar.forEach((s: any) => { s.photoIndex = i; });
+          allResults.push(...data.sonuclar);
+        }
       }
       setDamageResult(allResults);
     } catch (e) { Alert.alert('Hata', 'Analiz sırasında bir sorun oluştu.'); }
@@ -220,7 +224,9 @@ export default function VehiclesScreen() {
                   <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false}
                     onScroll={(e) => setPhotoIndex(Math.round(e.nativeEvent.contentOffset.x / SCREEN_W))}>
                     {detailVehicle.photos.map((p, i) => (
-                      <Image key={i} source={{ uri: `data:image/jpeg;base64,${p}` }} style={{ width: SCREEN_W, height: 240 }} resizeMode="cover" />
+                      <TouchableOpacity key={i} activeOpacity={0.9} onPress={() => setFullscreenPhoto(p)}>
+                        <Image source={{ uri: `data:image/jpeg;base64,${p}` }} style={{ width: SCREEN_W, height: 240 }} resizeMode="cover" />
+                      </TouchableOpacity>
                     ))}
                   </ScrollView>
                   <View style={s.dots}>
@@ -257,6 +263,14 @@ export default function VehiclesScreen() {
                   <Text style={s.damageSectionTitle}>🔍 Hasar Analiz Sonuçları</Text>
                   {damageResult.map((r: any, i: number) => (
                     <View key={i} style={s.damageCard}>
+                      {detailVehicle.photos && r.photoIndex !== undefined && (
+                        <TouchableOpacity onPress={() => setFullscreenPhoto(detailVehicle.photos[r.photoIndex])}>
+                          <View style={s.damagePhotoRow}>
+                            <Image source={{ uri: `data:image/jpeg;base64,${detailVehicle.photos[r.photoIndex]}` }} style={s.damageThumb} />
+                            <Text style={s.damagePhotoLabel}>Fotoğraf {r.photoIndex + 1}</Text>
+                          </View>
+                        </TouchableOpacity>
+                      )}
                       <Text style={s.damageCardTitle}>{r.hasar_var ? '⚠️ Hasar Tespit Edildi' : '✅ Hasar Yok'}</Text>
                       <Text style={s.damageCardMsg}>{r.mesaj}</Text>
                       {r.tespitler?.map((t: any, j: number) => (
@@ -279,6 +293,18 @@ export default function VehiclesScreen() {
             </ScrollView>
           </View>
         )}
+      </Modal>
+
+      {/* ── Fullscreen Photo Modal ── */}
+      <Modal visible={!!fullscreenPhoto} transparent animationType="fade">
+        <View style={s.fullscreenBg}>
+          <TouchableOpacity style={s.fullscreenClose} onPress={() => setFullscreenPhoto(null)}>
+            <Text style={s.fullscreenCloseTx}>✕</Text>
+          </TouchableOpacity>
+          {fullscreenPhoto && (
+            <Image source={{ uri: `data:image/jpeg;base64,${fullscreenPhoto}` }} style={s.fullscreenImg} resizeMode="contain" />
+          )}
+        </View>
       </Modal>
     </View>
   );
@@ -339,4 +365,13 @@ const s = StyleSheet.create({
   tespitBadge: { fontSize: 12, fontWeight: '700' },
   deleteBtn: { margin: 20, backgroundColor: Colors.surface, borderRadius: 12, padding: 14, alignItems: 'center', borderWidth: 1, borderColor: '#EF4444' },
   deleteBtnTx: { color: '#EF4444', fontWeight: 'bold', fontSize: 15 },
+  // Damage photo link
+  damagePhotoRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 10, gap: 10 },
+  damageThumb: { width: 60, height: 45, borderRadius: 8 },
+  damagePhotoLabel: { color: Colors.textMuted, fontSize: 12, fontWeight: '600' },
+  // Fullscreen
+  fullscreenBg: { flex: 1, backgroundColor: 'rgba(0,0,0,0.95)', justifyContent: 'center', alignItems: 'center' },
+  fullscreenClose: { position: 'absolute', top: 50, right: 20, zIndex: 10, width: 44, height: 44, borderRadius: 22, backgroundColor: 'rgba(255,255,255,0.2)', justifyContent: 'center', alignItems: 'center' },
+  fullscreenCloseTx: { color: '#FFF', fontSize: 20, fontWeight: 'bold' },
+  fullscreenImg: { width: '95%', height: '70%' },
 });
