@@ -263,24 +263,29 @@ export default function VehiclesScreen() {
                   <Text style={s.damageSectionTitle}>🔍 Hasar Analiz Sonuçları</Text>
                   {damageResult.map((r: any, i: number) => (
                     <View key={i} style={s.damageCard}>
-                      {detailVehicle.photos && r.photoIndex !== undefined && (
-                        <TouchableOpacity onPress={() => setFullscreenPhoto(detailVehicle.photos[r.photoIndex])}>
-                          <View style={s.damagePhotoRow}>
-                            <Image source={{ uri: `data:image/jpeg;base64,${detailVehicle.photos[r.photoIndex]}` }} style={s.damageThumb} />
-                            <Text style={s.damagePhotoLabel}>Fotoğraf {r.photoIndex + 1}</Text>
-                          </View>
+                      {/* Çizimli görüntü (bounding box'lı) */}
+                      {r.cizimli_goruntu ? (
+                        <TouchableOpacity onPress={() => setFullscreenPhoto(r.cizimli_goruntu)}>
+                          <Image source={{ uri: `data:image/jpeg;base64,${r.cizimli_goruntu}` }} style={s.damageFullImg} resizeMode="contain" />
                         </TouchableOpacity>
-                      )}
-                      <Text style={s.damageCardTitle}>{r.hasar_var ? '⚠️ Hasar Tespit Edildi' : '✅ Hasar Yok'}</Text>
-                      <Text style={s.damageCardMsg}>{r.mesaj}</Text>
-                      {r.tespitler?.map((t: any, j: number) => (
-                        <View key={j} style={s.tespitRow}>
-                          <Text style={s.tespitLabel}>{t.etiket}</Text>
-                          <Text style={[s.tespitBadge, { color: t.siddet === 'Yüksek' ? '#EF4444' : t.siddet === 'Orta' ? '#F59E0B' : '#10B981' }]}>
-                            {t.siddet} • %{t.guven?.toFixed(0)}
-                          </Text>
-                        </View>
-                      ))}
+                      ) : r.photoIndex !== undefined && detailVehicle.photos ? (
+                        <TouchableOpacity onPress={() => setFullscreenPhoto(detailVehicle.photos[r.photoIndex])}>
+                          <Image source={{ uri: `data:image/jpeg;base64,${detailVehicle.photos[r.photoIndex]}` }} style={s.damageFullImg} resizeMode="contain" />
+                        </TouchableOpacity>
+                      ) : null}
+                      <View style={{ padding: 14 }}>
+                        <Text style={s.damagePhotoLabel}>Fotoğraf {(r.photoIndex ?? 0) + 1}</Text>
+                        <Text style={s.damageCardTitle}>{r.hasar_var ? '⚠️ Hasar Tespit Edildi' : '✅ Hasar Yok'}</Text>
+                        <Text style={s.damageCardMsg}>{r.mesaj}</Text>
+                        {r.tespitler?.map((t: any, j: number) => (
+                          <View key={j} style={s.tespitRow}>
+                            <Text style={s.tespitLabel}>{t.etiket}</Text>
+                            <Text style={[s.tespitBadge, { color: t.siddet === 'Yüksek' ? '#EF4444' : t.siddet === 'Orta' ? '#F59E0B' : '#10B981' }]}>
+                              {t.siddet} • %{t.guven?.toFixed(0)}
+                            </Text>
+                          </View>
+                        ))}
+                      </View>
                     </View>
                   ))}
                 </View>
@@ -366,9 +371,8 @@ const s = StyleSheet.create({
   deleteBtn: { margin: 20, backgroundColor: Colors.surface, borderRadius: 12, padding: 14, alignItems: 'center', borderWidth: 1, borderColor: '#EF4444' },
   deleteBtnTx: { color: '#EF4444', fontWeight: 'bold', fontSize: 15 },
   // Damage photo link
-  damagePhotoRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 10, gap: 10 },
-  damageThumb: { width: 60, height: 45, borderRadius: 8 },
-  damagePhotoLabel: { color: Colors.textMuted, fontSize: 12, fontWeight: '600' },
+  damageFullImg: { width: '100%', height: 200, borderTopLeftRadius: 12, borderTopRightRadius: 12 },
+  damagePhotoLabel: { color: Colors.textMuted, fontSize: 12, fontWeight: '600', marginBottom: 6 },
   // Fullscreen
   fullscreenBg: { flex: 1, backgroundColor: 'rgba(0,0,0,0.95)', justifyContent: 'center', alignItems: 'center' },
   fullscreenClose: { position: 'absolute', top: 50, right: 20, zIndex: 10, width: 44, height: 44, borderRadius: 22, backgroundColor: 'rgba(255,255,255,0.2)', justifyContent: 'center', alignItems: 'center' },

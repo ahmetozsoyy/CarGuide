@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '../../constants/Colors';
@@ -52,6 +52,18 @@ export default function ProfileScreen() {
     return () => controller.abort();
   }, [fetchHistory]));
 
+  const clearHistory = () => {
+    Alert.alert('Geçmişi Temizle', 'Tüm analiz geçmişiniz silinecek. Devam etmek istiyor musunuz?', [
+      { text: 'İptal', style: 'cancel' },
+      { text: 'Temizle', style: 'destructive', onPress: async () => {
+        try {
+          await fetch(`${API_URL}/history`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${token}` } });
+          setHistory([]);
+        } catch (e) { console.error(e); }
+      }},
+    ]);
+  };
+
   const renderItem = ({ item }: { item: HistoryItem }) => {
     const cfg = TYPE_CONFIG[item.type] || { color: Colors.textMuted, icon: 'document' };
     return (
@@ -100,14 +112,21 @@ export default function ProfileScreen() {
         })}
       </View>
 
-      {/* Tab Bar */}
-      <View style={styles.tabBar}>
-        {TABS.map(t => (
-          <TouchableOpacity key={t.key} style={[styles.tab, tab === t.key && styles.tabActive]} onPress={() => setTab(t.key)}>
-            <Ionicons name={t.icon as any} size={16} color={tab === t.key ? Colors.primary : Colors.textMuted} />
-            <Text style={[styles.tabText, tab === t.key && styles.tabTextActive]}>{t.label}</Text>
+      {/* Tab Bar + Clear Button */}
+      <View style={styles.tabRow}>
+        <View style={styles.tabBar}>
+          {TABS.map(t => (
+            <TouchableOpacity key={t.key} style={[styles.tab, tab === t.key && styles.tabActive]} onPress={() => setTab(t.key)}>
+              <Ionicons name={t.icon as any} size={16} color={tab === t.key ? Colors.primary : Colors.textMuted} />
+              <Text style={[styles.tabText, tab === t.key && styles.tabTextActive]}>{t.label}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+        {history.length > 0 && (
+          <TouchableOpacity style={styles.clearBtn} onPress={clearHistory}>
+            <Ionicons name="trash-outline" size={18} color={Colors.danger} />
           </TouchableOpacity>
-        ))}
+        )}
       </View>
 
       {/* History */}
@@ -139,7 +158,9 @@ const styles = StyleSheet.create({
   statCard: { flex: 1, backgroundColor: Colors.surface, borderRadius: 16, padding: 14, alignItems: 'center', borderWidth: 1, borderColor: Colors.border, gap: 4 },
   statCount: { fontSize: 24, fontWeight: '800', color: Colors.text },
   statLabel: { fontSize: 11, color: Colors.textMuted },
-  tabBar: { flexDirection: 'row', paddingHorizontal: 16, gap: 8, marginBottom: 8 },
+  tabRow: { flexDirection: 'row', paddingHorizontal: 16, gap: 8, marginBottom: 8, alignItems: 'center' },
+  tabBar: { flexDirection: 'row', flex: 1, gap: 8 },
+  clearBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.danger + '15', justifyContent: 'center', alignItems: 'center' },
   tab: { flex: 1, flexDirection: 'row', gap: 6, paddingVertical: 10, borderRadius: 12, backgroundColor: Colors.surface, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: Colors.border },
   tabActive: { backgroundColor: Colors.primary + '15', borderColor: Colors.primary + '50' },
   tabText: { fontSize: 12, color: Colors.textMuted, fontWeight: '600' },

@@ -541,6 +541,24 @@ def get_history():
         return jsonify({'error': str(e)}), 500
 
 
+@app.route('/history', methods=['DELETE'])
+def clear_history():
+    """Kullanıcının tüm analiz geçmişini siler."""
+    user_id = get_user_from_token()
+    if not user_id:
+        return jsonify({'success': False, 'error': 'Yetkilendirme gerekli.'}), 401
+
+    try:
+        conn = sqlite3.connect('users.db')
+        cursor = conn.cursor()
+        cursor.execute('DELETE FROM analysis_history WHERE user_id = ?', (user_id,))
+        conn.commit()
+        conn.close()
+        return jsonify({'success': True, 'message': 'Geçmiş temizlendi.'})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 # ── Araç Yönetimi Endpoint'leri ──────────────────────────────────────────
 @app.route('/vehicles', methods=['GET'])
 def get_vehicles():
