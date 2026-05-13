@@ -689,7 +689,7 @@ YANITINI TAM OLARAK ŞÖYLE JSON FORMATINDA VER (başka hiçbir şey yazma):
 5 araç öner. Puanı 0-100 arasında ver."""
 
         try:
-            resp = client.models.generate_content(model='gemini-1.5-flash', contents=prompt)
+            resp = client.models.generate_content(model='gemini-2.5-flash-lite', contents=prompt)
             ai_text = resp.text.strip()
 
             # JSON'u parse et
