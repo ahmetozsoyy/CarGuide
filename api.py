@@ -561,6 +561,166 @@ def clear_history():
         return jsonify({'error': str(e)}), 500
 
 
+# ── Araç Tavsiye Sistemi ─────────────────────────────────────────────────
+@app.route('/recommend', methods=['POST'])
+def recommend_vehicle():
+    """Kullanıcı tercihlerine göre DB + AI hibrit araç tavsiyesi."""
+    data = request.json or {}
+
+    # Kullanıcıdan gelen filtreler
+    min_fiyat = data.get('min_fiyat')
+    max_fiyat = data.get('max_fiyat')
+    max_km = data.get('max_km')
+    min_yil = data.get('min_yil')
+    yakit = data.get('yakit_tipi')
+    vites = data.get('vites_tipi')
+    tercihler = data.get('tercihler', '')  # Serbest metin: "performanslı, az arızalı, konforlu"
+
+    if not tercihler and not max_fiyat:
+        return jsonify({'success': False, 'error': 'Lütfen en az bütçe veya tercih belirtin.'}), 400
+
+    # 1. AŞAMA: SQL ile DB'den aday araçları filtrele
+    try:
+        conn = sqlite3.connect('asistan.db')
+        conn.row_factory = sqlite3.Row
+        cursor = conn.cursor()
+
+        query = "SELECT DISTINCT marka, seri, model, yil, yakit_tipi, vites_tipi, kilometre, fiyat FROM arac_ilanlari WHERE 1=1"
+        params = []
+
+        if max_fiyat:
+            query += " AND CAST(REPLACE(fiyat, '.', '') AS INTEGER) <= ?"
+            params.append(int(max_fiyat))
+        if min_fiyat:
+            query += " AND CAST(REPLACE(fiyat, '.', '') AS INTEGER) >= ?"
+            params.append(int(min_fiyat))
+        if max_km:
+            query += " AND CAST(REPLACE(kilometre, '.', '') AS INTEGER) <= ?"
+            params.append(int(max_km))
+        if min_yil:
+            query += " AND yil >= ?"
+            params.append(int(min_yil))
+        if yakit and yakit != 'Farketmez':
+            query += " AND yakit_tipi = ?"
+            params.append(yakit)
+        if vites and vites != 'Farketmez':
+            query += " AND vites_tipi = ?"
+            params.append(vites)
+
+        # Fiyata göre sırala, en fazla 100 aday al (AI'ya göndermek için)
+        query += " ORDER BY CAST(REPLACE(fiyat, '.', '') AS INTEGER) ASC LIMIT 100"
+
+        cursor.execute(query, params)
+        rows = cursor.fetchall()
+        conn.close()
+
+        if not rows:
+            return jsonify({
+                'success': True,
+                'message': 'Filtrelere uygun araç bulunamadı. Bütçe aralığını veya kilometre limitini genişletmeyi deneyin.',
+                'recommendations': []
+            })
+
+        # Benzersiz marka-seri kombinasyonlarını çıkar
+        unique_cars = {}
+        for row in rows:
+            key = f"{row['marka']} {row['seri']}"
+            if key not in unique_cars:
+                unique_cars[key] = {
+                    'marka': row['marka'],
+                    'seri': row['seri'],
+                    'model': row['model'],
+                    'yil': row['yil'],
+                    'yakit_tipi': row['yakit_tipi'] or 'Belirtilmemiş',
+                    'vites_tipi': row['vites_tipi'] or 'Belirtilmemiş',
+                    'kilometre': row['kilometre'],
+                    'fiyat': row['fiyat'],
+                }
+
+        aday_listesi = list(unique_cars.values())[:30]  # AI'ya max 30 benzersiz araç gönder
+
+        # 2. AŞAMA: Gemini AI ile akıllı sıralama ve tavsiye
+        if not client:
+            # AI yoksa sadece DB sonuçlarını döndür
+            return jsonify({
+                'success': True,
+                'message': f'{len(aday_listesi)} araç bulundu (AI analizi devre dışı).',
+                'recommendations': aday_listesi[:5]
+            })
+
+        araclar_str = "\n".join([
+            f"- {a['marka']} {a['seri']} {a['model']} ({a['yil']}) | {a['yakit_tipi']} | {a['vites_tipi']} | {a['kilometre']} km | {a['fiyat']} TL"
+            for a in aday_listesi
+        ])
+
+        prompt = f"""Sen Türkiye otomotiv pazarında uzman bir danışmansın. 
+
+Kullanıcının tercihleri:
+- Bütçe: {min_fiyat or 'belirtilmemiş'} - {max_fiyat or 'belirtilmemiş'} TL
+- Maksimum KM: {max_km or 'farketmez'}
+- Minimum Yıl: {min_yil or 'farketmez'}
+- Yakıt: {yakit or 'farketmez'}
+- Vites: {vites or 'farketmez'}
+- Özel tercihler: {tercihler if tercihler else 'belirtilmemiş'}
+
+Veritabanımızdaki uygun araç adayları:
+{araclar_str}
+
+GÖREV: Bu adaylar arasından en iyi 5 tavsiyeyi seç. Her tavsiye için:
+1. Kullanıcının özel tercihlerine (performans, konfor, güvenilirlik, kronik arıza durumu vb.) ne kadar uygun olduğunu değerlendir
+2. O aracın bilinen güçlü/zayıf yanlarını, kronik sorunlarını, sürüş deneyimini ve piyasa değerini kısa belirt
+3. Neden bu aracı önerdiğini açıkla
+
+YANITINI TAM OLARAK ŞÖYLE JSON FORMATINDA VER (başka hiçbir şey yazma):
+[
+  {{
+    "marka": "...",
+    "seri": "...",
+    "model": "...",
+    "puan": 95,
+    "neden": "Bu aracı tercih etmeniz için 2-3 cümlelik açıklama",
+    "guclu": "Güçlü yanları (kısa)",
+    "zayif": "Zayıf yanları veya dikkat edilmesi gerekenler (kısa)",
+    "fiyat": "..."
+  }}
+]
+5 araç öner. Puanı 0-100 arasında ver."""
+
+        try:
+            resp = client.models.generate_content(model='gemini-2.5-flash', contents=prompt)
+            ai_text = resp.text.strip()
+
+            # JSON'u parse et
+            if '```json' in ai_text:
+                ai_text = ai_text.split('```json')[1].split('```')[0].strip()
+            elif '```' in ai_text:
+                ai_text = ai_text.split('```')[1].split('```')[0].strip()
+
+            recommendations = json_lib.loads(ai_text)
+
+            return jsonify({
+                'success': True,
+                'message': f'{len(rows)} araç filtrelendi, AI ile en iyi {len(recommendations)} tavsiye seçildi.',
+                'total_filtered': len(rows),
+                'recommendations': recommendations
+            })
+
+        except Exception as e:
+            print(f"AI tavsiye hatası: {e}")
+            # AI başarısız olursa ham sonuçları dön
+            return jsonify({
+                'success': True,
+                'message': f'{len(aday_listesi)} araç bulundu (AI analizi başarısız).',
+                'recommendations': [
+                    {**a, 'puan': 0, 'neden': 'AI analizi yapılamadı.', 'guclu': '-', 'zayif': '-'}
+                    for a in aday_listesi[:5]
+                ]
+            })
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 # ── Araç Yönetimi Endpoint'leri ──────────────────────────────────────────
 @app.route('/vehicles', methods=['GET'])
 def get_vehicles():

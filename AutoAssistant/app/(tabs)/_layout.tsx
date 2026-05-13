@@ -39,6 +39,10 @@ export default function TabLayout() {
         title: 'OBD',
         tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'hardware-chip' : 'hardware-chip-outline'} size={22} color={color} />,
       }} />
+      <Tabs.Screen name="recommend" options={{
+        title: 'Tavsiye',
+        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'bulb' : 'bulb-outline'} size={22} color={color} />,
+      }} />
       <Tabs.Screen name="price" options={{
         title: 'Fiyat',
         tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'analytics' : 'analytics-outline'} size={22} color={color} />,
