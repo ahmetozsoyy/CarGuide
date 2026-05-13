@@ -13,6 +13,7 @@ from PIL import Image
 from werkzeug.security import generate_password_hash, check_password_hash
 from google import genai
 from dotenv import load_dotenv
+import json
 
 load_dotenv()
 
@@ -688,7 +689,7 @@ YANITINI TAM OLARAK ŞÖYLE JSON FORMATINDA VER (başka hiçbir şey yazma):
 5 araç öner. Puanı 0-100 arasında ver."""
 
         try:
-            resp = client.models.generate_content(model='gemini-2.5-flash', contents=prompt)
+            resp = client.models.generate_content(model='gemini-1.5-flash', contents=prompt)
             ai_text = resp.text.strip()
 
             # JSON'u parse et
@@ -697,7 +698,7 @@ YANITINI TAM OLARAK ŞÖYLE JSON FORMATINDA VER (başka hiçbir şey yazma):
             elif '```' in ai_text:
                 ai_text = ai_text.split('```')[1].split('```')[0].strip()
 
-            recommendations = json_lib.loads(ai_text)
+            recommendations = json.loads(ai_text)
 
             return jsonify({
                 'success': True,
@@ -707,13 +708,16 @@ YANITINI TAM OLARAK ŞÖYLE JSON FORMATINDA VER (başka hiçbir şey yazma):
             })
 
         except Exception as e:
-            print(f"AI tavsiye hatası: {e}")
+            print(f"AI tavsiye hatası DETAYI: {e}")
+            if 'resp' in locals() and hasattr(resp, 'text'):
+                print(f"AI Yanıtı: {resp.text}")
+            
             # AI başarısız olursa ham sonuçları dön
             return jsonify({
                 'success': True,
                 'message': f'{len(aday_listesi)} araç bulundu (AI analizi başarısız).',
                 'recommendations': [
-                    {**a, 'puan': 0, 'neden': 'AI analizi yapılamadı.', 'guclu': '-', 'zayif': '-'}
+                    {**a, 'puan': 0, 'neden': 'AI analizi yapılamadı (Kota aşımı veya sunucu hatası).', 'guclu': '-', 'zayif': '-'}
                     for a in aday_listesi[:5]
                 ]
             })
