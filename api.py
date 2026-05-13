@@ -389,7 +389,7 @@ def analyze_damage():
                 bx1, by1, bx2, by2 = best_box
                 w, h = img.size
                 # Arabanın etrafından azıcık pay (padding) bırak
-                pad = 30
+                pad = 50
                 bx1 = max(0, bx1 - pad)
                 by1 = max(0, by1 - pad)
                 bx2 = min(w, bx2 + pad)
@@ -407,7 +407,7 @@ def analyze_damage():
             # Sadece ezik(0), çizik(1), çatlak(2) → cam/lamba/lastik ışık yansımalarından hatalı sonuç veriyor
             sonuc = damage_model.predict(
                 source=tmp_yolu,
-                conf=0.35,          # Düşük güvenli tespitleri filtrele (yansıma, kapı arası vb.)
+                conf=0.25,          # Dengelenmiş eşik: düşük=fazla yanlış, yüksek=gerçek hasarı kaçırır
                 iou=0.45,
                 classes=[0, 1, 2],  # 0:dent, 1:scratch, 2:crack (glass/lamp/tire hariç)
                 verbose=False
@@ -435,7 +435,7 @@ def analyze_damage():
 
                     # Çok küçük alanları filtrele (kapı arası boşluklar, yansıma gürültüsü)
                     area = (x2 - x1) * (y2 - y1)
-                    if area < 0.005:  # Görüntü alanının %0.5'inden küçükse atla
+                    if area < 0.002:  # Görüntü alanının %0.2'sinden küçükse atla
                         continue
 
                     siddet   = _hasar_siddeti(guven)
