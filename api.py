@@ -404,10 +404,12 @@ def analyze_damage():
                     tmp_yolu = tmp.name
 
             # 2. AŞAMA: Sadece Araba Üzerinde Hasar Tespiti
+            # Sadece ezik(0), çizik(1), çatlak(2) → cam/lamba/lastik ışık yansımalarından hatalı sonuç veriyor
             sonuc = damage_model.predict(
                 source=tmp_yolu,
-                conf=0.15,          # Nano model zayıf olduğu için eşiği oldukça düşürdük
+                conf=0.35,          # Düşük güvenli tespitleri filtrele (yansıma, kapı arası vb.)
                 iou=0.45,
+                classes=[0, 1, 2],  # 0:dent, 1:scratch, 2:crack (glass/lamp/tire hariç)
                 verbose=False
             )
             os.unlink(tmp_yolu)
@@ -427,16 +429,16 @@ def analyze_damage():
                     guven    = float(box.conf[0])
                     en_isim  = r.names[sinif_id]
                     tr_isim  = SINIF_TR.get(en_isim, en_isim)
-                    
-                    # Hatalı tespitlere neden olan sınıfları filtrele
-                    skip_classes = ['tire', 'glass', 'lamp', 'shatter', 'broken_lamp', 'flat_tire', 'shattered_glass']
-                    if any(skip in en_isim.lower() for skip in skip_classes):
-                        continue
-
-                    siddet   = _hasar_siddeti(guven)
 
                     # Bounding box koordinatları (oransal)
                     x1, y1, x2, y2 = [float(v) for v in box.xyxyn[0]]
+
+                    # Çok küçük alanları filtrele (kapı arası boşluklar, yansıma gürültüsü)
+                    area = (x2 - x1) * (y2 - y1)
+                    if area < 0.005:  # Görüntü alanının %0.5'inden küçükse atla
+                        continue
+
+                    siddet   = _hasar_siddeti(guven)
 
                     tespitler.append({
                         'etiket':      tr_isim,
