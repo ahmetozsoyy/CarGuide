@@ -8,7 +8,7 @@ import { useAuth } from '../../context/AuthContext';
 
 const API_URL = 'http://172.24.246.41:5000';
 
-interface Rec { marka: string; seri: string; model?: string; puan: number; neden: string; guclu: string; zayif: string; fiyat: string; }
+interface Rec { marka: string; seri: string; model?: string; puan: number; neden: string; guclu: string; zayif: string; fiyat: string; yil?: string; }
 
 export default function RecommendScreen() {
   const { token } = useAuth();
@@ -145,13 +145,13 @@ export default function RecommendScreen() {
                 <View style={{ flex: 1 }}>
                   <Text style={s.recRank}>#{i + 1}</Text>
                   <Text style={s.recName}>{rec.marka} {rec.seri}</Text>
-                  {rec.model && <Text style={s.recModel}>{rec.model}</Text>}
+                  <Text style={s.recModel}>{rec.model ? `${rec.model} • ` : ''}{rec.yil || 'Yıl Belirtilmemiş'}</Text>
                 </View>
                 <View style={[s.puanCircle, { borderColor: puanColor(rec.puan) }]}>
                   <Text style={[s.puanText, { color: puanColor(rec.puan) }]}>{rec.puan}</Text>
                 </View>
               </View>
-              {rec.fiyat && <Text style={s.recFiyat}>💰 {Number(rec.fiyat).toLocaleString('tr-TR')} ₺</Text>}
+              {rec.fiyat && <Text style={s.recFiyat}>💰 {rec.fiyat} ₺</Text>}
               <Text style={s.recNeden}>{rec.neden}</Text>
               <View style={s.prosConsRow}>
                 <View style={[s.prosConsBox, { backgroundColor: Colors.success + '12' }]}>

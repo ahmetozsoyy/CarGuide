@@ -622,21 +622,52 @@ def recommend_vehicle():
                 'recommendations': []
             })
 
-        # Benzersiz marka-seri kombinasyonlarını çıkar
+        # Benzersiz marka-seri kombinasyonlarını çıkar ve fiyat aralıklarını hesapla
         unique_cars = {}
         for row in rows:
             key = f"{row['marka']} {row['seri']}"
+            fiyat_str = str(row['fiyat']).replace('.', '') if row['fiyat'] else '0'
+            fiyat_int = int(fiyat_str) if fiyat_str.isdigit() else 0
+            
             if key not in unique_cars:
                 unique_cars[key] = {
                     'marka': row['marka'],
                     'seri': row['seri'],
                     'model': row['model'],
-                    'yil': row['yil'],
                     'yakit_tipi': row['yakit_tipi'] or 'Belirtilmemiş',
                     'vites_tipi': row['vites_tipi'] or 'Belirtilmemiş',
                     'kilometre': row['kilometre'],
-                    'fiyat': row['fiyat'],
+                    'fiyatlar': [fiyat_int],
+                    'yillar': [row['yil']]
                 }
+            else:
+                unique_cars[key]['fiyatlar'].append(fiyat_int)
+                unique_cars[key]['yillar'].append(row['yil'])
+                
+        # Fiyatları ve Yılları min-max aralığına çevir
+        for key in unique_cars:
+            fiyatlar = [f for f in unique_cars[key]['fiyatlar'] if f > 0]
+            if not fiyatlar:
+                unique_cars[key]['fiyat'] = 'Belirtilmemiş'
+            elif len(fiyatlar) > 1:
+                min_f = min(fiyatlar)
+                max_f = max(fiyatlar)
+                if min_f != max_f:
+                    unique_cars[key]['fiyat'] = f"{min_f:,} - {max_f:,}".replace(',', '.')
+                else:
+                    unique_cars[key]['fiyat'] = f"{min_f:,}".replace(',', '.')
+            else:
+                unique_cars[key]['fiyat'] = f"{fiyatlar[0]:,}".replace(',', '.')
+            del unique_cars[key]['fiyatlar']
+
+            yillar = [y for y in unique_cars[key]['yillar'] if y]
+            if not yillar:
+                unique_cars[key]['yil'] = 'Belirtilmemiş'
+            else:
+                min_y = min(yillar)
+                max_y = max(yillar)
+                unique_cars[key]['yil'] = f"{min_y}-{max_y}" if min_y != max_y else str(min_y)
+            del unique_cars[key]['yillar']
 
         # AI kotasını aşmamak için en fazla 15 farklı aracı gönder (30 araç token limitini dolduruyor olabilir)
         aday_listesi = list(unique_cars.values())[:15]
@@ -679,6 +710,7 @@ YANITINI TAM OLARAK ŞÖYLE JSON FORMATINDA VER (başka hiçbir şey yazma):
     "marka": "...",
     "seri": "...",
     "model": "...",
+    "yil": "...",
     "puan": 95,
     "neden": "Bu aracı tercih etmeniz için 2-3 cümlelik açıklama",
     "guclu": "Güçlü yanları (kısa)",
