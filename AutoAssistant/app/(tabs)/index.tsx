@@ -130,7 +130,7 @@ export default function ProfileScreen() {
             </TouchableOpacity>
           ))}
         </BlurView>
-        {filteredHistory.length > 0 && (
+        {history.length > 0 && (
           <TouchableOpacity style={styles.clearBtn} onPress={() => setAlertVisible(true)}>
             <BlurView intensity={50} tint="dark" style={styles.clearBtnInner}>
               <Ionicons name="trash-outline" size={20} color={Colors.danger} />
