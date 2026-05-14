@@ -109,10 +109,10 @@ export default function PriceAnalysisScreen() {
           <CustomPicker value={marka} onValueChange={setMarka} items={VehicleData.marka} />
 
           <Text style={styles.label}>Seri</Text>
-          <CustomPicker value={seri} onValueChange={setSeri} items={seriList} enabled={seriList.length > 0} placeholder="Seri bulunamadı" />
+          <CustomPicker value={seri} onValueChange={setSeri} items={seriList} enabled={seriList.length > 0} placeholder="Seçiniz" />
 
           <Text style={styles.label}>Model (Donanım)</Text>
-          <CustomPicker value={model} onValueChange={setModel} items={modelList} enabled={modelList.length > 0} placeholder="Model bulunamadı" />
+          <CustomPicker value={model} onValueChange={setModel} items={modelList} enabled={modelList.length > 0} placeholder="Seçiniz" />
 
           <View style={styles.row}>
             <View style={{ flex: 1, marginRight: 10 }}>
