@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TextInput, ActivityIndicator, Alert, Image, FlatList, Modal, Dimensions, Platform } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
+import CustomPicker from '../../components/CustomPicker';
 import * as ImagePicker from 'expo-image-picker';
 import { Colors } from '../../constants/Colors';
 import { useAuth } from '../../context/AuthContext';
@@ -184,14 +184,14 @@ export default function VehiclesScreen() {
           </View>
           <ScrollView contentContainerStyle={{ padding: 20, paddingBottom: 60 }}>
             <Text style={s.lbl}>Marka</Text>
-            <View style={s.pkBox}><Picker selectedValue={marka} onValueChange={setMarka} style={s.pk} dropdownIconColor={Colors.text}>{VD.marka.map(m => <Picker.Item key={m} label={m} value={m} />)}</Picker></View>
+            <CustomPicker value={marka} onValueChange={setMarka} items={VD.marka} />
             <Text style={s.lbl}>Seri</Text>
-            <View style={[s.pkBox, !seriList.length && s.pkDis]}><Picker selectedValue={seri} onValueChange={setSeri} style={s.pk} dropdownIconColor={Colors.text} enabled={seriList.length > 0}>{seriList.length ? seriList.map(x => <Picker.Item key={x} label={x} value={x} />) : <Picker.Item label="-" value="" />}</Picker></View>
+            <CustomPicker value={seri} onValueChange={setSeri} items={seriList} enabled={seriList.length > 0} placeholder="-" />
             <Text style={s.lbl}>Model</Text>
-            <View style={[s.pkBox, !modelList.length && s.pkDis]}><Picker selectedValue={model} onValueChange={setModel} style={s.pk} dropdownIconColor={Colors.text} enabled={modelList.length > 0}>{modelList.length ? modelList.map(x => <Picker.Item key={x} label={x} value={x} />) : <Picker.Item label="-" value="" />}</Picker></View>
+            <CustomPicker value={model} onValueChange={setModel} items={modelList} enabled={modelList.length > 0} placeholder="-" />
             <View style={s.row}>
-              <View style={{ flex: 1, marginRight: 8 }}><Text style={s.lbl}>Yakıt</Text><View style={s.pkBox}><Picker selectedValue={yakit} onValueChange={setYakit} style={s.pk} dropdownIconColor={Colors.text}>{VD.yakit_tipi.map(y => <Picker.Item key={y} label={y} value={y} />)}</Picker></View></View>
-              <View style={{ flex: 1, marginLeft: 8 }}><Text style={s.lbl}>Vites</Text><View style={s.pkBox}><Picker selectedValue={vites} onValueChange={setVites} style={s.pk} dropdownIconColor={Colors.text}>{VD.vites_tipi.map(v => <Picker.Item key={v} label={v} value={v} />)}</Picker></View></View>
+              <View style={{ flex: 1, marginRight: 8 }}><Text style={s.lbl}>Yakıt</Text><CustomPicker value={yakit} onValueChange={setYakit} items={VD.yakit_tipi} /></View>
+              <View style={{ flex: 1, marginLeft: 8 }}><Text style={s.lbl}>Vites</Text><CustomPicker value={vites} onValueChange={setVites} items={VD.vites_tipi} /></View>
             </View>
             <View style={s.row}>
               <View style={{ flex: 1, marginRight: 8 }}><Text style={s.lbl}>Yıl</Text><TextInput style={s.inp} placeholder="2018" placeholderTextColor={Colors.textMuted} keyboardType="number-pad" value={yil} onChangeText={setYil} /></View>
@@ -338,9 +338,7 @@ const s = StyleSheet.create({
   modalSave: { color: '#818CF8', fontSize: 16, fontFamily: 'Poppins_700Bold' },
   // Form
   lbl: { fontSize: 13, fontFamily: 'Poppins_600SemiBold', color: '#CBD5E1', marginBottom: 6, marginTop: 12 },
-  pkBox: { backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 16, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', overflow: 'hidden' },
-  pkDis: { opacity: 0.5 },
-  pk: { color: '#FFF', height: 56, backgroundColor: 'transparent', fontFamily: 'Poppins_500Medium' },
+
   row: { flexDirection: 'row' },
   inp: { backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 16, color: '#FFF', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', fontSize: 15, height: 56, fontFamily: 'Poppins_500Medium' },
   photoBtn: { backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 16, alignItems: 'center', borderWidth: 1, borderColor: 'rgba(255,255,255,0.2)', borderStyle: 'dashed' },

@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, ActivityIndicator, Animated, Platform, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
-import { Picker } from '@react-native-picker/picker';
 import { BlurView } from 'expo-blur';
+import CustomPicker from '../../components/CustomPicker';
 import { Colors } from '../../constants/Colors';
 import { useAuth } from '../../context/AuthContext';
 import VehicleDataRaw from '../../constants/VehicleData.json';
@@ -90,21 +90,6 @@ export default function PriceAnalysisScreen() {
     finally { setLoading(false); }
   };
 
-  const DarkPicker = ({ value, onValueChange, items, enabled = true, placeholder = '' }: any) => (
-    <View style={[styles.pickerWrapper, !enabled && styles.pickerDisabled]}>
-      <View style={styles.inputBackground}>
-        <Picker selectedValue={value} onValueChange={onValueChange} enabled={enabled}
-          style={styles.picker} dropdownIconColor={Colors.textMuted}
-          mode="dropdown"
-          itemStyle={{ fontFamily: 'Poppins_500Medium', fontSize: 15, color: Colors.text }}>
-          {items.length > 0
-            ? items.map((item: string) => <Picker.Item key={item} label={item} value={item} color={Platform.OS === 'android' ? Colors.text : undefined} style={itemStyle} />)
-            : <Picker.Item label={placeholder || '-'} value="" color={Platform.OS === 'android' ? Colors.textMuted : undefined} style={itemStyle} />}
-        </Picker>
-      </View>
-    </View>
-  );
-
   return (
     <View style={styles.container}>
       {/* Background Blobs for Glassmorphism effect */}
@@ -121,22 +106,22 @@ export default function PriceAnalysisScreen() {
         {/* Form Inputs */}
         <View style={styles.formContainer}>
           <Text style={styles.label}>Marka</Text>
-          <DarkPicker value={marka} onValueChange={setMarka} items={VehicleData.marka} />
+          <CustomPicker value={marka} onValueChange={setMarka} items={VehicleData.marka} />
 
           <Text style={styles.label}>Seri</Text>
-          <DarkPicker value={seri} onValueChange={setSeri} items={seriList} enabled={seriList.length > 0} placeholder="Seri bulunamadı" />
+          <CustomPicker value={seri} onValueChange={setSeri} items={seriList} enabled={seriList.length > 0} placeholder="Seri bulunamadı" />
 
           <Text style={styles.label}>Model (Donanım)</Text>
-          <DarkPicker value={model} onValueChange={setModel} items={modelList} enabled={modelList.length > 0} placeholder="Model bulunamadı" />
+          <CustomPicker value={model} onValueChange={setModel} items={modelList} enabled={modelList.length > 0} placeholder="Model bulunamadı" />
 
           <View style={styles.row}>
             <View style={{ flex: 1, marginRight: 10 }}>
               <Text style={styles.label}>Yakıt Tipi</Text>
-              <DarkPicker value={yakit} onValueChange={setYakit} items={VehicleData.yakit_tipi} />
+              <CustomPicker value={yakit} onValueChange={setYakit} items={VehicleData.yakit_tipi} />
             </View>
             <View style={{ flex: 1, marginLeft: 10 }}>
               <Text style={styles.label}>Vites Tipi</Text>
-              <DarkPicker value={vites} onValueChange={setVites} items={VehicleData.vites_tipi} />
+              <CustomPicker value={vites} onValueChange={setVites} items={VehicleData.vites_tipi} />
             </View>
           </View>
 
@@ -189,10 +174,7 @@ const styles = StyleSheet.create({
   title: { fontSize: 26, fontFamily: 'Poppins_700Bold', color: '#FFF', letterSpacing: -0.3 },
   formContainer: { gap: 4 },
   label: { fontSize: 13, fontFamily: 'Poppins_600SemiBold', color: Colors.textSecondary, marginBottom: 8, marginTop: 12, letterSpacing: 0.3 },
-  pickerWrapper: { borderRadius: 16, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },
-  pickerDisabled: { opacity: 0.5 },
   inputBackground: { backgroundColor: 'rgba(255,255,255,0.05)' },
-  picker: { color: '#FFF', height: 56, backgroundColor: 'transparent', fontFamily: 'Poppins_500Medium' },
   row: { flexDirection: 'row' },
   inputWrapper: { borderRadius: 16, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },
   input: { padding: 18, color: '#FFF', fontSize: 15, height: 56, fontFamily: 'Poppins_500Medium' },

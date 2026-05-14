@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, ActivityIndicator, Animated, Platform } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
-import { Picker } from '@react-native-picker/picker';
+import CustomPicker from '../../components/CustomPicker';
 import { Colors } from '../../constants/Colors';
 import { useAuth } from '../../context/AuthContext';
 
@@ -88,15 +88,19 @@ export default function RecommendScreen() {
       <View style={s.row}>
         <View style={{ flex: 1, marginRight: 8 }}>
           <Text style={s.label}>Yakıt</Text>
-          <View style={s.pkBox}><Picker selectedValue={yakit} onValueChange={setYakit} style={s.pk} dropdownIconColor={Colors.textMuted}>
-            {['Farketmez', 'Benzin', 'Dizel', 'LPG & Benzin', 'Hibrit', 'Elektrik'].map(y => <Picker.Item key={y} label={y} value={y} color={Colors.text} />)}
-          </Picker></View>
+          <CustomPicker 
+            value={yakit} 
+            onValueChange={setYakit} 
+            items={['Farketmez', 'Benzin', 'Dizel', 'LPG & Benzin', 'Hibrit', 'Elektrik']} 
+          />
         </View>
         <View style={{ flex: 1, marginLeft: 8 }}>
           <Text style={s.label}>Vites</Text>
-          <View style={s.pkBox}><Picker selectedValue={vites} onValueChange={setVites} style={s.pk} dropdownIconColor={Colors.textMuted}>
-            {['Farketmez', 'Otomatik', 'Düz', 'Yarı Otomatik'].map(v => <Picker.Item key={v} label={v} value={v} color={Colors.text} />)}
-          </Picker></View>
+          <CustomPicker 
+            value={vites} 
+            onValueChange={setVites} 
+            items={['Farketmez', 'Otomatik', 'Düz', 'Yarı Otomatik']} 
+          />
         </View>
       </View>
 
@@ -171,8 +175,7 @@ const s = StyleSheet.create({
   label: { fontSize: 13, fontFamily: 'Poppins_600SemiBold', color: '#CBD5E1', marginBottom: 8, marginTop: 12, letterSpacing: 0.3 },
   row: { flexDirection: 'row' },
   input: { backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 16, color: '#FFF', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', fontSize: 15, height: 56, fontFamily: 'Poppins_500Medium' },
-  pkBox: { backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 16, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', overflow: 'hidden' },
-  pk: { color: '#FFF', height: 56, backgroundColor: 'transparent', fontFamily: 'Poppins_500Medium' },
+
   chip: { backgroundColor: Colors.surface, borderRadius: 20, paddingHorizontal: 14, paddingVertical: 8, marginRight: 8, borderWidth: 1, borderColor: Colors.border },
   chipActive: { backgroundColor: Colors.primary + '25', borderColor: Colors.primary },
   chipText: { color: Colors.textMuted, fontSize: 13, fontWeight: '600' },
