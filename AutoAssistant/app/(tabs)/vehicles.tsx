@@ -171,7 +171,7 @@ export default function VehiclesScreen() {
         </View>
        ) : (
         <FlatList data={vehicles} keyExtractor={i => String(i.id)} renderItem={renderVehicle}
-          contentContainerStyle={{ padding: 16, paddingBottom: 20 }} showsVerticalScrollIndicator={false} />
+          contentContainerStyle={{ padding: 16, paddingBottom: 130 }} showsVerticalScrollIndicator={false} />
        )}
 
       {/* ── Add/Edit Form Modal ── */}
@@ -317,7 +317,7 @@ export default function VehiclesScreen() {
 
 const s = StyleSheet.create({
   container: { flex: 1, backgroundColor: Colors.background },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 20, paddingBottom: 12 },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 20, paddingTop: Platform.OS === 'ios' ? 60 : 40, paddingBottom: 12 },
   title: { fontSize: 24, fontWeight: 'bold', color: Colors.text },
   addBtn: { backgroundColor: Colors.primary, borderRadius: 10, paddingHorizontal: 16, paddingVertical: 10 },
   addBtnTx: { color: '#FFF', fontWeight: 'bold', fontSize: 14 },

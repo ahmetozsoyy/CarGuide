@@ -8,7 +8,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: true,
+        headerShown: false,
         headerBackground: () => (
           <BlurView intensity={80} tint="dark" style={StyleSheet.absoluteFill} />
         ),

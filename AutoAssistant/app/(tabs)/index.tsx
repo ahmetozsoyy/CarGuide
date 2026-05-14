@@ -151,7 +151,7 @@ export default function ProfileScreen() {
         </View>
        ) : (
         <FlatList data={history} keyExtractor={i => String(i.id)} renderItem={renderItem}
-          contentContainerStyle={{ padding: 20, paddingBottom: 100 }} showsVerticalScrollIndicator={false} />
+          contentContainerStyle={{ padding: 20, paddingBottom: 130 }} showsVerticalScrollIndicator={false} />
        )}
     </View>
   );
@@ -160,7 +160,7 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#0F172A' },
   bgBlob: { position: 'absolute', width: 350, height: 350, borderRadius: 175, filter: 'blur(90px)' as any, opacity: 0.8 },
-  headerContainer: { marginTop: Platform.OS === 'ios' ? 100 : 80, paddingHorizontal: 20, marginBottom: 20 },
+  headerContainer: { marginTop: Platform.OS === 'ios' ? 60 : 40, paddingHorizontal: 20, marginBottom: 20 },
   header: { flexDirection: 'row', alignItems: 'center', padding: 16, borderRadius: 20, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', overflow: 'hidden' },
   avatar: { width: 48, height: 48, borderRadius: 16, justifyContent: 'center', alignItems: 'center', shadowColor: '#6366F1', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.3, shadowRadius: 8 },
   avatarText: { fontSize: 20, color: '#FFF', fontFamily: 'Poppins_700Bold' },

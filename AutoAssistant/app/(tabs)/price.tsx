@@ -92,7 +92,7 @@ export default function PriceAnalysisScreen() {
 
   const DarkPicker = ({ value, onValueChange, items, enabled = true, placeholder = '' }: any) => (
     <View style={[styles.pickerWrapper, !enabled && styles.pickerDisabled]}>
-      <BlurView intensity={Platform.OS === 'ios' ? 40 : 100} tint="dark" style={styles.blurContainer}>
+      <View style={styles.inputBackground}>
         <Picker selectedValue={value} onValueChange={onValueChange} enabled={enabled}
           style={styles.picker} dropdownIconColor={Colors.textMuted}
           mode="dropdown"
@@ -101,7 +101,7 @@ export default function PriceAnalysisScreen() {
             ? items.map((item: string) => <Picker.Item key={item} label={item} value={item} color={Platform.OS === 'android' ? Colors.text : undefined} style={itemStyle} />)
             : <Picker.Item label={placeholder || '-'} value="" color={Platform.OS === 'android' ? Colors.textMuted : undefined} style={itemStyle} />}
         </Picker>
-      </BlurView>
+      </View>
     </View>
   );
 
@@ -112,19 +112,11 @@ export default function PriceAnalysisScreen() {
       <View style={[styles.bgBlob, { top: 200, right: -100, backgroundColor: 'rgba(6, 214, 160, 0.15)' }]} />
       <View style={[styles.bgBlob, { bottom: -50, left: 100, backgroundColor: 'rgba(244, 114, 182, 0.15)' }]} />
 
-      <ScrollView style={styles.scrollView} contentContainerStyle={{ padding: 24, paddingTop: Platform.OS === 'ios' ? 100 : 80 }}>
-        {/* Header Card with Glassmorphism */}
-        <BlurView intensity={40} tint="prominent" style={styles.headerCard}>
-          <View style={styles.headerContent}>
-            <View style={styles.headerIconWrapper}>
-              <Ionicons name="analytics" size={24} color={Colors.primaryLight} />
-            </View>
-            <View style={styles.headerTextWrapper}>
-              <Text style={styles.title}>Yapay Zeka Fiyat Analizi</Text>
-              <Text style={styles.subtitle}>Aracınızın piyasa değerini anında öğrenin.</Text>
-            </View>
-          </View>
-        </BlurView>
+      <ScrollView style={styles.scrollView} contentContainerStyle={{ padding: 24, paddingTop: Platform.OS === 'ios' ? 60 : 40, paddingBottom: 130 }}>
+        {/* Minimal Header */}
+        <View style={styles.minimalHeader}>
+          <Text style={styles.title}>Fiyat Analizi</Text>
+        </View>
 
         {/* Form Inputs */}
         <View style={styles.formContainer}>
@@ -152,17 +144,17 @@ export default function PriceAnalysisScreen() {
             <View style={{ flex: 1, marginRight: 10 }}>
               <Text style={styles.label}>Yıl</Text>
               <View style={styles.inputWrapper}>
-                <BlurView intensity={Platform.OS === 'ios' ? 40 : 100} tint="dark" style={styles.blurContainer}>
+                <View style={styles.inputBackground}>
                   <TextInput style={styles.input} placeholder="Örn: 2018" placeholderTextColor={Colors.textMuted} keyboardType="number-pad" value={yil} onChangeText={setYil} />
-                </BlurView>
+                </View>
               </View>
             </View>
             <View style={{ flex: 1, marginLeft: 10 }}>
               <Text style={styles.label}>Kilometre</Text>
               <View style={styles.inputWrapper}>
-                <BlurView intensity={Platform.OS === 'ios' ? 40 : 100} tint="dark" style={styles.blurContainer}>
+                <View style={styles.inputBackground}>
                   <TextInput style={styles.input} placeholder="Örn: 120000" placeholderTextColor={Colors.textMuted} keyboardType="number-pad" value={km} onChangeText={setKm} />
-                </BlurView>
+                </View>
               </View>
             </View>
           </View>
@@ -190,20 +182,16 @@ export default function PriceAnalysisScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#0F172A' }, // Brighter dark background
+  container: { flex: 1, backgroundColor: '#0F172A' },
   bgBlob: { position: 'absolute', width: 300, height: 300, borderRadius: 150, filter: 'blur(80px)' as any, opacity: 0.8 },
   scrollView: { flex: 1 },
-  headerCard: { borderRadius: 20, overflow: 'hidden', marginBottom: 24, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },
-  headerContent: { padding: 20, flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(255,255,255,0.03)' },
-  headerIconWrapper: { width: 48, height: 48, borderRadius: 14, backgroundColor: 'rgba(99, 102, 241, 0.2)', justifyContent: 'center', alignItems: 'center', marginRight: 16, borderWidth: 1, borderColor: 'rgba(99, 102, 241, 0.4)' },
-  headerTextWrapper: { flex: 1 },
-  title: { fontSize: 20, fontFamily: 'Poppins_700Bold', color: '#FFF', marginBottom: 2, letterSpacing: -0.3 },
-  subtitle: { fontSize: 13, fontFamily: 'Poppins_400Regular', color: '#E2E8F0', lineHeight: 18 },
+  minimalHeader: { marginBottom: 20 },
+  title: { fontSize: 26, fontFamily: 'Poppins_700Bold', color: '#FFF', letterSpacing: -0.3 },
   formContainer: { gap: 4 },
   label: { fontSize: 13, fontFamily: 'Poppins_600SemiBold', color: Colors.textSecondary, marginBottom: 8, marginTop: 12, letterSpacing: 0.3 },
   pickerWrapper: { borderRadius: 16, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },
   pickerDisabled: { opacity: 0.5 },
-  blurContainer: { backgroundColor: 'rgba(255,255,255,0.05)' },
+  inputBackground: { backgroundColor: 'rgba(255,255,255,0.05)' },
   picker: { color: '#FFF', height: 56, backgroundColor: 'transparent', fontFamily: 'Poppins_500Medium' },
   row: { flexDirection: 'row' },
   inputWrapper: { borderRadius: 16, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },

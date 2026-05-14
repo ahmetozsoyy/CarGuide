@@ -276,7 +276,7 @@ export default function DamageAnalysisScreen() {
           data={goruntular}
           keyExtractor={(_, i) => String(i)}
           renderItem={({ item, index }) => <SonucKarti item={item} index={index} />}
-          contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
+          contentContainerStyle={{ padding: 16, paddingBottom: 130 }}
           ListHeaderComponent={
             goruntular.some(g => g.sonuc) ? (
               <View style={styles.ozetSatiri}>
@@ -295,7 +295,7 @@ export default function DamageAnalysisScreen() {
 // ── Stiller ───────────────────────────────────────────────────────────────
 const styles = StyleSheet.create({
   container:       { flex: 1, backgroundColor: Colors.background },
-  menuIcerik:      { padding: 20, paddingBottom: 40 },
+  menuIcerik:      { padding: 20, paddingTop: Platform.OS === 'ios' ? 20 : 40, paddingBottom: 130 },
   baslik:          { fontSize: 26, fontWeight: 'bold', color: Colors.text, marginBottom: 6 },
   altBaslik:       { fontSize: 14, color: Colors.textMuted, marginBottom: 28 },
 
@@ -327,7 +327,7 @@ const styles = StyleSheet.create({
   cekBtnIc:   { width: 58, height: 58, borderRadius: 29, backgroundColor: '#FFF' },
 
   // Sonuç
-  sonucHeader:      { flexDirection: 'row', alignItems: 'center', padding: 16, borderBottomWidth: 1, borderBottomColor: Colors.border },
+  sonucHeader:      { flexDirection: 'row', alignItems: 'center', padding: 16, paddingTop: Platform.OS === 'ios' ? 16 : 40, borderBottomWidth: 1, borderBottomColor: Colors.border },
   geriLinkBtn:      { marginRight: 12 },
   geriLinkMetin:    { color: Colors.primary, fontWeight: '600', fontSize: 15 },
   sonucHeaderBaslik:{ color: Colors.text, fontWeight: '700', fontSize: 16 },

@@ -32,16 +32,9 @@ export default function OBDAnalysisScreen() {
   };
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={{ padding: 20 }}>
-      {/* Header */}
-      <View style={styles.headerCard}>
-        <LinearGradient colors={['#1E293B', '#334155']} style={styles.headerGrad} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
-          <View style={styles.headerIcon}>
-            <Ionicons name="hardware-chip" size={28} color={Colors.warning} />
-          </View>
-          <Text style={styles.title}>OBD Arıza Kodu Yorumlama</Text>
-          <Text style={styles.subtitle}>Aracınızın verdiği hata kodunun ne anlama geldiğini yapay zeka ile öğrenin.</Text>
-        </LinearGradient>
+    <ScrollView style={styles.container} contentContainerStyle={styles.scrollContent}>
+      <View style={styles.minimalHeader}>
+        <Text style={styles.title}>OBD Arıza Kodu</Text>
       </View>
 
       {/* Search */}
@@ -87,11 +80,9 @@ export default function OBDAnalysisScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: Colors.background },
-  headerCard: { borderRadius: 20, overflow: 'hidden', marginBottom: 20 },
-  headerGrad: { padding: 24 },
-  headerIcon: { width: 52, height: 52, borderRadius: 16, backgroundColor: Colors.warning + '18', justifyContent: 'center', alignItems: 'center', marginBottom: 16 },
-  title: { fontSize: 22, fontWeight: '800', color: Colors.text, marginBottom: 6 },
-  subtitle: { fontSize: 14, color: Colors.textSecondary, lineHeight: 20 },
+  scrollContent: { padding: 20, paddingTop: Platform.OS === 'ios' ? 60 : 40, paddingBottom: 130 },
+  minimalHeader: { marginBottom: 24 },
+  title: { fontSize: 26, fontWeight: '800', color: Colors.text, letterSpacing: -0.3 },
   searchRow: { flexDirection: 'row', gap: 12, marginBottom: 24 },
   inputWrap: { flex: 1, flexDirection: 'row', alignItems: 'center', backgroundColor: Colors.surface, borderRadius: 16, paddingHorizontal: 16, gap: 10, borderWidth: 1, borderColor: Colors.border },
   input: { flex: 1, color: Colors.text, fontSize: 16, paddingVertical: 16 },
