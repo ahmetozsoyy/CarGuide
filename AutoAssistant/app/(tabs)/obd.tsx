@@ -79,6 +79,7 @@ export default function OBDAnalysisScreen() {
             P ile başlayan kodlar motor ve şanzıman, B ile başlayanlar gövde, C ile başlayanlar şasi ve U ile başlayanlar iletişim arızalarıdır.
           </Text>
         </View>
+      )}
       </ScrollView>
     </View>
   );
