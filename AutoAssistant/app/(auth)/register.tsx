@@ -39,20 +39,6 @@ export default function RegisterScreen() {
     finally { setLoading(false); }
   };
 
-  const InputField = ({ icon, placeholder, value, onChangeText, secure, keyboard, autoCapitalize }: any) => (
-    <View style={styles.inputWrap}>
-      <Ionicons name={icon} size={20} color={Colors.textMuted} style={styles.inputIcon} />
-      <TextInput style={styles.input} placeholder={placeholder} placeholderTextColor={Colors.textMuted}
-        value={value} onChangeText={onChangeText} secureTextEntry={secure && !showPw}
-        keyboardType={keyboard} autoCapitalize={autoCapitalize || 'none'} />
-      {secure && (
-        <TouchableOpacity onPress={() => setShowPw(!showPw)} style={{ padding: 8 }}>
-          <Ionicons name={showPw ? 'eye-off-outline' : 'eye-outline'} size={20} color={Colors.textMuted} />
-        </TouchableOpacity>
-      )}
-    </View>
-  );
-
   return (
     <View style={styles.container}>
       <LinearGradient colors={['#0A0E17', '#141922', '#1C2333']} style={StyleSheet.absoluteFill} />
@@ -68,10 +54,35 @@ export default function RegisterScreen() {
             </View>
 
             <View style={styles.form}>
-              <InputField icon="person-outline" placeholder="Ad Soyad" value={name} onChangeText={setName} autoCapitalize="words" />
-              <InputField icon="mail-outline" placeholder="E-posta" value={email} onChangeText={setEmail} keyboard="email-address" />
-              <InputField icon="lock-closed-outline" placeholder="Şifre" value={password} onChangeText={setPassword} secure />
-              <InputField icon="shield-checkmark-outline" placeholder="Şifreyi Onayla" value={confirmPassword} onChangeText={setConfirmPassword} secure />
+              <View style={styles.inputWrap}>
+                <Ionicons name="person-outline" size={20} color={Colors.textMuted} style={styles.inputIcon} />
+                <TextInput style={styles.input} placeholder="Ad Soyad" placeholderTextColor={Colors.textMuted}
+                  value={name} onChangeText={setName} autoCapitalize="words" />
+              </View>
+
+              <View style={styles.inputWrap}>
+                <Ionicons name="mail-outline" size={20} color={Colors.textMuted} style={styles.inputIcon} />
+                <TextInput style={styles.input} placeholder="E-posta" placeholderTextColor={Colors.textMuted}
+                  value={email} onChangeText={setEmail} autoCapitalize="none" keyboardType="email-address" />
+              </View>
+
+              <View style={styles.inputWrap}>
+                <Ionicons name="lock-closed-outline" size={20} color={Colors.textMuted} style={styles.inputIcon} />
+                <TextInput style={styles.input} placeholder="Şifre" placeholderTextColor={Colors.textMuted}
+                  value={password} onChangeText={setPassword} secureTextEntry={!showPw} />
+                <TouchableOpacity onPress={() => setShowPw(!showPw)} style={{ padding: 8 }}>
+                  <Ionicons name={showPw ? 'eye-off-outline' : 'eye-outline'} size={20} color={Colors.textMuted} />
+                </TouchableOpacity>
+              </View>
+
+              <View style={styles.inputWrap}>
+                <Ionicons name="shield-checkmark-outline" size={20} color={Colors.textMuted} style={styles.inputIcon} />
+                <TextInput style={styles.input} placeholder="Şifreyi Onayla" placeholderTextColor={Colors.textMuted}
+                  value={confirmPassword} onChangeText={setConfirmPassword} secureTextEntry={!showPw} />
+                <TouchableOpacity onPress={() => setShowPw(!showPw)} style={{ padding: 8 }}>
+                  <Ionicons name={showPw ? 'eye-off-outline' : 'eye-outline'} size={20} color={Colors.textMuted} />
+                </TouchableOpacity>
+              </View>
 
               <TouchableOpacity onPress={handleRegister} disabled={loading} activeOpacity={0.8}>
                 <LinearGradient colors={[...Colors.gradientPrimary]} style={styles.button} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
