@@ -7,7 +7,7 @@ import { useAuth } from '../../context/AuthContext';
 
 export default function OBDAnalysisScreen() {
   const [code, setCode] = useState('');
-  const [result, setResult] = useState<{ title: string; desc: string } | null>(null);
+  const [result, setResult] = useState<{ title: string; desc: string; searchedCode: string } | null>(null);
   const [loading, setLoading] = useState(false);
   const { token } = useAuth();
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -23,7 +23,7 @@ export default function OBDAnalysisScreen() {
       });
       const data = await response.json();
       if (data.success) {
-        setResult({ title: data.title, desc: data.desc });
+        setResult({ title: data.title, desc: data.desc, searchedCode: code });
         fadeAnim.setValue(0);
         Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }).start();
       } else { alert("Hata: " + (data.error || "Bir sorun oluştu")); }
@@ -62,7 +62,7 @@ export default function OBDAnalysisScreen() {
         <Animated.View style={[styles.resultCard, { opacity: fadeAnim }]}>
           <View style={styles.resultHeader}>
             <View style={styles.codeChip}>
-              <Text style={styles.codeChipText}>{code.toUpperCase()}</Text>
+              <Text style={styles.codeChipText}>{result.searchedCode.toUpperCase()}</Text>
             </View>
             <Text style={styles.resultTitle}>{result.title}</Text>
           </View>
