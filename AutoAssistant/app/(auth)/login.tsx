@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform, Animated } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform, Animated, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '../../constants/Colors';
@@ -45,9 +45,9 @@ export default function LoginScreen() {
         <Animated.View style={[styles.inner, { opacity: fadeAnim, transform: [{ translateY: slideAnim }] }]}>
           {/* Logo Area */}
           <View style={styles.logoArea}>
-            <LinearGradient colors={[...Colors.gradientPrimary]} style={styles.logoCircle}>
-              <Ionicons name="car-sport" size={36} color="#FFF" />
-            </LinearGradient>
+            <View style={styles.logoFrame}>
+              <Image source={require('../../assets/images/logo.png')} style={styles.logoImage} resizeMode="contain" />
+            </View>
             <Text style={styles.brand}>AutoAssistant</Text>
             <Text style={styles.tagline}>Akıllı Araç Asistanınız</Text>
           </View>
@@ -94,7 +94,23 @@ const styles = StyleSheet.create({
   content: { flex: 1, justifyContent: 'center', padding: 24 },
   inner: { alignItems: 'center' },
   logoArea: { alignItems: 'center', marginBottom: 48 },
-  logoCircle: { width: 80, height: 80, borderRadius: 24, justifyContent: 'center', alignItems: 'center', marginBottom: 20 },
+  logoFrame: { 
+    width: 110, 
+    height: 110, 
+    borderRadius: 28, 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    marginBottom: 20,
+    backgroundColor: 'rgba(255,255,255,0.03)',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.1)',
+    shadowColor: '#6366F1', 
+    shadowOffset: { width: 0, height: 8 }, 
+    shadowOpacity: 0.4, 
+    shadowRadius: 15,
+    elevation: 10 
+  },
+  logoImage: { width: 70, height: 70 },
   brand: { fontSize: 32, fontWeight: '800', color: Colors.text, letterSpacing: -0.5 },
   tagline: { fontSize: 15, color: Colors.textMuted, marginTop: 6 },
   form: { width: '100%', gap: 14 },

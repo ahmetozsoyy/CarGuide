@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform, Animated, ScrollView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform, Animated, ScrollView, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '../../constants/Colors';
@@ -60,9 +60,9 @@ export default function RegisterScreen() {
         <ScrollView contentContainerStyle={styles.content}>
           <Animated.View style={{ opacity: fadeAnim, transform: [{ translateY: slideAnim }], width: '100%', alignItems: 'center' }}>
             <View style={styles.logoArea}>
-              <LinearGradient colors={[...Colors.gradientPrimary]} style={styles.logoCircle}>
-                <Ionicons name="person-add" size={32} color="#FFF" />
-              </LinearGradient>
+              <View style={styles.logoFrame}>
+                <Image source={require('../../assets/images/logo.png')} style={styles.logoImage} resizeMode="contain" />
+              </View>
               <Text style={styles.brand}>Kayıt Ol</Text>
               <Text style={styles.tagline}>Yeni bir hesap oluşturun</Text>
             </View>
@@ -96,7 +96,23 @@ const styles = StyleSheet.create({
   container: { flex: 1 },
   content: { flexGrow: 1, justifyContent: 'center', padding: 24, paddingBottom: 40 },
   logoArea: { alignItems: 'center', marginBottom: 40 },
-  logoCircle: { width: 72, height: 72, borderRadius: 22, justifyContent: 'center', alignItems: 'center', marginBottom: 18 },
+  logoFrame: { 
+    width: 100, 
+    height: 100, 
+    borderRadius: 26, 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    marginBottom: 18,
+    backgroundColor: 'rgba(255,255,255,0.03)',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.1)',
+    shadowColor: '#6366F1', 
+    shadowOffset: { width: 0, height: 8 }, 
+    shadowOpacity: 0.4, 
+    shadowRadius: 15,
+    elevation: 10 
+  },
+  logoImage: { width: 64, height: 64 },
   brand: { fontSize: 30, fontWeight: '800', color: Colors.text, letterSpacing: -0.5 },
   tagline: { fontSize: 15, color: Colors.textMuted, marginTop: 6 },
   form: { width: '100%', gap: 14 },

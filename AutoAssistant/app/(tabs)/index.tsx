@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useRef } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList, Animated, Platform } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList, Animated, Platform, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '../../constants/Colors';
@@ -91,9 +91,9 @@ export default function ProfileScreen() {
       {/* Profile Header */}
       <View style={styles.headerContainer}>
         <BlurView intensity={50} tint="prominent" style={styles.header}>
-          <LinearGradient colors={['#6366F1', '#4F46E5']} style={styles.avatar}>
-            <Text style={styles.avatarText}>{avatarLetter}</Text>
-          </LinearGradient>
+          <View style={styles.logoFrame}>
+            <Image source={require('../../assets/images/logo.png')} style={styles.logoImage} resizeMode="contain" />
+          </View>
           <View style={styles.headerInfo}>
             <Text style={styles.userName}>{userName || 'Kullanıcı'}</Text>
           </View>
@@ -171,8 +171,8 @@ const styles = StyleSheet.create({
   bgBlob: { position: 'absolute', width: 350, height: 350, borderRadius: 175, filter: 'blur(90px)' as any, opacity: 0.8 },
   headerContainer: { marginTop: Platform.OS === 'ios' ? 60 : 40, paddingHorizontal: 20, marginBottom: 20 },
   header: { flexDirection: 'row', alignItems: 'center', padding: 16, borderRadius: 20, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', overflow: 'hidden' },
-  avatar: { width: 48, height: 48, borderRadius: 16, justifyContent: 'center', alignItems: 'center', shadowColor: '#6366F1', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.3, shadowRadius: 8 },
-  avatarText: { fontSize: 20, color: '#FFF', fontFamily: 'Poppins_700Bold' },
+  logoFrame: { width: 52, height: 52, borderRadius: 16, backgroundColor: 'rgba(255,255,255,0.05)', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', justifyContent: 'center', alignItems: 'center' },
+  logoImage: { width: 36, height: 36 },
   headerInfo: { marginLeft: 16, flex: 1 },
   userName: { fontSize: 18, fontFamily: 'Poppins_700Bold', color: '#FFF', letterSpacing: -0.3 },
   logoutBtn: { width: 44, height: 44, borderRadius: 14, backgroundColor: 'rgba(244, 63, 94, 0.1)', justifyContent: 'center', alignItems: 'center' },
