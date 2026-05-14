@@ -41,13 +41,14 @@ export default function ProfileScreen() {
     if (!token) return;
     setLoading(true);
     try {
-      const tp = tab === 'all' ? '' : `?type=${tab}`;
-      const res = await fetch(`${API_URL}/history${tp}`, { headers: { 'Authorization': `Bearer ${token}` }, signal });
+      const res = await fetch(`${API_URL}/history`, { headers: { 'Authorization': `Bearer ${token}` }, signal });
       const data = await res.json();
       if (data.success) setHistory(data.history);
     } catch (e: any) { if (e.name !== 'AbortError') console.error(e); }
     finally { setLoading(false); }
-  }, [token, tab]);
+  }, [token]);
+
+  const filteredHistory = tab === 'all' ? history : history.filter(h => h.type === tab);
 
   useFocusEffect(useCallback(() => {
     const controller = new AbortController();
@@ -106,7 +107,7 @@ export default function ProfileScreen() {
       <View style={styles.statsRow}>
         {(['price', 'obd', 'damage'] as const).map(type => {
           const cfg = TYPE_CONFIG[type];
-          const allCount = tab === 'all' ? history.filter(h => h.type === type).length : (tab === type ? history.length : 0);
+          const allCount = history.filter(h => h.type === type).length;
           return (
             <BlurView key={type} intensity={40} tint="prominent" style={styles.statCard}>
               <View style={styles.statInner}>
@@ -129,7 +130,7 @@ export default function ProfileScreen() {
             </TouchableOpacity>
           ))}
         </BlurView>
-        {history.length > 0 && (
+        {filteredHistory.length > 0 && (
           <TouchableOpacity style={styles.clearBtn} onPress={() => setAlertVisible(true)}>
             <BlurView intensity={50} tint="dark" style={styles.clearBtnInner}>
               <Ionicons name="trash-outline" size={20} color={Colors.danger} />
@@ -140,14 +141,14 @@ export default function ProfileScreen() {
 
       {/* History */}
       {loading ? <View style={styles.center}><ActivityIndicator size="large" color="#6366F1" /></View>
-       : history.length === 0 ? (
+       : filteredHistory.length === 0 ? (
         <View style={styles.center}>
           <Ionicons name="document-text-outline" size={64} color={Colors.textMuted} style={{ opacity: 0.5 }} />
           <Text style={styles.emptyTitle}>Henüz analiz yok</Text>
           <Text style={styles.emptySub}>Analiz yaptığınızda detaylar burada listelenecek.</Text>
         </View>
        ) : (
-        <FlatList data={history} keyExtractor={i => String(i.id)} renderItem={renderItem}
+        <FlatList data={filteredHistory} keyExtractor={i => String(i.id)} renderItem={renderItem}
           contentContainerStyle={{ padding: 20, paddingBottom: 130 }} showsVerticalScrollIndicator={false} />
        )}
 
