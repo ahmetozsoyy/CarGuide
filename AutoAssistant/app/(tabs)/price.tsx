@@ -41,7 +41,7 @@ const PremiumButton = ({ onPress, disabled, loading, children }: any) => {
       disabled={disabled || loading}
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
-      style={{ marginTop: 24, marginBottom: 120 }}
+      style={{ marginTop: 24, marginBottom: 20 }}
     >
       <Animated.View style={[{ transform: [{ scale: scaleValue }] }]}>
         <LinearGradient colors={['#6366F1', '#4F46E5']} style={styles.button} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
   input: { padding: 18, color: '#FFF', fontSize: 15, height: 56, fontFamily: 'Poppins_500Medium' },
   button: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10, borderRadius: 20, paddingVertical: 20, shadowColor: '#6366F1', shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.4, shadowRadius: 16, elevation: 10 },
   buttonText: { color: '#FFF', fontSize: 16, fontFamily: 'Poppins_600SemiBold', letterSpacing: 0.5 },
-  resultContainer: { position: 'absolute', bottom: 100, left: 24, right: 24 },
+  resultContainer: { marginTop: 10, marginBottom: 40 },
   resultCard: { borderRadius: 24, padding: 32, alignItems: 'center', gap: 12, borderWidth: 1, borderColor: 'rgba(6, 214, 160, 0.3)', backgroundColor: 'rgba(6, 214, 160, 0.05)' },
   resultIconGlow: { shadowColor: Colors.secondary, shadowOffset: { width: 0, height: 0 }, shadowOpacity: 0.8, shadowRadius: 15, elevation: 10, marginBottom: 4 },
   resultTitle: { color: Colors.textSecondary, fontSize: 14, fontFamily: 'Poppins_500Medium', letterSpacing: 0.5, textTransform: 'uppercase' },
