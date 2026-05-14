@@ -4,6 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '../../constants/Colors';
 import { useRouter } from 'expo-router';
+import CustomAlert from '../../components/CustomAlert';
 
 export default function RegisterScreen() {
   const [name, setName] = useState('');
@@ -13,6 +14,14 @@ export default function RegisterScreen() {
   const [showPw, setShowPw] = useState(false);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  
+  const [alertVisible, setAlertVisible] = useState(false);
+  const [alertConfig, setAlertConfig] = useState({ title: '', message: '', type: 'danger' as 'danger' | 'info' | 'success', onConfirm: () => {} });
+
+  const showAlert = (title: string, message: string, type: 'danger' | 'info' | 'success' = 'danger', onConfirm?: () => void) => {
+    setAlertConfig({ title, message, type, onConfirm: onConfirm || (() => setAlertVisible(false)) });
+    setAlertVisible(true);
+  };
 
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(30)).current;
@@ -24,8 +33,8 @@ export default function RegisterScreen() {
   }, []);
 
   const handleRegister = async () => {
-    if (!name || !email || !password || !confirmPassword) { alert("Lütfen tüm alanları doldurun."); return; }
-    if (password !== confirmPassword) { alert("Şifreler eşleşmiyor."); return; }
+    if (!name || !email || !password || !confirmPassword) { showAlert("Hata", "Lütfen tüm alanları doldurun.", "danger"); return; }
+    if (password !== confirmPassword) { showAlert("Hata", "Şifreler eşleşmiyor.", "danger"); return; }
     setLoading(true);
     try {
       const response = await fetch('http://172.24.246.41:5000/register', {
@@ -33,9 +42,14 @@ export default function RegisterScreen() {
         body: JSON.stringify({ name, email, password })
       });
       const data = await response.json();
-      if (data.success) { alert("Kayıt başarılı! Lütfen giriş yapın."); router.replace('/(auth)/login'); }
-      else { alert("Hata: " + (data.error || "Kayıt olunamadı.")); }
-    } catch (error) { alert("Sunucuya bağlanılamadı."); }
+      if (data.success) { 
+        showAlert("Başarılı", "Kayıt başarılı! Lütfen giriş yapın.", "success", () => {
+          setAlertVisible(false);
+          router.replace('/(auth)/login');
+        }); 
+      }
+      else { showAlert("Hata", data.error || "Kayıt olunamadı.", "danger"); }
+    } catch (error) { showAlert("Hata", "Sunucuya bağlanılamadı.", "danger"); }
     finally { setLoading(false); }
   };
 
@@ -99,6 +113,16 @@ export default function RegisterScreen() {
           </Animated.View>
         </ScrollView>
       </KeyboardAvoidingView>
+      <CustomAlert
+        visible={alertVisible}
+        title={alertConfig.title}
+        message={alertConfig.message}
+        type={alertConfig.type}
+        showCancel={false}
+        confirmText="Tamam"
+        onCancel={() => setAlertVisible(false)}
+        onConfirm={alertConfig.onConfirm}
+      />
     </View>
   );
 }

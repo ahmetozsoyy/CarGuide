@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '../../constants/Colors';
 import { useAuth } from '../../context/AuthContext';
 import { Link } from 'expo-router';
+import CustomAlert from '../../components/CustomAlert';
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
@@ -12,6 +13,14 @@ export default function LoginScreen() {
   const [showPw, setShowPw] = useState(false);
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
+  
+  const [alertVisible, setAlertVisible] = useState(false);
+  const [alertConfig, setAlertConfig] = useState({ title: '', message: '', type: 'danger' as 'danger' | 'info' | 'success' });
+
+  const showAlert = (title: string, message: string, type: 'danger' | 'info' | 'success' = 'danger') => {
+    setAlertConfig({ title, message, type });
+    setAlertVisible(true);
+  };
 
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(30)).current;
@@ -24,7 +33,7 @@ export default function LoginScreen() {
   }, []);
 
   const handleLogin = async () => {
-    if (!email || !password) { alert("Lütfen e-posta ve şifrenizi girin."); return; }
+    if (!email || !password) { showAlert("Hata", "Lütfen e-posta ve şifrenizi girin.", "danger"); return; }
     setLoading(true);
     try {
       const response = await fetch('http://172.24.246.41:5000/login', {
@@ -33,8 +42,8 @@ export default function LoginScreen() {
       });
       const data = await response.json();
       if (data.success) { await login(data.token, data.name); }
-      else { alert("Hata: " + (data.error || "Giriş yapılamadı.")); }
-    } catch (error) { alert("Sunucuya bağlanılamadı."); }
+      else { showAlert("Hata", data.error || "Giriş yapılamadı.", "danger"); }
+    } catch (error) { showAlert("Hata", "Sunucuya bağlanılamadı.", "danger"); }
     finally { setLoading(false); }
   };
 
@@ -85,6 +94,16 @@ export default function LoginScreen() {
           </View>
         </Animated.View>
       </KeyboardAvoidingView>
+      <CustomAlert
+        visible={alertVisible}
+        title={alertConfig.title}
+        message={alertConfig.message}
+        type={alertConfig.type}
+        showCancel={false}
+        confirmText="Tamam"
+        onCancel={() => setAlertVisible(false)}
+        onConfirm={() => setAlertVisible(false)}
+      />
     </View>
   );
 }

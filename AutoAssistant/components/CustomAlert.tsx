@@ -12,6 +12,7 @@ interface CustomAlertProps {
   confirmText?: string;
   cancelText?: string;
   type?: 'danger' | 'info' | 'success';
+  showCancel?: boolean;
 }
 
 export default function CustomAlert({ 
@@ -22,7 +23,8 @@ export default function CustomAlert({
   onConfirm, 
   confirmText = 'Onayla', 
   cancelText = 'İptal',
-  type = 'danger'
+  type = 'danger',
+  showCancel = true
 }: CustomAlertProps) {
   
   const getIcon = () => {
@@ -48,9 +50,11 @@ export default function CustomAlert({
           <Text style={styles.message}>{message}</Text>
           
           <View style={styles.buttonRow}>
-            <TouchableOpacity style={styles.cancelBtn} onPress={onCancel}>
-              <Text style={styles.cancelBtnText}>{cancelText}</Text>
-            </TouchableOpacity>
+            {showCancel && (
+              <TouchableOpacity style={styles.cancelBtn} onPress={onCancel}>
+                <Text style={styles.cancelBtnText}>{cancelText}</Text>
+              </TouchableOpacity>
+            )}
             
             <TouchableOpacity 
               style={[styles.confirmBtn, type === 'danger' && styles.confirmBtnDanger]} 
