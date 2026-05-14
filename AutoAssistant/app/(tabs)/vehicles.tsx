@@ -154,9 +154,12 @@ export default function VehiclesScreen() {
     </TouchableOpacity>
   );
 
-  // ── Main List ──
   return (
     <View style={s.container}>
+      {/* Background Blobs */}
+      <View style={[s.bgBlob, { top: -100, left: -50, backgroundColor: 'rgba(99, 102, 241, 0.25)' }]} />
+      <View style={[s.bgBlob, { top: 200, right: -100, backgroundColor: 'rgba(6, 214, 160, 0.15)' }]} />
+      
       <View style={s.header}>
         <Text style={s.title}>Araçlarım</Text>
         <TouchableOpacity style={s.addBtn} onPress={() => openForm()}><Text style={s.addBtnTx}>+ Yeni Araç</Text></TouchableOpacity>
@@ -233,7 +236,7 @@ export default function VehiclesScreen() {
                     {detailVehicle.photos.map((_, i) => <View key={i} style={[s.dot, photoIndex === i && s.dotActive]} />)}
                   </View>
                 </View>
-              ) : <View style={{ height: 120, justifyContent: 'center', alignItems: 'center', backgroundColor: Colors.surface }}><Text style={{ fontSize: 40 }}>🚗</Text></View>}
+              ) : <View style={{ height: 120, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(255,255,255,0.05)' }}><Text style={{ fontSize: 40 }}>🚗</Text></View>}
 
               {/* Vehicle Info */}
               <View style={s.detailInfo}>
@@ -316,25 +319,26 @@ export default function VehiclesScreen() {
 }
 
 const s = StyleSheet.create({
-  container: { flex: 1, backgroundColor: Colors.background },
+  container: { flex: 1, backgroundColor: '#0F172A' },
+  bgBlob: { position: 'absolute', width: 300, height: 300, borderRadius: 150, filter: 'blur(80px)' as any, opacity: 0.8 },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 20, paddingTop: Platform.OS === 'ios' ? 60 : 40, paddingBottom: 12 },
-  title: { fontSize: 24, fontWeight: 'bold', color: Colors.text },
-  addBtn: { backgroundColor: Colors.primary, borderRadius: 10, paddingHorizontal: 16, paddingVertical: 10 },
-  addBtnTx: { color: '#FFF', fontWeight: 'bold', fontSize: 14 },
+  title: { fontSize: 26, fontFamily: 'Poppins_700Bold', color: '#FFF', letterSpacing: -0.3 },
+  addBtn: { backgroundColor: 'rgba(129, 140, 248, 0.2)', borderRadius: 12, paddingHorizontal: 16, paddingVertical: 10, borderWidth: 1, borderColor: 'rgba(129, 140, 248, 0.4)' },
+  addBtnTx: { color: '#818CF8', fontFamily: 'Poppins_700Bold', fontSize: 14 },
   center: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 40 },
-  emptyTitle: { fontSize: 20, fontWeight: 'bold', color: Colors.text, marginBottom: 8 },
-  emptyDesc: { fontSize: 14, color: Colors.textMuted, textAlign: 'center', marginBottom: 24 },
-  card: { backgroundColor: Colors.surface, borderRadius: 16, marginBottom: 14, borderWidth: 1, borderColor: Colors.border, overflow: 'hidden' },
+  emptyTitle: { fontSize: 20, fontFamily: 'Poppins_700Bold', color: '#FFF', marginBottom: 8 },
+  emptyDesc: { fontSize: 14, color: '#94A3B8', textAlign: 'center', marginBottom: 24, fontFamily: 'Poppins_500Medium' },
+  card: { backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 18, marginBottom: 14, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', overflow: 'hidden' },
   cardImg: { width: '100%', height: 140 },
-  cardBody: { padding: 14 },
-  cardName: { fontSize: 17, fontWeight: '700', color: Colors.text },
-  cardModel: { fontSize: 13, color: Colors.primary, marginTop: 2 },
-  cardInfo: { fontSize: 12, color: Colors.textMuted, marginTop: 6 },
+  cardBody: { padding: 16 },
+  cardName: { fontSize: 18, fontFamily: 'Poppins_700Bold', color: '#FFF' },
+  cardModel: { fontSize: 13, color: '#818CF8', marginTop: 2, fontFamily: 'Poppins_500Medium' },
+  cardInfo: { fontSize: 12, color: '#94A3B8', marginTop: 6, fontFamily: 'Poppins_500Medium' },
   // Modal common
   modal: { flex: 1, backgroundColor: '#0F172A' },
   modalHead: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 16, paddingTop: Platform.OS === 'ios' ? 50 : 20, borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.1)', backgroundColor: '#0F172A' },
   modalCancel: { color: '#94A3B8', fontSize: 15, fontFamily: 'Poppins_500Medium' },
-  modalTitle: { fontSize: 17, fontFamily: 'Poppins_700Bold', color: '#FFF', flex: 1, textAlign: 'center' },
+  modalTitle: { fontSize: 18, fontFamily: 'Poppins_700Bold', color: '#FFF', flex: 1, textAlign: 'center' },
   modalSave: { color: '#818CF8', fontSize: 16, fontFamily: 'Poppins_700Bold' },
   // Form
   lbl: { fontSize: 13, fontFamily: 'Poppins_600SemiBold', color: '#CBD5E1', marginBottom: 6, marginTop: 12 },
@@ -346,31 +350,31 @@ const s = StyleSheet.create({
   thumb: { width: 80, height: 60, borderRadius: 8, marginRight: 8 },
   // Detail
   dots: { flexDirection: 'row', justifyContent: 'center', paddingVertical: 10, gap: 6 },
-  dot: { width: 8, height: 8, borderRadius: 4, backgroundColor: Colors.border },
-  dotActive: { backgroundColor: Colors.primary, width: 20 },
+  dot: { width: 8, height: 8, borderRadius: 4, backgroundColor: 'rgba(255,255,255,0.2)' },
+  dotActive: { backgroundColor: '#818CF8', width: 20 },
   detailInfo: { padding: 20 },
-  detailName: { fontSize: 22, fontWeight: 'bold', color: Colors.text, marginBottom: 16 },
+  detailName: { fontSize: 24, fontFamily: 'Poppins_700Bold', color: '#FFF', marginBottom: 16 },
   detailGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
-  detailItem: { backgroundColor: Colors.surface, borderRadius: 12, padding: 14, width: '48%' as any, borderWidth: 1, borderColor: Colors.border },
-  detailLabel: { fontSize: 11, color: Colors.textMuted, marginBottom: 4 },
-  detailValue: { fontSize: 16, fontWeight: '700', color: Colors.text },
+  detailItem: { backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 16, width: '48%' as any, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },
+  detailLabel: { fontSize: 12, color: '#94A3B8', marginBottom: 4, fontFamily: 'Poppins_500Medium' },
+  detailValue: { fontSize: 16, fontFamily: 'Poppins_700Bold', color: '#FFF' },
   detailActions: { flexDirection: 'row', paddingHorizontal: 20, gap: 12, marginBottom: 16 },
-  bigAction: { flex: 1, borderRadius: 16, padding: 20, alignItems: 'center', gap: 8 },
-  bigActionTx: { fontWeight: '700', fontSize: 14 },
+  bigAction: { flex: 1, borderRadius: 18, padding: 20, alignItems: 'center', gap: 8 },
+  bigActionTx: { fontFamily: 'Poppins_700Bold', fontSize: 14 },
   // Damage results
   damageSection: { padding: 20 },
-  damageSectionTitle: { fontSize: 18, fontWeight: 'bold', color: Colors.text, marginBottom: 12 },
-  damageCard: { backgroundColor: Colors.surface, borderRadius: 12, padding: 16, marginBottom: 10, borderWidth: 1, borderColor: Colors.border },
-  damageCardTitle: { fontSize: 15, fontWeight: '700', color: Colors.text, marginBottom: 4 },
-  damageCardMsg: { fontSize: 13, color: Colors.textMuted, marginBottom: 10 },
-  tespitRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 6, borderTopWidth: 1, borderTopColor: Colors.border },
-  tespitLabel: { fontSize: 14, color: Colors.text, fontWeight: '600' },
-  tespitBadge: { fontSize: 12, fontWeight: '700' },
-  deleteBtn: { margin: 20, backgroundColor: Colors.surface, borderRadius: 12, padding: 14, alignItems: 'center', borderWidth: 1, borderColor: '#EF4444' },
-  deleteBtnTx: { color: '#EF4444', fontWeight: 'bold', fontSize: 15 },
+  damageSectionTitle: { fontSize: 18, fontFamily: 'Poppins_700Bold', color: '#FFF', marginBottom: 12 },
+  damageCard: { backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 16, marginBottom: 12, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },
+  damageCardTitle: { fontSize: 15, fontFamily: 'Poppins_700Bold', color: '#FFF', marginBottom: 4 },
+  damageCardMsg: { fontSize: 13, color: '#CBD5E1', marginBottom: 10, fontFamily: 'Poppins_500Medium' },
+  tespitRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 8, borderTopWidth: 1, borderTopColor: 'rgba(255,255,255,0.05)' },
+  tespitLabel: { fontSize: 14, color: '#FFF', fontFamily: 'Poppins_600SemiBold' },
+  tespitBadge: { fontSize: 12, fontFamily: 'Poppins_700Bold' },
+  deleteBtn: { margin: 20, backgroundColor: 'rgba(239, 68, 68, 0.1)', borderRadius: 16, padding: 16, alignItems: 'center', borderWidth: 1, borderColor: 'rgba(239, 68, 68, 0.3)' },
+  deleteBtnTx: { color: '#EF4444', fontFamily: 'Poppins_700Bold', fontSize: 15 },
   // Damage photo link
-  damageFullImg: { width: '100%', height: 200, borderTopLeftRadius: 12, borderTopRightRadius: 12 },
-  damagePhotoLabel: { color: Colors.textMuted, fontSize: 12, fontWeight: '600', marginBottom: 6 },
+  damageFullImg: { width: '100%', height: 200, borderTopLeftRadius: 16, borderTopRightRadius: 16 },
+  damagePhotoLabel: { color: '#94A3B8', fontSize: 12, fontFamily: 'Poppins_600SemiBold', marginBottom: 6 },
   // Fullscreen
   fullscreenBg: { flex: 1, backgroundColor: 'rgba(0,0,0,0.95)', justifyContent: 'center', alignItems: 'center' },
   fullscreenClose: { position: 'absolute', top: 50, right: 20, zIndex: 10, width: 44, height: 44, borderRadius: 22, backgroundColor: 'rgba(255,255,255,0.2)', justifyContent: 'center', alignItems: 'center' },

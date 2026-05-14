@@ -180,6 +180,11 @@ export default function DamageAnalysisScreen() {
   if (mod === 'menu') {
     return (
       <SafeAreaView style={styles.container}>
+        {/* Background Blobs */}
+        <View style={[styles.bgBlob, { top: -100, left: -50, backgroundColor: 'rgba(99, 102, 241, 0.25)' }]} />
+        <View style={[styles.bgBlob, { top: 200, right: -100, backgroundColor: 'rgba(6, 214, 160, 0.15)' }]} />
+        <View style={[styles.bgBlob, { bottom: -50, left: 100, backgroundColor: 'rgba(244, 114, 182, 0.15)' }]} />
+
         <ScrollView contentContainerStyle={styles.menuIcerik}>
           <Text style={styles.baslik}>Hasar Tespiti</Text>
           <Text style={styles.altBaslik}>Yapay zeka ile aracınızın hasarını analiz edin.</Text>
@@ -220,6 +225,11 @@ export default function DamageAnalysisScreen() {
   // ── Sonuç Ekranı ──────────────────────────────────────────────────────
   return (
     <SafeAreaView style={styles.container}>
+      {/* Background Blobs */}
+      <View style={[styles.bgBlob, { top: -100, left: -50, backgroundColor: 'rgba(99, 102, 241, 0.25)' }]} />
+      <View style={[styles.bgBlob, { top: 200, right: -100, backgroundColor: 'rgba(6, 214, 160, 0.15)' }]} />
+      <View style={[styles.bgBlob, { bottom: -50, left: 100, backgroundColor: 'rgba(244, 114, 182, 0.15)' }]} />
+
       <View style={styles.sonucHeader}>
         <TouchableOpacity onPress={sifirla} style={styles.geriLinkBtn}>
           <Text style={styles.geriLinkMetin}>← Yeni Analiz</Text>
@@ -258,22 +268,23 @@ export default function DamageAnalysisScreen() {
 
 // ── Stiller ───────────────────────────────────────────────────────────────
 const styles = StyleSheet.create({
-  container:       { flex: 1, backgroundColor: Colors.background },
+  container:       { flex: 1, backgroundColor: '#0F172A' },
+  bgBlob:          { position: 'absolute', width: 300, height: 300, borderRadius: 150, filter: 'blur(80px)' as any, opacity: 0.8 },
   menuIcerik:      { padding: 20, paddingTop: Platform.OS === 'ios' ? 20 : 40, paddingBottom: 130 },
-  baslik:          { fontSize: 26, fontWeight: 'bold', color: Colors.text, marginBottom: 6 },
-  altBaslik:       { fontSize: 14, color: Colors.textMuted, marginBottom: 28 },
+  baslik:          { fontSize: 26, fontFamily: 'Poppins_700Bold', color: '#FFF', marginBottom: 6, letterSpacing: -0.3 },
+  altBaslik:       { fontSize: 14, color: '#CBD5E1', marginBottom: 28, fontFamily: 'Poppins_500Medium' },
 
   buyukKart: {
-    backgroundColor: Colors.surface, borderRadius: 18, padding: 22,
-    marginBottom: 16, borderWidth: 1, borderColor: Colors.border,
+    backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 18, padding: 22,
+    marginBottom: 16, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)',
   },
   ikonDaire:   { width: 60, height: 60, borderRadius: 30, justifyContent: 'center', alignItems: 'center', marginBottom: 14 },
   ikonEmoji:   { fontSize: 26 },
-  kartBaslik:  { fontSize: 17, fontWeight: '700', color: Colors.text, marginBottom: 6 },
-  kartAciklama:{ fontSize: 13, color: Colors.textMuted, lineHeight: 19 },
+  kartBaslik:  { fontSize: 17, fontFamily: 'Poppins_700Bold', color: '#FFF', marginBottom: 6 },
+  kartAciklama:{ fontSize: 13, color: '#94A3B8', lineHeight: 19, fontFamily: 'Poppins_500Medium' },
 
-  bilgiKutu:   { backgroundColor: '#1E3A5F', borderRadius: 12, padding: 14, marginTop: 8 },
-  bilgiMetin:  { color: '#93C5FD', fontSize: 13, lineHeight: 20 },
+  bilgiKutu:   { backgroundColor: 'rgba(56, 189, 248, 0.1)', borderRadius: 12, padding: 14, marginTop: 8, borderWidth: 1, borderColor: 'rgba(56, 189, 248, 0.2)' },
+  bilgiMetin:  { color: '#38BDF8', fontSize: 13, lineHeight: 20, fontFamily: 'Poppins_500Medium' },
 
   // Kamera
   kameraKonteyner: { flex: 1, backgroundColor: '#000' },
@@ -291,33 +302,33 @@ const styles = StyleSheet.create({
   cekBtnIc:   { width: 58, height: 58, borderRadius: 29, backgroundColor: '#FFF' },
 
   // Sonuç
-  sonucHeader:      { flexDirection: 'row', alignItems: 'center', padding: 16, paddingTop: Platform.OS === 'ios' ? 16 : 40, borderBottomWidth: 1, borderBottomColor: Colors.border },
+  sonucHeader:      { flexDirection: 'row', alignItems: 'center', padding: 16, paddingTop: Platform.OS === 'ios' ? 16 : 40, borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.05)' },
   geriLinkBtn:      { marginRight: 12 },
-  geriLinkMetin:    { color: Colors.primary, fontWeight: '600', fontSize: 15 },
-  sonucHeaderBaslik:{ color: Colors.text, fontWeight: '700', fontSize: 16 },
+  geriLinkMetin:    { color: '#818CF8', fontFamily: 'Poppins_600SemiBold', fontSize: 15 },
+  sonucHeaderBaslik:{ color: '#FFF', fontFamily: 'Poppins_700Bold', fontSize: 16 },
 
   yukleniyorKonteyner: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  yukleniyorMetin:     { color: Colors.text, fontSize: 17, fontWeight: '600', marginTop: 18 },
-  yukleniyorAlt:       { color: Colors.textMuted, fontSize: 13, marginTop: 6 },
+  yukleniyorMetin:     { color: '#FFF', fontSize: 17, fontFamily: 'Poppins_600SemiBold', marginTop: 18 },
+  yukleniyorAlt:       { color: '#94A3B8', fontSize: 13, marginTop: 6, fontFamily: 'Poppins_500Medium' },
 
-  ozetSatiri:  { backgroundColor: Colors.surface, borderRadius: 12, padding: 14, marginBottom: 16, borderWidth: 1, borderColor: Colors.border },
-  ozetMetin:   { color: Colors.text, fontWeight: '600', fontSize: 14 },
+  ozetSatiri:  { backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 12, padding: 14, marginBottom: 16, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },
+  ozetMetin:   { color: '#FFF', fontFamily: 'Poppins_600SemiBold', fontSize: 14 },
 
-  sonucKarti:  { backgroundColor: Colors.surface, borderRadius: 18, marginBottom: 20, overflow: 'hidden', borderWidth: 1, borderColor: Colors.border },
+  sonucKarti:  { backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 18, marginBottom: 20, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },
   sonucGoruntu:{ width: '100%', height: 220 },
   sonucIcerik: { padding: 18 },
-  sonucBaslik: { fontSize: 17, fontWeight: '700', color: Colors.text, marginBottom: 6 },
-  sonucMesaj:  { fontSize: 13, color: Colors.textMuted, marginBottom: 14 },
+  sonucBaslik: { fontSize: 17, fontFamily: 'Poppins_700Bold', color: '#FFF', marginBottom: 6 },
+  sonucMesaj:  { fontSize: 13, color: '#CBD5E1', marginBottom: 14, fontFamily: 'Poppins_500Medium' },
 
-  tespitKarti: { backgroundColor: '#252525', borderRadius: 10, padding: 12, marginBottom: 8, flexDirection: 'row', alignItems: 'center', borderLeftWidth: 4 },
-  tespitEtiket:{ color: Colors.text, fontWeight: '600', fontSize: 14 },
-  tespitSiddet:{ fontSize: 12, marginTop: 2 },
+  tespitKarti: { backgroundColor: 'rgba(255,255,255,0.03)', borderRadius: 10, padding: 12, marginBottom: 8, flexDirection: 'row', alignItems: 'center', borderLeftWidth: 4 },
+  tespitEtiket:{ color: '#FFF', fontFamily: 'Poppins_600SemiBold', fontSize: 14 },
+  tespitSiddet:{ fontSize: 12, marginTop: 2, fontFamily: 'Poppins_500Medium' },
   guvenBadge:  { borderRadius: 20, paddingHorizontal: 10, paddingVertical: 4 },
-  guvenText:   { fontWeight: '700', fontSize: 13 },
+  guvenText:   { fontFamily: 'Poppins_700Bold', fontSize: 13 },
 
-  aiOzetKutu:  { backgroundColor: '#1A2744', borderRadius: 12, padding: 14, marginTop: 12, borderWidth: 1, borderColor: '#3B82F640' },
-  aiOzetBaslik:{ color: '#93C5FD', fontWeight: '700', fontSize: 13, marginBottom: 8 },
-  aiOzetMetin: { color: '#BFDBFE', fontSize: 13, lineHeight: 20 },
+  aiOzetKutu:  { backgroundColor: 'rgba(59, 130, 246, 0.1)', borderRadius: 12, padding: 14, marginTop: 12, borderWidth: 1, borderColor: 'rgba(59, 130, 246, 0.2)' },
+  aiOzetBaslik:{ color: '#93C5FD', fontFamily: 'Poppins_700Bold', fontSize: 13, marginBottom: 8 },
+  aiOzetMetin: { color: '#BFDBFE', fontSize: 13, lineHeight: 20, fontFamily: 'Poppins_500Medium' },
 
-  hataMetin:   { color: Colors.danger, fontSize: 13, marginTop: 8 },
+  hataMetin:   { color: '#EF4444', fontSize: 13, marginTop: 8, fontFamily: 'Poppins_500Medium' },
 });
