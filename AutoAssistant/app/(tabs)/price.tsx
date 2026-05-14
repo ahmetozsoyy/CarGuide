@@ -114,13 +114,15 @@ export default function PriceAnalysisScreen() {
 
       <ScrollView style={styles.scrollView} contentContainerStyle={{ padding: 24, paddingTop: Platform.OS === 'ios' ? 100 : 80 }}>
         {/* Header Card with Glassmorphism */}
-        <BlurView intensity={50} tint="dark" style={styles.headerCard}>
+        <BlurView intensity={40} tint="prominent" style={styles.headerCard}>
           <View style={styles.headerContent}>
             <View style={styles.headerIconWrapper}>
-              <Ionicons name="analytics" size={28} color={Colors.primaryLight} />
+              <Ionicons name="analytics" size={24} color={Colors.primaryLight} />
             </View>
-            <Text style={styles.title}>Yapay Zeka{'\n'}Fiyat Analizi</Text>
-            <Text style={styles.subtitle}>Aracınızın piyasa değerini yapay zeka algoritmalarıyla anında ve yüksek doğrulukla öğrenin.</Text>
+            <View style={styles.headerTextWrapper}>
+              <Text style={styles.title}>Yapay Zeka Fiyat Analizi</Text>
+              <Text style={styles.subtitle}>Aracınızın piyasa değerini anında öğrenin.</Text>
+            </View>
           </View>
         </BlurView>
 
@@ -188,23 +190,24 @@ export default function PriceAnalysisScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#070A10' }, // Deepest dark background
-  bgBlob: { position: 'absolute', width: 300, height: 300, borderRadius: 150, filter: 'blur(80px)' as any, opacity: 0.6 },
+  container: { flex: 1, backgroundColor: '#0F172A' }, // Brighter dark background
+  bgBlob: { position: 'absolute', width: 300, height: 300, borderRadius: 150, filter: 'blur(80px)' as any, opacity: 0.8 },
   scrollView: { flex: 1 },
-  headerCard: { borderRadius: 24, overflow: 'hidden', marginBottom: 30, borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)' },
-  headerContent: { padding: 28, backgroundColor: 'rgba(0,0,0,0.2)' },
-  headerIconWrapper: { width: 56, height: 56, borderRadius: 18, backgroundColor: 'rgba(99, 102, 241, 0.15)', justifyContent: 'center', alignItems: 'center', marginBottom: 20, borderWidth: 1, borderColor: 'rgba(99, 102, 241, 0.3)' },
-  title: { fontSize: 26, fontFamily: 'Poppins_700Bold', color: '#FFF', marginBottom: 8, lineHeight: 34, letterSpacing: -0.5 },
-  subtitle: { fontSize: 14, fontFamily: 'Poppins_400Regular', color: Colors.textSecondary, lineHeight: 22 },
+  headerCard: { borderRadius: 20, overflow: 'hidden', marginBottom: 24, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },
+  headerContent: { padding: 20, flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(255,255,255,0.03)' },
+  headerIconWrapper: { width: 48, height: 48, borderRadius: 14, backgroundColor: 'rgba(99, 102, 241, 0.2)', justifyContent: 'center', alignItems: 'center', marginRight: 16, borderWidth: 1, borderColor: 'rgba(99, 102, 241, 0.4)' },
+  headerTextWrapper: { flex: 1 },
+  title: { fontSize: 20, fontFamily: 'Poppins_700Bold', color: '#FFF', marginBottom: 2, letterSpacing: -0.3 },
+  subtitle: { fontSize: 13, fontFamily: 'Poppins_400Regular', color: '#E2E8F0', lineHeight: 18 },
   formContainer: { gap: 4 },
   label: { fontSize: 13, fontFamily: 'Poppins_600SemiBold', color: Colors.textSecondary, marginBottom: 8, marginTop: 12, letterSpacing: 0.3 },
-  pickerWrapper: { borderRadius: 16, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)' },
+  pickerWrapper: { borderRadius: 16, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },
   pickerDisabled: { opacity: 0.5 },
-  blurContainer: { backgroundColor: 'rgba(255,255,255,0.03)' },
-  picker: { color: Colors.text, height: 56, backgroundColor: 'transparent', fontFamily: 'Poppins_500Medium' },
+  blurContainer: { backgroundColor: 'rgba(255,255,255,0.05)' },
+  picker: { color: '#FFF', height: 56, backgroundColor: 'transparent', fontFamily: 'Poppins_500Medium' },
   row: { flexDirection: 'row' },
-  inputWrapper: { borderRadius: 16, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)' },
-  input: { padding: 18, color: Colors.text, fontSize: 15, height: 56, fontFamily: 'Poppins_500Medium' },
+  inputWrapper: { borderRadius: 16, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },
+  input: { padding: 18, color: '#FFF', fontSize: 15, height: 56, fontFamily: 'Poppins_500Medium' },
   button: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10, borderRadius: 20, paddingVertical: 20, shadowColor: '#6366F1', shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.4, shadowRadius: 16, elevation: 10 },
   buttonText: { color: '#FFF', fontSize: 16, fontFamily: 'Poppins_600SemiBold', letterSpacing: 0.5 },
   resultContainer: { position: 'absolute', bottom: 100, left: 24, right: 24 },

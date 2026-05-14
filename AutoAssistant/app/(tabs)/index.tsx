@@ -91,7 +91,7 @@ export default function ProfileScreen() {
       
       {/* Profile Header */}
       <View style={styles.headerContainer}>
-        <BlurView intensity={60} tint="dark" style={styles.header}>
+        <BlurView intensity={50} tint="prominent" style={styles.header}>
           <LinearGradient colors={['#6366F1', '#4F46E5']} style={styles.avatar}>
             <Text style={styles.avatarText}>{avatarLetter}</Text>
           </LinearGradient>
@@ -100,7 +100,7 @@ export default function ProfileScreen() {
             <Text style={styles.userSub}>Premium Üye</Text>
           </View>
           <TouchableOpacity onPress={logout} style={styles.logoutBtn}>
-            <Ionicons name="log-out-outline" size={24} color={Colors.danger} />
+            <Ionicons name="log-out-outline" size={22} color={Colors.danger} />
           </TouchableOpacity>
         </BlurView>
       </View>
@@ -111,9 +111,9 @@ export default function ProfileScreen() {
           const cfg = TYPE_CONFIG[type];
           const allCount = tab === 'all' ? history.filter(h => h.type === type).length : (tab === type ? history.length : 0);
           return (
-            <BlurView key={type} intensity={40} tint="dark" style={styles.statCard}>
+            <BlurView key={type} intensity={40} tint="prominent" style={styles.statCard}>
               <View style={styles.statInner}>
-                <Ionicons name={cfg.icon as any} size={24} color={cfg.color} />
+                <Ionicons name={cfg.icon as any} size={22} color={cfg.color} />
                 <Text style={styles.statCount}>{allCount}</Text>
                 <Text style={styles.statLabel}>{type === 'price' ? 'Fiyat' : type === 'obd' ? 'OBD' : 'Hasar'}</Text>
               </View>
@@ -158,24 +158,24 @@ export default function ProfileScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#070A10' },
-  bgBlob: { position: 'absolute', width: 350, height: 350, borderRadius: 175, filter: 'blur(90px)' as any, opacity: 0.7 },
+  container: { flex: 1, backgroundColor: '#0F172A' },
+  bgBlob: { position: 'absolute', width: 350, height: 350, borderRadius: 175, filter: 'blur(90px)' as any, opacity: 0.8 },
   headerContainer: { marginTop: Platform.OS === 'ios' ? 100 : 80, paddingHorizontal: 20, marginBottom: 20 },
-  header: { flexDirection: 'row', alignItems: 'center', padding: 20, borderRadius: 24, borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)', overflow: 'hidden' },
-  avatar: { width: 56, height: 56, borderRadius: 20, justifyContent: 'center', alignItems: 'center', shadowColor: '#6366F1', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.3, shadowRadius: 8 },
-  avatarText: { fontSize: 24, color: '#FFF', fontFamily: 'Poppins_700Bold' },
+  header: { flexDirection: 'row', alignItems: 'center', padding: 16, borderRadius: 20, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', overflow: 'hidden' },
+  avatar: { width: 48, height: 48, borderRadius: 16, justifyContent: 'center', alignItems: 'center', shadowColor: '#6366F1', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.3, shadowRadius: 8 },
+  avatarText: { fontSize: 20, color: '#FFF', fontFamily: 'Poppins_700Bold' },
   headerInfo: { marginLeft: 16, flex: 1 },
-  userName: { fontSize: 22, fontFamily: 'Poppins_700Bold', color: '#FFF', letterSpacing: -0.5 },
-  userSub: { fontSize: 13, fontFamily: 'Poppins_500Medium', color: Colors.primaryLight, marginTop: 2 },
-  logoutBtn: { width: 48, height: 48, borderRadius: 16, backgroundColor: 'rgba(244, 63, 94, 0.1)', justifyContent: 'center', alignItems: 'center' },
+  userName: { fontSize: 18, fontFamily: 'Poppins_700Bold', color: '#FFF', letterSpacing: -0.3 },
+  userSub: { fontSize: 12, fontFamily: 'Poppins_500Medium', color: '#818CF8', marginTop: 2 },
+  logoutBtn: { width: 44, height: 44, borderRadius: 14, backgroundColor: 'rgba(244, 63, 94, 0.1)', justifyContent: 'center', alignItems: 'center' },
   statsRow: { flexDirection: 'row', paddingHorizontal: 20, gap: 12, marginBottom: 20 },
-  statCard: { flex: 1, borderRadius: 20, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)' },
-  statInner: { padding: 16, alignItems: 'center', gap: 6, backgroundColor: 'rgba(0,0,0,0.2)' },
-  statCount: { fontSize: 26, fontFamily: 'Poppins_700Bold', color: '#FFF', marginTop: 4 },
-  statLabel: { fontSize: 12, fontFamily: 'Poppins_500Medium', color: Colors.textMuted },
+  statCard: { flex: 1, borderRadius: 18, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },
+  statInner: { padding: 12, alignItems: 'center', gap: 4, backgroundColor: 'rgba(255,255,255,0.03)' },
+  statCount: { fontSize: 22, fontFamily: 'Poppins_700Bold', color: '#FFF', marginTop: 4 },
+  statLabel: { fontSize: 11, fontFamily: 'Poppins_500Medium', color: '#CBD5E1' },
   tabRow: { flexDirection: 'row', paddingHorizontal: 20, gap: 12, marginBottom: 10, alignItems: 'center' },
-  tabBar: { flexDirection: 'row', flex: 1, borderRadius: 16, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)' },
-  tab: { flex: 1, flexDirection: 'row', gap: 6, paddingVertical: 14, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.2)' },
+  tabBar: { flexDirection: 'row', flex: 1, borderRadius: 16, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },
+  tab: { flex: 1, flexDirection: 'row', gap: 6, paddingVertical: 12, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(255,255,255,0.03)' },
   tabActive: { backgroundColor: 'rgba(99, 102, 241, 0.2)' },
   tabText: { fontSize: 12, color: Colors.textMuted, fontFamily: 'Poppins_600SemiBold' },
   tabTextActive: { color: '#FFF' },
@@ -184,11 +184,11 @@ const styles = StyleSheet.create({
   center: { flex: 1, justifyContent: 'center', alignItems: 'center', gap: 12 },
   emptyTitle: { fontSize: 20, fontFamily: 'Poppins_700Bold', color: '#FFF' },
   emptySub: { fontSize: 14, fontFamily: 'Poppins_400Regular', color: Colors.textMuted },
-  histCard: { borderRadius: 20, marginBottom: 16, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)' },
-  histCardContent: { flexDirection: 'row', alignItems: 'center', padding: 18, backgroundColor: 'rgba(0,0,0,0.2)' },
-  histIconBg: { width: 48, height: 48, borderRadius: 16, justifyContent: 'center', alignItems: 'center' },
-  histContent: { flex: 1, marginLeft: 16 },
-  histTitle: { fontSize: 15, fontFamily: 'Poppins_600SemiBold', color: '#FFF', marginBottom: 2 },
-  histSummary: { fontSize: 13, fontFamily: 'Poppins_400Regular', color: Colors.textSecondary, lineHeight: 18 },
-  histDate: { fontSize: 11, fontFamily: 'Poppins_500Medium', color: Colors.textMuted, marginTop: 6 },
+  histCard: { borderRadius: 18, marginBottom: 12, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },
+  histCardContent: { flexDirection: 'row', alignItems: 'center', padding: 16, backgroundColor: 'rgba(255,255,255,0.03)' },
+  histIconBg: { width: 44, height: 44, borderRadius: 14, justifyContent: 'center', alignItems: 'center' },
+  histContent: { flex: 1, marginLeft: 14 },
+  histTitle: { fontSize: 14, fontFamily: 'Poppins_600SemiBold', color: '#FFF', marginBottom: 2 },
+  histSummary: { fontSize: 12, fontFamily: 'Poppins_400Regular', color: '#CBD5E1', lineHeight: 18 },
+  histDate: { fontSize: 10, fontFamily: 'Poppins_500Medium', color: '#94A3B8', marginTop: 4 },
 });
