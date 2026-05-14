@@ -92,7 +92,7 @@ export default function ProfileScreen() {
       <View style={styles.headerContainer}>
         <BlurView intensity={50} tint="prominent" style={styles.header}>
           <View style={styles.logoFrame}>
-            <Image source={require('../../assets/images/logo.png')} style={styles.logoImage} resizeMode="contain" />
+            <Image source={require('../../assets/images/logo.png')} style={styles.logoImage} resizeMode="cover" />
           </View>
           <View style={styles.headerInfo}>
             <Text style={styles.userName}>{userName || 'Kullanıcı'}</Text>
@@ -171,8 +171,8 @@ const styles = StyleSheet.create({
   bgBlob: { position: 'absolute', width: 350, height: 350, borderRadius: 175, filter: 'blur(90px)' as any, opacity: 0.8 },
   headerContainer: { marginTop: Platform.OS === 'ios' ? 60 : 40, paddingHorizontal: 20, marginBottom: 20 },
   header: { flexDirection: 'row', alignItems: 'center', padding: 16, borderRadius: 20, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', overflow: 'hidden' },
-  logoFrame: { width: 52, height: 52, borderRadius: 16, backgroundColor: 'rgba(255,255,255,0.05)', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', justifyContent: 'center', alignItems: 'center' },
-  logoImage: { width: 36, height: 36 },
+  logoFrame: { width: 52, height: 52, borderRadius: 16, backgroundColor: 'rgba(255,255,255,0.05)', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' },
+  logoImage: { width: '100%', height: '100%' },
   headerInfo: { marginLeft: 16, flex: 1 },
   userName: { fontSize: 18, fontFamily: 'Poppins_700Bold', color: '#FFF', letterSpacing: -0.3 },
   logoutBtn: { width: 44, height: 44, borderRadius: 14, backgroundColor: 'rgba(244, 63, 94, 0.1)', justifyContent: 'center', alignItems: 'center' },

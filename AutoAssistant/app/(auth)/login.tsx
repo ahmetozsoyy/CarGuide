@@ -46,7 +46,7 @@ export default function LoginScreen() {
           {/* Logo Area */}
           <View style={styles.logoArea}>
             <View style={styles.logoFrame}>
-              <Image source={require('../../assets/images/logo.png')} style={styles.logoImage} resizeMode="contain" />
+              <Image source={require('../../assets/images/logo.png')} style={styles.logoImage} resizeMode="cover" />
             </View>
             <Text style={styles.brand}>AutoAssistant</Text>
             <Text style={styles.tagline}>Akıllı Araç Asistanınız</Text>
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   logoFrame: { 
     width: 110, 
     height: 110, 
-    borderRadius: 28, 
+    borderRadius: 30, 
     justifyContent: 'center', 
     alignItems: 'center', 
     marginBottom: 20,
@@ -108,9 +108,10 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 8 }, 
     shadowOpacity: 0.4, 
     shadowRadius: 15,
-    elevation: 10 
+    elevation: 10,
+    overflow: 'hidden'
   },
-  logoImage: { width: 70, height: 70 },
+  logoImage: { width: '100%', height: '100%' },
   brand: { fontSize: 32, fontWeight: '800', color: Colors.text, letterSpacing: -0.5 },
   tagline: { fontSize: 15, color: Colors.textMuted, marginTop: 6 },
   form: { width: '100%', gap: 14 },

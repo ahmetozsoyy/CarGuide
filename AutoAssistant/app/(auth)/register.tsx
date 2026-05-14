@@ -61,7 +61,7 @@ export default function RegisterScreen() {
           <Animated.View style={{ opacity: fadeAnim, transform: [{ translateY: slideAnim }], width: '100%', alignItems: 'center' }}>
             <View style={styles.logoArea}>
               <View style={styles.logoFrame}>
-                <Image source={require('../../assets/images/logo.png')} style={styles.logoImage} resizeMode="contain" />
+                <Image source={require('../../assets/images/logo.png')} style={styles.logoImage} resizeMode="cover" />
               </View>
               <Text style={styles.brand}>Kayıt Ol</Text>
               <Text style={styles.tagline}>Yeni bir hesap oluşturun</Text>
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   logoFrame: { 
     width: 100, 
     height: 100, 
-    borderRadius: 26, 
+    borderRadius: 28, 
     justifyContent: 'center', 
     alignItems: 'center', 
     marginBottom: 18,
@@ -110,9 +110,10 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 8 }, 
     shadowOpacity: 0.4, 
     shadowRadius: 15,
-    elevation: 10 
+    elevation: 10,
+    overflow: 'hidden'
   },
-  logoImage: { width: 64, height: 64 },
+  logoImage: { width: '100%', height: '100%' },
   brand: { fontSize: 30, fontWeight: '800', color: Colors.text, letterSpacing: -0.5 },
   tagline: { fontSize: 15, color: Colors.textMuted, marginTop: 6 },
   form: { width: '100%', gap: 14 },
