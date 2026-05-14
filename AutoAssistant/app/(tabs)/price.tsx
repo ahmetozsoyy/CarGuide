@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, ActivityIndicator, Animated, Platform, Pressable, Alert } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, ActivityIndicator, Animated, Platform, Pressable, Alert, Modal } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { BlurView } from 'expo-blur';
@@ -149,19 +149,25 @@ export default function PriceAnalysisScreen() {
           <Ionicons name="sparkles" size={20} color="#FFF" />
           <Text style={styles.buttonText}>Değerlemeyi Başlat</Text>
         </PremiumButton>
-
-        {result && (
-          <Animated.View style={[styles.resultContainer, { opacity: fadeAnim, transform: [{ scale: fadeAnim.interpolate({ inputRange: [0, 1], outputRange: [0.95, 1] }) }] }]}>
-            <BlurView intensity={70} tint="dark" style={styles.resultCard}>
-              <View style={styles.resultIconGlow}>
-                <Ionicons name="checkmark-circle" size={42} color={Colors.secondary} />
-              </View>
-              <Text style={styles.resultTitle}>Tahmini Piyasa Değeri</Text>
-              <Text style={styles.resultValue}>{result}</Text>
-            </BlurView>
-          </Animated.View>
-        )}
       </ScrollView>
+
+      {/* Result Modal */}
+      <Modal visible={!!result} transparent animationType="fade">
+        <View style={styles.modalOverlay}>
+          <View style={styles.resultCard}>
+            <View style={styles.resultIconGlow}>
+              <Ionicons name="checkmark-circle" size={48} color={Colors.secondary} />
+            </View>
+            <Text style={styles.resultTitle}>Tahmini Piyasa Değeri</Text>
+            <Text style={styles.resultValue} adjustsFontSizeToFit numberOfLines={1}>
+              {result}
+            </Text>
+            <TouchableOpacity style={styles.closeButton} onPress={() => setResult(null)}>
+              <Text style={styles.closeButtonText}>Tamam</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -180,9 +186,13 @@ const styles = StyleSheet.create({
   input: { padding: 18, color: '#FFF', fontSize: 15, height: 56, fontFamily: 'Poppins_500Medium' },
   button: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10, borderRadius: 20, paddingVertical: 20, shadowColor: '#6366F1', shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.4, shadowRadius: 16, elevation: 10 },
   buttonText: { color: '#FFF', fontSize: 16, fontFamily: 'Poppins_600SemiBold', letterSpacing: 0.5 },
-  resultContainer: { marginTop: 10, marginBottom: 40 },
-  resultCard: { borderRadius: 24, padding: 32, alignItems: 'center', gap: 12, borderWidth: 1, borderColor: 'rgba(6, 214, 160, 0.3)', backgroundColor: 'rgba(6, 214, 160, 0.05)' },
+  
+  // Modal Styles
+  modalOverlay: { flex: 1, backgroundColor: 'rgba(15, 23, 42, 0.85)', justifyContent: 'center', alignItems: 'center', padding: 24 },
+  resultCard: { width: '100%', backgroundColor: 'rgba(30, 41, 59, 0.95)', borderRadius: 28, padding: 32, alignItems: 'center', gap: 16, borderWidth: 1, borderColor: 'rgba(6, 214, 160, 0.3)', shadowColor: '#000', shadowOffset: { width: 0, height: 10 }, shadowOpacity: 0.5, shadowRadius: 20, elevation: 20 },
   resultIconGlow: { shadowColor: Colors.secondary, shadowOffset: { width: 0, height: 0 }, shadowOpacity: 0.8, shadowRadius: 15, elevation: 10, marginBottom: 4 },
-  resultTitle: { color: Colors.textSecondary, fontSize: 14, fontFamily: 'Poppins_500Medium', letterSpacing: 0.5, textTransform: 'uppercase' },
-  resultValue: { color: '#FFF', fontSize: 34, fontFamily: 'Poppins_700Bold', textShadowColor: 'rgba(6, 214, 160, 0.5)', textShadowOffset: { width: 0, height: 4 }, textShadowRadius: 12 },
+  resultTitle: { color: Colors.textSecondary, fontSize: 15, fontFamily: 'Poppins_500Medium', letterSpacing: 0.5, textTransform: 'uppercase', textAlign: 'center' },
+  resultValue: { color: '#FFF', fontSize: 40, fontFamily: 'Poppins_700Bold', textShadowColor: 'rgba(6, 214, 160, 0.5)', textShadowOffset: { width: 0, height: 4 }, textShadowRadius: 12, textAlign: 'center', width: '100%' },
+  closeButton: { marginTop: 12, backgroundColor: 'rgba(6, 214, 160, 0.15)', paddingVertical: 14, paddingHorizontal: 40, borderRadius: 16, borderWidth: 1, borderColor: 'rgba(6, 214, 160, 0.3)' },
+  closeButtonText: { color: Colors.secondary, fontSize: 16, fontFamily: 'Poppins_700Bold' },
 });
