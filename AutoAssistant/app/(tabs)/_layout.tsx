@@ -23,9 +23,9 @@ export default function TabLayout() {
           backgroundColor: Platform.OS === 'ios' ? 'transparent' : 'rgba(15, 23, 42, 0.90)',
           borderTopWidth: 0,
           elevation: 0,
-          height: 80,
-          paddingBottom: Platform.OS === 'ios' ? 24 : 14,
-          paddingTop: 12,
+          height: 65,
+          paddingBottom: Platform.OS === 'ios' ? 20 : 10,
+          paddingTop: 8,
           shadowColor: '#000',
           shadowOffset: { width: 0, height: -3 },
           shadowOpacity: 0.1,
@@ -38,31 +38,31 @@ export default function TabLayout() {
         ),
         tabBarActiveTintColor: '#818CF8', // primaryLight
         tabBarInactiveTintColor: '#94A3B8', // Lighter muted color
-        tabBarLabelStyle: { fontFamily: 'Poppins_500Medium', fontSize: 11, marginTop: 4 },
+        tabBarLabelStyle: { fontFamily: 'Poppins_500Medium', fontSize: 10, marginTop: 4 },
       }}>
       <Tabs.Screen name="index" options={{
         title: 'Profil',
-        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'person' : 'person-outline'} size={28} color={color} />,
+        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'person' : 'person-outline'} size={24} color={color} />,
       }} />
       <Tabs.Screen name="vehicles" options={{
         title: 'Araçlarım',
-        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'car-sport' : 'car-sport-outline'} size={28} color={color} />,
+        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'car-sport' : 'car-sport-outline'} size={24} color={color} />,
       }} />
       <Tabs.Screen name="damage" options={{
         title: 'Hasar',
-        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'scan' : 'scan-outline'} size={28} color={color} />,
+        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'scan' : 'scan-outline'} size={24} color={color} />,
       }} />
       <Tabs.Screen name="obd" options={{
         title: 'OBD',
-        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'hardware-chip' : 'hardware-chip-outline'} size={28} color={color} />,
+        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'hardware-chip' : 'hardware-chip-outline'} size={24} color={color} />,
       }} />
       <Tabs.Screen name="recommend" options={{
         title: 'Tavsiye',
-        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'bulb' : 'bulb-outline'} size={28} color={color} />,
+        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'bulb' : 'bulb-outline'} size={24} color={color} />,
       }} />
       <Tabs.Screen name="price" options={{
         title: 'Fiyat',
-        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'analytics' : 'analytics-outline'} size={28} color={color} />,
+        tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'analytics' : 'analytics-outline'} size={24} color={color} />,
       }} />
     </Tabs>
   );

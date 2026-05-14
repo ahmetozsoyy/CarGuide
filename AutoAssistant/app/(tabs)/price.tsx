@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, ActivityIndicator, Animated, Platform, Pressable } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, ActivityIndicator, Animated, Platform, Pressable, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { BlurView } from 'expo-blur';
@@ -71,7 +71,7 @@ export default function PriceAnalysisScreen() {
   useEffect(() => { const m = VehicleData.seri_to_model[seri] || []; setModelList(m); setModel(m[0] || ''); }, [seri]);
 
   const handleAnalyze = async () => {
-    if (!yil || !km) { alert("Lütfen Yıl ve Kilometre bilgilerini giriniz."); return; }
+    if (!yil || !km) { Alert.alert("Uyarı", "Lütfen Yıl ve Kilometre bilgilerini giriniz."); return; }
     setLoading(true);
     setResult(null);
     try {
@@ -85,8 +85,8 @@ export default function PriceAnalysisScreen() {
         setResult(data.formatted_price);
         fadeAnim.setValue(0);
         Animated.spring(fadeAnim, { toValue: 1, useNativeDriver: true, tension: 50, friction: 7 }).start();
-      } else { alert("Hata: " + (data.error || "Bir sorun oluştu")); }
-    } catch (error) { alert("Sunucuya bağlanılamadı."); }
+      } else { Alert.alert("Hata", data.error || "Bir sorun oluştu"); }
+    } catch (error) { Alert.alert("Hata", "Sunucuya bağlanılamadı."); }
     finally { setLoading(false); }
   };
 
@@ -97,7 +97,7 @@ export default function PriceAnalysisScreen() {
       <View style={[styles.bgBlob, { top: 200, right: -100, backgroundColor: 'rgba(6, 214, 160, 0.15)' }]} />
       <View style={[styles.bgBlob, { bottom: -50, left: 100, backgroundColor: 'rgba(244, 114, 182, 0.15)' }]} />
 
-      <ScrollView style={styles.scrollView} contentContainerStyle={{ padding: 24, paddingTop: Platform.OS === 'ios' ? 60 : 40, paddingBottom: 130 }}>
+      <ScrollView style={styles.scrollView} contentContainerStyle={{ padding: 24, paddingTop: Platform.OS === 'ios' ? 60 : 40, paddingBottom: 150 }} keyboardShouldPersistTaps="handled">
         {/* Minimal Header */}
         <View style={styles.minimalHeader}>
           <Text style={styles.title}>Fiyat Analizi</Text>
