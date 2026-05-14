@@ -1,10 +1,11 @@
-import React, { useState, useCallback } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList, Alert } from 'react-native';
+import React, { useState, useCallback, useRef } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList, Alert, Animated, Platform } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '../../constants/Colors';
 import { useAuth } from '../../context/AuthContext';
 import { useFocusEffect } from 'expo-router';
+import { BlurView } from 'expo-blur';
 
 const API_URL = 'http://172.24.246.41:5000';
 
@@ -67,111 +68,127 @@ export default function ProfileScreen() {
   const renderItem = ({ item }: { item: HistoryItem }) => {
     const cfg = TYPE_CONFIG[item.type] || { color: Colors.textMuted, icon: 'document' };
     return (
-      <View style={styles.histCard}>
-        <View style={[styles.histIconBg, { backgroundColor: cfg.color + '18' }]}>
-          <Ionicons name={cfg.icon as any} size={20} color={cfg.color} />
+      <BlurView intensity={50} tint="dark" style={styles.histCard}>
+        <View style={styles.histCardContent}>
+          <View style={[styles.histIconBg, { backgroundColor: cfg.color + '18' }]}>
+            <Ionicons name={cfg.icon as any} size={22} color={cfg.color} />
+          </View>
+          <View style={styles.histContent}>
+            <Text style={styles.histTitle} numberOfLines={1}>{item.title}</Text>
+            <Text style={styles.histSummary} numberOfLines={2}>{item.summary}</Text>
+            <Text style={styles.histDate}>{formatDate(item.created_at)}</Text>
+          </View>
         </View>
-        <View style={styles.histContent}>
-          <Text style={styles.histTitle} numberOfLines={1}>{item.title}</Text>
-          <Text style={styles.histSummary} numberOfLines={2}>{item.summary}</Text>
-          <Text style={styles.histDate}>{formatDate(item.created_at)}</Text>
-        </View>
-      </View>
+      </BlurView>
     );
   };
 
   return (
     <View style={styles.container}>
+      {/* Background Blobs for Glassmorphism effect */}
+      <View style={[styles.bgBlob, { top: -100, right: -50, backgroundColor: 'rgba(99, 102, 241, 0.20)' }]} />
+      <View style={[styles.bgBlob, { top: 300, left: -100, backgroundColor: 'rgba(244, 114, 182, 0.12)' }]} />
+      
       {/* Profile Header */}
-      <LinearGradient colors={['#1E293B', '#0F172A']} style={styles.header}>
-        <LinearGradient colors={[...Colors.gradientPrimary]} style={styles.avatar}>
-          <Text style={styles.avatarText}>{avatarLetter}</Text>
-        </LinearGradient>
-        <View style={styles.headerInfo}>
-          <Text style={styles.userName}>{userName || 'Kullanıcı'}</Text>
-          <Text style={styles.userSub}>AutoAssistant Kullanıcısı</Text>
-        </View>
-        <TouchableOpacity onPress={logout} style={styles.logoutBtn}>
-          <Ionicons name="log-out-outline" size={22} color={Colors.danger} />
-        </TouchableOpacity>
-      </LinearGradient>
+      <View style={styles.headerContainer}>
+        <BlurView intensity={60} tint="dark" style={styles.header}>
+          <LinearGradient colors={['#6366F1', '#4F46E5']} style={styles.avatar}>
+            <Text style={styles.avatarText}>{avatarLetter}</Text>
+          </LinearGradient>
+          <View style={styles.headerInfo}>
+            <Text style={styles.userName}>{userName || 'Kullanıcı'}</Text>
+            <Text style={styles.userSub}>Premium Üye</Text>
+          </View>
+          <TouchableOpacity onPress={logout} style={styles.logoutBtn}>
+            <Ionicons name="log-out-outline" size={24} color={Colors.danger} />
+          </TouchableOpacity>
+        </BlurView>
+      </View>
 
       {/* Stats */}
       <View style={styles.statsRow}>
         {(['price', 'obd', 'damage'] as const).map(type => {
           const cfg = TYPE_CONFIG[type];
-          const count = history.filter(h => tab === 'all' ? h.type === type : h.type === type).length;
           const allCount = tab === 'all' ? history.filter(h => h.type === type).length : (tab === type ? history.length : 0);
           return (
-            <View key={type} style={styles.statCard}>
-              <Ionicons name={cfg.icon as any} size={20} color={cfg.color} />
-              <Text style={styles.statCount}>{allCount}</Text>
-              <Text style={styles.statLabel}>{type === 'price' ? 'Fiyat' : type === 'obd' ? 'OBD' : 'Hasar'}</Text>
-            </View>
+            <BlurView key={type} intensity={40} tint="dark" style={styles.statCard}>
+              <View style={styles.statInner}>
+                <Ionicons name={cfg.icon as any} size={24} color={cfg.color} />
+                <Text style={styles.statCount}>{allCount}</Text>
+                <Text style={styles.statLabel}>{type === 'price' ? 'Fiyat' : type === 'obd' ? 'OBD' : 'Hasar'}</Text>
+              </View>
+            </BlurView>
           );
         })}
       </View>
 
       {/* Tab Bar + Clear Button */}
       <View style={styles.tabRow}>
-        <View style={styles.tabBar}>
+        <BlurView intensity={50} tint="dark" style={styles.tabBar}>
           {TABS.map(t => (
             <TouchableOpacity key={t.key} style={[styles.tab, tab === t.key && styles.tabActive]} onPress={() => setTab(t.key)}>
-              <Ionicons name={t.icon as any} size={16} color={tab === t.key ? Colors.primary : Colors.textMuted} />
+              <Ionicons name={t.icon as any} size={16} color={tab === t.key ? '#FFF' : Colors.textMuted} />
               <Text style={[styles.tabText, tab === t.key && styles.tabTextActive]}>{t.label}</Text>
             </TouchableOpacity>
           ))}
-        </View>
+        </BlurView>
         {history.length > 0 && (
           <TouchableOpacity style={styles.clearBtn} onPress={clearHistory}>
-            <Ionicons name="trash-outline" size={18} color={Colors.danger} />
+            <BlurView intensity={50} tint="dark" style={styles.clearBtnInner}>
+              <Ionicons name="trash-outline" size={20} color={Colors.danger} />
+            </BlurView>
           </TouchableOpacity>
         )}
       </View>
 
       {/* History */}
-      {loading ? <View style={styles.center}><ActivityIndicator size="large" color={Colors.primary} /></View>
+      {loading ? <View style={styles.center}><ActivityIndicator size="large" color="#6366F1" /></View>
        : history.length === 0 ? (
         <View style={styles.center}>
-          <Ionicons name="document-text-outline" size={52} color={Colors.textMuted} />
+          <Ionicons name="document-text-outline" size={64} color={Colors.textMuted} style={{ opacity: 0.5 }} />
           <Text style={styles.emptyTitle}>Henüz analiz yok</Text>
-          <Text style={styles.emptySub}>Analiz yaptığınızda burada görünecek.</Text>
+          <Text style={styles.emptySub}>Analiz yaptığınızda detaylar burada listelenecek.</Text>
         </View>
        ) : (
         <FlatList data={history} keyExtractor={i => String(i.id)} renderItem={renderItem}
-          contentContainerStyle={{ padding: 16, paddingBottom: 20 }} showsVerticalScrollIndicator={false} />
+          contentContainerStyle={{ padding: 20, paddingBottom: 100 }} showsVerticalScrollIndicator={false} />
        )}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: Colors.background },
-  header: { flexDirection: 'row', alignItems: 'center', padding: 20, paddingTop: 10, paddingBottom: 16 },
-  avatar: { width: 52, height: 52, borderRadius: 18, justifyContent: 'center', alignItems: 'center' },
-  avatarText: { fontSize: 22, color: '#FFF', fontWeight: '800' },
-  headerInfo: { marginLeft: 14, flex: 1 },
-  userName: { fontSize: 20, fontWeight: '800', color: Colors.text },
-  userSub: { fontSize: 13, color: Colors.textMuted, marginTop: 2 },
-  logoutBtn: { width: 44, height: 44, borderRadius: 14, backgroundColor: Colors.danger + '15', justifyContent: 'center', alignItems: 'center' },
-  statsRow: { flexDirection: 'row', paddingHorizontal: 16, gap: 10, marginBottom: 12 },
-  statCard: { flex: 1, backgroundColor: Colors.surface, borderRadius: 16, padding: 14, alignItems: 'center', borderWidth: 1, borderColor: Colors.border, gap: 4 },
-  statCount: { fontSize: 24, fontWeight: '800', color: Colors.text },
-  statLabel: { fontSize: 11, color: Colors.textMuted },
-  tabRow: { flexDirection: 'row', paddingHorizontal: 16, gap: 8, marginBottom: 8, alignItems: 'center' },
-  tabBar: { flexDirection: 'row', flex: 1, gap: 8 },
-  clearBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.danger + '15', justifyContent: 'center', alignItems: 'center' },
-  tab: { flex: 1, flexDirection: 'row', gap: 6, paddingVertical: 10, borderRadius: 12, backgroundColor: Colors.surface, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: Colors.border },
-  tabActive: { backgroundColor: Colors.primary + '15', borderColor: Colors.primary + '50' },
-  tabText: { fontSize: 12, color: Colors.textMuted, fontWeight: '600' },
-  tabTextActive: { color: Colors.primary },
-  center: { flex: 1, justifyContent: 'center', alignItems: 'center', gap: 10 },
-  emptyTitle: { fontSize: 18, fontWeight: '700', color: Colors.text },
-  emptySub: { fontSize: 14, color: Colors.textMuted },
-  histCard: { flexDirection: 'row', alignItems: 'center', backgroundColor: Colors.surface, borderRadius: 16, padding: 14, marginBottom: 10, borderWidth: 1, borderColor: Colors.border },
-  histIconBg: { width: 44, height: 44, borderRadius: 14, justifyContent: 'center', alignItems: 'center' },
-  histContent: { flex: 1, marginLeft: 12 },
-  histTitle: { fontSize: 14, fontWeight: '700', color: Colors.text },
-  histSummary: { fontSize: 12, color: Colors.textMuted, marginTop: 2, lineHeight: 17 },
-  histDate: { fontSize: 10, color: Colors.textMuted, marginTop: 4, opacity: 0.6 },
+  container: { flex: 1, backgroundColor: '#070A10' },
+  bgBlob: { position: 'absolute', width: 350, height: 350, borderRadius: 175, filter: 'blur(90px)' as any, opacity: 0.7 },
+  headerContainer: { marginTop: Platform.OS === 'ios' ? 100 : 80, paddingHorizontal: 20, marginBottom: 20 },
+  header: { flexDirection: 'row', alignItems: 'center', padding: 20, borderRadius: 24, borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)', overflow: 'hidden' },
+  avatar: { width: 56, height: 56, borderRadius: 20, justifyContent: 'center', alignItems: 'center', shadowColor: '#6366F1', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.3, shadowRadius: 8 },
+  avatarText: { fontSize: 24, color: '#FFF', fontFamily: 'Poppins_700Bold' },
+  headerInfo: { marginLeft: 16, flex: 1 },
+  userName: { fontSize: 22, fontFamily: 'Poppins_700Bold', color: '#FFF', letterSpacing: -0.5 },
+  userSub: { fontSize: 13, fontFamily: 'Poppins_500Medium', color: Colors.primaryLight, marginTop: 2 },
+  logoutBtn: { width: 48, height: 48, borderRadius: 16, backgroundColor: 'rgba(244, 63, 94, 0.1)', justifyContent: 'center', alignItems: 'center' },
+  statsRow: { flexDirection: 'row', paddingHorizontal: 20, gap: 12, marginBottom: 20 },
+  statCard: { flex: 1, borderRadius: 20, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)' },
+  statInner: { padding: 16, alignItems: 'center', gap: 6, backgroundColor: 'rgba(0,0,0,0.2)' },
+  statCount: { fontSize: 26, fontFamily: 'Poppins_700Bold', color: '#FFF', marginTop: 4 },
+  statLabel: { fontSize: 12, fontFamily: 'Poppins_500Medium', color: Colors.textMuted },
+  tabRow: { flexDirection: 'row', paddingHorizontal: 20, gap: 12, marginBottom: 10, alignItems: 'center' },
+  tabBar: { flexDirection: 'row', flex: 1, borderRadius: 16, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)' },
+  tab: { flex: 1, flexDirection: 'row', gap: 6, paddingVertical: 14, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.2)' },
+  tabActive: { backgroundColor: 'rgba(99, 102, 241, 0.2)' },
+  tabText: { fontSize: 12, color: Colors.textMuted, fontFamily: 'Poppins_600SemiBold' },
+  tabTextActive: { color: '#FFF' },
+  clearBtn: { borderRadius: 16, overflow: 'hidden' },
+  clearBtnInner: { width: 48, height: 48, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(244, 63, 94, 0.1)', borderWidth: 1, borderColor: 'rgba(244, 63, 94, 0.2)', borderRadius: 16 },
+  center: { flex: 1, justifyContent: 'center', alignItems: 'center', gap: 12 },
+  emptyTitle: { fontSize: 20, fontFamily: 'Poppins_700Bold', color: '#FFF' },
+  emptySub: { fontSize: 14, fontFamily: 'Poppins_400Regular', color: Colors.textMuted },
+  histCard: { borderRadius: 20, marginBottom: 16, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)' },
+  histCardContent: { flexDirection: 'row', alignItems: 'center', padding: 18, backgroundColor: 'rgba(0,0,0,0.2)' },
+  histIconBg: { width: 48, height: 48, borderRadius: 16, justifyContent: 'center', alignItems: 'center' },
+  histContent: { flex: 1, marginLeft: 16 },
+  histTitle: { fontSize: 15, fontFamily: 'Poppins_600SemiBold', color: '#FFF', marginBottom: 2 },
+  histSummary: { fontSize: 13, fontFamily: 'Poppins_400Regular', color: Colors.textSecondary, lineHeight: 18 },
+  histDate: { fontSize: 11, fontFamily: 'Poppins_500Medium', color: Colors.textMuted, marginTop: 6 },
 });
