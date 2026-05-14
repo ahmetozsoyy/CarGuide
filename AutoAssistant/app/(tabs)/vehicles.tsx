@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TextInput, ActivityIndicator, Alert, Image, FlatList, Modal, Dimensions, Platform } from 'react-native';
+import CustomAlert from '../../components/CustomAlert';
 import CustomPicker from '../../components/CustomPicker';
 import * as ImagePicker from 'expo-image-picker';
 import { Colors } from '../../constants/Colors';
@@ -26,6 +27,8 @@ export default function VehiclesScreen() {
   const [analyzing, setAnalyzing] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const [fullscreenPhoto, setFullscreenPhoto] = useState<string | null>(null);
+  const [deleteAlertVisible, setDeleteAlertVisible] = useState(false);
+  const [vehicleToDelete, setVehicleToDelete] = useState<number | null>(null);
 
   // Form fields
   const [marka, setMarka] = useState(VD.marka[0] || '');
@@ -99,13 +102,19 @@ export default function VehiclesScreen() {
   };
 
   const handleDelete = (id: number) => {
-    Alert.alert('Aracı Sil', 'Bu aracı silmek istediğinize emin misiniz?', [
-      { text: 'İptal', style: 'cancel' },
-      { text: 'Sil', style: 'destructive', onPress: async () => {
-        await fetch(`${API_URL}/vehicles/${id}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${token}` } });
-        setDetailVehicle(null); fetchVehicles();
-      }},
-    ]);
+    setVehicleToDelete(id);
+    setDeleteAlertVisible(true);
+  };
+
+  const confirmDelete = async () => {
+    if (vehicleToDelete === null) return;
+    setDeleteAlertVisible(false);
+    try {
+      await fetch(`${API_URL}/vehicles/${vehicleToDelete}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${token}` } });
+      setDetailVehicle(null); 
+      fetchVehicles();
+    } catch (e) { console.error(e); }
+    setVehicleToDelete(null);
   };
 
   const quickPrice = async (v: Vehicle) => {
@@ -314,6 +323,21 @@ export default function VehiclesScreen() {
           )}
         </View>
       </Modal>
+
+      {/* Delete Confirmation Alert */}
+      <CustomAlert
+        visible={deleteAlertVisible}
+        title="Aracı Sil"
+        message="Bu aracı silmek istediğinize emin misiniz? Bu işlem geri alınamaz."
+        confirmText="Evet, Sil"
+        cancelText="İptal"
+        type="danger"
+        onCancel={() => {
+          setDeleteAlertVisible(false);
+          setVehicleToDelete(null);
+        }}
+        onConfirm={confirmDelete}
+      />
     </View>
   );
 }

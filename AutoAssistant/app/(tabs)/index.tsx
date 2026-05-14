@@ -1,11 +1,12 @@
 import React, { useState, useCallback, useRef } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList, Alert, Animated, Platform } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList, Animated, Platform } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '../../constants/Colors';
 import { useAuth } from '../../context/AuthContext';
 import { useFocusEffect } from 'expo-router';
 import { BlurView } from 'expo-blur';
+import CustomAlert from '../../components/CustomAlert';
 
 const API_URL = 'http://172.24.246.41:5000';
 
@@ -33,6 +34,7 @@ export default function ProfileScreen() {
   const [tab, setTab] = useState<string>('all');
   const [history, setHistory] = useState<HistoryItem[]>([]);
   const [loading, setLoading] = useState(false);
+  const [alertVisible, setAlertVisible] = useState(false);
   const avatarLetter = userName ? userName.charAt(0).toUpperCase() : '?';
 
   const fetchHistory = useCallback(async (signal?: AbortSignal) => {
@@ -53,16 +55,12 @@ export default function ProfileScreen() {
     return () => controller.abort();
   }, [fetchHistory]));
 
-  const clearHistory = () => {
-    Alert.alert('Geçmişi Temizle', 'Tüm analiz geçmişiniz silinecek. Devam etmek istiyor musunuz?', [
-      { text: 'İptal', style: 'cancel' },
-      { text: 'Temizle', style: 'destructive', onPress: async () => {
-        try {
-          await fetch(`${API_URL}/history`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${token}` } });
-          setHistory([]);
-        } catch (e) { console.error(e); }
-      }},
-    ]);
+  const confirmClearHistory = async () => {
+    setAlertVisible(false);
+    try {
+      await fetch(`${API_URL}/history`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${token}` } });
+      setHistory([]);
+    } catch (e) { console.error(e); }
   };
 
   const renderItem = ({ item }: { item: HistoryItem }) => {
@@ -132,7 +130,7 @@ export default function ProfileScreen() {
           ))}
         </BlurView>
         {history.length > 0 && (
-          <TouchableOpacity style={styles.clearBtn} onPress={clearHistory}>
+          <TouchableOpacity style={styles.clearBtn} onPress={() => setAlertVisible(true)}>
             <BlurView intensity={50} tint="dark" style={styles.clearBtnInner}>
               <Ionicons name="trash-outline" size={20} color={Colors.danger} />
             </BlurView>
@@ -152,6 +150,17 @@ export default function ProfileScreen() {
         <FlatList data={history} keyExtractor={i => String(i.id)} renderItem={renderItem}
           contentContainerStyle={{ padding: 20, paddingBottom: 130 }} showsVerticalScrollIndicator={false} />
        )}
+
+      <CustomAlert
+        visible={alertVisible}
+        title="Geçmişi Temizle"
+        message="Tüm analiz geçmişiniz kalıcı olarak silinecek. Bu işlem geri alınamaz."
+        confirmText="Evet, Sil"
+        cancelText="İptal"
+        type="danger"
+        onCancel={() => setAlertVisible(false)}
+        onConfirm={confirmClearHistory}
+      />
     </View>
   );
 }
