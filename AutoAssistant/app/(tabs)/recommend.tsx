@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, ActivityIndicator, Animated } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, ActivityIndicator, Animated, Platform } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { Picker } from '@react-native-picker/picker';
@@ -58,15 +58,8 @@ export default function RecommendScreen() {
 
   return (
     <ScrollView style={s.container} contentContainerStyle={{ padding: 20, paddingBottom: 60 }}>
-      {/* Header */}
-      <View style={s.headerCard}>
-        <LinearGradient colors={['#1E293B', '#334155']} style={s.headerGrad} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
-          <View style={s.headerIcon}>
-            <Ionicons name="bulb" size={28} color={Colors.warning} />
-          </View>
-          <Text style={s.title}>AI Araç Tavsiye</Text>
-          <Text style={s.subtitle}>Bütçe ve tercihlerinize göre yapay zeka size en uygun aracı önersin.</Text>
-        </LinearGradient>
+      <View style={s.minimalHeader}>
+        <Text style={s.title}>Araç Tavsiye</Text>
       </View>
 
       {/* Budget Row */}
@@ -96,13 +89,13 @@ export default function RecommendScreen() {
         <View style={{ flex: 1, marginRight: 8 }}>
           <Text style={s.label}>Yakıt</Text>
           <View style={s.pkBox}><Picker selectedValue={yakit} onValueChange={setYakit} style={s.pk} dropdownIconColor={Colors.textMuted}>
-            {['Farketmez', 'Benzin', 'Dizel', 'LPG & Benzin', 'Hibrit', 'Elektrik'].map(y => <Picker.Item key={y} label={y} value={y} style={{ backgroundColor: Colors.surface, color: Colors.text }} />)}
+            {['Farketmez', 'Benzin', 'Dizel', 'LPG & Benzin', 'Hibrit', 'Elektrik'].map(y => <Picker.Item key={y} label={y} value={y} color={Colors.text} />)}
           </Picker></View>
         </View>
         <View style={{ flex: 1, marginLeft: 8 }}>
           <Text style={s.label}>Vites</Text>
           <View style={s.pkBox}><Picker selectedValue={vites} onValueChange={setVites} style={s.pk} dropdownIconColor={Colors.textMuted}>
-            {['Farketmez', 'Otomatik', 'Düz', 'Yarı Otomatik'].map(v => <Picker.Item key={v} label={v} value={v} style={{ backgroundColor: Colors.surface, color: Colors.text }} />)}
+            {['Farketmez', 'Otomatik', 'Düz', 'Yarı Otomatik'].map(v => <Picker.Item key={v} label={v} value={v} color={Colors.text} />)}
           </Picker></View>
         </View>
       </View>
@@ -172,17 +165,14 @@ export default function RecommendScreen() {
 }
 
 const s = StyleSheet.create({
-  container: { flex: 1, backgroundColor: Colors.background },
-  headerCard: { borderRadius: 20, overflow: 'hidden', marginBottom: 20 },
-  headerGrad: { padding: 24 },
-  headerIcon: { width: 52, height: 52, borderRadius: 16, backgroundColor: Colors.warning + '18', justifyContent: 'center', alignItems: 'center', marginBottom: 16 },
-  title: { fontSize: 22, fontWeight: '800', color: Colors.text, marginBottom: 6 },
-  subtitle: { fontSize: 14, color: Colors.textSecondary, lineHeight: 20 },
-  label: { fontSize: 13, color: Colors.textMuted, marginBottom: 6, fontWeight: '600', marginTop: 12 },
+  container: { flex: 1, backgroundColor: '#0F172A' },
+  minimalHeader: { marginBottom: 20, paddingTop: Platform.OS === 'ios' ? 60 : 40 },
+  title: { fontSize: 26, fontFamily: 'Poppins_700Bold', color: '#FFF', letterSpacing: -0.3 },
+  label: { fontSize: 13, fontFamily: 'Poppins_600SemiBold', color: '#CBD5E1', marginBottom: 8, marginTop: 12, letterSpacing: 0.3 },
   row: { flexDirection: 'row' },
-  input: { backgroundColor: Colors.surface, borderRadius: 14, padding: 16, color: Colors.text, borderWidth: 1, borderColor: Colors.border, fontSize: 15, height: 52 },
-  pkBox: { backgroundColor: Colors.surface, borderRadius: 14, borderWidth: 1, borderColor: Colors.border, overflow: 'hidden' },
-  pk: { color: Colors.text, height: 50, backgroundColor: Colors.surface },
+  input: { backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 16, color: '#FFF', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', fontSize: 15, height: 56, fontFamily: 'Poppins_500Medium' },
+  pkBox: { backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 16, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', overflow: 'hidden' },
+  pk: { color: '#FFF', height: 56, backgroundColor: 'transparent', fontFamily: 'Poppins_500Medium' },
   chip: { backgroundColor: Colors.surface, borderRadius: 20, paddingHorizontal: 14, paddingVertical: 8, marginRight: 8, borderWidth: 1, borderColor: Colors.border },
   chipActive: { backgroundColor: Colors.primary + '25', borderColor: Colors.primary },
   chipText: { color: Colors.textMuted, fontSize: 13, fontWeight: '600' },

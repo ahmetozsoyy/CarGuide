@@ -97,7 +97,6 @@ export default function ProfileScreen() {
           </LinearGradient>
           <View style={styles.headerInfo}>
             <Text style={styles.userName}>{userName || 'Kullanıcı'}</Text>
-            <Text style={styles.userSub}>Premium Üye</Text>
           </View>
           <TouchableOpacity onPress={logout} style={styles.logoutBtn}>
             <Ionicons name="log-out-outline" size={22} color={Colors.danger} />
@@ -166,7 +165,6 @@ const styles = StyleSheet.create({
   avatarText: { fontSize: 20, color: '#FFF', fontFamily: 'Poppins_700Bold' },
   headerInfo: { marginLeft: 16, flex: 1 },
   userName: { fontSize: 18, fontFamily: 'Poppins_700Bold', color: '#FFF', letterSpacing: -0.3 },
-  userSub: { fontSize: 12, fontFamily: 'Poppins_500Medium', color: '#818CF8', marginTop: 2 },
   logoutBtn: { width: 44, height: 44, borderRadius: 14, backgroundColor: 'rgba(244, 63, 94, 0.1)', justifyContent: 'center', alignItems: 'center' },
   statsRow: { flexDirection: 'row', paddingHorizontal: 20, gap: 12, marginBottom: 20 },
   statCard: { flex: 1, borderRadius: 18, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },

@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TextInput, ActivityIndicator, Alert, Image, FlatList, Modal, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TextInput, ActivityIndicator, Alert, Image, FlatList, Modal, Dimensions, Platform } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import * as ImagePicker from 'expo-image-picker';
 import { Colors } from '../../constants/Colors';
@@ -331,20 +331,20 @@ const s = StyleSheet.create({
   cardModel: { fontSize: 13, color: Colors.primary, marginTop: 2 },
   cardInfo: { fontSize: 12, color: Colors.textMuted, marginTop: 6 },
   // Modal common
-  modal: { flex: 1, backgroundColor: Colors.background },
-  modalHead: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 16, borderBottomWidth: 1, borderBottomColor: Colors.border, backgroundColor: Colors.surface },
-  modalCancel: { color: Colors.textMuted, fontSize: 15 },
-  modalTitle: { fontSize: 17, fontWeight: 'bold', color: Colors.text, flex: 1, textAlign: 'center' },
-  modalSave: { color: Colors.primary, fontSize: 16, fontWeight: 'bold' },
+  modal: { flex: 1, backgroundColor: '#0F172A' },
+  modalHead: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 16, paddingTop: Platform.OS === 'ios' ? 50 : 20, borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.1)', backgroundColor: '#0F172A' },
+  modalCancel: { color: '#94A3B8', fontSize: 15, fontFamily: 'Poppins_500Medium' },
+  modalTitle: { fontSize: 17, fontFamily: 'Poppins_700Bold', color: '#FFF', flex: 1, textAlign: 'center' },
+  modalSave: { color: '#818CF8', fontSize: 16, fontFamily: 'Poppins_700Bold' },
   // Form
-  lbl: { fontSize: 13, color: Colors.textMuted, marginBottom: 6, fontWeight: '600', marginTop: 12 },
-  pkBox: { backgroundColor: Colors.surface, borderRadius: 12, borderWidth: 1, borderColor: Colors.border, overflow: 'hidden' },
+  lbl: { fontSize: 13, fontFamily: 'Poppins_600SemiBold', color: '#CBD5E1', marginBottom: 6, marginTop: 12 },
+  pkBox: { backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 16, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', overflow: 'hidden' },
   pkDis: { opacity: 0.5 },
-  pk: { color: Colors.text, height: 50 },
+  pk: { color: '#FFF', height: 56, backgroundColor: 'transparent', fontFamily: 'Poppins_500Medium' },
   row: { flexDirection: 'row' },
-  inp: { backgroundColor: Colors.surface, borderRadius: 12, padding: 16, color: Colors.text, borderWidth: 1, borderColor: Colors.border, fontSize: 16, height: 55 },
-  photoBtn: { backgroundColor: Colors.surface, borderRadius: 12, padding: 16, alignItems: 'center', borderWidth: 1, borderColor: Colors.border, borderStyle: 'dashed' },
-  photoBtnTx: { color: Colors.textMuted, fontWeight: '600' },
+  inp: { backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 16, color: '#FFF', borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', fontSize: 15, height: 56, fontFamily: 'Poppins_500Medium' },
+  photoBtn: { backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 16, alignItems: 'center', borderWidth: 1, borderColor: 'rgba(255,255,255,0.2)', borderStyle: 'dashed' },
+  photoBtnTx: { color: '#94A3B8', fontFamily: 'Poppins_600SemiBold' },
   thumb: { width: 80, height: 60, borderRadius: 8, marginRight: 8 },
   // Detail
   dots: { flexDirection: 'row', justifyContent: 'center', paddingVertical: 10, gap: 6 },

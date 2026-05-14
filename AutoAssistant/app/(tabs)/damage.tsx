@@ -184,19 +184,7 @@ export default function DamageAnalysisScreen() {
           <Text style={styles.baslik}>Hasar Tespiti</Text>
           <Text style={styles.altBaslik}>Yapay zeka ile aracınızın hasarını analiz edin.</Text>
 
-          {/* Kamera */}
-          <TouchableOpacity style={styles.buyukKart}
-            onPress={async () => {
-              const { granted } = await requestPermission();
-              if (granted) setMod('kamera');
-              else Alert.alert('İzin Gerekli', 'Kamera erişim izni verilmedi.');
-            }}>
-            <View style={[styles.ikonDaire, { backgroundColor: '#3B82F622' }]}>
-              <Text style={styles.ikonEmoji}>📷</Text>
-            </View>
-            <Text style={styles.kartBaslik}>Anlık Kamera</Text>
-            <Text style={styles.kartAciklama}>Kameranızı açarak aracınızın hasar bölgesini analiz edin.</Text>
-          </TouchableOpacity>
+
 
           {/* Tekli galeri */}
           <TouchableOpacity style={styles.buyukKart} onPress={galeridenSec}>
@@ -227,31 +215,7 @@ export default function DamageAnalysisScreen() {
     );
   }
 
-  // ── Kamera Ekranı ─────────────────────────────────────────────────────
-  if (mod === 'kamera') {
-    return (
-      <View style={styles.kameraKonteyner}>
-        <CameraView style={StyleSheet.absoluteFill} facing={kameraYon} ref={kameraRef} />
-        {/* Üst bar */}
-        <SafeAreaView style={styles.kameraUst}>
-          <TouchableOpacity onPress={() => setMod('menu')} style={styles.geriBtn}>
-            <Text style={styles.geriBtnMetin}>✕ Geri</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => setKameraYon(k => k === 'back' ? 'front' : 'back')} style={styles.donBtn}>
-            <Text style={styles.donBtnMetin}>🔄</Text>
-          </TouchableOpacity>
-        </SafeAreaView>
-        {/* Çerçeve */}
-        <View style={styles.cerceve} />
-        {/* Alt çek butonu */}
-        <SafeAreaView style={styles.kameraAlt}>
-          <TouchableOpacity onPress={fotografCek} style={styles.cekBtn}>
-            <View style={styles.cekBtnIc} />
-          </TouchableOpacity>
-        </SafeAreaView>
-      </View>
-    );
-  }
+
 
   // ── Sonuç Ekranı ──────────────────────────────────────────────────────
   return (
