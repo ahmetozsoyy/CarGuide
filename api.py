@@ -179,6 +179,9 @@ def _gemini_ozet(tespitler: list) -> str:
         return resp.text
     except Exception as e:
         print(f"Gemini özet hatası: {e}")
+        error_msg = str(e)
+        if '429' in error_msg or 'RESOURCE_EXHAUSTED' in error_msg:
+            return "Yapay zeka kota sınırına ulaştığı için özet oluşturulamadı (Lütfen kısa bir süre sonra tekrar deneyin)."
         return None
 
 
@@ -319,7 +322,11 @@ def lookup_obd():
                 simplified_desc = f"Teknik Tanım: {technical_desc}\n\nAnaliz:\n{response.text}"
             except Exception as e:
                 print("Gemini API Error:", e)
-                simplified_desc = f"Yapay zeka çevirisi şu an yapılamadı. Hata: {str(e)}\n\nTeknik Tanım: {technical_desc}"
+                error_msg = str(e)
+                if '429' in error_msg or 'RESOURCE_EXHAUSTED' in error_msg:
+                    simplified_desc = f"Yapay zeka (Gemini) kota sınırına ulaştığı için şu an çeviri yapılamadı. Lütfen kısa bir süre sonra tekrar deneyin.\n\nTeknik Tanım: {technical_desc}"
+                else:
+                    simplified_desc = f"Yapay zeka çevirisi şu an yapılamadı. Hata: {error_msg}\n\nTeknik Tanım: {technical_desc}"
         else:
             simplified_desc = f"{technical_desc}\n\n(Not: Daha basit bir açıklama için sunucuya GEMINI_API_KEY eklenmelidir.)"
 
